@@ -32,7 +32,7 @@ batsmanMovingAverage(kohli,"Kohli")
 Tinniam V Ganesh
 }
 \references{
-\url{http://cricsheet.org/}
+\url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{

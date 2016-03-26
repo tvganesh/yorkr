@@ -2,9 +2,51 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
 # Function: bowlerDeliveryWickets
-# This function creates a data frame of delivery and wickets
+# This function creates a data frame of deliveries bowled and wickets
 #
 ###########################################################################################
+#' @title
+#' This function creates a dataframe of deliveries bowled and wickets taken
+#'
+#' @description
+#' This function creates a dataframe of balls bowled versus the wickets taken by
+#' the bowler
+#' @usage
+#' bowlerDeliveryWickets(match,theTeam,name)
+#'
+#' @param match
+#' Data frame of the match
+#'
+#' @param theTeam
+#' The team for which the delivery wickets have to be computed
+#'
+#' @param name
+#' The name of the bowler
+#'
+#' @return dataframe
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get the data frame for Kohli
+#' kohli <- getBatsmanDetails(team="India",name="Kohli")
+#' batsmanDismissals(kohli,"Kohli")
+#'
+#' @seealso
+#' \code{\link{batsmanFoursSixes}}
+#' \code{\link{batsmanRunsVsDeliveries}}
+#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{bowlerDeliveryWickets}}
+#' \code{\link{bowlerMeanEconomyRate}}
+#' \code{\link{bowlerMeanRunsConceded}}
+#'
+#'
+
 bowlerDeliveryWickets <- function(match,theTeam,name){
     d <- NULL
     a <-filter(match,team!=theTeam)
@@ -16,7 +58,7 @@ bowlerDeliveryWickets <- function(match,theTeam,name){
             c$wicketNo <- seq(1:dim(c)[1])
             d <- select(c,bowler,delivery,wicketNo,date)
         }
-        
+
     }
     d
 }

@@ -24,7 +24,7 @@
 #'
 #' @return None
 #' @references
-#' \url{http://cricsheet.org/}
+#' \url{http://cricsheet.org/}\cr
 #' \url{https://gigadom.wordpress.com/}
 #'
 #' @author

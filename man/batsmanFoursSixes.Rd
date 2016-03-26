@@ -32,7 +32,7 @@ batsmanFoursSixes(kohli46,"Kohli")
 Tinniam V Ganesh
 }
 \references{
-\url{http://cricsheet.org/}
+\url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{

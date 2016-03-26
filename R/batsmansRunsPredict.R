@@ -6,12 +6,53 @@
 # runs scored by batsman
 #
 ###########################################################################################
+#' @title
+#' This function computes and plot the number of deliveries required and the runs scored
+#'
+#' @description
+#' This function  uses a classification tree to predict the number of deliveries required for
+#' the batsman to score the runs. It uses the package rpart to perform the classification
+#'
+#' @usage
+#' batsmanRunsPredict(kohli,name="Kohli")
+#'
+#' @param df
+#' Data frame
+#'
+#' @param name
+#' Name of batsman
+#'
+#' @return None
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#'
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get the data frame for Kohli
+#' kohli <- getBatsmanDetails(team="India",name="Kohli")
+#' batsmanRunsVsStrikeRate(kohli,"Kohli")
+#'
+#' @seealso
+#' \code{\link{batsmanDismissals}}
+#' \code{\link{batsmanRunsVsDeliveries}}
+#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{batsmansRunsPredict}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
+#'
+#' @export
+#'
 batsmanRunsPredict <- function(df,name){
-   
+
     b <- select(df,batsman,ballsPlayed,runs)
     names(b) <-c("batsman","deliveries","runs")
     m <-rpart(runs~deliveries,data=b)
     atitle <- paste(name,"- Runs vs Required number of Deliveries")
     rpart.plot(m,main=atitle)
-    
+
 }

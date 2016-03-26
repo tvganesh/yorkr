@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 26 Mar 2016\n# Function: bowlerMeanEconomyRate\n# This function gets the bowling details of a bowler\n#\n###########################################################################################\n#' @title\n#' Compute and plot mean economy rate versus number of overs\n#'\n#' @description\n#' This function computes and plots mean economy rate and the number of\n#' overs bowled by the bowler\n#' @usage\n#' bowlerMeanEconomyRate(df, name)\n#'\n#' @param df\n#' Data frame\n#'\n#' @param name\n#' Name of bowler\n#'\n#' @return None\n#' @references\n#' \\url{http://cricsheet.org/}\\cr\n#' \\url{https://gigadom.wordpress.com/}\n#' @author\n#' Tinniam V Ganesh\n#' @note\n#' Maintainer: Tinniam V Ganesh \\email{tvganesh.85@gmail.com}\n#'\n#' @examples\n#' # Get the data frame for RA Jadeja\n#' jadeja <- getBowlerWicketDetails(team=\"India\",name=\"Jadeja\")\n#' bowlerMeanEconomyRate(jadeja,\"RA Jadeja\")\n#'\n#' @seealso\n#' \\code{\\link{bowlerMovingAverage}}\n#' \\code{\\link{bowlerWicketPlot}}\n#' \\code{\\link{bowlerWicketsVenue}}\n#' \\code{\\link{bowlerMeanRunsConceded}}\n#'\n#' @export\n#'\n\nbowlerMeanEconomyRate <- function(df,name){\n\n    c <- summarise(group_by(df,overs),meanEconomyRate=mean(economyRate))\n\n    plot.title <- paste(name,\"- Mean Economy Rate vs Overs\")\n    ggplot(c,aes(x=overs, y=meanEconomyRate,fill=overs)) +\n        geom_bar(data=c,stat=\"identity\" ) +\n        xlab(\"Overs\") + ylab(\"Mean Economy Rate\") +\n        ggtitle(bquote(atop(.(plot.title),\n                            atop(italic(\"Data source:http://cricsheet.org/\"),\"\"))))\n\n\n}\n",
+    "created" : 1458995147520.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "647446807",
+    "id" : "3121554C",
+    "lastKnownWriteTime" : 1458995401,
+    "last_content_update" : 1458995401834,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/bowlerMeanEconomyRate.R",
+    "project_path" : "R/bowlerMeanEconomyRate.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
