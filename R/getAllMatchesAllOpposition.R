@@ -31,7 +31,8 @@
 #' to save this large dataframe as the creation of this data frame takes a several seconds depending
 #' on the number of matches
 #'
-#' @return None
+#' @return match
+#' The combined data frame
 #' @references
 #' \url{http://cricsheet.org/}\cr
 #' \url{https://gigadom.wordpress.com/}
