@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 26 Mar 2016\n# Function: getTeamBowlingDetails\n# This function uses gets the bowling details of a team\n#\n###########################################################################################\ngetTeamBowlingDetails <- function(team,dir=\".\",save=FALSE){\n    \n    a <- paste(dir,\"/\",\"*\",team,\"*\",sep=\"\")\n    # Gather team against all ooposition\n    \n    fl <- Sys.glob(a)\n    \n    bowlingDetails <- NULL\n    for(i in 1:length(fl)){\n        load(fl[i])\n        match <- overs\n        details <- teamBowlingPerfDetails(match,team,includeInfo=TRUE)\n        # If the side has not batted details will be NULL. Skip in that case\n        if(!is.null(dim(details))){\n            bowlingDetails <- rbind(bowlingDetails,details)\n        }else {\n            #print(\"Empty\")\n            \n            next\n        }\n        \n    }\n    \n    if(save==TRUE){\n        fl <- paste(\"./\",team,\"-BowlingDetails.RData\",sep=\"\")\n        save(bowlingDetails,file=fl)\n    }\n    bowlingDetails <- arrange(bowlingDetails,bowler,date)\n    bowlingDetails\n    \n    \n}\n",
+    "created" : 1459011101915.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3933193812",
+    "id" : "6E13EAB8",
+    "lastKnownWriteTime" : 1458961390,
+    "last_content_update" : 1458961390,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/getTeamBowlingDetails.R",
+    "project_path" : "R/getTeamBowlingDetails.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
