@@ -4,14 +4,55 @@
 # Function: batsmanRunsVsStrikeRate
 # This function plots the runs scored versus the strike rate
 ###########################################################################################
+#' @title
+#' Compute and plot the strike rate of the batsman versus the runs scored
+#'
+#' @description
+#' This function plots the runs scored by the batsman  and the runs scored
+#' by the batsman. A loess line is fitted over the points
+#'
+#' @usage
+#' batsmanRunsVsStrikeRate(kohli,name="Kohli")
+#'
+#' @param df
+#' Data frame
+#'
+#' @param name
+#' Name of batsman
+#'
+#' @return None
+#' @references
+#' \url{http://cricsheet.org/}
+#' \url{https://gigadom.wordpress.com/}
+#'
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get the data frame for Kohli
+#' kohli <- getBatsmanDetails(team="India",name="Kohli")
+#' batsmanRunsVsStrikeRate(kohli,"Kohli")
+#'
+#' @seealso
+#' \code{\link{batsmanDismissals}}
+#' \code{\link{batsmanRunsVsDeliveries}}
+#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{batsmansRunsPredict}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
+#'
+#' @export
+#'
 batsmanRunsVsStrikeRate <- function(df,name){
-    
+
     b <- select(df,batsman,runs,strikeRate)
-    
+
     plot.title = paste(name,"- Runs vs Strike Rate")
-    ggplot(b) + geom_point(aes(x=runs, y=strikeRate),colour="darkgrey") +  
-        geom_smooth(aes(x=runs, y=strikeRate)) + 
+    ggplot(b) + geom_point(aes(x=runs, y=strikeRate),colour="darkgrey") +
+        geom_smooth(aes(x=runs, y=strikeRate)) +
         xlab("Strike rate(%)") + ylab("Runs") +
         ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),"")))) 
+                            atop(italic("Data source:http://cricsheet.org/"),""))))
 }

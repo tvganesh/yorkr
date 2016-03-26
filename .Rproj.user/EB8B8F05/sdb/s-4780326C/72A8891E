@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 25 Mar 2016\n# Function: batsmanMovingAverage\n# This function computes and plots the moving average  the batsman\n#\n###########################################################################################\n#' @title\n#' Compute and plot moving average of the batsman over the batsman's career\n#'\n#' @description\n#' This function plots the runs scored by the batsman over the career as a time\n#' series. A loess regression line is plotted on the moving average of the batsman\n#' the batsman\n#'\n#' @usage\n#' batsmanMovingAverage(kohli,name=\"Kohli\")\n#'\n#' @param df\n#' Data frame\n#'\n#' @param name\n#' Name of batsman\n#'\n#' @return None\n#' @references\n#' \\url{http://cricsheet.org/}\n#' \\url{https://gigadom.wordpress.com/}\n#'\n#' @author\n#' Tinniam V Ganesh\n#' @note\n#' Maintainer: Tinniam V Ganesh \\email{tvganesh.85@gmail.com}\n#'\n#' @examples\n#' # Get the data frame for Kohli\n#' kohli <- getBatsmanDetails(team=\"India\",name=\"Kohli\")\n#' batsmanMovingAverage(kohli,\"Kohli\")\n#'\n#' @seealso\n#' \\code{\\link{batsmanDismissals}}\n#' \\code{\\link{batsmanRunsVsDeliveries}}\n#' \\code{\\link{batsmanRunsVsStrikeRate}}\n#' \\code{\\link{batsmanRunsVsStrikeRate}}\n#' \\code{\\link{batsmansRunsPredict}}\n#' \\code{\\link{teamBatsmanPartnershipAllOppnAllMatches}}\n#'\n#' @export\n#'\nbatsmanMovingAverage <- function(df,name){\n\n    b <- select(df,batsman,runs,date)\n\n    plot.title = paste(name,\"- Moving average of runs in career\")\n    ggplot(b) + geom_line(aes(x=date, y=runs),colour=\"darkgrey\") +\n        geom_smooth(aes(x=date, y=runs)) +\n        xlab(\"Date\") + ylab(\"Runs\") +\n        ggtitle(bquote(atop(.(plot.title),\n                            atop(italic(\"Data source:http://cricsheet.org/\"),\"\"))))\n}\n",
+    "created" : 1458991510222.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1324360541",
+    "id" : "72A8891E",
+    "lastKnownWriteTime" : 1458990972,
+    "last_content_update" : 1458990972,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/batsmanMovingAverage.R",
+    "project_path" : "R/batsmanMovingAverage.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

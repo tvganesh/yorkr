@@ -44,6 +44,7 @@
 #' \code{\link{batsmansRunsPredict}}
 #'
 #' @export
+#'
 batsmanFoursSixes <- function(df,name){
     names(df) <- c("batsman","ballsPlayed","fours","sixes","TotalRuns")
     c <- mutate(df, RunsFromFours=fours*4,RunsFromSixes=sixes*6)

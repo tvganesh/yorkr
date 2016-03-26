@@ -2,3 +2,7 @@
 
 export(batsmanDismissals)
 export(batsmanFoursSixes)
+export(batsmanMovingAverage)
+export(batsmanRunsAgainstOpposition)
+export(batsmanRunsVenue)
+export(batsmanRunsVsStrikeRate)

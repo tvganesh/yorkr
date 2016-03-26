@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the dismissal type for the batsman
+#' Compute and plot the dismissal type of the batsman
 #'
 #' @description
 #' This function computes and plots the type of dismissals of the
