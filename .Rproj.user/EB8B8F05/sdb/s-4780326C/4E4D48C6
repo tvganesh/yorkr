@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 25 Mar 2016\n# Function: batsmanFoursSixes\n# This function computes and plots the total runs,fours and sixes hit by the batsman\n#\n###########################################################################################\n#' @title\n#' Compute and plot the total runs, fours and sixes of the batsman\n#'\n#' @description\n#' This function computes and plots the total runs, fours and sixes of\n#' the batsman\n#' @usage\n#' batsmanFoursSixes(df, name=\"Kohli\")\n#'\n#' @param df\n#' Data frame\n#'\n#' @param name\n#' Name of batsman\n#'\n#' @return None\n#' @references\n#' \\url{http://cricsheet.org/}\n#' \\url{https://gigadom.wordpress.com/}\n#'\n#' @author\n#' Tinniam V Ganesh\n#' @note\n#' Maintainer: Tinniam V Ganesh \\email{tvganesh.85@gmail.com}\n#'\n#' @examples\n#' # Get the data frame for Kohli\n#' kohli <- getBatsmanDetails(team=\"India\",name=\"Kohli\")\n#' kohli46 <- select(kohli,batsman,ballsPlayed,fours,sixes,runs)\n#' batsmanFoursSixes(kohli46,\"Kohli\")\n#'\n#' @seealso\n#' \\code{\\link{batsmanDismissals}}\n#' \\code{\\link{batsmanRunsVsDeliveries}}\n#' \\code{\\link{batsmanRunsVsStrikeRate}}\n#' \\code{\\link{batsmanRunsVsStrikeRate}}\n#' \\code{\\link{batsmansRunsPredict}}\n#'\n#' @export\n#' \nbatsmanFoursSixes <- function(df,name){\n    names(df) <- c(\"batsman\",\"ballsPlayed\",\"fours\",\"sixes\",\"TotalRuns\")\n    c <- mutate(df, RunsFromFours=fours*4,RunsFromSixes=sixes*6)\n    d <- select(c, batsman,ballsPlayed,RunsFromFours,RunsFromSixes,TotalRuns)\n    e <- melt(d,id=c(\"batsman\",\"ballsPlayed\"))\n\n    plot.title = paste(name,\"- Total runs, 4s and 6s vs Balls Faced\")\n    ggplot(e) + geom_point(aes(x=ballsPlayed, y=value, colour=variable)) +\n        geom_smooth(aes(x=ballsPlayed, y=value, colour=variable)) +\n        scale_colour_manual(values=c(\"red\",\"green\",\"blue\")) +\n        xlab(\"Deliveries faced\") + ylab(\"Runs\") +\n        ggtitle(bquote(atop(.(plot.title),\n                            atop(italic(\"Data source:http://cricsheet.org/\"),\"\"))))\n\n\n}\n",
+    "created" : 1458988575284.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1222270715",
+    "id" : "4E4D48C6",
+    "lastKnownWriteTime" : 1458990339,
+    "last_content_update" : 1458990385962,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/batsmanFoursSixes.R",
+    "project_path" : "R/batsmanFoursSixes.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
