@@ -12,7 +12,8 @@
 #'
 #' @description
 #' This function coverts all Yaml files from source directory to data frames. The data frames
-#' are then stored as .RData
+#' are then stored as .RData. The saved files are of the format team1-team2-date.RData
+#' For e.g. England-India-2008-04-06.RData etc
 #' @usage
 #' convertAllYaml2RDataframes(sourceDir=".",targetDir=".")
 #'
@@ -32,8 +33,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
-#' # Get the data frame for RA Jadeja
-#'
+#' # In the example below ../yamldir is the source dir for the yaml files
 #' convertAllYaml2RDataframes("../yamldir","../data")
 #'
 #' @seealso
