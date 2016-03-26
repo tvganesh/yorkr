@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 22 Mar 2016\n# Function: teamBowlersVsBatsmanMatch\n# This function computes  performance of the team bowlers against the opposition batsmen\n#\n###########################################################################################\n#' @title\n#' Compute the performance of bowlers of a team in a specific match\n#'\n#' @description\n#' This function computes performance of bowlers of a team against an opposition in a match\n#'\n#' @usage\n#' teamBowlersVsBatsmanMatch(match,theTeam,plot=TRUE)\n#'\n#' @param match\n#' The data frame of the match. This can be obtained with the call for e.g\n#' a <- getMatchDetails(\"England\",\"Pakistan\",\"2006-09-05\",dir=\"../temp\")\n#'\n#'\n#' @param theTeam\n#' The team against which the performance is required\n#'\n#' @param plot\n#' This parameter specifies if a plot is required, If plot=FALSE then a data frame is returned\n#'\n#' @return None or dataframe\n#' If plot=TRUE there is no return. If plot=TRUE then the dataframe is returned\n#'\n#' @references\n#' \\url{http://cricsheet.org/}\\cr\n#' \\url{https://gigadom.wordpress.com/}\n#' @author\n#' Tinniam V Ganesh\n#' @note\n#' Maintainer: Tinniam V Ganesh \\email{tvganesh.85@gmail.com}\n#'\n#' @examples\n#' # Get the match between England and Pakistan\n#' a <- getMatchDetails(\"England\",\"Pakistan\",\"2006-09-05\",dir=\"../temp\")\n#'\n#' teamBowlersVsBatsmanMatch(a,\"Pakistan\")\n#' teamBowlersVsBatsmanMatch(a,\"England\")\n#' m <- teamBowlersVsBatsmanMatch(a,\"Pakistan\")\n#'\n#'\n#'\n#' @seealso\n#' \\code{\\link{teamBatsmanPartnershipAllOppnAllMatches}}\n#' \\code{\\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}\n#' \\code{\\link{teamBatsmanPartnershipOppnAllMatchesChart}}\n#' \\code{\\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}\n#' \\code{\\link{teamBowlersVsBatsmanAllOppnAllMatchesPlot}}\n#'\n#' @export\n#'\nteamBowlersVsBatsmanMatch <- function(match,theTeam,plot=TRUE){\n    a <-filter(match,team==theTeam)\n    b <-summarise(group_by(a,bowler,batsman),sum(runs))\n    names(b) <- c(\"bowler\",\"batsman\",\"runsConceded\")\n\n    # Output plot or dataframe\n    if(plot == TRUE){\n        ggplot(data=b,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +\n            facet_grid(. ~ bowler) + geom_bar(stat=\"identity\") +\n            ggtitle(expression(atop(\"Bowler vs Batsman\",\n                                    atop(italic(\"Data source:http://cricsheet.org/\"),\"\")))) +\n            theme(axis.text.x = element_text(angle = 90, hjust = 1))\n    }\n    else{\n        b\n    }\n}\n",
+    "created" : 1459007562024.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "203647695",
+    "id" : "68E4F9B2",
+    "lastKnownWriteTime" : 1459007916,
+    "last_content_update" : 1459007916325,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/teamBowlerVsBatsmanMatch.R",
+    "project_path" : "R/teamBowlerVsBatsmanMatch.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

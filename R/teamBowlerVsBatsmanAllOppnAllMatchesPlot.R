@@ -5,6 +5,56 @@
 # This function computes the performance of bowlers against batsman of opposition
 #
 ###########################################################################################
+#' @title
+#' Compute the performance of bowlers of a team against all opposition in all matches
+#'
+#' @description
+#' This function computes performance of bowlers of a team against all opposition in all matches
+#'
+#' @usage
+#' teamBowlerVsBatsmanAllOppnAllMatchesPlot(bowlerDF,t1,t2)
+#'
+#' @param matches
+#' the data frame of the bowler whose performance is required
+#'
+#' @param t1
+#' The team against to which the player belong
+#'
+#' @param t2
+#' The opposing team
+#'
+#'
+#' @return none
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get all matches between India and all oppostions
+#' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
+#'
+#' #Get the details of the bowler with the specified rank as a dataframe
+#' df <- teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam="India",rank=1)
+#' #Plot this
+#' teamBowlerVsBatsmanAllOppnAllMatchesPlot(df,"India","India")
+#'
+#' df <- teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam="England",rank=1)
+#' teamBowlerVsBatsmanAllOppnAllMatchesPlot(df,"India","England")
+#'
+#'
+#' @seealso
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesMain}}
+#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
+#' @export
+#'
 teamBowlerVsBatsmanAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){
 
     bwlr <- bowlerDF$bowler
