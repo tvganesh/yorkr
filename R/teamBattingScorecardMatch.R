@@ -6,6 +6,44 @@
 # returned as a data frame
 #
 ###########################################################################################
+#' @title
+#' Compute and return the batting scorecard of a team in a match
+#'
+#' @description
+#' This function computes returns the batting scorecard (runs, fours, sixes, balls played) for the
+#' team
+#' @usage
+#' teamBattingScorecardMatch(match,theTeam)
+#'
+#' @param match
+#' The match for which the score card is required e.g.
+#'
+#' @param name
+#' Team for which scorecard required
+#'
+#' @return scorecard
+#' A data frame with the batting scorecard
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
+#' teamBowlingScorecardMatch(a,'England')
+#'
+#'
+#' @seealso
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
+#'
+#' @export
+#'
+
 teamBattingScorecardMatch <- function(match,theTeam){
     a <-filter(match,team==theTeam)
     sz <- dim(a)
@@ -35,7 +73,7 @@ teamBattingScorecardMatch <- function(match,theTeam){
         b %>%
         mutate(sixes=(runs ==6)) %>%
         filter(sixes == TRUE)
-    
+
     # Group by batsman. oOunt 6s
     g <- summarise(group_by(f, batsman),sixes=n())
     names(g) <-c("batsman","sixes")
@@ -50,8 +88,8 @@ teamBattingScorecardMatch <- function(match,theTeam){
         select(batsman,runs)
     ballsPlayed<- summarise(group_by(ballsPlayed,batsman),count=n())
     names(ballsPlayed) <- c("batsman","ballsPlayed")
-    
-    
+
+
     details <- full_join(details,ballsPlayed,by="batsman")
     cat("Total=",sum(details$runs),"\n")
     # If there are NAs then

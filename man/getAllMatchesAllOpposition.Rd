@@ -16,7 +16,8 @@ to save this large dataframe as the creation of this data frame takes a several 
 on the number of matches}
 }
 \value{
-None
+match
+The combined data frame
 }
 \description{
 This function gets all the matches for a particular team for e.g India, Pakistan,
