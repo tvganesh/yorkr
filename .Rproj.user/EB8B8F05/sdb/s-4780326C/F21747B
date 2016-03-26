@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 26 Mar 2016\n# Function: bowlerWicketsAgainstOpposition\n# This function plots the mean wickets taken by the bowler against different oppositions\n#\n###########################################################################################\n#' @title\n#' Compute and plot mean wicket taken by the bowler versus  against different teams\n#'\n#' @description\n#' This function computes and plots mean number of wickets taken by the bowler  against different\n#' opposition\n#' @usage\n#' bowlerWicketsAgainstOpposition(df, name)\n#'\n#' @param df\n#' Data frame\n#'\n#' @param name\n#' Name of bowler\n#'\n#' @return None\n#' @references\n#' \\url{http://cricsheet.org/}\\cr\n#' \\url{https://gigadom.wordpress.com/}\n#' @author\n#' Tinniam V Ganesh\n#' @note\n#' Maintainer: Tinniam V Ganesh \\email{tvganesh.85@gmail.com}\n#'\n#' @examples\n#' # Get the data frame for RA Jadeja\n#' jadeja <- getBowlerWicketDetails(team=\"India\",name=\"Jadeja\")\n#' bowlerWicketsAgainstOpposition(jadeja,\"RA Jadeja\")\n#'\n#' @seealso\n#' \\code{\\link{bowlerMovingAverage}}\n#' \\code{\\link{bowlerWicketPlot}}\n#' \\code{\\link{bowlerWicketsVenue}}\n#' \\code{\\link{bowlerMeanRunsConceded}}\n#'\n#' @export\n#'\n\nbowlerWicketsAgainstOpposition <- function(df,name){\n\n    c <- summarise(group_by(df,opposition),meanWickets=mean(wickets),numMatches=n())\n    d <- mutate(c,opposition=paste(opposition,\"(\",numMatches,\")\",sep=\"\"))\n    plot.title = paste(name,\"- Wickets against Opposition(number innings)\")\n    ggplot(d, aes(x=opposition, y=meanWickets, fill=opposition))+\n        geom_bar(stat = \"identity\",position=\"dodge\") +\n        geom_hline(aes(yintercept=2))+\n        xlab(\"Opposition\") + ylab(\"Average wickets taken\") +\n        ggtitle(bquote(atop(.(plot.title),\n                            atop(italic(\"Data source:http://cricsheet.org/\"),\"\"))))\n}\n",
+    "created" : 1458996426321.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1698764780",
+    "id" : "F21747B",
+    "lastKnownWriteTime" : 1458996533,
+    "last_content_update" : 1458996533312,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/bowlerWicketsAgainstOppn.R",
+    "project_path" : "R/bowlerWicketsAgainstOppn.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

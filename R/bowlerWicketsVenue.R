@@ -5,6 +5,44 @@
 # This function plots the performance of bowlers at different venues
 #
 ###########################################################################################
+#' @title
+#' Compute and plot mean wicket taken by the bowler at different venues
+#'
+#' @description
+#' This function computes and plots mean number of wickets taken by the bowler  in different
+#' venues
+#' @usage
+#' bowlerWicketsVenue(df, name)
+#'
+#' @param df
+#' Data frame
+#'
+#' @param name
+#' Name of bowler
+#'
+#' @return None
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get the data frame for RA Jadeja
+#' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja")
+#' bowlerWicketsVenue(jadeja,"RA Jadeja")
+#'
+#' @seealso
+#' \code{\link{bowlerMovingAverage}}
+#' \code{\link{bowlerWicketPlot}}
+#' \code{\link{bowlerWicketsVenue}}
+#' \code{\link{bowlerMeanRunsConceded}}
+#'
+#' @export
+#'
+
 bowlerWicketsVenue <- function(df,name){
 
     c <- summarise(group_by(df,venue),meanWickets=mean(wickets),numMatches=n())

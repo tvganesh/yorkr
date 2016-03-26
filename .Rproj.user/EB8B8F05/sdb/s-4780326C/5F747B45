@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "##########################################################################################\n# Designed and developed by Tinniam V Ganesh\n# Date : 26 Mar 2016\n# Function: bowlerWicketsVenue\n# This function plots the performance of bowlers at different venues\n#\n###########################################################################################\n#' @title\n#' Compute and plot mean wicket taken by the bowler at different venues\n#'\n#' @description\n#' This function computes and plots mean number of wickets taken by the bowler  in different\n#' venues\n#' @usage\n#' bowlerWicketsVenue(df, name)\n#'\n#' @param df\n#' Data frame\n#'\n#' @param name\n#' Name of bowler\n#'\n#' @return None\n#' @references\n#' \\url{http://cricsheet.org/}\\cr\n#' \\url{https://gigadom.wordpress.com/}\n#' @author\n#' Tinniam V Ganesh\n#' @note\n#' Maintainer: Tinniam V Ganesh \\email{tvganesh.85@gmail.com}\n#'\n#' @examples\n#' # Get the data frame for RA Jadeja\n#' jadeja <- getBowlerWicketDetails(team=\"India\",name=\"Jadeja\")\n#' bowlerWicketsVenue(jadeja,\"RA Jadeja\")\n#'\n#' @seealso\n#' \\code{\\link{bowlerMovingAverage}}\n#' \\code{\\link{bowlerWicketPlot}}\n#' \\code{\\link{bowlerWicketsVenue}}\n#' \\code{\\link{bowlerMeanRunsConceded}}\n#'\n#' @export\n#'\n\nbowlerWicketsVenue <- function(df,name){\n\n    c <- summarise(group_by(df,venue),meanWickets=mean(wickets),numMatches=n())\n    d <- mutate(c,venue=paste(venue,\"(\",numMatches,\")\",sep=\"\"))\n    e <- arrange(d,desc(meanWickets))\n    f <- e[1:20,]\n    plot.title = paste(name,\"- Wickets in venue(number innings)\")\n    ggplot(f, aes(x=venue, y=meanWickets, fill=venue))+\n        geom_bar(stat = \"identity\",position=\"dodge\") +\n        geom_hline(aes(yintercept=2))+\n        xlab(\"Venue\") + ylab(\"Average wickets taken\") +\n        ggtitle(bquote(atop(.(plot.title),\n                            atop(italic(\"Data source:http://cricsheet.org/\"),\"\"))))+\n        theme(axis.text.x = element_text(angle = 90, hjust = 1))\n}\n",
+    "created" : 1458996959335.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3990765087",
+    "id" : "5F747B45",
+    "lastKnownWriteTime" : 1458997010,
+    "last_content_update" : 1458997010003,
+    "path" : "C:/software/cricket-package/york-test/yorkr/R/bowlerWicketsVenue.R",
+    "project_path" : "R/bowlerWicketsVenue.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
