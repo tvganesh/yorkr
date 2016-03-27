@@ -48,6 +48,7 @@
 #'
 
 bowlerDeliveryWickets <- function(match,theTeam,name){
+    team = bowler = wicketPlayerOut =delivery = wicketNo = NULL
     d <- NULL
     a <-filter(match,team!=theTeam)
     b <- filter(a,grepl(name,bowler))

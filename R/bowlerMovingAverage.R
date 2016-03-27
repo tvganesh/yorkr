@@ -43,7 +43,7 @@
 #' @export
 #'
 bowlerMovingAverage <- function(df,name){
-
+    bowler = wickets = NULL
     c <- select(df,bowler,wickets,date)
 
     plot.title = paste(name,"- Moving average of wickets in career")

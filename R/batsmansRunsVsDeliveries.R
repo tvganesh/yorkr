@@ -44,6 +44,7 @@
 #'
 
 batsmanRunsVsDeliveries <- function(df,name){
+    batsman = runs  = NULL
 
     plot.title = paste(name,"- Runs vs balls faced")
     ggplot(df,aes(x=ballsPlayed,y=runs)) +

@@ -48,7 +48,7 @@
 #' @export
 #'
 batsmanRunsPredict <- function(df,name){
-
+    batsman = ballsPlayed = runs = rpart =  NULL
     b <- select(df,batsman,ballsPlayed,runs)
     names(b) <-c("batsman","deliveries","runs")
     m <-rpart(runs~deliveries,data=b)

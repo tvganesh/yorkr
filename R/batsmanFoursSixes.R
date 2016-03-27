@@ -46,6 +46,8 @@
 #' @export
 #'
 batsmanFoursSixes <- function(df,name){
+    fours <- sixes <- batsman <- ballsPlayed <- RunsFromFours <- NULL
+    RunsFromSixes <- TotalRuns <- value <- variable <- NULL
     names(df) <- c("batsman","ballsPlayed","fours","sixes","TotalRuns")
     c <- mutate(df, RunsFromFours=fours*4,RunsFromSixes=sixes*6)
     d <- select(c, batsman,ballsPlayed,RunsFromFours,RunsFromSixes,TotalRuns)

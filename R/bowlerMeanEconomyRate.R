@@ -44,7 +44,7 @@
 #'
 
 bowlerMeanEconomyRate <- function(df,name){
-
+    overs =meanEconomyRate = economyRate = NULL
     c <- summarise(group_by(df,overs),meanEconomyRate=mean(economyRate))
 
     plot.title <- paste(name,"- Mean Economy Rate vs Overs")

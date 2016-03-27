@@ -40,9 +40,17 @@
 #' \code{\link{batsmanRunsVsStrikeRate}}
 #'
 #' @export
+#' @import dplyr
+#' @import ggplot2
+#' @import reshape2
+#' @import rpart.plot
+#' @importFrom stats complete.cases loess
+#' @importFrom utils head
 #'
 
 batsmanDismissals <- function(df,name){
+    batsman <- wicketKind <-dismissal <- NULL
+    DismissalType <- NULL
     b <-select(df,batsman,wicketKind)
 
     c <- summarise(group_by(b,batsman,wicketKind),dismissal=n())

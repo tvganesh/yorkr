@@ -46,7 +46,7 @@
 #'
 
 batsmanRunsVenue <- function(df,name){
-
+    batsman = runs = venue = numMatches = meanRuns = NULL
     b <- select(df,batsman,runs,venue)
     c <- summarise(group_by(b,venue),meanRuns=mean(runs),numMatches=n())
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))

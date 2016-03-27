@@ -44,7 +44,7 @@
 #'
 
 bowlerMeanRunsConceded <- function(df,name){
-
+    overs = runs = maidens = meanRuns = wickets = NULL
     c <- summarise(group_by(df,overs),meanRuns=mean(runs),meanMaidens=mean(maidens),
                    meanWickets=mean(wickets))
     plot.title <- paste(name,"- Average runs conceded vs Overs")

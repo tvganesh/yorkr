@@ -1,10 +1,61 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBowlingWicketKindAllOppnAllMatches
-# This function computes the wicket kind of bowlers against all  opposition
+# Function: teamBowlingWicketRunsAllOppnAllMatches
+# This function computes the wickets taken and the runs conceded  against all  opposition
 #
 ###########################################################################################
+#' @title
+#' Compute and plot the wicket taken and runs given by bowlers of team in all matches against all oppositions
+#'
+#' @description
+#' This function computes the number of wickets and runs conceded by bowlers in all matches against
+#' all oppositions. The user can chose to plot or return a data frame
+#'
+#' @usage
+#' teamBowlingWicketRunsAllOppnAllMatches(match,t1,t2="All",plot=TRUE)
+#'
+#' @param matches
+#' The matches of the team against all oppositions and all matches
+#'
+#' @param t1
+#' Team for which bowling performance is required
+#'
+#' @param t2
+#' t2=All gives the performance of the team against all opponents. Giving a opposing team (Australia, India
+#' ) will give the performance against this  team
+#'
+#' @param plot
+#' If plot= TRUE the dataframe will be plotted else a data frame will be returned
+#'
+#' @return None or data fame
+#' A data frame with the bowling performance in alll matches against all oppositions
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' #Get all matches between India  and other opposition
+#' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
+#'
+#' # Or load directly from saved file
+#' # load("allMatchesAllOpposition-India.RData")
+#'
+#' teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=TRUE)
+#' m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALSE))
+#'
+#' @seealso
+#' \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesPlot}}\cr
+#'
+#' @export
+#'
 teamBowlingWicketRunsAllOppnAllMatches <- function(match,t1,t2="All",plot=TRUE){
 
 

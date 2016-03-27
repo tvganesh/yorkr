@@ -42,7 +42,7 @@
 #' @export
 #'
 bowlerWicketPlot <- function(df,name){
-
+    overs = runs = maidens = meanRuns = wickets = bowler = meanWickets = NULL
      c <- summarise(group_by(df,overs),meanRuns=mean(runs),meanMaidens=mean(maidens),
                     meanWickets=mean(wickets))
 

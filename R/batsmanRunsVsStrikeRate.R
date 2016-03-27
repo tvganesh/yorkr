@@ -46,7 +46,7 @@
 #' @export
 #'
 batsmanRunsVsStrikeRate <- function(df,name){
-
+    batsman = runs = strikeRate = NULL
     b <- select(df,batsman,runs,strikeRate)
 
     plot.title = paste(name,"- Runs vs Strike Rate")

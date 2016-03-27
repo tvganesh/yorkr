@@ -45,6 +45,7 @@
 #'
 
 batsmanRunsAgainstOpposition <- function(df,name){
+    batsman = runs = opposition = meanRuns =  NULL
     b <- select(df,batsman,runs,opposition)
     c <-b[complete.cases(b),]
     d <- summarise(group_by(c,opposition),meanRuns=mean(runs),numMatches=n())
