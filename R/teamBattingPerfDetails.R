@@ -46,7 +46,7 @@
 #'
 teamBattingPerfDetails <- function(match,theTeam,includeInfo=FALSE){
     team=batsman=runs=fours=sixes=NULL
-    byes=legbyes=noballs=NULL
+    byes=legbyes=noballs=wides=bowler=wicketFielder=NULL
     wicketKind=wicketPlayerOut=NULL
     # Initialise to NULL
     details <- NULL

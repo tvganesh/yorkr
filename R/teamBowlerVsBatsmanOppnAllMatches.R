@@ -62,7 +62,8 @@
 #' @export
 #'
 teamBowlersVsBatsmanOppnAllMatches <- function(match,main,opposition,plot=TRUE,top=5){
-
+    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     a <-filter(match,team != main)
 
     b <-summarise(group_by(a,bowler,batsman),sum(runs))

@@ -47,7 +47,7 @@
 
 convertAllYaml2RDataframes <- function(sourceDir=".",targetDir="."){
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
-    info.teams=matchType=winner=result=NULL
+    info.teams=matchType=winner=result=venue=NULL
     files <- list.files(sourceDir)
     print(length(files))
     for(iii in 1:length(files)){

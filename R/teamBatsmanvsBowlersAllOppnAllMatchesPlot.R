@@ -55,7 +55,7 @@
 #'
 teamBatsmanVsBowlersAllOppnAllMatchesPlot <- function(df,plot=TRUE)
 {
-
+    runs=bowler=NULL
     bman <- df$batsman
     if(plot==TRUE){
         plot.title <- paste(bman,"-Performances against all bowlers ODIs")

@@ -61,8 +61,8 @@
 #'
 teamBowlerWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=TRUE){
     team=bowler=ball=NULL
-
-    byes=legbyes=noballs=wides=runConceded=NULL
+    runs=over=wickets=NULL
+    byes=legbyes=noballs=wides=runsConceded=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
 
     # Compute the maidens,runs conceded and overs for the bowlers

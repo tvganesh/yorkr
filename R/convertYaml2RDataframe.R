@@ -50,7 +50,7 @@
 convertYaml2RDataframe <- function(yamlFile,sourceDir=".",targetDir="."){
 
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
-    info.teams=matchType=winner=result=NULL
+    info.teams=matchType=winner=result=venue=NULL
     pth = paste(sourceDir,"/",yamlFile,sep="")
     print(pth)
 

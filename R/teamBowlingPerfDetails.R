@@ -54,7 +54,8 @@
 #' @export
 #'
 teamBowlingPerfDetails <- function(match,theTeam,includeInfo=FALSE){
-
+    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     # Initialise to NULL
     l <- NULL
     a <-filter(match,team!=theTeam)

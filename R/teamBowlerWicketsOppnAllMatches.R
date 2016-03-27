@@ -68,9 +68,9 @@
 #' @export
 #'
 teamBowlerWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=20){
-    team=bowler=ball=NULL
-    byes=legbyes=noballs=wides=runConceded=NULL
-    extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
+
+    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     #Filter the matches by the team
     a <-filter(matches,team!=main)
 

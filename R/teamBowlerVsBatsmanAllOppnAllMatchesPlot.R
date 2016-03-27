@@ -56,7 +56,7 @@
 #' @export
 #'
 teamBowlerVsBatsmanAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){
-    batsman=runConceded=team=NULL
+    batsman=runsConceded=team=NULL
     bwlr <- bowlerDF$bowler
     if(t2 != "India"){
         plot.title <- paste(bwlr,"-Performance against",t2,"batsmen")

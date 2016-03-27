@@ -60,7 +60,8 @@
 #' @export
 #'
 teamBowlersVsBatsmanAllOppnAllMatchesMain <- function(matches,theTeam,rank=0) {
-
+    team=bowler=batsman=NULL
+    runs=over=runsConceded=NULL
 
     a <-filter(matches,team !=theTeam)
 

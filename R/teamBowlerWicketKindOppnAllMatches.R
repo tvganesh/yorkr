@@ -61,6 +61,7 @@
 #'
 teamBowlerWicketKindOppnAllMatches <- function(matches,main,opposition,plot=TRUE){
     team=bowler=ball=NULL
+    runs=over=runsConceded=NULL
 
     byes=legbyes=noballs=wides=runConceded=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL

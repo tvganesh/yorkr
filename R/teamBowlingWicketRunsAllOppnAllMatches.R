@@ -57,7 +57,8 @@
 #' @export
 #'
 teamBowlingWicketRunsAllOppnAllMatches <- function(match,t1,t2="All",plot=TRUE){
-
+    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
 
     a <- NULL
     if(t2 == "All"){

@@ -46,7 +46,7 @@
 
 teamBattingScorecardMatch <- function(match,theTeam){
     team=batsman=runs=fours=sixes=NULL
-    byes=legbyes=noballs=NULL
+    byes=legbyes=noballs=wides=NULL
     a <-filter(match,team==theTeam)
     sz <- dim(a)
     if(sz[1] == 0){

@@ -56,7 +56,10 @@
 #' @export
 #'
 teamBowlersVsBatsmanMatch <- function(match,theTeam,plot=TRUE){
-    a <-filter(match,team==theTeam)
+
+    batsman=runsConceded=team=runs=bowler=NULL
+    team=bowler=batsman=a=NULL
+    filter(match,team==theTeam)
     b <-summarise(group_by(a,bowler,batsman),sum(runs))
     names(b) <- c("bowler","batsman","runsConceded")
 

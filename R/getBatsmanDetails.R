@@ -43,7 +43,7 @@
 #'
 
 getBatsmanDetails <- function(team, name){
-    batsman=NULL
+    batsman=battingDetails=NULL
     fl <- paste("./",team,"-BattingDetails.RData",sep="")
     load(fl)
     details <- battingDetails
