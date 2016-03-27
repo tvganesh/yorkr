@@ -2,16 +2,69 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 20 Mar 2016
 # Function: specialProc
-# This is a helper function used by parseYamlOver when the over has more tan 10 
+# This is a helper function used by parseYamlOver when the over has more tan 10
 # deliveries.
 #
 ###########################################################################################
+#' @title
+#' This function is used to parse yaml file where deliveries are bigger than 10 deliveries (This is an internal
+#' function)
+#'
+#' @description
+#' This is special processing function. This is an internal function and
+#' is used by convertAllYaml2RDataframes() & convertYaml2RDataframe()
+#'
+#' @usage
+#' specialProc(dist, overset, ateam,over,str1,meta)
+#'
+#' @param dist
+
+#'
+#' @param overset
+
+#'
+#' @param ateam
+#' The team
+#'
+#' @param over
+#' over
+#'
+#' @param str1
+#'
+#'
+#' @param meta
+#' The meta information of the match
+#'
+#' @return over
+#' The dataframe of over
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#'
+#' @author
+#' Tinniam V Ganesh
+#'
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Parse the yaml over
+#'
+#'
+#' @seealso
+#' \code{\link{getBatsmanDetails}}\cr
+#' \code{\link{getBowlerWicketDetails}}\cr
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{getTeamBattingDetails}}
+#'
+#'
 # This functio is used when there are more than 10 deliveries in the over
 specialProc <- function(dist, overset, ateam,over,str1,meta){
 
     if(dist == 6){
         names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns")
-        
+
         # Add the missing elements for extras
         over$byes<-as.factor(0)
         over$legbyes<-as.factor(0)
@@ -19,7 +72,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
         over$wides<-as.factor(0)
         over$nonBoundary <- as.factor(0)
         over$penalty<-as.factor(0)
-        
+
         over$wicketFielder="nobody"
         over$wicketKind="not-out"
         over$wicketPlayerOut="nobody"
@@ -31,9 +84,9 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
                        wides,nonBoundary,penalty,runs,
                        extras,totalRuns,wicketFielder,
                        wicketKind,wicketPlayerOut)
-        
+
         over <- cbind(over,meta)
-        
+
     } else if(dist==7){
         # The over had 7 deliveries
         if(sum(grepl("\\.byes",overset$rnames))){
@@ -80,7 +133,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
             over$wides=as.factor(0)
             over$nonBoundary <- as.factor(0)
         }
-        
+
         # Add missing elements
         over$wicketFielder="nobody"
         over$wicketKind="not-out"
@@ -98,7 +151,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
         #cat("Hhhh",dim(over),"\n")
     } else if(dist ==8){
         names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns","wicketKind","wicketPlayerOut")
-        
+
         # Add the missing elements for extras
         over$byes<-as.factor(0)
         over$legbyes<-as.factor(0)
@@ -106,7 +159,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
         over$wides<-as.factor(0)
         over$nonBoundary <- as.factor(0)
         over$penalty<-as.factor(0)
-        
+
         over$wicketFielder="nobody"
         over$ball=gsub("\\\\.","",str1)
         over$team = ateam
@@ -117,12 +170,12 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
                        extras,totalRuns,wicketFielder,
                        wicketKind,wicketPlayerOut)
         over <- cbind(over,meta)
-        
-        
+
+
     } else if(dist ==9){
         names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns",
                         "wicketFielder","wicketKind","wicketPlayerOut")
-        
+
         # Add the missing elements for extras
         over$byes<-as.factor(0)
         over$legbyes<-as.factor(0)
@@ -130,7 +183,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
         over$wides<-as.factor(0)
         over$nonBoundary <- as.factor(0)
         over$penalty<-as.factor(0)
-        
+
         over$ball=gsub("\\\\.","",str1)
         over$team = ateam
         over <- select(over, ball,team,batsman,bowler,nonStriker,
@@ -139,8 +192,8 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
                        extras,totalRuns,wicketFielder,
                        wicketKind,wicketPlayerOut)
         over <- cbind(over,meta)
-    
-        
+
+
     } else if(dist == 10){
         if(sum(grepl("\\.byes",overset$rnames))){
             names(over) <-c("batsman","bowler","byes","nonStriker","runs","extras","totalRuns",
@@ -181,7 +234,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
             over$legbyes=as.factor(0)
             over$wides=as.factor(0)
             over$noballs=as.factor(0)
-            
+
             over$penalty=as.factor(0)
             over$penalty<-as.factor(0)
         } else if(sum(grepl("penalty",overset$rnames))){
@@ -193,7 +246,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
             over$nonBoundary=as.factor(0)
             over$penalty<-as.factor(0)
         }
-        
+
         over$ball=gsub("\\\\.","",str1)
         over$team = ateam
         over <- select(over, ball,team,batsman,bowler,nonStriker,
@@ -201,11 +254,11 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
                        wides,runs,
                        extras,totalRuns,wicketFielder,
                        wicketKind,wicketPlayerOut)
-      
+
         over <- cbind(over,meta)
         print("Ho!")
     }
     #cat("returning",dim(over),"\n")
     over
-    
+
 }

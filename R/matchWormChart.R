@@ -5,6 +5,49 @@
 # This function computes  and plots the match worm chart
 #
 ###########################################################################################
+#' @title
+#' Plot the match worm graph
+#'
+#' @description
+#' This function  plots the match worm graph between 2 teams in a match
+#'
+#' @usage
+#' matchWormGraph(match,team1,team2)
+#'
+#' @param match
+#' The dataframe of the match
+#'
+#' @param team1
+#' The 1st team of the match
+#'
+#' @param team2
+#' the 2nd team in the match
+#'
+#' @return none
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' #Get the match details
+#' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
+#'
+#' # Plot tne match worm plot
+#' matchWormGraph(a,'England',"Pakistan")
+#'
+#' @seealso
+#' \code{\link{getBatsmanDetails}}\cr
+#' \code{\link{getBowlerWicketDetails}}\cr
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{getTeamBattingDetails}}
+#'
+#' @export
+#'
 matchWormGraph <- function(match,team1,team2) {
     # Filter the performance of team1
     a <-filter(match,team==team1)
