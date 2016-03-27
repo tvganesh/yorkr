@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBatsmenPartnershipOppnAllMatches.R
 \name{teamBatsmenPartnershiOppnAllMatches}
 \alias{teamBatsmenPartnershiOppnAllMatches}
-\title{This function computes  and returns the performance of a team of  batsmen against bowlers in
+\title{This function computes  and returns the partenership of a team of  batsmen against bowlers in
 all matches against an opposition}
 \usage{
 teamBatsmenPartnershiOppnAllMatches(matches,theTeam,report="summary")
@@ -46,7 +46,7 @@ Tinniam V Ganesh
 \seealso{
 \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
 \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-\code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-\code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+\code{\link{teamBowlerVsBatsmanMatch}}
+\code{\link{teamBattingScorecardMatch}}
 }
 

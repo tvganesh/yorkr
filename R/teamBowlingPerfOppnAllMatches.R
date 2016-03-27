@@ -7,6 +7,56 @@
 #
 #
 ###########################################################################################
+#' @title
+#' Compute and return a data frame of a team against an opposition in all matches
+#'
+#' @description
+#' This function computes returns the bowling dataframe of bowlers deliveries, maidens, overs, wickets
+#' against an opposition in all matches
+#'
+#' @usage
+#' teamBowlingPerfOppnAllMatches(matches,main,opposition)
+#'
+#' @param matches
+#' The matches of the team against an opposition.
+#'
+#' @param main
+#' Team for which bowling performance is required
+#'
+#' @param opposition
+#' The opposition Team
+#'
+#'
+#' @return l
+#' A data frame with the bowling performance
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' #Get all matches between India and Autralia
+#' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
+#'
+#' # Or load directly from saved file
+#' # load("India-Australia-allMatches.RData")
+#'
+#' teamBowlingPerfOppnAllMatches(matches,"India","Australia")
+#' teamBowlingPerfOppnAllMatches(matches,main="Australia",opposition="India")
+#'
+#'
+#' @seealso
+#' \code{\link{teamBowlerWicketsOppnAllMatches}}
+#' \code{\link{teamBowlerWicketRunsOppnAllMatches}}
+#' \code{\link{teamBowlerWicketKindOppnAllMatche}}
+#'
+#' @export
+#'
+
 teamBowlingPerfOppnAllMatches <- function(matches,main,opposition){
 
     # Compute the maidens,runs conceded and overs for the bowlers

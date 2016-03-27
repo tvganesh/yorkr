@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function computes  and returns the performance of a team of  batsmen against bowlers in
+#' This function computes  and returns the partenership of a team of  batsmen against bowlers in
 #' all matches against an opposition
 #'
 #' @description
@@ -50,8 +50,8 @@
 #' @seealso
 #' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
 #' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#' \code{\link{teamBowlerVsBatsmanMatch}}
+#' \code{\link{teamBattingScorecardMatch}}
 #'
 #' @export
 #'
