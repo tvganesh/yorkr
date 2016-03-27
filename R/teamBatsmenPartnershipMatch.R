@@ -6,6 +6,52 @@
 # can either be a plot or the data frame used in the plot
 #
 ###########################################################################################
+#' @title
+#' This function plots the partnerships of batsmen in a match against an opposition. It can also return
+#' the data frame
+#'
+#' @description
+#' This function plots the partnerships of batsmen in a match against an opposition or it can return
+#' the data frame
+#'
+#' @usage
+#' teamBatsmenPartnershipMatch(match,theTeam,plot=TRUE)
+#'
+#' @param match
+#' The match between the teams
+#'
+#' @param theTeam
+#' The team for which the the batting partnerships are sought
+#'
+#' @param plot
+#' If plot=TRUE then a plot is created otherwise a data frame is returned
+#'
+#' @return df
+#' The data frame of the batsmen partnetships
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get athe match between England and Pakistan
+#' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
+#' batsmenPartnershipMatch(a,"Pakistan")
+#' batsmenPartnershipMatch(a,"England",plot=TRUE)
+#' m <-batsmenPartnershipMatch(a,"Pakistan",plot=FALSE)
+#'
+#' @seealso
+#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#'
+#' @export
+#'
 teamBatsmenPartnershipMatch <- function(match,theTeam,plot=TRUE){
     a <-filter(match,team==theTeam)
     # Group batsman with non strikers and compute partnerships
