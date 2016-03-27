@@ -4,26 +4,83 @@
 # Function: teamBatsmanVsBowlersOppnAllMatches
 # This function computes the best performing batsman against an opposition's bowlers
 # in all matches with this team.The top 5 batsman are displayed by default
-# 
+#
 #
 ###########################################################################################
+#' @title
+#' This function computes  and returns the performance of the  batsmen of a team
+#' in all matches against a specific team
+#'
+#' @description
+#' This function computes the performance of batsmen against the  bowlers of an oppositions in all matches
+#'
+#' @usage
+#' teamBatsmanVsBowlersOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
+#'
+#' @param matches
+#' All the matches of the team against one specific opposition
+#'
+#' @param main
+#' The team for which the the batting partnerships are sought
+#'
+#' @param opposition
+#' The opposition team
+#'
+#' @param plot
+#' If plot=TRUE then a plot will be displayed else a data frame will be returned
+#'
+#' @param top
+#' The number of players to be plotted or returned as a dataframe. The default is 5
+#'
+#'
+#' @return None or dataframe
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get all matches for team India against an opposition
+#' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
+#'
+#' # Get the performance of India batsman against Australia in all matches
+#' teamBatsmanVsBowlersOppnAllMatches(a,"India","Australia")
+#'
+#' # Display top 3
+#' teamBatsmanVsBowlersOppnAllMatches(a,"Australia","India",top=3)
+#'
+#' # Get top 10 and do not plot
+#' n <- teamBatsmanVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
+#'
+#' @seealso
+#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#'
+#' @export
+#'
 teamBatsmanVsBowlersOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=5){
-    
+
     a <-filter(matches,team==main)
     b <-summarise(group_by(a,batsman,bowler),sum(runs))
     names(b) <- c("batsman","bowler","runs")
     c <- summarise(b,runsScored=sum(runs))
     d <- arrange(c,desc(runsScored))
-    
+
     # Pick 9 highest run givers
     d <- head(d,top)
-    
+
     batsmen <- as.character(d$batsman)
     e <- NULL
     for(i in 1:length(batsmen)){
         f <- filter(b,batsman==batsmen[i])
         e <- rbind(e,f)
-        
+
     }
     if(plot == TRUE){
         plot.title = paste("Batsmen vs bowlers -",main," Vs ",opposition,"(all matches)",sep="")

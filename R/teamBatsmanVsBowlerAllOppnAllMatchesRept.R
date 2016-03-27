@@ -8,21 +8,72 @@
 # If rank=10 then the overall performance of the team is displayed
 # For a rank'n' the performance of the batsman at that rank against bowlers is displayed
 ###########################################################################################
+#' @title
+#' This function computes  and returns the performance of a batsmen against bowlers in all matches against all
+#' oppositions
+#'
+#' @description
+#' This function computes the performance of batsmen against all bowlers of all oppositions in all matches
+#'
+#' @usage
+#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,theTeam,rank=0,dispRows=50)
+#'
+#' @param matches
+#' All the matches of the team against all oppositions
+#'
+#' @param theTeam
+#' The team for which the the batting partnerships are sought
+#'
+#' @param rank
+#' if the rank=0  then the data frame returned gives a summary list of the batsmen with the highest
+#' runs against bowlers. If rank=N (where N=1,2,3...) then the detailed breakup of the batsman and the runs
+#' scored against each bowler is returned
+#'
+#' @return h
+#' The data frame of the batsman and the runs against bowlers
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get all matches for team India against all oppositions
+#' m <-teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
+#' # Get the  summary report
+#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=0)
+#' #Get detailed report
+#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
+#'
+#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"Pakistan",rank=0)
+#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"England",rank=1)
+#'
+#' @seealso
+#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#'
+#' @export
+#'
 teamBatsmanVsBowlersAllOppnAllMatchesRept <- function(matches,theTeam,rank=0,dispRows=50)
 {
-    
+
     a <-filter(matches,team==theTeam)
     b <-summarise(group_by(a,batsman,bowler),sum(runs))
     names(b) <- c("batsman","bowler","runs")
-    
+
     c <- summarise(b,runsScored=sum(runs))
     d <- arrange(c,desc(runsScored))
-    
-    
+
+
     # If rank == 0 thne display top  batsman with best performance
     if(rank == 0){
         f <- d
-    } else { 
+    } else {
         # display dispRows for selected batsman with rank and runs scored against opposing bowlers
         bman <- d[rank,]
         f <- filter(b,batsman==bman$batsman)
@@ -32,6 +83,6 @@ teamBatsmanVsBowlersAllOppnAllMatchesRept <- function(matches,theTeam,rank=0,dis
     }
     g <- complete.cases(f)
     h <- f[g,]
-    
-    
+
+
 }
