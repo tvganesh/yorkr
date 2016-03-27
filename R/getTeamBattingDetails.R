@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Get teh team batting details against all oppositions in all matches
+#' Get the team batting details against all oppositions in all matches
 #'
 #' @description
 #' This function  gets the batting details of a team in all matchs against all
@@ -17,7 +17,7 @@
 #' getTeamBattingDetails(team,dir=".",save=FALSE)
 #'
 #' @param team
-#' The team for which all matches against all oppositions is required
+#' The team for which batting details is required
 #'
 #' @param dir
 #' The source directory of RData files obtained with  convertAllYaml2RDataframes()
@@ -44,7 +44,7 @@
 #' \code{\link{getBatsmanDetails}}\cr
 #' \code{\link{getBowlerWicketDetails}}\cr
 #' \code{\link{batsmanDismissals}}\cr
-#' \code{\link{batsmanFoursSixes}}
+#' \code{\link{getTeamBowlingDetails}}
 #'
 #' @export
 #'

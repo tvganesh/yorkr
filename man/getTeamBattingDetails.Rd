@@ -2,12 +2,12 @@
 % Please edit documentation in R/getTeamBattingDetails.R
 \name{getTeamBattingDetails}
 \alias{getTeamBattingDetails}
-\title{Get teh team batting details against all oppositions in all matches}
+\title{Get the team batting details against all oppositions in all matches}
 \usage{
 getTeamBattingDetails(team,dir=".",save=FALSE)
 }
 \arguments{
-\item{team}{The team for which all matches against all oppositions is required}
+\item{team}{The team for which batting details is required}
 
 \item{dir}{The source directory of RData files obtained with  convertAllYaml2RDataframes()}
 
@@ -41,6 +41,6 @@ Tinniam V Ganesh
 \code{\link{getBatsmanDetails}}\cr
 \code{\link{getBowlerWicketDetails}}\cr
 \code{\link{batsmanDismissals}}\cr
-\code{\link{batsmanFoursSixes}}
+\code{\link{getTeamBowlingDetails}}
 }
 
