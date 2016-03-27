@@ -6,6 +6,52 @@
 # and the date the match was played
 #
 ###########################################################################################
+#' @title
+#' Get and details of a match played between 2 countries as a dataframe
+#'
+#' @description
+#' This function  gets the details of a matc palyed between 2 countries from the saved RData files
+#' and returns a dataframe
+#'
+#' @usage
+#' getMatchDetails(team1,team2,date,dir=".")
+#'
+#' @param team1
+#' The 1st team in the match
+#'
+#' @param team2
+#' The 2nd team in the matcj
+#'
+#' @param date
+#' The date on which the match was played
+#'
+#' @return dir
+#' The source directory of the RData files with all matches
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # convertAllYaml2RDataframes() & convertYaml2RDataframe convert yaml files to data frame and store as RData
+#' # We have to point to this directory for the call below
+#' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../data")
+#'
+#' # Use this to create a classification tree of deliveries to wickets
+#' bowlerWktsPredict(jadeja1,"RA Jadeja")
+#'
+#' @seealso
+#' \code{\link{getBatsmanDetails}}\cr
+#' \code{\link{getBowlerWicketDetails}}\cr
+#' \code{\link{getTeamBattingDetails}}\cr
+#' \code{\link{getTeamBowlingDetails}}
+#'
+#' @export
+#'
 getMatchDetails <- function(team1,team2,date,dir="."){
     overs <- NULL
     match <- NULL
@@ -23,5 +69,5 @@ getMatchDetails <- function(team1,team2,date,dir="."){
     }else {
         cat("Match file not found at",dir, "\n")
     }
-    
+
 }

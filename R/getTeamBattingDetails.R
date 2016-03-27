@@ -5,6 +5,49 @@
 # This function gets the Batting details of a team against all opposition
 #
 ###########################################################################################
+#' @title
+#' Get teh team batting details against all oppositions in all matches
+#'
+#' @description
+#' This function  gets the batting details of a team in all matchs against all
+#' oppositions. This gets all the details of the batsmen balls faced,4s,6s,strikerate, runs, venue etc.
+#' This function is then used for analyses of batsmen. This function calls teamBattingPerfDetails()
+#'
+#' @usage
+#' getTeamBattingDetails(team,dir=".",save=FALSE)
+#'
+#' @param team
+#' The team for which all matches against all oppositions is required
+#'
+#' @param dir
+#' The source directory of RData files obtained with  convertAllYaml2RDataframes()
+#'
+#' @param save
+#' Whether the data frame needs to be saved as RData or not. It is recommended to set save=TRUE
+#' as the data can be used for a lot of analyses of batsmen
+#'
+#' @return battingDetails
+#' The dataframe with the batting details
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' a <- getTeamBattingDetails("India",dir="../data", save=TRUE)
+#'
+#' @seealso
+#' \code{\link{getBatsmanDetails}}\cr
+#' \code{\link{getBowlerWicketDetails}}\cr
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanFoursSixes}}
+#'
+#' @export
+#'
 getTeamBattingDetails <- function(team,dir=".",save=FALSE){
 
     a <- paste(dir,"/","*",team,"*",sep="")
