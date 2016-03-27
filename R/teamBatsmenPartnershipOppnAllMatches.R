@@ -2,10 +2,59 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 22 Mar 2016
 # Function: teamBatsmenPartnershiOppnAllMatches
-# This function computes the batting partnership of a team in all matches against 
+# This function computes the batting partnership of a team in all matches against
 # an opposition. The report generated can be detailed or a summary
 #
 ###########################################################################################
+#' @title
+#' This function computes  and returns the performance of a team of  batsmen against bowlers in
+#' all matches against an opposition
+#'
+#' @description
+#' This function computes the performance of batsmen against all bowlers of an oppositions in all matches. This
+#' function returns a dataframe
+#'
+#' @usage
+#' teamBatsmenPartnershiOppnAllMatches(matches,theTeam,report="summary")
+#'
+#' @param matches
+#' All the matches of the team against the oppositions
+#'
+#' @param theTeam
+#' The team for which the the batting partnerships are sought
+#'
+#' @param report
+#' If the report="summary" then the list of top batsmen with the highest partnerships is displayed. If
+#' report="detailed" then the detailed break up of partnership is returned as a dataframe
+#'
+#' @return partnerships
+#' The data frame of the partnerships
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' # Get all matches for team India against all oppositions
+#' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
+#' You can also directly load the data
+#' #load("India-Australia-allMatches.RData")
+#'
+#' m <-teamBatsmenPartnershiOppnAllMatches(a,'India',report="summary")
+#' m <-teamBatsmenPartnershiOppnAllMatches(a,'Australia',report="detailed")
+#'
+#' @seealso
+#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#'
+#' @export
+#'
 teamBatsmenPartnershiOppnAllMatches <- function(matches,theTeam,report="summary"){
 
 
