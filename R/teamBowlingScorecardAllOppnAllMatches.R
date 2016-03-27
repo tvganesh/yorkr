@@ -6,9 +6,61 @@
 # This function returns a dataframe
 #
 ###########################################################################################
-teamBowlingScorecardAllOppnAllMatches <- function(match,theTeam){
+#' @title
+#' Compute and return a data frame of the bowling scorecard of a  team against all oppositions in all matches
+#'
+#' @description
+#' This function computes returns the bowling dataframe of bowlers deliveries, maidens, overs, wickets
+#' against all oppositions in all matches
+#'
+#' @usage
+#' teamBowlingScorecardAllOppnAllMatches(matches,theTeam)
+#'
+#' @param matches
+#' The matches of the team against all oppositions and all matches
+#'
+#' @param theTeam
+#' Team for which bowling performance is required
+#'
+#'
+#' @return l
+#' A data frame with the bowling performance in alll matches against all oppositions
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' #Get all matches between India  and other opposition
+#' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
+#'
+#' # Or load directly from saved file
+#' # load("allMatchesAllOpposition-India.RData")
+#'
+#' # Top opposition bowlers performances against India
+#' teamBowlingScorecardAllOppnAllMatches(matches,"India")
+#'
+#' #Top Indian bowlers against respective opposition
+#' teamBowlingScorecardAllOppnAllMatches(matches,'Australia')
+#' teamBowlingScorecardAllOppnAllMatches(matches,'South Africa')
+#' teamBowlingScorecardAllOppnAllMatches(matches,'England')
+#'
+#'
+#' @seealso
+#' \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesPlot}}\cr
+#'
+#' @export
+#'
 
-    a <-filter(match,team==theTeam)
+teamBowlingScorecardAllOppnAllMatches <- function(matches,theTeam){
+
+    a <-filter(matches,team==theTeam)
 
     a1 <- unlist(strsplit(a$ball[1],"\\."))
     # Create a string for substitution 1st or 2nd

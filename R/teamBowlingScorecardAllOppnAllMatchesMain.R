@@ -6,6 +6,52 @@
 # This function returns a dataframe
 #
 ###########################################################################################
+#' @title
+#' Compute and return a data frame of the best bowlers of a  team against all oppositions in all matches
+#'
+#' @description
+#' This function computes returns the bowling dataframe of best bowlers deliveries, maidens, overs, wickets
+#' against all oppositions in all matches
+#'
+#' @usage
+#' teamBowlingScoreCardAllOppnAllMatchesMain(matches,theTeam)
+#'
+#' @param matches
+#' The matches of the team against all oppositions and all matches
+#'
+#' @param theTeam
+#' Team for which bowling performance is required
+#'
+#'
+#' @return l
+#' A data frame with the bowling performance in alll matches against all oppositions
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' #Get all matches between India  and other opposition
+#' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
+#'
+#' # Or load directly from saved file
+#' # load("allMatchesAllOpposition-India.RData")
+#'
+#' # Top opposition bowlers of India
+#' teamBowlingScoreCardAllOppnAllMatchesMain(matches,"India")
+#'
+#'
+#' @seealso
+#' \code{\link{teamBowlingScorecardAllOppnAllMatches}}\cr
+#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesPlot}}\cr
+#'
+#' @export
+#'
 teamBowlingScoreCardAllOppnAllMatchesMain <- function(matches,theTeam){
 
 
