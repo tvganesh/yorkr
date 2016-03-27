@@ -6,6 +6,46 @@
 # This function returns a dataframe
 #
 ###########################################################################################
+#' @title
+#' Compute and return the bowling scorecard of a team in a match
+#'
+#' @description
+#' This function computes and returns the bowling scorecard of a team in a match
+#'
+#' @usage
+#' teamBowlingScorecardMatch(match,theTeam)
+#'
+#' @param match
+#' The match between the teams
+#'
+#' @param theTeam
+#' Team for which bowling performance is required
+#'
+#' @return l
+#' A data frame with the bowling performance in alll matches against all oppositions
+#'
+#' @references
+#' \url{http://cricsheet.org/}\cr
+#' \url{https://gigadom.wordpress.com/}
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' #Get all matches between India  and other opposition
+#' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
+#'
+#' teamBowlingScorecardMatch(a,'England')
+#'
+#'
+#' @seealso
+#' \code{\link{teamBowlingWicketMatch}}\cr
+#' \code{\link{teamBowlerVsBatsmanMatch}}\cr
+#' \code{\link{teamBattingScorecardMatch}}\cr
+#'
+#' @export
+#'
 teamBowlingScorecardMatch <- function(match,theTeam){
 
     # Compute the maidens,runs conceded and overs for the bowlers.
