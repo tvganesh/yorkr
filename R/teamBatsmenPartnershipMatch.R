@@ -53,6 +53,7 @@
 #' @export
 #'
 teamBatsmenPartnershipMatch <- function(match,theTeam,plot=TRUE){
+    team=batsman=nonStriker=runs=runsScored=NULL
     a <-filter(match,team==theTeam)
     # Group batsman with non strikers and compute partnerships
     df <- data.frame(summarise(group_by(a,batsman,nonStriker),sum(runs)))

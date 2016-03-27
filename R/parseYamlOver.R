@@ -59,6 +59,9 @@
 #'
 #'
 parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
+    team=ball=totalRuns-rnames=batsman=bowler=nonStriker=NULL
+    byes=legbyes=noballs=wides=nonBoundary=penalty=runs=NULL
+    extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
     #The xsflag will be used when there are more than 10 deliveries in the over
     xsflag=FALSE
 

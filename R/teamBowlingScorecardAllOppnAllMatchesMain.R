@@ -53,8 +53,7 @@
 #' @export
 #'
 teamBowlingScoreCardAllOppnAllMatchesMain <- function(matches,theTeam){
-
-
+    team=bowler=batsman=runs=runsConceded=NULL
 
     a <-filter(matches,team!=theTeam)
 

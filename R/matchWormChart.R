@@ -49,6 +49,7 @@
 #' @export
 #'
 matchWormGraph <- function(match,team1,team2) {
+    team=ball=totalRuns=NULL
     # Filter the performance of team1
     a <-filter(match,team==team1)
     b <- select(a,ball,totalRuns)

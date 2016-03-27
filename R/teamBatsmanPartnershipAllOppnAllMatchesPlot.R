@@ -55,9 +55,8 @@
 #' @export
 #'
 teamBatsmanPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plot=TRUE){
-
+    team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <- NULL
-
     a <-filter(matches,team==theTeam)
 
     #Get partnerships

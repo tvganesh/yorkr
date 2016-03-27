@@ -58,7 +58,7 @@
 #'
 teamBatsmanPartnershiAllOppnAllMatches <- function(matches,theTeam,report="summary"){
 
-
+    team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <-filter(matches,team==theTeam)
     #Get partnerships
     df <- data.frame(summarise(group_by(a,batsman,nonStriker),sum(runs)))

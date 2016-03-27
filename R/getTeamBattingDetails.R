@@ -49,7 +49,7 @@
 #' @export
 #'
 getTeamBattingDetails <- function(team,dir=".",save=FALSE){
-
+    overs=batsman=NULL
     a <- paste(dir,"/","*",team,"*",sep="")
     # Gather team against all ooposition
     fl <- Sys.glob(a)

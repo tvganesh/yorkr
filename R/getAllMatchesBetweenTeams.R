@@ -57,7 +57,7 @@
 #'
 
 getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE){
-
+     overs=NULL
     # Create 2 filenames with both combinations of team1 and team2
     d1 <- paste(team1,"-",team2,"*",sep="")
     d2 <- paste(team2,"-",team1,"*",sep="")

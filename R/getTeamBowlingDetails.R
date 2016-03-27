@@ -49,7 +49,7 @@
 #' @export
 #'
 getTeamBowlingDetails <- function(team,dir=".",save=FALSE){
-
+    overs=bowler=NULL
     a <- paste(dir,"/","*",team,"*",sep="")
     # Gather team against all ooposition
 

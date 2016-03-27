@@ -61,7 +61,9 @@
 #'
 # This functio is used when there are more than 10 deliveries in the over
 specialProc <- function(dist, overset, ateam,over,str1,meta){
-
+    team=ball=totalRuns-rnames=batsman=bowler=nonStriker=NULL
+    byes=legbyes=noballs=wides=nonBoundary=penalty=runs=NULL
+    extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
     if(dist == 6){
         names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns")
 

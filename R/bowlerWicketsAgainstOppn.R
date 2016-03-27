@@ -44,7 +44,7 @@
 #'
 
 bowlerWicketsAgainstOpposition <- function(df,name){
-
+    meanWickets = numMatches = wickets = opposition = NULL
     c <- summarise(group_by(df,opposition),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,opposition=paste(opposition,"(",numMatches,")",sep=""))
     plot.title = paste(name,"- Wickets against Opposition(number innings)")

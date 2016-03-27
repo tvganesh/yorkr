@@ -49,6 +49,8 @@
 #' @export
 #'
 getBowlerWicketDetails <- function(team,name){
+    bowlingDetails=bowler=wicketPlayerOut=overs=maidens=NULL
+    runs=economyRate=opposition=wickets=venue=NULL
     fl <- paste("./",team,"-BowlingDetails.RData",sep="")
     load(fl)
     details <- bowlingDetails

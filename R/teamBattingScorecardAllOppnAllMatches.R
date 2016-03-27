@@ -57,7 +57,8 @@
 #' @export
 #'
 teamBattingScorecardAllOppnAllMatches <- function(matches,theTeam){
-
+    team=batsman=runs=fours=sixes=NULL
+    byes=legbyes=noballs=NULL
     a <-filter(matches,team==theTeam)
     b <- select(a,batsman,runs)
     names(b) <-c("batsman","runs")

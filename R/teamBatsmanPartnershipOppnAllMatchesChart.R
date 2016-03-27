@@ -54,7 +54,7 @@
 #' @export
 #'
 teamBatsmanPartnershipOppnAllMatchesChart <- function(matches,main,opposition,plot=TRUE){
-
+    team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <-filter(matches,team==main)
     #Get partnerships
     df <- data.frame(summarise(group_by(a,batsman,nonStriker),sum(runs)))

@@ -51,7 +51,7 @@
 #' @export
 #'
 getDeliveryWickets <- function(team,dir=".",name,save=FALSE){
-
+    over=NULL
     a <- paste(dir,"/","*",team,"*",sep="")
 
     # Gather team against all opposition

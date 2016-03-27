@@ -61,7 +61,7 @@
 #'
 teamBatsmanVsBowlersAllOppnAllMatchesRept <- function(matches,theTeam,rank=0,dispRows=50)
 {
-
+    team=batsman=bowler=runs=runsScored=NULL
     a <-filter(matches,team==theTeam)
     b <-summarise(group_by(a,batsman,bowler),sum(runs))
     names(b) <- c("batsman","bowler","runs")

@@ -44,7 +44,7 @@
 #'
 
 bowlerWicketsVenue <- function(df,name){
-
+    meanWickets = numMatches =wickets = venue = NULL
     c <- summarise(group_by(df,venue),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))
     e <- arrange(d,desc(meanWickets))

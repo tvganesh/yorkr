@@ -56,7 +56,7 @@
 #'
 
 getAllMatchesAllOpposition <- function(team,dir=".",save=FALSE){
-
+    overs=NULL
     # Gather team data  against all ooposition
     d1 <- paste("*",team,"*",sep="")
     path=paste(dir,"/",d1,sep="")

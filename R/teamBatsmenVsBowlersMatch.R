@@ -54,6 +54,7 @@
 #'
 teamBatsmenVsBowlersMatch <- function(match,theTeam,plot=TRUE)
 {
+    team=batsman=bowler=runs=runsConceded=NULL
     a <-filter(match,team==theTeam)
     # Summarise the performance of the batsmen against the bowlers vs total runs scored
     b <-summarise(group_by(a,batsman,bowler),sum(runs))
