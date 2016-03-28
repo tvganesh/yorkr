@@ -12,7 +12,7 @@
 #' This function computes and plots the type of dismissals of the
 #' the batsman
 #' @usage
-#' batsman4s(df, name="Kohli")
+#' batsmanDismissals(df,name="A Leg Glance")
 #'
 #' @param df
 #' Data frame
@@ -48,7 +48,7 @@
 #' @importFrom utils head
 #'
 
-batsmanDismissals <- function(df,name){
+batsmanDismissals <- function(df,name="A Leg Glance"){
     batsman <- wicketKind <-dismissal <- NULL
     DismissalType <- NULL
     b <-select(df,batsman,wicketKind)

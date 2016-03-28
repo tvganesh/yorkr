@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBowlersVsBatsmanAllOppnAllMatchesRept
+# Function: teamBowlersVsBatsmenAllOppnAllMatchesRept
 # This function computes the performance of bowlers of team against all opposition in all matches
 # This function returns a dataframe
 #
@@ -13,7 +13,7 @@
 #' This function computes performance of bowlers of a team against all opposition in all matches
 #'
 #' @usage
-#' teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam,rank=0)
+#' teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam,rank=0)
 #'
 #' @param matches
 #' the data frame of all matches between a team and aall opposition  and all obtained with
@@ -44,26 +44,26 @@
 #' # You could also load directly from the saved file
 #' #load("allMatchesAllOpposition-India.RData")
 #' # The call below gives the best bowlers against India
-#' teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam="India",rank=0)
+#' teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam="India",rank=0)
 #'
 #' # The call with rank=1 gives the performace of the bowler with rank
-#'  teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam="India",rank=1)
+#'  teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam="India",rank=1)
 #'
 #' # The call below gives the overall performance of India bowlers against South Africa
-#'  teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"South Africa",rank=0)
+#'  teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,"South Africa",rank=0)
 #'
 #' # The call below gives the performance of best Indias bowlers against Australia
-#' teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,"Australia",rank=1)
+#' teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,"Australia",rank=1)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesMain}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}
 #' @export
 #'
-teamBowlersVsBatsmanAllOppnAllMatchesRept <- function(matches,theTeam,rank=0) {
+teamBowlersVsBatsmenAllOppnAllMatchesRept <- function(matches,theTeam,rank=0) {
     batsman=runsConceded=team=runs=bowler=NULL
     team=bowler=batsman=NULL
 

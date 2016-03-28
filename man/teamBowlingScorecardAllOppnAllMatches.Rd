@@ -48,7 +48,7 @@ Tinniam V Ganesh
 }
 \seealso{
 \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
-\code{\link{teamBowlerVsBatsmanAllOppnAllMatchesMain}}\cr
-\code{\link{teamBowlerVsBatsmanAllOppnAllMatchesPlot}}\cr
+\code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
+\code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }
 

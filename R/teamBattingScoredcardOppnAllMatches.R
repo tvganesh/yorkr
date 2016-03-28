@@ -50,9 +50,9 @@
 #' teamBattingScorecardOppnAllMatches(matches,"Australia","India")
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
 #'
 #' @export
 #'

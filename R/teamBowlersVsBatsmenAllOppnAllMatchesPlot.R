@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBowlerVsBatsmanAllOppnAllMatchesPlot
+# Function: teamBowlersVsBatsmenAllOppnAllMatchesPlot
 # This function computes the performance of bowlers against batsman of opposition
 #
 ###########################################################################################
@@ -12,7 +12,7 @@
 #' This function computes performance of bowlers of a team against all opposition in all matches
 #'
 #' @usage
-#' teamBowlerVsBatsmanAllOppnAllMatchesPlot(bowlerDF,t1,t2)
+#' teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2)
 #'
 #' @param matches
 #' the data frame of the bowler whose performance is required
@@ -39,23 +39,23 @@
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
 #' #Get the details of the bowler with the specified rank as a dataframe
-#' df <- teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam="India",rank=1)
+#' df <- teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam="India",rank=1)
 #' #Plot this
-#' teamBowlerVsBatsmanAllOppnAllMatchesPlot(df,"India","India")
+#' teamBowlersVsBatsmenAllOppnAllMatchesPlot(df,"India","India")
 #'
-#' df <- teamBowlersVsBatsmanAllOppnAllMatchesRept(matches,theTeam="England",rank=1)
-#' teamBowlerVsBatsmanAllOppnAllMatchesPlot(df,"India","England")
+#' df <- teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam="England",rank=1)
+#' teamBowlersVsBatsmenAllOppnAllMatchesPlot(df,"India","England")
 #'
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesMain}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
 #' @export
 #'
-teamBowlerVsBatsmanAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){
+teamBowlersVsBatsmenAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){
     batsman=runsConceded=team=NULL
     bwlr <- bowlerDF$bowler
     if(t2 != "India"){

@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Mar 2016
-# Function: teamBowlerWicketsOppnAllMatches
+# Function: teamBowlersWicketsOppnAllMatches
 # This function computes the total wickets taken by the top 20(default) bowlers against the
 # opposition
 #
@@ -50,24 +50,24 @@
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
 #' #Display top 20
-#' teamBowlerWicketsOppnAllMatches(matches,"India","Australia")
+#' teamBowlersWicketsOppnAllMatches(matches,"India","Australia")
 #' #Display and plot top 10
-#' teamBowlerWicketsOppnAllMatches(matches,"Australia","India",top=10)
+#' teamBowlersWicketsOppnAllMatches(matches,"Australia","India",top=10)
 #'
 #' #Do not plot but return as dataframe
-#' teamBowlerWicketsOppnAllMatches(matches,"India","Australia",plot=FALSE)
+#' teamBowlersWicketsOppnAllMatches(matches,"India","Australia",plot=FALSE)
 #'
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
-#' \code{\link{teamBowlerWicketRunsOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
+#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}
 #'
 #' @export
 #'
-teamBowlerWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=20){
+teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=20){
 
     team=bowler=ball=noballs=runs=NULL
     wicketKind=wicketPlayerOut=over=wickets=NULL

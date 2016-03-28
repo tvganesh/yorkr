@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBowlingScoreCardAllOppnAllMatchesMain
+# Function: teamBowlingScorecardAllOppnAllMatchesMain
 # This function computes the performance of bowlers of team against all opposition in all matches
 # This function returns a dataframe
 #
@@ -14,7 +14,7 @@
 #' against all oppositions in all matches
 #'
 #' @usage
-#' teamBowlingScoreCardAllOppnAllMatchesMain(matches,theTeam)
+#' teamBowlingScorecardAllOppnAllMatchesMain(matches,theTeam)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches
@@ -42,17 +42,17 @@
 #' # load("allMatchesAllOpposition-India.RData")
 #'
 #' # Top opposition bowlers of India
-#' teamBowlingScoreCardAllOppnAllMatchesMain(matches,"India")
+#' teamBowlingScorecardAllOppnAllMatchesMain(matches,"India")
 #'
 #'
 #' @seealso
 #' \code{\link{teamBowlingScorecardAllOppnAllMatches}}\cr
-#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesMain}}\cr
-#' \code{\link{teamBowlerVsBatsmanAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 #'
 #' @export
 #'
-teamBowlingScoreCardAllOppnAllMatchesMain <- function(matches,theTeam){
+teamBowlingScorecardAllOppnAllMatchesMain <- function(matches,theTeam){
     team=bowler=batsman=runs=runsConceded=NULL
     ball=noballs=wides=wicketKind=maidens=NULL
     wicketPlayerOut=over=wickets=NULL

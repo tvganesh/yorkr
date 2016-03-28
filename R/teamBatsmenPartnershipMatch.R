@@ -45,10 +45,10 @@
 #' m <-batsmenPartnershipMatch(a,"Pakistan",plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'

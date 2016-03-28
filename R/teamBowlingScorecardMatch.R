@@ -41,7 +41,7 @@
 #'
 #' @seealso
 #' \code{\link{teamBowlingWicketMatch}}\cr
-#' \code{\link{teamBowlerVsBatsmanMatch}}\cr
+#' \code{\link{teamBowlersVsBatsmenMatch}}\cr
 #' \code{\link{teamBattingScorecardMatch}}\cr
 #'
 #' @export

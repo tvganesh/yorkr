@@ -38,8 +38,8 @@ Tinniam V Ganesh
 \code{\link{batsmanFoursSixes}}
 \code{\link{batsmanRunsVsDeliveries}}
 \code{\link{batsmanRunsVsStrikeRate}}
-\code{\link{batsmansRunsPredict}}
-\code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
+\code{\link{batsmanRunsPredict}}
+\code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
 \code{\link{batsmanRunsAgainstOpposition}}
 }
 

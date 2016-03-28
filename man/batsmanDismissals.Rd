@@ -4,7 +4,7 @@
 \alias{batsmanDismissals}
 \title{Compute and plot the dismissal type of the batsman}
 \usage{
-batsman4s(df, name="Kohli")
+batsmanDismissals(df,name="A Leg Glance")
 }
 \arguments{
 \item{df}{Data frame}

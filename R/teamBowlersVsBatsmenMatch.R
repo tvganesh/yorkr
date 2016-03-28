@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 22 Mar 2016
-# Function: teamBowlersVsBatsmanMatch
+# Function: teamBowlersVsBatsmenMatch
 # This function computes  performance of the team bowlers against the opposition batsmen
 #
 ###########################################################################################
@@ -12,7 +12,7 @@
 #' This function computes performance of bowlers of a team against an opposition in a match
 #'
 #' @usage
-#' teamBowlersVsBatsmanMatch(match,theTeam,plot=TRUE)
+#' teamBowlersVsBatsmenMatch(match,theTeam,plot=TRUE)
 #'
 #' @param match
 #' The data frame of the match. This can be obtained with the call for e.g
@@ -40,22 +40,22 @@
 #' # Get the match between England and Pakistan
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 #'
-#' teamBowlersVsBatsmanMatch(a,"Pakistan")
-#' teamBowlersVsBatsmanMatch(a,"England")
-#' m <- teamBowlersVsBatsmanMatch(a,"Pakistan")
+#' teamBowlersVsBatsmenMatch(a,"Pakistan")
+#' teamBowlersVsBatsmenMatch(a,"England")
+#' m <- teamBowlersVsBatsmenMatch(a,"Pakistan")
 #'
 #'
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}
 #'
 #' @export
 #'
-teamBowlersVsBatsmanMatch <- function(match,theTeam,plot=TRUE){
+teamBowlersVsBatsmenMatch <- function(match,theTeam,plot=TRUE){
 
     batsman=runsConceded=team=runs=bowler=NULL
     team=bowler=batsman=a=NULL

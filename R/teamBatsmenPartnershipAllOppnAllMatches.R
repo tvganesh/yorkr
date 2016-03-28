@@ -49,14 +49,14 @@
 #' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India',report="detailed")
 #'
 #' @seealso
-#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
 #' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
 #' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'
-teamBatsmanPartnershiAllOppnAllMatches <- function(matches,theTeam,report="summary"){
+teamBatsmenPartnershipAllOppnAllMatches <- function(matches,theTeam,report="summary"){
 
     team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <-filter(matches,team==theTeam)

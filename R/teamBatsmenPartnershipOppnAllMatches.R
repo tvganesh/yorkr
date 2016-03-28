@@ -48,9 +48,9 @@
 #' m <-teamBatsmenPartnershiOppnAllMatches(a,'Australia',report="detailed")
 #'
 #' @seealso
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlerVsBatsmanMatch}}
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenMatch}}
 #' \code{\link{teamBattingScorecardMatch}}
 #'
 #' @export

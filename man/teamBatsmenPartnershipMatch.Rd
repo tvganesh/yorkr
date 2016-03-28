@@ -41,9 +41,9 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
-\code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-\code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-\code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+\code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
+\code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+\code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+\code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 }
 

@@ -46,10 +46,10 @@
 #' e <- teamBatsmenVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
 #' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmenVsBowlerOppnAllMatches}}
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'

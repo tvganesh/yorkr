@@ -1,8 +1,9 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 24 Mar 2016
-# Function: teamBowlerWicketKindOppnAllMatches
-# This function computes the the types of wickets taken by the bowlers, caught,bowled, c&b etc
+# Function: teamBowlersWicketRunsOppnAllMatches
+# This function computes the number of wickets taken and runs conceded by the bowlers in
+# all matches against the opposition
 #
 #
 ###########################################################################################
@@ -11,11 +12,11 @@
 #' opposition in all matches
 #'
 #' @description
-#' This function computes performance of bowlers of a team and the wicket kind against an
+#' This function computes performance of bowlers of a team and the runs conceded against an
 #' opposition in all matches against the opposition
 #'
 #' @usage
-#' teamBowlerWicketKindOppnAllMatches(matches,main,opposition,plot=TRUE)
+#' teamBowlersWicketRunsOppnAllMatches(matches,main,opposition,plot=TRUE)
 #'
 #' @param matches
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -45,26 +46,25 @@
 #' # Get all matches between India and Australia
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
-#' teamBowlerWicketKindOppnAllMatches(matches,"India","Australia",plot=TRUE)
-#' m <- teamBowlerWicketKindOppnAllMatches(matches,"Australia","India",plot=FALSE)
+#' teamBowlersWicketRunsOppnAllMatches(matches,"India","Australia")
+#' m <-teamBowlerWicketsRunsOppnAllMatches(matches,"Australia","India",plot=FALSE)
 #'
-#' teamBowlerWicketKindOppnAllMatches(matches,"Australia","India",plot=TRUE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBowlersWicketsOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}
 #'
 #' @export
 #'
-teamBowlerWicketKindOppnAllMatches <- function(matches,main,opposition,plot=TRUE){
+teamBowlersWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=TRUE){
     team=bowler=ball=NULL
-    runs=over=runsConceded=NULL
-
-    byes=legbyes=noballs=wides=runConceded=NULL
+    runs=over=wickets=NULL
+    byes=legbyes=noballs=wides=runsConceded=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
+
     # Compute the maidens,runs conceded and overs for the bowlers
     a <-filter(matches,team !=main)
 
@@ -83,6 +83,10 @@ teamBowlerWicketKindOppnAllMatches <- function(matches,main,opposition,plot=TRUE
     #Compute total runs conceded (runs_wides+noballs)
     e <- summarize(group_by(c,bowler),runs=sum(runsConceded))
 
+    # Calculate the number of overs bowled by each bwler
+    f <- select(c,bowler,over)
+    g <- summarise(group_by(f,bowler),overs=length(unique(over)))
+
 
     #Compute number of wickets
     h <- b %>%
@@ -90,29 +94,29 @@ teamBowlerWicketKindOppnAllMatches <- function(matches,main,opposition,plot=TRUE
         filter(wicketPlayerOut != "nobody")
     i <- summarise(group_by(h,bowler),wickets=length(unique(wicketPlayerOut)))
 
-    r <- full_join(h,e,by="bowler")
+    #Join the over & maidens
+    j <- full_join(g,d,by="bowler")
+    # Add runs
+    k <- full_join(j,e,by="bowler")
+    # Add wickets
+    l <- full_join(k,i,by="bowler")
 
     # Set NAs to 0
-    if(sum(is.na(r$wicketKind)) != 0){
-        r[is.na(r$wicketKind),]$wicketKind="noWicket"
-    }
-    if(sum(is.na(r$wicketPlayerOut)) !=0){
-        r[is.na(r$wicketPlayerOut),]$wicketPlayerOut="noWicket"
+    if(sum(is.na(l$wickets)) != 0){
+        l[is.na(l$wickets),]$wickets=0
     }
 
-    if(plot == TRUE){
-        plot.title = paste("Wicket kind taken by bowlers -",main," Vs ",opposition,"(all matches)",sep="")
-        ggplot(data=r,aes(x=wicketKind,y=runs,fill=factor(wicketKind))) +
+    if(plot==TRUE){
+        plot.title = paste("Wicket taken cs Runs conceded -",main," Vs ",opposition,"(all matches)",sep="")
+        ggplot(data=l,aes(x=factor(wickets),y=runs,fill=factor(wickets))) +
             facet_wrap( ~ bowler,scales = "fixed", ncol=8) +
             geom_bar(stat="identity") +
-            xlab("Wicket kind") + ylab("Runs conceded") +
+            xlab("Number of wickets") + ylab('Runs conceded') +
             ggtitle(bquote(atop(.(plot.title),
-                                atop(italic("Data source:http://cricsheet.org/"),"")))) +
+                                    atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else {
+        l
     }
-    else{
-        r
-    }
-
 
 }

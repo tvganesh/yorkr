@@ -50,9 +50,9 @@
 #'
 #'
 #' @seealso
-#' \code{\link{teamBowlerWicketsOppnAllMatches}}
-#' \code{\link{teamBowlerWicketRunsOppnAllMatches}}
-#' \code{\link{teamBowlerWicketKindOppnAllMatche}}
+#' \code{\link{teamBowlersWicketsOppnAllMatches}}
+#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}
+#' \code{\link{teamBowlersWicketKindOppnAllMatches}}
 #'
 #' @export
 #'

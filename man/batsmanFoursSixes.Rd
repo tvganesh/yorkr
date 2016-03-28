@@ -4,7 +4,7 @@
 \alias{batsmanFoursSixes}
 \title{Compute and plot the total runs, fours and sixes of the batsman}
 \usage{
-batsmanFoursSixes(df, name="Kohli")
+batsmanFoursSixes(df,name)
 }
 \arguments{
 \item{df}{Data frame}
@@ -40,6 +40,6 @@ Tinniam V Ganesh
 \code{\link{batsmanRunsVsDeliveries}}
 \code{\link{batsmanRunsVsStrikeRate}}
 \code{\link{batsmanRunsVsStrikeRate}}
-\code{\link{batsmansRunsPredict}}
+\code{\link{batsmanRunsPredict}}
 }
 

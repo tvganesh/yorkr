@@ -57,7 +57,7 @@
 #' n <- teamBatsmenVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr
 #' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
 #' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}

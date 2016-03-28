@@ -37,9 +37,9 @@
 #' @examples
 #'
 #' @seealso
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}\cr
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}\cr
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
 #' \code{\link{teamBattingScorecardMatch}}
 #'
 #'

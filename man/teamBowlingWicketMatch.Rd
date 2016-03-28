@@ -41,6 +41,6 @@ Tinniam V Ganesh
 \seealso{
 \code{\link{teamBowlingWicketMatch}}\cr
 \code{\link{teamBowlingWicketRunsMatch}}\cr
-\code{\link{teamBowlerVsBatsmanMatch}}\cr
+\code{\link{teamBowlersVsBatsmenMatch}}\cr
 }
 

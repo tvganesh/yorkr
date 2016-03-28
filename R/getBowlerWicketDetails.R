@@ -44,7 +44,7 @@
 #' \code{\link{bowlerMovingAverage}}
 #' \code{\link{getTeamBowlingDetails}}
 #' \code{\link{bowlerMeanRunsConceded}}
-#' \code{\link{teamBowlerWicketRunsOppnAllMatches}}
+#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}
 #'
 #' @export
 #'

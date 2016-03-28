@@ -12,7 +12,7 @@
 #' This function computes and plots the total runs, fours and sixes of
 #' the batsman
 #' @usage
-#' batsmanFoursSixes(df, name="Kohli")
+#' batsmanFoursSixes(df,name= "A Leg Glance")
 #'
 #' @param df
 #' Data frame
@@ -41,11 +41,11 @@
 #' \code{\link{batsmanRunsVsDeliveries}}
 #' \code{\link{batsmanRunsVsStrikeRate}}
 #' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmansRunsPredict}}
+#' \code{\link{batsmanRunsPredict}}
 #'
 #' @export
 #'
-batsmanFoursSixes <- function(df,name){
+batsmanFoursSixes <- function(df,name= "A Leg Glance"){
     fours <- sixes <- batsman <- ballsPlayed <- RunsFromFours <- NULL
     RunsFromSixes <- TotalRuns <- value <- variable <- NULL
     names(df) <- c("batsman","ballsPlayed","fours","sixes","TotalRuns")

@@ -4,7 +4,7 @@
 \alias{batsmanMovingAverage}
 \title{Compute and plot moving average of the batsman over the batsman's career}
 \usage{
-batsmanMovingAverage(kohli,name="Kohli")
+batsmanMovingAverage(kohli,name)
 }
 \arguments{
 \item{df}{Data frame}
@@ -40,7 +40,7 @@ Tinniam V Ganesh
 \code{\link{batsmanRunsVsDeliveries}}
 \code{\link{batsmanRunsVsStrikeRate}}
 \code{\link{batsmanRunsVsStrikeRate}}
-\code{\link{batsmansRunsPredict}}
-\code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
+\code{\link{batsmanRunsPredict}}
+\code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
 }
 

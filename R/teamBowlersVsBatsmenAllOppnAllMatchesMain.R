@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBowlersVsBatsmanAllOppnAllMatchesMain
+# Function: teamBowlersVsBatsmenAllOppnAllMatchesMain
 # This function computes the performance of bowlers of team against all opposition in all matches
 # This function returns a dataframe
 #
@@ -13,7 +13,7 @@
 #' This function computes performance of bowlers of a team against all opposition in all matches
 #'
 #' @usage
-#' teamBowlersVsBatsmanAllOppnAllMatchesMain(matches,theTeam,rank=0)
+#' teamBowlersVsBatsmenAllOppnAllMatchesMain(matches,theTeam,rank=0)
 #'
 #' @param matches
 #' the data frame of all matches between a team and aall opposition  and all obtained with
@@ -44,22 +44,22 @@
 #' # You could also load directly from the saved file
 #' #load("allMatchesAllOpposition-India.RData")
 #' # The call below gives the best bowlers of India
-#' teamBowlersVsBatsmanAllOppnAllMatchesMain(matches,theTeam="India",rank=0)
+#' teamBowlersVsBatsmenAllOppnAllMatchesMain(matches,theTeam="India",rank=0)
 #'
 #' # The call with rank=1 gives the performance of the 'India' bowler with rank=1
-#'  teamBowlersVsBatsmanAllOppnAllMatchesMain(matches,theTeam="India",rank=1)
+#'  teamBowlersVsBatsmenAllOppnAllMatchesMain(matches,theTeam="India",rank=1)
 #'
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}
 #'
 #' @export
 #'
-teamBowlersVsBatsmanAllOppnAllMatchesMain <- function(matches,theTeam,rank=0) {
+teamBowlersVsBatsmenAllOppnAllMatchesMain <- function(matches,theTeam,rank=0) {
     team=bowler=batsman=NULL
     runs=over=runsConceded=NULL
 

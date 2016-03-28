@@ -49,12 +49,12 @@
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
 #' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
 #' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'
-teamBatsmanPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plot=TRUE){
+teamBatsmenPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plot=TRUE){
     team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <- NULL
     a <-filter(matches,team==theTeam)

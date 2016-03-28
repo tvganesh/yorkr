@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Mar 2016
-# Function: teamBowlersVsBatsmanOppnAllMatches
+# Function: teamBowlersVsBatsmenOppnAllMatches
 # This function computes the performance of the bowlers and the runs conceded and the batsman
 # who scored most
 #
@@ -15,7 +15,7 @@
 #' against the opposition
 #'
 #' @usage
-#' teamBowlersVsBatsmanOppnAllMatches(match,main,opposition,plot=TRUE,top=5)
+#' teamBowlersVsBatsmenOppnAllMatches(match,main,opposition,plot=TRUE,top=5)
 #'
 #' @param match
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -47,21 +47,21 @@
 #' teamBowlersVsBatsmanOppnAllMatches(matches,'India',"Australia",top=5)
 #'
 #' # Plot the performance of top 3 Australian bowlers against India
-#' teamBowlersVsBatsmanOppnAllMatches(matches,"Australia","India",top=3)
+#' teamBowlersVsBatsmenOppnAllMatches(matches,"Australia","India",top=3)
 #'
 #' # Get the top 5 bowlers of Australia. Do not plot but get as a dataframe
-#' teamBowlersVsBatsmanOppnAllMatches(matches,"Australia","India",plot=FALSE)
+#' teamBowlersVsBatsmenOppnAllMatches(matches,"Australia","India",plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesRept}}
-#' \code{\link{teamBowlersVsBatsmanAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}
 #'
 #' @export
 #'
-teamBowlersVsBatsmanOppnAllMatches <- function(match,main,opposition,plot=TRUE,top=5){
+teamBowlersVsBatsmenOppnAllMatches <- function(match,main,opposition,plot=TRUE,top=5){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=batsman=NULL
     a <-filter(match,team != main)

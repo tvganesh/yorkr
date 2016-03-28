@@ -37,7 +37,8 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
-#' # convertAllYaml2RDataframes() & convertYaml2RDataframe convert yaml files to data frame and store as RData
+#' # convertAllYaml2RDataframes() & convertYaml2RDataframe convert yaml files
+#' # to data frame and store as RData
 #' # We have to point to this directory for the call below
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../data")
 #'
