@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 22 Mar 2016
-# Function: teamBatsmanVsBowlersOppnAllMatches
+# Function: teamBatsmenVsBowlersOppnAllMatches
 # This function computes the best performing batsman against an opposition's bowlers
 # in all matches with this team.The top 5 batsman are displayed by default
 #
@@ -15,7 +15,7 @@
 #' This function computes the performance of batsmen against the  bowlers of an oppositions in all matches
 #'
 #' @usage
-#' teamBatsmanVsBowlersOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
+#' teamBatsmenVsBowlersOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
 #'
 #' @param matches
 #' All the matches of the team against one specific opposition
@@ -48,23 +48,23 @@
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
 #' # Get the performance of India batsman against Australia in all matches
-#' teamBatsmanVsBowlersOppnAllMatches(a,"India","Australia")
+#' teamBatsmenVsBowlersOppnAllMatches(a,"India","Australia")
 #'
 #' # Display top 3
 #' teamBatsmanVsBowlersOppnAllMatches(a,"Australia","India",top=3)
 #'
 #' # Get top 10 and do not plot
-#' n <- teamBatsmanVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
+#' n <- teamBatsmenVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}\cr
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}\cr
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}\cr
-#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'
-teamBatsmanVsBowlersOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=5){
+teamBatsmenVsBowlersOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=5){
     team=batsman=bowler=runs=runsScored=NULL
     a <-filter(matches,team==main)
     b <-summarise(group_by(a,batsman,bowler),sum(runs))

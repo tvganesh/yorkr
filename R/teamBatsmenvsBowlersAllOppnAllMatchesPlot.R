@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBatsmanVsBowlersAllOppnAllMatchesPlot
+# Function: teamBatsmenVsBowlersAllOppnAllMatchesPlot
 # This function computes performance of batsmen/batsman against bowlers of the opposition.
 # It provides the names of the bowlers against whom the batsman scored the most.
 # This is plotted as a chart
@@ -15,7 +15,7 @@
 #' The data frame can be either plotted or returned to the user
 #'
 #' @usage
-#' teamBatsmanVsBowlersAllOppnAllMatchesPlot(df,plot=TRUE)
+#' teamBatsmenVsBowlersAllOppnAllMatchesPlot(df,plot=TRUE)
 #'
 #' @param df
 #' The dataframe of all the matches of the team against all oppositions
@@ -42,18 +42,18 @@
 #' #load("allMatchesAllOpposition-India.RData")
 #'
 #' d <- teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
-#' teamBatsmanVsBowlersAllOppnAllMatchesPlot(d)
-#' e <- teamBatsmanVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
+#' teamBatsmenVsBowlersAllOppnAllMatchesPlot(d)
+#' e <- teamBatsmenVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlerOppnAllMatches}}
 #'
 #' @export
 #'
-teamBatsmanVsBowlersAllOppnAllMatchesPlot <- function(df,plot=TRUE)
+teamBatsmenVsBowlersAllOppnAllMatchesPlot <- function(df,plot=TRUE)
 {
     runs=bowler=NULL
     bman <- df$batsman

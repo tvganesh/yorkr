@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 22 Mar 2016
-# Function: teamBatsmanPartnershipOppnAllMatchesChart
+# Function: teamBatsmenPartnershipOppnAllMatchesChart
 # This function computes the batting partnership of a team in all matches against
 # an opposition. The report generated can be detailed or a summary
 #
@@ -38,22 +38,22 @@
 #'
 #' @examples
 #' # Get all matches for team India against all oppositions
-#' d <- teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
+#' d <- teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
 #'  #Plot the partnerships
-#' teamBatsmanVsBowlersAllOppnAllMatchesPlot(d)
+#' teamBatsmenVsBowlersAllOppnAllMatchesPlot(d)
 #'
 #' #Do not plot but get the dataframe
-#' e <- teamBatsmanVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
+#' e <- teamBatsmenVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
 #'
 #' @seealso
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'
-teamBatsmanPartnershipOppnAllMatchesChart <- function(matches,main,opposition,plot=TRUE){
+teamBatsmenPartnershipOppnAllMatchesChart <- function(matches,main,opposition,plot=TRUE){
     team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <-filter(matches,team==main)
     #Get partnerships

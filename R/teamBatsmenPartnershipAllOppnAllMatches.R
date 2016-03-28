@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 24 Mar 2016
-# Function: teamBatsmanPartnershiAllOppnAllMatches
+# Function: teamBatsmenPartnershiAllOppnAllMatches
 # This function computes the partnetship of the batsman against all opposition
 #
 #
@@ -16,7 +16,7 @@
 #' or the partnership of an individual batsman
 #'
 #' @usage
-#' teamBatsmanPartnershiAllOppnAllMatches(matches,theTeam,report="summary")
+#' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam,report="summary")
 #'
 #' @param matches
 #' All the matches of the team against all oppositions
@@ -43,16 +43,16 @@
 #' # Get all matches for team India against all oppositions
 #' m <-teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 #' # Get the  summary report
-#' teamBatsmanPartnershiAllOppnAllMatches(matches,theTeam='India')
+#' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India')
 #'
 #' # Get the detailed report
-#' teamBatsmanPartnershiAllOppnAllMatches(matches,theTeam='India',report="detailed")
+#' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India',report="detailed")
 #'
 #' @seealso
-#' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmanPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmanVsBowlerOppnAllMatches}}
+#' \code{\link{teamBatsmenvsBowlersAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
 #'
 #' @export
 #'

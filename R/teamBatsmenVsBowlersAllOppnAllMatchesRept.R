@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Mar 2016
-# Function: teamBatsmanVsBowlersAllOppnAllMatchesRept
+# Function: teamBatsmenVsBowlersAllOppnAllMatchesRept
 # This function computes performance of batsmen/batsman against bowlers of the opposition.
 # It provides the names of the bowlers against whom the batsman scored the most.
 # We can the over all performance of the team or the individual performances of the batsman
@@ -16,7 +16,7 @@
 #' This function computes the performance of batsmen against all bowlers of all oppositions in all matches
 #'
 #' @usage
-#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,theTeam,rank=0,dispRows=50)
+#' teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,theTeam,rank=0,dispRows=50)
 #'
 #' @param matches
 #' All the matches of the team against all oppositions
@@ -44,12 +44,12 @@
 #' # Get all matches for team India against all oppositions
 #' m <-teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 #' # Get the  summary report
-#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=0)
+#' teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,"India",rank=0)
 #' #Get detailed report
-#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
+#' teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
 #'
-#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"Pakistan",rank=0)
-#' teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"England",rank=1)
+#' teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,"Pakistan",rank=0)
+#' teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,"England",rank=1)
 #'
 #' @seealso
 #' \code{\link{teamBatsmanvsBowlersAllOppnAllMatchesPlot}}
@@ -59,7 +59,7 @@
 #'
 #' @export
 #'
-teamBatsmanVsBowlersAllOppnAllMatchesRept <- function(matches,theTeam,rank=0,dispRows=50)
+teamBatsmenVsBowlersAllOppnAllMatchesRept <- function(matches,theTeam,rank=0,dispRows=50)
 {
     team=batsman=bowler=runs=runsScored=NULL
     a <-filter(matches,team==theTeam)
