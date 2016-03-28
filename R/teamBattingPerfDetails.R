@@ -21,7 +21,7 @@
 #' The team for which the the batting partnerships are sought
 #'
 #' @param includeInfo
-#'
+#' Whether to include venue,date, winner and result
 #'
 #' @return
 #'

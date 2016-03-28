@@ -11,7 +11,7 @@ teamBattingPerfDetails(match,theTeam,includeInfo=FALSE)
 
 \item{theTeam}{The team for which the the batting partnerships are sought}
 
-\item{includeInfo}{}
+\item{includeInfo}{Whether to include venue,date, winner and result}
 }
 \value{
 
