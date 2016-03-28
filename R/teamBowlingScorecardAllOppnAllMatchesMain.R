@@ -54,7 +54,8 @@
 #'
 teamBowlingScoreCardAllOppnAllMatchesMain <- function(matches,theTeam){
     team=bowler=batsman=runs=runsConceded=NULL
-
+    ball=noballs=wides=wicketKind=maidens=NULL
+    wicketPlayerOut=over=wickets=NULL
     a <-filter(matches,team!=theTeam)
 
     a1 <- unlist(strsplit(a$ball[1],"\\."))

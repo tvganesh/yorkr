@@ -48,7 +48,7 @@
 #'
 teamBowlingScorecardMatch <- function(match,theTeam){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
-    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
     # Compute the maidens,runs conceded and overs for the bowlers.
     # The bowlers performance of the team is got when the other side is batting. Hence '!-"
     a <-filter(match,team != theTeam)

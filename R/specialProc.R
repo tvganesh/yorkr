@@ -61,7 +61,7 @@
 #'
 # This functio is used when there are more than 10 deliveries in the over
 specialProc <- function(dist, overset, ateam,over,str1,meta){
-    team=ball=totalRuns=rnames=batsman=bowler=nonStriker=NULL
+    team=ball=totalRuns=rnames=batsman=bowler=nonStriker=i=NULL
     byes=legbyes=noballs=wides=nonBoundary=penalty=runs=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
     if(dist == 6){
@@ -190,7 +190,7 @@ specialProc <- function(dist, overset, ateam,over,str1,meta){
         over$team = ateam
         over <- select(over, ball,team,batsman,bowler,nonStriker,
                        byes,legbyes,noballs,
-                       wides,nonBounary,penalty,runs,
+                       wides,nonBoundary,penalty,runs,
                        extras,totalRuns,wicketFielder,
                        wicketKind,wicketPlayerOut)
         over <- cbind(over,meta)

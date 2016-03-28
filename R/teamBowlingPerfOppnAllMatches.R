@@ -59,7 +59,8 @@
 
 teamBowlingPerfOppnAllMatches <- function(matches,main,opposition){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
-    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
+    wickets=maidens=NULL
     # Compute the maidens,runs conceded and overs for the bowlers
     a <-filter(matches,team != main)
 

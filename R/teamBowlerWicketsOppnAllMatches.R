@@ -69,8 +69,11 @@
 #'
 teamBowlerWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=20){
 
-    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
-    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
+    team=bowler=ball=noballs=runs=NULL
+    wicketKind=wicketPlayerOut=over=wickets=NULL
+    batsman=wides=NULL
+
+    a = NULL
     #Filter the matches by the team
     a <-filter(matches,team!=main)
 
@@ -94,7 +97,7 @@ teamBowlerWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,to
 
     if(plot==TRUE){
         ggplot(data=e,aes(x=bowler,y=wickets,fill=factor(bowler))) +
-             geom_bar(stat="identity") +
+            geom_bar(stat="identity") +
             #facet_wrap( ~ bowler,scales = "free", ncol=3,drop=TRUE) + #Does not work.Check!
             xlab("Batsman") + ylab("Runs conceded") +
             ggtitle(expression(atop("Performances of bowlers against opposition",

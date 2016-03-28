@@ -64,6 +64,7 @@ teamBowlingWicketKindAllOppnAllMatches <- function(matches,t1,t2="All",plot=TRUE
 
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
+    over=wickets=NULL
     a <- NULL
     if(t2 == "All"){
         a <-filter(matches,team==t1)

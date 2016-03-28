@@ -52,7 +52,7 @@
 #'
 teamBowlingWicketRunsMatch <- function(match,theTeam,plot=TRUE){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
-    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=over=wickets=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
     # Filter the bowler's performance
     a <-filter(match,team!=theTeam)
