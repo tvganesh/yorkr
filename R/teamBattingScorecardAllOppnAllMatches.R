@@ -42,7 +42,7 @@
 #' # This can also be loaded from saved file
 #' # load("allMatchesAllOpposition-India.RData")
 #'
-#' Top batsman is displayed in descending order of runs
+#' # Top batsman is displayed in descending order of runs
 #' teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 #'
 #' # The best England players scorecard against India is shown

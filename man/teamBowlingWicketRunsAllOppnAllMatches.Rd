@@ -35,7 +35,7 @@ matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 # load("allMatchesAllOpposition-India.RData")
 
 teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=TRUE)
-m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALSE))
+m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALSE)
 
 }
 \author{

@@ -29,7 +29,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \examples{
 # Get all matches for team India against all oppositions
 matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
-You can also directly load the data
+# You can also directly load the data
 #load("India-Australia-allMatches.RData")
 
 m <-teamBatsmenPartnershiOppnAllMatches(a,'India',report="summary")

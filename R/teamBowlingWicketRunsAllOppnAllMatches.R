@@ -47,7 +47,7 @@
 #' # load("allMatchesAllOpposition-India.RData")
 #'
 #' teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=TRUE)
-#' m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALSE))
+#' m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALSE)
 #'
 #' @seealso
 #' \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
