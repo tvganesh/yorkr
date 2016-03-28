@@ -18,10 +18,10 @@
 #' specialProc(dist, overset, ateam,over,str1,meta)
 #'
 #' @param dist
-
+#' dist
 #'
 #' @param overset
-
+#' overset
 #'
 #' @param ateam
 #' The team
@@ -30,6 +30,7 @@
 #' over
 #'
 #' @param str1
+#' str1
 #'
 #'
 #' @param meta

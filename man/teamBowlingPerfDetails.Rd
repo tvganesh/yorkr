@@ -12,8 +12,6 @@ teamBowlingPerfDetails(match,theTeam,includeInfo=FALSE)
 \item{theTeam}{The team for which the performance is required}
 
 \item{includeInfo}{If true details like venie,winner, result etc are included}
-
-\item{plot}{If plot=TRUE then a plot is displayed else a dataframe is returned}
 }
 \value{
 dataframe

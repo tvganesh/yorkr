@@ -4,7 +4,7 @@
 \alias{teamBowlingWicketKindAllOppnAllMatches}
 \title{Compute and plot the wicket kinds taken by bowlers of team in all matches against all oppositions}
 \usage{
-teamBowlingWicketKindAllOppnAllMatches(match,t1,t2="All",plot=TRUE)
+teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 }
 \arguments{
 \item{matches}{The matches of the team against all oppositions and all matches}

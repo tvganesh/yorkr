@@ -4,7 +4,7 @@
 \alias{teamBattingScorecardOppnAllMatches}
 \title{Compute and return the batting scorecard of a team in all matches against an opposition}
 \usage{
-teamBattingScorecardMatch(matches,main,opposition)
+teamBattingScorecardOppnAllMatches(matches,main,opposition)
 }
 \arguments{
 \item{matches}{the data frame of all matches between a team and an opposition obtained with

@@ -26,7 +26,10 @@
 #' @param team2
 #' The other team for which matches are needed e.g( India, Sri Lanka, Pakistan)
 #'
-#'@param save
+#' @param dir
+#' The directory which has the RData files of matches between teams
+#'
+#' @param save
 #' Default=FALSE. This parameter indicates whether the combined data frame needs to be saved or not. It is recommended
 #' to save this large dataframe as the creation of this data frame takes a several seconds depending
 #' on the number of matches

@@ -18,7 +18,7 @@
 #' @param match
 #' The match for which the score card is required e.g.
 #'
-#' @param name
+#' @param theTeam
 #' Team for which scorecard required
 #'
 #' @return scorecard

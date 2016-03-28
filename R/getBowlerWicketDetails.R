@@ -17,7 +17,7 @@
 #' @param team
 #' The tam to which the bowler belongs
 #'
-#' @param theTeam
+#' @param name
 #' The name of the bowler
 #'
 #' @return dataframe

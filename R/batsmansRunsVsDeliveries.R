@@ -13,7 +13,7 @@
 #' smoothing function is used to fit the points
 #'
 #' @usage
-#' batsmanRunsVsDeliveries(df, name="Kohli")
+#' batsmanRunsVsDeliveries(df, name= "A Late Cut")
 #'
 #' @param df
 #' Data frame
@@ -43,7 +43,7 @@
 #' @export
 #'
 
-batsmanRunsVsDeliveries <- function(df,name){
+batsmanRunsVsDeliveries <- function(df,name= "A Late Cut"){
     batsman = runs  = ballsPlayed= NULL
 
     plot.title = paste(name,"- Runs vs balls faced")

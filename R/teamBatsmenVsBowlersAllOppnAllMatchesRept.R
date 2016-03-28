@@ -29,6 +29,9 @@
 #' runs against bowlers. If rank=N (where N=1,2,3...) then the detailed breakup of the batsman and the runs
 #' scored against each bowler is returned
 #'
+#' @param dispRows
+#' The number of rows to be returned
+#'
 #' @return h
 #' The data frame of the batsman and the runs against bowlers
 #'

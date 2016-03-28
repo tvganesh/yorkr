@@ -7,6 +7,8 @@
 getDeliveryWickets(team,dir=".",name,save=FALSE)
 }
 \arguments{
+\item{team}{The team for which dataframe is to be obtained}
+
 \item{dir}{The source directory in which the match .RData files exist}
 
 \item{name}{The name of the bowler}

@@ -9,7 +9,7 @@ teamBattingScorecardMatch(match,theTeam)
 \arguments{
 \item{match}{The match for which the score card is required e.g.}
 
-\item{name}{Team for which scorecard required}
+\item{theTeam}{Team for which scorecard required}
 }
 \value{
 scorecard

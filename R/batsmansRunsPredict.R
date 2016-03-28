@@ -14,7 +14,7 @@
 #' the batsman to score the runs. It uses the package rpart to perform the classification
 #'
 #' @usage
-#' batsmanRunsPredict(kohli,name="Kohli")
+#' batsmanRunsPredict(df, name= "A Leg Glance")
 #'
 #' @param df
 #' Data frame
@@ -47,7 +47,7 @@
 #'
 #' @export
 #'
-batsmanRunsPredict <- function(df,name){
+batsmanRunsPredict <- function(df,name= "A Leg Glance"){
     batsman = ballsPlayed = runs = rpart =  NULL
     b <- select(df,batsman,ballsPlayed,runs)
     names(b) <-c("batsman","deliveries","runs")

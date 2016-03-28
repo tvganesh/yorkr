@@ -14,8 +14,8 @@
 #' @usage
 #' teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2)
 #'
-#' @param matches
-#' the data frame of the bowler whose performance is required
+#' @param bowlerDF
+#' The data frame of the bowler whose performance is required
 #'
 #' @param t1
 #' The team against to which the player belong

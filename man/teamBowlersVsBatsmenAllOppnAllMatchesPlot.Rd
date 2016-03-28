@@ -7,11 +7,11 @@
 teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2)
 }
 \arguments{
+\item{bowlerDF}{The data frame of the bowler whose performance is required}
+
 \item{t1}{The team against to which the player belong}
 
 \item{t2}{The opposing team}
-
-\item{matches}{the data frame of the bowler whose performance is required}
 }
 \value{
 none

@@ -4,7 +4,7 @@
 \alias{batsmanMovingAverage}
 \title{Compute and plot moving average of the batsman over the batsman's career}
 \usage{
-batsmanMovingAverage(kohli,name)
+batsmanMovingAverage(df, name= "A Leg Glance")
 }
 \arguments{
 \item{df}{Data frame}

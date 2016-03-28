@@ -5,7 +5,7 @@
 \title{Compute the performance of bowlers of a team  and the wicket taken against an
 opposition in all matches}
 \usage{
-teamBowlerWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
+teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
 }
 \arguments{
 \item{matches}{The data frame of all matches between a team the opposition. This dataframe can be obtained with

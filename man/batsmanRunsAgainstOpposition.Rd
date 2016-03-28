@@ -4,7 +4,7 @@
 \alias{batsmanRunsAgainstOpposition}
 \title{Compute and plot the average runs scored by the batsman against different oppositions}
 \usage{
-batsmanRunsAgainstOpposition(df, name="Kohli")
+batsmanRunsAgainstOpposition(df, name= "A Leg Glance")
 }
 \arguments{
 \item{df}{Data frame}

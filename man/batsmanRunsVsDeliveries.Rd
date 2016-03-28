@@ -4,7 +4,7 @@
 \alias{batsmanRunsVsDeliveries}
 \title{Plot the runs scored versus the deliveries. Fit a regression line}
 \usage{
-batsmanRunsVsDeliveries(df, name="Kohli")
+batsmanRunsVsDeliveries(df, name= "A Late Cut")
 }
 \arguments{
 \item{df}{Data frame}

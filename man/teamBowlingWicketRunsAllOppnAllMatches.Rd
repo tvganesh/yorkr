@@ -4,17 +4,17 @@
 \alias{teamBowlingWicketRunsAllOppnAllMatches}
 \title{Compute and plot the wicket taken and runs given by bowlers of team in all matches against all oppositions}
 \usage{
-teamBowlingWicketRunsAllOppnAllMatches(match,t1,t2="All",plot=TRUE)
+teamBowlingWicketRunsAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 }
 \arguments{
+\item{matches}{The matches of the team against all oppositions and all matches}
+
 \item{t1}{Team for which bowling performance is required}
 
 \item{t2}{t2=All gives the performance of the team against all opponents. Giving a opposing team (Australia, India
 ) will give the performance against this  team}
 
 \item{plot}{If plot= TRUE the dataframe will be plotted else a data frame will be returned}
-
-\item{matches}{The matches of the team against all oppositions and all matches}
 }
 \value{
 None or data fame

@@ -4,7 +4,7 @@
 \alias{batsmanRunsVenue}
 \title{Compute and plot the average runs scored by the batsman  at different venues}
 \usage{
-batsmanRunsVenue(df, name="Kohli")
+batsmanRunsVenue(df, name= "A Leg Glance")
 }
 \arguments{
 \item{df}{Data frame}

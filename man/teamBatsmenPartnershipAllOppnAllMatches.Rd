@@ -5,7 +5,7 @@
 \title{This function gets and returns the batting partnership of a team in all matches against all
 oppositions}
 \usage{
-teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam,report="summary")
+teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam,report="summary")
 }
 \arguments{
 \item{matches}{All the matches of the team against all oppositions}
@@ -31,10 +31,10 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 # Get all matches for team India against all oppositions
 m <-teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 # Get the  summary report
-teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India')
+teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam='India')
 
 # Get the detailed report
-teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India',report="detailed")
+teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam='India',report="detailed")
 
 }
 \author{

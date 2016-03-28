@@ -15,15 +15,18 @@
 #' This function also returns a  dataframe  with the batting partnerships
 #'
 #' @usage
-#' teamBatsmanPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=TRUE)
+#' teamBatsmenPartnershipOppnAllMatchesChart(matches,main,opposition, plot=TRUE)
 #'
 #' @param matches
 #' All the matches of the team against all oppositions
 #'
-#' @param theTeam
-#' The team for which the the batting partnerships are sought
+#' @param main
+#' The main team for which the the batting partnerships are sought
 #'
-#'@param plot
+#' @param opposition
+#' The opposition team for which the the batting partnerships are sought
+#'
+#' @param plot
 #' Whether the partnerships have top be rendered as a plot. If plot=FALSE the data frame is returned
 #'
 #' @return None or partnerships

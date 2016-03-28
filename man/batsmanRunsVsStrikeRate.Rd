@@ -4,7 +4,7 @@
 \alias{batsmanRunsVsStrikeRate}
 \title{Compute and plot the strike rate of the batsman versus the runs scored}
 \usage{
-batsmanRunsVsStrikeRate(kohli,name="Kohli")
+batsmanRunsVsStrikeRate(df, name= "A Late Cut")
 }
 \arguments{
 \item{df}{Data frame}

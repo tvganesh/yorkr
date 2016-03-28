@@ -16,7 +16,7 @@
 #' opposition in all matches against the opposition
 #'
 #' @usage
-#' teamBowlerWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
+#' teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
 #'
 #' @param matches
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with

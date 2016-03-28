@@ -15,6 +15,8 @@ teamBatsmenVsBowlersAllOppnAllMatchesRept(matches,theTeam,rank=0,dispRows=50)
 \item{rank}{if the rank=0  then the data frame returned gives a summary list of the batsmen with the highest
 runs against bowlers. If rank=N (where N=1,2,3...) then the detailed breakup of the batsman and the runs
 scored against each bowler is returned}
+
+\item{dispRows}{The number of rows to be returned}
 }
 \value{
 h

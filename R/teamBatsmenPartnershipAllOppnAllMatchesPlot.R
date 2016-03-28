@@ -24,6 +24,10 @@
 #' @param theTeam
 #' The team for which the the batting partnerships are sought
 #'
+#' @param main
+#' The main team for which the the batting partnerships are sought
+
+#'
 #'@param plot
 #' Whether the partnerships have top be rendered as a plot. If plot=FALSE the data frame is returned
 #'

@@ -12,7 +12,7 @@
 #' by the batsman. A loess line is fitted over the points
 #'
 #' @usage
-#' batsmanRunsVsStrikeRate(kohli,name="Kohli")
+#' batsmanRunsVsStrikeRate(df, name= "A Late Cut")
 #'
 #' @param df
 #' Data frame
@@ -45,7 +45,7 @@
 #'
 #' @export
 #'
-batsmanRunsVsStrikeRate <- function(df,name){
+batsmanRunsVsStrikeRate <- function(df,name= "A Late Cut"){
     batsman = runs = strikeRate = NULL
     b <- select(df,batsman,runs,strikeRate)
 

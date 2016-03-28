@@ -72,6 +72,8 @@ C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlerWicketRuns
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlerWicketsOppnAllMatches.R="9A82E280"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlersVsBatsmenAllOppnAllMatchesMain.R="CA2F4025"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlersVsBatsmenAllOppnAllMatchesPlot.R="B6AAEF78"
+C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlersVsBatsmenOppnAllMatches.R="7206B204"
+C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlersWicketsOppnAllMatches.R="46DA85FE"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlingPerfDetails.R="35DE6AE4"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlingPerfOppnAllMatches.R="47106C1A"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2FR%2FteamBowlingScorecardAllOppnAllMatches.R="B324B1D0"
@@ -97,3 +99,4 @@ C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2Fman%2FgetMatchDetails.Rd
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2Fman%2Fhello.Rd="A4FE2DD5"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr%2Fman%2FteamBowlersVsBatsmanAllOppnAllMatchesMain.Rd="27AC3223"
 C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr.Rcheck%2Fyorkr%2FLICENSE="BCF3A2EE"
+C%3A%2Fsoftware%2Fcricket-package%2Fyork-test%2Fyorkr2%2FR%2FbatsmansRunsPredict.R="3F1D73ED"

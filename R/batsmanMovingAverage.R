@@ -14,7 +14,7 @@
 #' the batsman
 #'
 #' @usage
-#' batsmanMovingAverage(kohli,name)
+#' batsmanMovingAverage(df, name= "A Leg Glance")
 #'
 #' @param df
 #' Data frame
@@ -47,7 +47,7 @@
 #'
 #' @export
 #'
-batsmanMovingAverage <- function(df,name){
+batsmanMovingAverage <- function(df,name = "A Leg Glance"){
     batsman = runs = NULL
     b <- select(df,batsman,runs,date)
 

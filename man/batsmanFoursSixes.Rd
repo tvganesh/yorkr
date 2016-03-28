@@ -4,7 +4,7 @@
 \alias{batsmanFoursSixes}
 \title{Compute and plot the total runs, fours and sixes of the batsman}
 \usage{
-batsmanFoursSixes(df,name)
+batsmanFoursSixes(df,name= "A Leg Glance")
 }
 \arguments{
 \item{df}{Data frame}

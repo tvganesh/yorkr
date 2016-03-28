@@ -15,18 +15,23 @@
 #' against the opposition
 #'
 #' @usage
-#' teamBowlersVsBatsmenOppnAllMatches(match,main,opposition,plot=TRUE,top=5)
+#' teamBowlersVsBatsmenOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
 #'
-#' @param match
+#' @param matches
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
-#' @param theTeam
-#' The team against which the performance is requires
+#' @param main
+#' The main team against which the performance is requires
 #'
-#' @param rank
-#' When the rank is 0 then the performance of all the bowlers is displayed. If rank=n (1,2,3 ..) then
-#' the performance of that bowler is given
+#' @param opposition
+#' The opposition team against which the performance is require
+#'
+#' @param plot
+#' If true plot else return dataframe
+#'
+#' @param top
+#' The number of rows to be returned. 5 by default
 #'
 #' @return dataframe
 #' The dataframe with all performances
@@ -61,10 +66,10 @@
 #'
 #' @export
 #'
-teamBowlersVsBatsmenOppnAllMatches <- function(match,main,opposition,plot=TRUE,top=5){
+teamBowlersVsBatsmenOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=5){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=batsman=NULL
-    a <-filter(match,team != main)
+    a <-filter(matches,team != main)
 
     b <-summarise(group_by(a,bowler,batsman),sum(runs))
     names(b) <- c("bowler","batsman","runsConceded")

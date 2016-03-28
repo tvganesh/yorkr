@@ -13,7 +13,7 @@
 #' all oppositions. The user can chose to plot or return a data frame
 #'
 #' @usage
-#' teamBowlingWicketKindAllOppnAllMatches(match,t1,t2="All",plot=TRUE)
+#' teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches

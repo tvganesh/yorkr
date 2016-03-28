@@ -13,7 +13,7 @@
 #' all oppositions. The user can chose to plot or return a data frame
 #'
 #' @usage
-#' teamBowlingWicketRunsAllOppnAllMatches(match,t1,t2="All",plot=TRUE)
+#' teamBowlingWicketRunsAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches
@@ -56,7 +56,7 @@
 #'
 #' @export
 #'
-teamBowlingWicketRunsAllOppnAllMatches <- function(match,t1,t2="All",plot=TRUE){
+teamBowlingWicketRunsAllOppnAllMatches <- function(matches,t1,t2="All",plot=TRUE){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     matches=over=wickets=NULL

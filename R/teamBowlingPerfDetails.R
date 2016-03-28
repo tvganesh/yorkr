@@ -23,10 +23,6 @@
 #' @param includeInfo
 #' If true details like venie,winner, result etc are included
 #'
-#' @param plot
-#' If plot=TRUE then a plot is displayed else a dataframe is returned
-#'
-#'
 #' @return dataframe
 #' The dataframe of bowling performance
 #'

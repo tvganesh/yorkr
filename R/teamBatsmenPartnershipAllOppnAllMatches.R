@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 24 Mar 2016
-# Function: teamBatsmenPartnershiAllOppnAllMatches
+# Function: teamBatsmenPartnershipAllOppnAllMatches
 # This function computes the partnetship of the batsman against all opposition
 #
 #
@@ -16,7 +16,7 @@
 #' or the partnership of an individual batsman
 #'
 #' @usage
-#' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam,report="summary")
+#' teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam,report="summary")
 #'
 #' @param matches
 #' All the matches of the team against all oppositions
@@ -43,10 +43,10 @@
 #' # Get all matches for team India against all oppositions
 #' m <-teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 #' # Get the  summary report
-#' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India')
+#' teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam='India')
 #'
 #' # Get the detailed report
-#' teamBatsmenPartnershiAllOppnAllMatches(matches,theTeam='India',report="detailed")
+#' teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam='India',report="detailed")
 #'
 #' @seealso
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}

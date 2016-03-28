@@ -12,7 +12,7 @@
 #' This function computes and plots the mean runs scored by the batsman against different
 #' oppositions
 #' @usage
-#' batsmanRunsAgainstOpposition(df, name="Kohli")
+#' batsmanRunsAgainstOpposition(df, name= "A Leg Glance")
 #'
 #' @param df
 #' Data frame
@@ -44,7 +44,7 @@
 #' @export
 #'
 
-batsmanRunsAgainstOpposition <- function(df,name){
+batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance"){
     batsman = runs = opposition = meanRuns =  NULL
     b <- select(df,batsman,runs,opposition)
     c <-b[complete.cases(b),]

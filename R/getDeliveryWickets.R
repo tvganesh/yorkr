@@ -15,6 +15,9 @@
 #' @usage
 #' getDeliveryWickets(team,dir=".",name,save=FALSE)
 #'
+#' @param team
+#' The team for which dataframe is to be obtained
+#'
 #' @param dir
 #' The source directory in which the match .RData files exist
 #'

@@ -4,7 +4,7 @@
 \alias{batsmanRunsPredict}
 \title{This function computes and plot the number of deliveries required and the runs scored}
 \usage{
-batsmanRunsPredict(kohli,name="Kohli")
+batsmanRunsPredict(df, name= "A Leg Glance")
 }
 \arguments{
 \item{df}{Data frame}

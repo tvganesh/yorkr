@@ -8,15 +8,15 @@ function)}
 specialProc(dist, overset, ateam,over,str1,meta)
 }
 \arguments{
-\item{dist}{}
+\item{dist}{dist}
 
-\item{overset}{}
+\item{overset}{overset}
 
 \item{ateam}{The team}
 
 \item{over}{over}
 
-\item{str1}{}
+\item{str1}{str1}
 
 \item{meta}{The meta information of the match}
 }

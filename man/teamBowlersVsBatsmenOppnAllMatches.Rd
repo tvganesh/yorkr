@@ -4,16 +4,19 @@
 \alias{teamBowlersVsBatsmenOppnAllMatches}
 \title{Compute the performance of bowlers of a team against an opposition in all matches}
 \usage{
-teamBowlersVsBatsmenOppnAllMatches(match,main,opposition,plot=TRUE,top=5)
+teamBowlersVsBatsmenOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
 }
 \arguments{
-\item{match}{The data frame of all matches between a team the opposition. This dataframe can be obtained with
+\item{matches}{The data frame of all matches between a team the opposition. This dataframe can be obtained with
 matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")}
 
-\item{theTeam}{The team against which the performance is requires}
+\item{main}{The main team against which the performance is requires}
 
-\item{rank}{When the rank is 0 then the performance of all the bowlers is displayed. If rank=n (1,2,3 ..) then
-the performance of that bowler is given}
+\item{opposition}{The opposition team against which the performance is require}
+
+\item{plot}{If true plot else return dataframe}
+
+\item{top}{The number of rows to be returned. 5 by default}
 }
 \value{
 dataframe

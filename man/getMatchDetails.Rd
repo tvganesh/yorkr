@@ -12,10 +12,12 @@ getMatchDetails(team1,team2,date,dir=".")
 \item{team2}{The 2nd team in the matcj}
 
 \item{date}{The date on which the match was played}
+
+\item{dir}{The source directory of the RData files with all matches}
 }
 \value{
-dir
-The source directory of the RData files with all matches
+match
+The dataframe of the match
 }
 \description{
 This function  gets the details of a matc palyed between 2 countries from the saved RData files

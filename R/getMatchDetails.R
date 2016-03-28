@@ -25,8 +25,11 @@
 #' @param date
 #' The date on which the match was played
 #'
-#' @return dir
+#' @param dir
 #' The source directory of the RData files with all matches
+#'
+#' @return match
+#' The dataframe of the match
 #'
 #' @references
 #' \url{http://cricsheet.org/}\cr

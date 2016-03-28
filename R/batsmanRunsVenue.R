@@ -12,7 +12,7 @@
 #' This function computes and plots the mean runs scored by the batsman at different
 #' venues of the world
 #' @usage
-#' batsmanRunsVenue(df, name="Kohli")
+#' batsmanRunsVenue(df, name= "A Leg Glance")
 #'
 #' @param df
 #' Data frame
@@ -45,7 +45,7 @@
 #' @export
 #'
 
-batsmanRunsVenue <- function(df,name){
+batsmanRunsVenue <- function(df,name= "A Leg Glance"){
     batsman = runs = venue = numMatches = meanRuns = NULL
     b <- select(df,batsman,runs,venue)
     c <- summarise(group_by(b,venue),meanRuns=mean(runs),numMatches=n())

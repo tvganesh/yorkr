@@ -9,7 +9,7 @@ getBowlerWicketDetails(team,name)
 \arguments{
 \item{team}{The tam to which the bowler belongs}
 
-\item{theTeam}{The name of the bowler}
+\item{name}{The name of the bowler}
 }
 \value{
 dataframe

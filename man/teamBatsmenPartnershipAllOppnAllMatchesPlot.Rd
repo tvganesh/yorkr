@@ -12,6 +12,8 @@ teamBatsmenPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=TRUE)
 
 \item{theTeam}{The team for which the the batting partnerships are sought}
 
+\item{main}{The main team for which the the batting partnerships are sought}
+
 \item{plot}{Whether the partnerships have top be rendered as a plot. If plot=FALSE the data frame is returned}
 }
 \value{
