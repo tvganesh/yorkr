@@ -33,9 +33,11 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
-#' # Get the data frame for Kohli
-#' kohli <- getBatsmanDetails(team="India",name="Kohli")
-#' batsmanDismissals(kohli,"Kohli")
+#' \dontrun{
+#' #Get match data
+#' match <- getMatchDetails("England","Pakistan","2006-09-05",dir="../data")
+#' bowlerDeliveryWickets(match,"India","Jadeja")
+#' }
 #'
 #' @seealso
 #' \code{\link{batsmanFoursSixes}}

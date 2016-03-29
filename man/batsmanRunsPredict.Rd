@@ -22,9 +22,11 @@ the batsman to score the runs. It uses the package rpart to perform the classifi
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
-# Get the data frame for Kohli
-kohli <- getBatsmanDetails(team="India",name="Kohli")
+\dontrun{
+#Get the data frame for Kohli
+kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 batsmanRunsVsStrikeRate(kohli,"Kohli")
+}
 
 }
 \author{

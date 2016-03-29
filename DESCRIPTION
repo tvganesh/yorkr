@@ -3,7 +3,7 @@ Type: Package
 Title: Analyze performance of cricketers based on match data from Cricsheet.org
 Description: Tools for analyzing performances of cricketers and cricketing
              teams based on match data from Cricsheet (http://cricsheet.org).
-Version: 0.1.0
+Version: 0.0.1
 Date: 2016-03-27
 Author: Tinniam V Ganesh
 Maintainer: Tinniam V Ganesh <tvganesh.85@gmail.com>

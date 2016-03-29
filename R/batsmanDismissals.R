@@ -30,22 +30,25 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
-#' # Get the data frame for Kohli
-#' kohli <- getBatsmanDetails(team="India",name="Kohli")
+#' \dontrun{
+#' #Get the data frame for Kohli
+#' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 #' batsmanDismissals(kohli,"Kohli")
-#'
+#' }
 #' @seealso
 #' \code{\link{batsmanFoursSixes}}
 #' \code{\link{batsmanRunsVsDeliveries}}
 #' \code{\link{batsmanRunsVsStrikeRate}}
 #'
-#' @export
 #' @import dplyr
 #' @import ggplot2
 #' @import reshape2
 #' @import rpart.plot
 #' @importFrom stats complete.cases loess
 #' @importFrom utils head
+#'
+#'
+#'
 #'
 
 batsmanDismissals <- function(df,name="A Leg Glance"){

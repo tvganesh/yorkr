@@ -4,12 +4,14 @@
 \alias{getBatsmanDetails}
 \title{Get the batting details of a batsman from the match}
 \usage{
-getBatsmanDetails(team,name)
+getBatsmanDetails(team,name,dir=".")
 }
 \arguments{
 \item{team}{The team of the batsman e.g. India}
 
 \item{name}{Name of batsman}
+
+\item{dir}{The directory where the source file exists}
 }
 \value{
 None
@@ -21,8 +23,9 @@ This function gets the batting details of a batsman given the match data as a RD
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
-
-getBatsmanDetails(team="India",name="Kohli")
+\dontrun{
+getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
+}
 
 
 }

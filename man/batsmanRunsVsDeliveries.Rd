@@ -22,9 +22,11 @@ smoothing function is used to fit the points
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
-# Get the data frame for Kohli
-kohli <- getBatsmanDetails(team="India",name="Kohli")
+\dontrun{
+#Get the data frame for Kohli
+kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 batsmanRunsVsDeliveries(kohli,"Kohli")
+}
 
 }
 \author{

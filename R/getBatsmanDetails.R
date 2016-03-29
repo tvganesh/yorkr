@@ -11,13 +11,16 @@
 #' @description
 #' This function gets the batting details of a batsman given the match data as a RData file
 #' @usage
-#' getBatsmanDetails(team,name)
+#' getBatsmanDetails(team,name,dir=".")
 #'
 #' @param team
 #' The team of the batsman e.g. India
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dir
+#' The directory where the source file exists
 #'
 #' @return None
 #' @references
@@ -28,9 +31,11 @@
 #' @note
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
-#' @examples
 #'
-#' getBatsmanDetails(team="India",name="Kohli")
+#' @examples
+#' \dontrun{
+#' getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
+#' }
 #'
 #'
 #' @seealso
@@ -41,10 +46,12 @@
 #'
 #' @export
 #'
+#'
 
-getBatsmanDetails <- function(team, name){
+getBatsmanDetails <- function(team, name,dir="."){
     batsman=battingDetails=NULL
-    fl <- paste("./",team,"-BattingDetails.RData",sep="")
+    fl <- paste(dir,"/",team,"-BattingDetails.RData",sep="")
+    print(fl)
     load(fl)
     details <- battingDetails
     batsmanDetails <- filter(details,grepl(name,batsman))
