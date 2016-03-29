@@ -4,12 +4,14 @@
 \alias{getBowlerWicketDetails}
 \title{Get the bowling details of a bowler of a team}
 \usage{
-getBowlerWicketDetails(team,name)
+getBowlerWicketDetails(team,name,dir=".")
 }
 \arguments{
-\item{team}{The tam to which the bowler belongs}
+\item{team}{The team to which the bowler belongs}
 
 \item{name}{The name of the bowler}
+
+\item{dir}{The source directory of the data}
 }
 \value{
 dataframe
@@ -22,13 +24,16 @@ This function gets the bowling of a bowler (overs,maidens,runs,wickets,venue, op
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get the bowling details of bowlers of a team e.g. India. This is saved as a dataframe
 c <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
 #Get the bowler details from this overall data frame
-jadeja <- getBowlerWicketDetails(team="India",name="Jadeja")
+
+jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=".")
 
 # The dataframe from the above call is used in many functions
 #bowlerMeanEconomyRate(jadeja,"RA Jadeja")
+}
 
 }
 \author{

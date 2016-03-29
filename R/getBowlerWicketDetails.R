@@ -12,13 +12,16 @@
 #' This function gets the bowling of a bowler (overs,maidens,runs,wickets,venue, opposition)
 #'
 #' @usage
-#' getBowlerWicketDetails(team,name)
+#' getBowlerWicketDetails(team,name,dir=".")
 #'
 #' @param team
-#' The tam to which the bowler belongs
+#' The team to which the bowler belongs
 #'
 #' @param name
 #' The name of the bowler
+#'
+#' @param dir
+#' The source directory of the data
 #'
 #' @return dataframe
 #' The dataframe of bowling performance
@@ -31,14 +34,18 @@
 #' @note
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
+#'
 #' @examples
+#' \dontrun{
 #' # Get the bowling details of bowlers of a team e.g. India. This is saved as a dataframe
 #' c <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
 #' #Get the bowler details from this overall data frame
-#' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja")
+#'
+#' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=".")
 #'
 #' # The dataframe from the above call is used in many functions
 #' #bowlerMeanEconomyRate(jadeja,"RA Jadeja")
+#' }
 #'
 #' @seealso
 #' \code{\link{bowlerMovingAverage}}
@@ -48,10 +55,10 @@
 #'
 #' @export
 #'
-getBowlerWicketDetails <- function(team,name){
+getBowlerWicketDetails <- function(team,name,dir="."){
     bowlingDetails=bowler=wicketPlayerOut=overs=maidens=NULL
     runs=economyRate=opposition=wickets=venue=NULL
-    fl <- paste("./",team,"-BowlingDetails.RData",sep="")
+    fl <- paste(dir,"/",team,"-BowlingDetails.RData",sep="")
     load(fl)
     details <- bowlingDetails
     bowlerDetails <- filter(details,grepl(name,bowler))
