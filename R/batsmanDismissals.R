@@ -49,7 +49,7 @@
 #' @importFrom utils head
 #'
 #'
-#'
+#' @export
 #'
 
 batsmanDismissals <- function(df,name="A Leg Glance"){
