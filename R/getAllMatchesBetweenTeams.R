@@ -34,7 +34,7 @@
 #' to save this large dataframe as the creation of this data frame takes a several seconds depending
 #' on the number of matches
 #'
-#' @return match
+#' @return matches
 #' The combined data frame
 #'
 #' @references
@@ -74,15 +74,15 @@ getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE){
     fl3 <-c(fl1,fl2)
 
     # Create a data frame with all matches
-    match <- NULL
+    matches <- NULL
     for(i in 1:length(fl3)){
         load(fl3[i])
-        match <- rbind(match,overs)
+        matches <- rbind(matches,overs)
     }
     b <- paste(team1,"-",team2,"-allMatches.RData",sep="")
     if(save){
-        save(match,file=b)
+        save(matches,file=b)
     }
 
-    match
+    matches
 }

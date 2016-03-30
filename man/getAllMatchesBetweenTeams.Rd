@@ -18,7 +18,7 @@ to save this large dataframe as the creation of this data frame takes a several 
 on the number of matches}
 }
 \value{
-match
+matches
 The combined data frame
 }
 \description{
