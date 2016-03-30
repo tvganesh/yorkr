@@ -28,6 +28,7 @@ This function computes the performance of batsmen against the  bowlers of an opp
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches for team India against an opposition
 matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 
@@ -39,6 +40,7 @@ teamBatsmanVsBowlersOppnAllMatches(a,"Australia","India",top=3)
 
 # Get top 10 and do not plot
 n <- teamBatsmenVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
+}
 
 }
 \author{

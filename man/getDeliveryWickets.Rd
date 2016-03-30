@@ -27,11 +27,13 @@ then used by bowlerWktsPredict to predict the number of deliveries to wickets ta
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Create a data frame of deliveries to wickets from the stored .RData files
 jadeja1 <- getDeliveryWickets(team="India",dir="../data",name="Jadeja",save=FALSE)
 
 # Use this to create a classification tree of deliveries to wickets
 bowlerWktsPredict(jadeja1,"RA Jadeja")
+}
 
 }
 \author{

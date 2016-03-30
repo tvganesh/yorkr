@@ -38,6 +38,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India and all oppostions
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
@@ -54,6 +55,7 @@
 #'
 #' # The call below gives the performance of best Indias bowlers against Australia
 #' teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,"Australia",rank=1)
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}

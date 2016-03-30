@@ -22,10 +22,11 @@ number of overs bowled
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get the data frame for RA Jadeja
-jadeja <- getBowlerWicketDetails(team="India",name="Jadeja")
+jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
 bowlerWicketPlot(jadeja,"RA Jadeja")
-
+}
 }
 \author{
 Tinniam V Ganesh

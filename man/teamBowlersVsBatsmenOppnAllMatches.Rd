@@ -30,6 +30,7 @@ against the opposition
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches between India and Australia
 matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 
@@ -41,6 +42,7 @@ teamBowlersVsBatsmenOppnAllMatches(matches,"Australia","India",top=3)
 
 # Get the top 5 bowlers of Australia. Do not plot but get as a dataframe
 teamBowlersVsBatsmenOppnAllMatches(matches,"Australia","India",plot=FALSE)
+}
 
 }
 \author{

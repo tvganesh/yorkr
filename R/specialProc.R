@@ -50,8 +50,9 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Parse the yaml over
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr

@@ -25,8 +25,10 @@ For e.g. England-India-2008-04-06.RData etc
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # In the example below ../yamldir c
 convertYaml2RDataframe("225171.yaml",".","../data")
+}
 
 }
 \author{

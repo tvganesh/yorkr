@@ -22,11 +22,12 @@ This function computes and returns the bowling scorecard of a team in a match
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 #Get all matches between India  and other opposition
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 
 teamBowlingScorecardMatch(a,'England')
-
+}
 
 }
 \author{

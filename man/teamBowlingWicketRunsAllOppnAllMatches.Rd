@@ -28,6 +28,7 @@ all oppositions. The user can chose to plot or return a data frame
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 #Get all matches between India  and other opposition
 matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 
@@ -36,6 +37,7 @@ matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 
 teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=TRUE)
 m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALSE)
+}
 
 }
 \author{

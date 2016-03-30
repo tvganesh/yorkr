@@ -40,6 +40,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' #Get all matches between India  and other opposition
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
@@ -51,6 +52,7 @@
 #'
 #' teamBowlingWicketKindAllOppnAllMatches(matches,t1="India",t2="Bangladesh")
 #' teamBowlingWicketKindAllOppnAllMatches(matches,t1="India",t2="South Africa")
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr

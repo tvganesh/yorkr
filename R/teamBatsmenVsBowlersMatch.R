@@ -38,11 +38,13 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get athe match between England and Pakistan
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 #' batsmenVsBowlersMatch(a,'Pakistan',plot=TRUE)
 #' teamBowlingScorecardMatch(a,'England')
 #' teamBowlingWicketKindMatch(a,"England",plot=FALSE)
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

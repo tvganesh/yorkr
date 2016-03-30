@@ -27,7 +27,9 @@ This function is then used for analyses of batsmen. This function calls teamBatt
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 a <- getTeamBattingDetails("India",dir="../data", save=TRUE)
+}
 
 }
 \author{

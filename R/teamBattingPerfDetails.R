@@ -23,8 +23,8 @@
 #' @param includeInfo
 #' Whether to include venue,date, winner and result
 #'
-#' @return
-#'
+#' @return df
+#' dataframe
 #'
 #' @references
 #' \url{http://cricsheet.org/}\cr
@@ -35,6 +35,9 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
+#' #teamBattingPerfDetails()
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

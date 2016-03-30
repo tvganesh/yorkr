@@ -33,9 +33,10 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # In the example below ../yamldir is the source dir for the yaml files
 #' convertAllYaml2RDataframes("../yamldir","../data")
-#'
+#' }
 #' @seealso
 #' \code{\link{bowlerMovingAverage}}
 #' \code{\link{bowlerWicketPlot}}

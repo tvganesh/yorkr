@@ -36,6 +36,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India with all oppositions
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
@@ -47,6 +48,7 @@
 #'
 #' # The best England players scorecard against India is shown
 #' teamBattingScorecardAllOppnAllMatches(matches,theTeam="England")
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

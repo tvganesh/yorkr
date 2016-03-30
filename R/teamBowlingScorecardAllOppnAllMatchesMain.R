@@ -35,6 +35,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' #Get all matches between India  and other opposition
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
@@ -43,7 +44,7 @@
 #'
 #' # Top opposition bowlers of India
 #' teamBowlingScorecardAllOppnAllMatchesMain(matches,"India")
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBowlingScorecardAllOppnAllMatches}}\cr

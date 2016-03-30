@@ -23,12 +23,13 @@ This function  plots the match worm graph between 2 teams in a match
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 #Get the match details
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 
 # Plot tne match worm plot
 matchWormGraph(a,'England',"Pakistan")
-
+}
 }
 \author{
 Tinniam V Ganesh

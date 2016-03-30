@@ -23,6 +23,7 @@ oppositions. The data frame has the ball played, 4's,6's and runs scored by bats
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches between India with all oppositions
 matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 
@@ -34,6 +35,7 @@ teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 
 # The best England players scorecard against India is shown
 teamBattingScorecardAllOppnAllMatches(matches,theTeam="England")
+}
 
 }
 \author{

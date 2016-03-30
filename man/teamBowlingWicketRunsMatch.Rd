@@ -25,11 +25,13 @@ The user can choose to plot or return a dataframe
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 #Get the match details
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 
 teamBowlingWicketRunsMatch(a,"England",plot=FALSE)
 teamBowlingWicketRunsMatch(a,"Pakistan")
+}
 
 }
 \author{

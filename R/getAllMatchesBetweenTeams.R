@@ -46,9 +46,11 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches for team India
 #' getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #' getAllMatchesAllOpposition("Australia",dir="./mysavedata/",save=TRUE)
+#' }
 #'
 #' @seealso
 #' \code{\link{bowlerMovingAverage}}

@@ -39,6 +39,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India and Australia
 #' matches <- getAllMatchesBetweenTeams("India","Australia",dir="../data",save=TRUE)
 #' # Compute the scorecard of India in matches with australia
@@ -48,6 +49,7 @@
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #' #Compute the batting scorecard of Australia
 #' teamBattingScorecardOppnAllMatches(matches,"Australia","India")
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}

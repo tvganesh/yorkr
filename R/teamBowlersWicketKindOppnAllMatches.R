@@ -42,6 +42,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India and Australia
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
@@ -49,6 +50,7 @@
 #' m <- teamBowlersWicketKindOppnAllMatches(matches,"Australia","India",plot=FALSE)
 #'
 #' teamBowlersWicketKindOppnAllMatches(matches,"Australia","India",plot=TRUE)
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}

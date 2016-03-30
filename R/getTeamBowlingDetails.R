@@ -38,7 +38,9 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' a <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
+#' }
 #'
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr

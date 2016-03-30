@@ -27,7 +27,9 @@ wickets, venue, date, winner ec
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 a <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
+}
 
 }
 \author{

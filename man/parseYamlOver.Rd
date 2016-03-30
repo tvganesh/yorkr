@@ -31,8 +31,9 @@ is used by convertAllYaml2RDataframes() & convertYaml2RDataframe()
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Parse the yaml over
-
+}
 
 }
 \author{

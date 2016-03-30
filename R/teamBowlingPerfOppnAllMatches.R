@@ -39,6 +39,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' #Get all matches between India and Autralia
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
@@ -47,7 +48,7 @@
 #'
 #' teamBowlingPerfOppnAllMatches(matches,"India","Australia")
 #' teamBowlingPerfOppnAllMatches(matches,main="Australia",opposition="India")
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBowlersWicketsOppnAllMatches}}

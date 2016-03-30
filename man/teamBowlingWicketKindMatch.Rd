@@ -24,11 +24,13 @@ This function computes returns kind of wickets (caught, bowled etc) of bowlers i
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 #Get the match details
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 
 teamBowlingWicketKindMatch(a,"England",plot=FALSE)
 teamBowlingWicketKindMatch(a,"Pakistan")
+}
 
 }
 \author{

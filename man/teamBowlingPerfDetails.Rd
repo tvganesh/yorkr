@@ -24,10 +24,11 @@ This function computes performance of bowlers of a team a
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches between India and Australia
 match <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 teamBowlingPerf(match,"India",includeInfo=TRUE)
-
+}
 
 }
 \author{

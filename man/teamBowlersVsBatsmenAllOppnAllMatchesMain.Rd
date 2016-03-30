@@ -26,6 +26,7 @@ This function computes performance of bowlers of a team against all opposition i
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches between India and all oppostions
 matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 
@@ -36,7 +37,7 @@ teamBowlersVsBatsmenAllOppnAllMatchesMain(matches,theTeam="India",rank=0)
 
 # The call with rank=1 gives the performance of the 'India' bowler with rank=1
  teamBowlersVsBatsmenAllOppnAllMatchesMain(matches,theTeam="India",rank=1)
-
+}
 
 }
 \author{

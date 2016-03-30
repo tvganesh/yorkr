@@ -31,6 +31,7 @@ opposition in all matches against the opposition
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches between India and Australia
 matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 
@@ -41,7 +42,7 @@ teamBowlersWicketsOppnAllMatches(matches,"Australia","India",top=10)
 
 #Do not plot but return as dataframe
 teamBowlersWicketsOppnAllMatches(matches,"India","Australia",plot=FALSE)
-
+}
 
 }
 \author{

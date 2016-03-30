@@ -23,9 +23,10 @@ team
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 teamBowlingScorecardMatch(a,'England')
-
+}
 
 }
 \author{

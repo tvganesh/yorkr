@@ -44,6 +44,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches for team India against an opposition
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
@@ -55,6 +56,7 @@
 #'
 #' # Get top 10 and do not plot
 #' n <- teamBatsmenVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

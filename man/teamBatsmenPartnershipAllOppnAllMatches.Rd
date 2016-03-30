@@ -28,6 +28,7 @@ or the partnership of an individual batsman
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches for team India against all oppositions
 m <-teamBattingScorecardAllOppnAllMatches(matches,theTeam="India")
 # Get the  summary report
@@ -35,6 +36,7 @@ teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam='India')
 
 # Get the detailed report
 teamBatsmenPartnershipAllOppnAllMatches(matches,theTeam='India',report="detailed")
+}
 
 }
 \author{

@@ -23,6 +23,7 @@ This function computes performance of bowlers of a team against all opposition i
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches between India and all oppostions
 matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 
@@ -33,7 +34,7 @@ teamBowlersVsBatsmenAllOppnAllMatchesPlot(df,"India","India")
 
 df <- teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam="England",rank=1)
 teamBowlersVsBatsmenAllOppnAllMatchesPlot(df,"India","England")
-
+}
 
 }
 \author{

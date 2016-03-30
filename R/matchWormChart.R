@@ -34,12 +34,13 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' #Get the match details
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 #'
 #' # Plot tne match worm plot
 #' matchWormGraph(a,'England',"Pakistan")
-#'
+#' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
 #' \code{\link{getBowlerWicketDetails}}\cr

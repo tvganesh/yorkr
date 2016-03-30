@@ -40,6 +40,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # convertAllYaml2RDataframes() & convertYaml2RDataframe convert yaml files
 #' # to data frame and store as RData
 #' # We have to point to this directory for the call below
@@ -47,6 +48,7 @@
 #'
 #' # Use this to create a classification tree of deliveries to wickets
 #' bowlerWktsPredict(jadeja1,"RA Jadeja")
+#' }
 #'
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr

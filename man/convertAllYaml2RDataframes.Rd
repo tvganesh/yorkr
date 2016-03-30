@@ -23,9 +23,10 @@ For e.g. England-India-2008-04-06.RData etc
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # In the example below ../yamldir is the source dir for the yaml files
 convertAllYaml2RDataframes("../yamldir","../data")
-
+}
 }
 \author{
 Tinniam V Ganesh

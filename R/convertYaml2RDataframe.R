@@ -36,8 +36,10 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # In the example below ../yamldir c
 #' convertYaml2RDataframe("225171.yaml",".","../data")
+#' }
 #'
 #' @seealso
 #' \code{\link{bowlerMovingAverage}}

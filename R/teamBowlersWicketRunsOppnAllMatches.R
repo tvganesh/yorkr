@@ -43,12 +43,13 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India and Australia
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #'
 #' teamBowlersWicketRunsOppnAllMatches(matches,"India","Australia")
 #' m <-teamBowlerWicketsRunsOppnAllMatches(matches,"Australia","India",plot=FALSE)
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}

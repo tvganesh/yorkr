@@ -27,6 +27,7 @@ This function also returns a  dataframe  with the batting partnerships
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches for team India against all oppositions
 d <- teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
  #Plot the partnerships
@@ -34,6 +35,7 @@ teamBatsmenVsBowlersAllOppnAllMatchesPlot(d)
 
 #Do not plot but get the dataframe
 e <- teamBatsmenVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
+}
 
 }
 \author{

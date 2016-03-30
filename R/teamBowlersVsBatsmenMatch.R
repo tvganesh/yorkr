@@ -37,13 +37,14 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get the match between England and Pakistan
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 #'
 #' teamBowlersVsBatsmenMatch(a,"Pakistan")
 #' teamBowlersVsBatsmenMatch(a,"England")
 #' m <- teamBowlersVsBatsmenMatch(a,"Pakistan")
-#'
+#' }
 #'
 #'
 #' @seealso

@@ -18,7 +18,6 @@ Imports:
     reshape2,
     gridExtra,
     rpart.plot,
-    grDevices,
     stats,
     utils
 URL: https://github.com/tvganesh/yorkr

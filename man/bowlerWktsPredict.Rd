@@ -22,9 +22,11 @@ versus the wickets taken
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get the data frame for RA Jadeja
 jadeja1 <- getDeliveryWickets(team="India",name="Jadeja",save=FALSE)
 bowlerWktsPredict(jadeja1,"RA Jadeja")
+}
 
 }
 \author{

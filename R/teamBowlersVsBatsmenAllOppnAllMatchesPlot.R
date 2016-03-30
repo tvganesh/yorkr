@@ -35,6 +35,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India and all oppostions
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
@@ -45,7 +46,7 @@
 #'
 #' df <- teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,theTeam="England",rank=1)
 #' teamBowlersVsBatsmenAllOppnAllMatchesPlot(df,"India","England")
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}

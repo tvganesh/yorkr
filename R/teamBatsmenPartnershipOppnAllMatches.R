@@ -39,6 +39,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches for team India against all oppositions
 #' matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")
 #' # You can also directly load the data
@@ -46,6 +47,7 @@
 #'
 #' m <-teamBatsmenPartnershiOppnAllMatches(a,'India',report="summary")
 #' m <-teamBatsmenPartnershiOppnAllMatches(a,'Australia',report="detailed")
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}

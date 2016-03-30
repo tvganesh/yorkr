@@ -23,6 +23,7 @@ The data frame can be either plotted or returned to the user
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
 # Get all matches for team India against all oppositions in all matches
 matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 
@@ -32,6 +33,7 @@ matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 d <- teamBatsmanVsBowlersAllOppnAllMatchesRept(matches,"India",rank=1,dispRows=50)
 teamBatsmenVsBowlersAllOppnAllMatchesPlot(d)
 e <- teamBatsmenVsBowlersAllOppnAllMatchesPlot(d,plot=FALSE)
+}
 
 }
 \author{

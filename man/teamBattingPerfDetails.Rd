@@ -14,7 +14,8 @@ teamBattingPerfDetails(match,theTeam,includeInfo=FALSE)
 \item{includeInfo}{Whether to include venue,date, winner and result}
 }
 \value{
-
+df
+dataframe
 }
 \description{
 This function gets the team batting detals
@@ -23,6 +24,9 @@ This function gets the team batting detals
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
+\dontrun{
+#teamBattingPerfDetails()
+}
 
 }
 \author{

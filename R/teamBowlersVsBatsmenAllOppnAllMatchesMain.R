@@ -38,6 +38,7 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @examples
+#' \dontrun{
 #' # Get all matches between India and all oppostions
 #' matches <-getAllMatchesAllOpposition("India",dir="../data/",save=TRUE)
 #'
@@ -48,7 +49,7 @@
 #'
 #' # The call with rank=1 gives the performance of the 'India' bowler with rank=1
 #'  teamBowlersVsBatsmenAllOppnAllMatchesMain(matches,theTeam="India",rank=1)
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
