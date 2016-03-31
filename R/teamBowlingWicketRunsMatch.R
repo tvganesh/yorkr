@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the wickets taken and runs given  by bowlers in a match
+#' Team bowling wickets runs conceded in match
 #'
 #' @description
 #' This function computes returns the wickets taken and runs conceded bowlers in a match between 2 teams.

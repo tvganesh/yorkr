@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and return a data frame of the best bowlers of a  team against all oppositions in all matches
+#' Team bowling scorecard all opposition all matches
 #'
 #' @description
 #' This function computes returns the bowling dataframe of best bowlers deliveries, maidens, overs, wickets

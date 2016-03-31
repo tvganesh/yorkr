@@ -5,7 +5,7 @@
 # This function saves all matches between 2 teams as a single dataframe
 ##################################################################################
 #' @title
-#' This function saves all matches between 2 teams as a single dataframe
+#' Saves all matches between 2 teams as  dataframe
 #'
 #' @description
 #' This function saves all matches between 2 teams as a single dataframe in the

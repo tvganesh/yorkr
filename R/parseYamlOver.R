@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Parse the yaml file and convert to data frame (This is an internal function)
+#' Parse yaml file and convert to dataframe
 #'
 #' @description
 #' This function parses the yaml file and converts it into a data frame. This is an internal function and

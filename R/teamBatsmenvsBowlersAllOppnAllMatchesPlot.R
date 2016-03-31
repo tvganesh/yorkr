@@ -7,8 +7,7 @@
 # This is plotted as a chart
 ###########################################################################################
 #' @title
-#' This function computes the performance of the batsmen of a team in all matches against all
-#' oppositions. The result can be plotted or returned as a dataframe
+#' Plot of Team batsmen vs bowlers against all opposition all matches
 #'
 #' @description
 #' This function computes the performance of batsmen against all bowlers of all oppositions in all matches.

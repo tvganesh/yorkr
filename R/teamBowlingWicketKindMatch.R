@@ -8,7 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the wicket kinds taken by bowlers in a match
+#' Compute and plot the wicket kinds by bowlers in match
 #'
 #' @description
 #' This function computes returns kind of wickets (caught, bowled etc) of bowlers in a match between 2 teams

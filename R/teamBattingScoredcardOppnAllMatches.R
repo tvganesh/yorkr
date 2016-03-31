@@ -8,7 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and return the batting scorecard of a team in all matches against an opposition
+#' Team batting scorecard of a team in all matches against an opposition
 #'
 #' @description
 #' This function computes returns the batting scorecard (runs, fours, sixes, balls played) for the

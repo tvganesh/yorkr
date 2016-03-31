@@ -6,8 +6,7 @@
 # single dataframe
 ##################################################################################
 #' @title
-#' This function saves all matches against all opposition to a team as a
-#' single data frame
+#' Saves matches of all opposition as dataframe
 #'
 #' @description
 #' This function saves all matches agaist all opposition as a single dataframe in the

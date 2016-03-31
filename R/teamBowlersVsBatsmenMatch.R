@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute the performance of bowlers of a team in a specific match
+#' Team bowlers vs batsmen in a match
 #'
 #' @description
 #' This function computes performance of bowlers of a team against an opposition in a match

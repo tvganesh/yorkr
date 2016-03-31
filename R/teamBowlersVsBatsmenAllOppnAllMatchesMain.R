@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute the performance of bowlers of a team against all opposition in all matches
+#' Compute team bowlers vs batsmen all opposition  all matches
 #'
 #' @description
 #' This function computes performance of bowlers of a team against all opposition in all matches

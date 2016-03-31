@@ -7,8 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute the performance of bowlers of a team  and the wicket kind against an
-#' opposition in all matches
+#' Team bowlers wicket kind against an opposition in all matches
 #'
 #' @description
 #' This function computes performance of bowlers of a team and the wicket kind against an

@@ -7,8 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function plots the partnerships of batsmen in a match against an opposition. It can also return
-#' the data frame
+#' Team batting partnerships of batsmen in a match
 #'
 #' @description
 #' This function plots the partnerships of batsmen in a match against an opposition or it can return

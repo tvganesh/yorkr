@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute the performance of bowlers of a team. This function is used internally by getTeamBowlingDetails
+#' get team bowling performance details
 #'
 #' @description
 #' This function computes performance of bowlers of a team a

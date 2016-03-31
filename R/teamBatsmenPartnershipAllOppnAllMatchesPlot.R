@@ -8,8 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function plots the batting partnership of a team in all matches against all
-#' oppositions or it returns the data frame
+#' Plots team batting partnership  all matches all oppositions
 #'
 #' @description
 #' This function plots  the batting partnership of a team againt all oppositions in all matches

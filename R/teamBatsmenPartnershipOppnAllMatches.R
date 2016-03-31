@@ -7,8 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function computes  and returns the partenership of a team of  batsmen against bowlers in
-#' all matches against an opposition
+#' Team batting partnership against a opposition all matches
 #'
 #' @description
 #' This function computes the performance of batsmen against all bowlers of an oppositions in all matches. This

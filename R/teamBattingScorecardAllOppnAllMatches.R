@@ -8,7 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function computes and returns the batting scorecard of a team in all matches against all oppositions
+#' Team batting scorecard against all oppositions in all matches
 #'
 #' @description
 #' This function omputes and returns the batting scorecard of a team in all matches against all

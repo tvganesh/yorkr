@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the wickets taken by bowlers in a match
+#' Compute and plot wickets  by bowlers in  match
 #'
 #' @description
 #' This function computes returns the wickets taken bowlers in a match between 2 teams

@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the wicket kinds taken by bowlers of team in all matches against all oppositions
+#' team bowling wicket kind against all opposition all matches
 #'
 #' @description
 #' This function computes returns kind of wickets (caught, bowled etc) of bowlers in all matches against

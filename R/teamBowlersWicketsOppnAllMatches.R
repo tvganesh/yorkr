@@ -8,8 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute the performance of bowlers of a team  and the wicket taken against an
-#' opposition in all matches
+#' Team bowlers  wickets against an opposition in all matches
 #'
 #' @description
 #' This function computes performance of bowlers of a team and the wickets taken against an

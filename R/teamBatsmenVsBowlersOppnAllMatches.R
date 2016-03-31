@@ -8,8 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function computes  and returns the performance of the  batsmen of a team
-#' in all matches against a specific team
+#' Team batsmen vs bowlers all matches of an opposition
 #'
 #' @description
 #' This function computes the performance of batsmen against the  bowlers of an oppositions in all matches

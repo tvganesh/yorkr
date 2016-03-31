@@ -6,8 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function computes and plots number of wins for each team in all their
-#' encounters
+#' Plot  wins for each team
 #'
 #' @description
 #' This function computes and plots number of wins for each team in all their

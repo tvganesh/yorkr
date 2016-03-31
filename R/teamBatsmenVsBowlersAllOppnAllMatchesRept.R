@@ -9,8 +9,7 @@
 # For a rank'n' the performance of the batsman at that rank against bowlers is displayed
 ###########################################################################################
 #' @title
-#' This function computes  and returns the performance of a batsmen against bowlers in all matches against all
-#' oppositions
+#' Report of team batsmen vs bowlers in all matches all oppositions
 #'
 #' @description
 #' This function computes the performance of batsmen against all bowlers of all oppositions in all matches

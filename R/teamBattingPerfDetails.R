@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function gets the team batting details. This function is used internally
+#' Gets the team batting details.
 #'
 #' @description
 #' This function gets the team batting detals

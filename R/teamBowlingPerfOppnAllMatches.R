@@ -8,7 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and return a data frame of a team against an opposition in all matches
+#' team bowling performance all matches against an opposition
 #'
 #' @description
 #' This function computes returns the bowling dataframe of bowlers deliveries, maidens, overs, wickets

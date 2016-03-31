@@ -7,8 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function plots the performance of batsmen against bowlers in a match . It can also return
-#' the data frame
+#' Team batsmen against bowlers in a match
 #'
 #' @description
 #' This function plots the performance of  batsmen versus bowlers in a match  or it can return

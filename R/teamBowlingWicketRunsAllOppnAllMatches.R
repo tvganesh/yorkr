@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the wicket taken and runs given by bowlers of team in all matches against all oppositions
+#' Team bowling wicket runs all matches against all oppositions
 #'
 #' @description
 #' This function computes the number of wickets and runs conceded by bowlers in all matches against

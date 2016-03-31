@@ -7,8 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function is used to parse yaml file where deliveries are bigger than 10 deliveries (This is an internal
-#' function)
+#' Used to parse yaml file
 #'
 #' @description
 #' This is special processing function. This is an internal function and

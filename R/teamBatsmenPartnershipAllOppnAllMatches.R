@@ -7,8 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function gets and returns the batting partnership of a team in all matches against all
-#' oppositions
+#' Team batting partnership in all matches all oppositions
 #'
 #' @description
 #' This function computes the batting partnership of a team againt all oppositions in all matches
