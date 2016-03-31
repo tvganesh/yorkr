@@ -47,6 +47,7 @@
 #' @importFrom gridExtra grid.arrange
 #' @importFrom stats complete.cases loess
 #' @importFrom utils head
+#' @importFrom graphics legend lines plot
 #'
 #'
 #' @export
