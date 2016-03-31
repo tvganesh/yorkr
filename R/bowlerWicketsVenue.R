@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot mean wicket taken by the bowler at different venues
+#' Bowler performance at different venues
 #'
 #' @description
 #' This function computes and plots mean number of wickets taken by the bowler  in different
@@ -37,10 +37,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

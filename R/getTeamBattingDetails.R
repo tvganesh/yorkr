@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Get the team batting details against all oppositions in all matches
+#' Get team batting details
 #'
 #' @description
 #' This function  gets the batting details of a team in all matchs against all
@@ -46,7 +46,7 @@
 #' \code{\link{getBatsmanDetails}}\cr
 #' \code{\link{getBowlerWicketDetails}}\cr
 #' \code{\link{batsmanDismissals}}\cr
-#' \code{\link{getTeamBowlingDetails}}
+#' \code{\link{getTeamBowlingDetails}}\cr
 #'
 #' @export
 #'

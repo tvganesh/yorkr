@@ -45,8 +45,8 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{teamBowlersWicketsOppnAllMatches}}
-\code{\link{teamBowlersWicketRunsOppnAllMatches}}
-\code{\link{teamBowlersWicketKindOppnAllMatches}}
+\code{\link{teamBowlersWicketsOppnAllMatches}}\cr
+\code{\link{teamBowlersWicketRunsOppnAllMatches}}\cr
+\code{\link{teamBowlersWicketKindOppnAllMatches}}\cr
 }
 

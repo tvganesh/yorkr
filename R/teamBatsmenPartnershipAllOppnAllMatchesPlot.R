@@ -53,10 +53,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}\cr
 #'
 #' @export
 #'

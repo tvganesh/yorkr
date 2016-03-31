@@ -58,7 +58,7 @@
 #' \code{\link{getBatsmanDetails}}\cr
 #' \code{\link{getBowlerWicketDetails}}\cr
 #' \code{\link{batsmanDismissals}}\cr
-#' \code{\link{getTeamBattingDetails}}
+#' \code{\link{getTeamBattingDetails}}\cr
 #'
 #'
 # This functio is used when there are more than 10 deliveries in the over

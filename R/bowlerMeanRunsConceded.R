@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot mean runs  conceded by the bowler
+#' Mean runs conceded versus overs
 #'
 #' @description
 #' This function computes and plots mean runs conceded by the bowler for the
@@ -37,10 +37,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

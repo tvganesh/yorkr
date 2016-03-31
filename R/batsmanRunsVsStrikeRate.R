@@ -5,7 +5,7 @@
 # This function plots the runs scored versus the strike rate
 ###########################################################################################
 #' @title
-#' Compute and plot the strike rate of the batsman versus the runs scored
+#' Batsman runs versus strike rate
 #'
 #' @description
 #' This function plots the runs scored by the batsman  and the runs scored
@@ -38,12 +38,11 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{batsmanDismissals}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsPredict}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{batsmanRunsPredict}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
 #'
 #' @export
 #'

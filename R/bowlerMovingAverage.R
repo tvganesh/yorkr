@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the moving average of the wickets taken by bowler over career
+#' Bowler's moving average of wickets
 #'
 #' @description
 #' This function computes and plots the wickets taken by the bowler over career. A loess
@@ -37,10 +37,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMeanEconomyRate}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{bowlerMeanEconomyRate}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

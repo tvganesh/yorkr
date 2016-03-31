@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot average wickets taken versus the number of overs bowled
+#' Average wickets versus of overs bowled
 #'
 #' @description
 #' This function computes and plots the average wickets taken by the bowler versus the
@@ -36,9 +36,9 @@
 #' bowlerWicketPlot(jadeja,"RA Jadeja")
 #' }
 #' @seealso
-#' \code{\link{bowlerMeanEconomyRate}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{bowlerMeanEconomyRate}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

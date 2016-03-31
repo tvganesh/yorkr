@@ -37,8 +37,8 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{batsmanFoursSixes}}
-\code{\link{batsmanRunsVsDeliveries}}
-\code{\link{batsmanRunsVsStrikeRate}}
+\code{\link{batsmanFoursSixes}}\cr
+\code{\link{batsmanRunsVsDeliveries}}\cr
+\code{\link{batsmanRunsVsStrikeRate}}\cr
 }
 

@@ -2,7 +2,7 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 30 Mar 2016
 # Function: saveAllMatchesAllOpposition
-# This function saves all matches between all opposition of a  teams as a 
+# This function saves all matches between all opposition of a  teams as a
 # single dataframe
 ##################################################################################
 #' @title
@@ -12,7 +12,7 @@
 #' @description
 #' This function saves all matches agaist all opposition as a single dataframe in the
 #' current directory
-#' 
+#'
 #' @usage
 #' saveAllMatchesAllOpposition()
 #'
@@ -31,11 +31,11 @@
 #' saveAllMatchesBetweenTeams
 #' }
 #' @seealso
-#' \code{\link{batsmanDismissals}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{getAllMatchesAllOpposition}}
-#' \code{\link{getAllMatchesBetweenTeams}}
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{getAllMatchesAllOpposition}}\cr
+#' \code{\link{getAllMatchesBetweenTeams}}\cr
 #'
 #' @export
 #'
@@ -45,14 +45,14 @@ saveAllMatchesAllOpposition <- function() {
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
               "Bermuda","Kenya")
-    
+
     matches <- NULL
     for(i in seq_along(teams)){
         cat("Team1=",teams[i],"\n")
         tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir="../data",save=TRUE),
                  error = function(e) {
                      print("No matches")
-                     
+
                  }
         )
         matches <- NULL

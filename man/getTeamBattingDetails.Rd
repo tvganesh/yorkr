@@ -43,6 +43,6 @@ Tinniam V Ganesh
 \code{\link{getBatsmanDetails}}\cr
 \code{\link{getBowlerWicketDetails}}\cr
 \code{\link{batsmanDismissals}}\cr
-\code{\link{getTeamBowlingDetails}}
+\code{\link{getTeamBowlingDetails}}\cr
 }
 

@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Get the batting details of a batsman from the match
+#' Get batting details of  batsman from match
 #'
 #' @description
 #' This function gets the batting details of a batsman given the match data as a RData file
@@ -39,10 +39,10 @@
 #'
 #'
 #' @seealso
-#' \code{\link{batsmanRunsPredict}}
-#' \code{\link{batsmanMovingAverage}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{batsmanRunsPredict}}\cr
+#' \code{\link{batsmanMovingAverage}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

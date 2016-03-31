@@ -58,11 +58,11 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}
-#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 #' @export
 #'
 teamBowlersVsBatsmenAllOppnAllMatchesRept <- function(matches,theTeam,rank=0) {

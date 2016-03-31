@@ -2,7 +2,7 @@
 % Please edit documentation in R/batsmanDismissals.R
 \name{batsmanDismissals}
 \alias{batsmanDismissals}
-\title{Compute and plot the dismissal type of the batsman}
+\title{Dismissal type of batsmen}
 \usage{
 batsmanDismissals(df,name="A Leg Glance")
 }
@@ -36,8 +36,8 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{batsmanFoursSixes}}
-\code{\link{batsmanRunsVsDeliveries}}
-\code{\link{batsmanRunsVsStrikeRate}}
+\code{\link{batsmanFoursSixes}}\cr
+\code{\link{batsmanRunsVsDeliveries}}\cr
+\code{\link{batsmanRunsVsStrikeRate}}\cr
 }
 

@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the average runs scored by the batsman against different oppositions
+#' Batsman runs against different oppositions
 #'
 #' @description
 #' This function computes and plots the mean runs scored by the batsman against different
@@ -37,11 +37,11 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{batsmanFoursSixes}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsPredict}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{batsmanFoursSixes}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{batsmanRunsPredict}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
 #'
 #' @export
 #'

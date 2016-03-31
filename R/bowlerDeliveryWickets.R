@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function creates a dataframe of deliveries bowled and wickets taken
+#' Number of deliveries to wickets
 #'
 #' @description
 #' This function creates a dataframe of balls bowled versus the wickets taken by
@@ -40,12 +40,12 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{batsmanFoursSixes}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{bowlerDeliveryWickets}}
-#' \code{\link{bowlerMeanEconomyRate}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{batsmanFoursSixes}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{bowlerDeliveryWickets}}\cr
+#' \code{\link{bowlerMeanEconomyRate}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #'
 

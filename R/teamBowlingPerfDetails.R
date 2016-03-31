@@ -42,11 +42,11 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
-#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}\cr
+#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}\cr
 #'
 #' @export
 #'

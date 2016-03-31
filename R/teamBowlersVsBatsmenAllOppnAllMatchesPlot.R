@@ -49,11 +49,11 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}
-#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}
-#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}
-#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
+#' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
+#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}\cr
 #' @export
 #'
 teamBowlersVsBatsmenAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){

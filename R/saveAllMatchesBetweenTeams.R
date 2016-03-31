@@ -10,7 +10,7 @@
 #' @description
 #' This function saves all matches between 2 teams as a single dataframe in the
 #' current directory
-#' 
+#'
 #' @usage
 #' saveAllMatchesBetweenTeams()
 #'
@@ -29,22 +29,22 @@
 #' saveAllMatchesBetweenTeams
 #' }
 #' @seealso
-#' \code{\link{batsmanDismissals}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{getAllMatchesAllOpposition}}
-#' \code{\link{getAllMatchesBetweenTeams}}
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{getAllMatchesAllOpposition}}\cr
+#' \code{\link{getAllMatchesBetweenTeams}}\cr
 #'
 #' @export
 #'
 
 saveAllMatchesBetweenTeams <- function(){
-    
+
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
               "Bermuda","Kenya")
-    
+
     matches <- NULL
     #Create all combinations of teams
     for(i in seq_along(teams)){
@@ -54,7 +54,7 @@ saveAllMatchesBetweenTeams <- function(){
                 tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir="../data",save=TRUE),
                          error = function(e) {
                              print("No matches")
-                             
+
                          }
                 )
             }

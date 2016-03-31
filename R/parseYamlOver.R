@@ -55,7 +55,7 @@
 #' \code{\link{getBatsmanDetails}}\cr
 #' \code{\link{getBowlerWicketDetails}}\cr
 #' \code{\link{batsmanDismissals}}\cr
-#' \code{\link{getTeamBattingDetails}}
+#' \code{\link{getTeamBattingDetails}}\cr
 #'
 #'
 #'

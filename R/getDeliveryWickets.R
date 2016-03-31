@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Get and create a data frame of deliveries bowled and wickets taken
+#' Get datframe of deliveries bowled and wickets taken
 #'
 #' @description
 #' This function  creates a data frame of deliveries bowled and wickets taken. This data frame is

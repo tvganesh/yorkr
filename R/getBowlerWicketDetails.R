@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Get the bowling details of a bowler of a team
+#' Get the bowling details of a bowler
 #'
 #' @description
 #' This function gets the bowling of a bowler (overs,maidens,runs,wickets,venue, opposition)
@@ -48,10 +48,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{getTeamBowlingDetails}}
-#' \code{\link{bowlerMeanRunsConceded}}
-#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{getTeamBowlingDetails}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
+#' \code{\link{teamBowlersWicketRunsOppnAllMatches}}\cr
 #'
 #' @export
 #'

@@ -37,9 +37,9 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{batsmanRunsPredict}}
-\code{\link{batsmanMovingAverage}}
-\code{\link{bowlerWicketsVenue}}
-\code{\link{bowlerMeanRunsConceded}}
+\code{\link{batsmanRunsPredict}}\cr
+\code{\link{batsmanMovingAverage}}\cr
+\code{\link{bowlerWicketsVenue}}\cr
+\code{\link{bowlerMeanRunsConceded}}\cr
 }
 

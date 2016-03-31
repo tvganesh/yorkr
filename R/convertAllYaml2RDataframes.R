@@ -8,7 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function converts all Yaml files in source directory to data frames and saves as RData
+#' Convert and save all Yaml files  to dataframes
 #'
 #' @description
 #' This function coverts all Yaml files from source directory to data frames. The data frames
@@ -38,10 +38,10 @@
 #' convertAllYaml2RDataframes("../yamldir","../data")
 #' }
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{convertYaml2RDataframe}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{convertYaml2RDataframe}}\cr
 #'
 #' @export
 #'

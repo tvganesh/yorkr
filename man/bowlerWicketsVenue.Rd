@@ -37,9 +37,9 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{bowlerMovingAverage}}
-\code{\link{bowlerWicketPlot}}
-\code{\link{bowlerWicketsVenue}}
-\code{\link{bowlerMeanRunsConceded}}
+\code{\link{bowlerMovingAverage}}\cr
+\code{\link{bowlerWicketPlot}}\cr
+\code{\link{bowlerWicketsVenue}}\cr
+\code{\link{bowlerMeanRunsConceded}}\cr
 }
 

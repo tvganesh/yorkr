@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the dismissal type of the batsman
+#' Dismissal type of batsmen
 #'
 #' @description
 #' This function computes and plots the type of dismissals of the
@@ -36,9 +36,9 @@
 #' batsmanDismissals(kohli,"Kohli")
 #' }
 #' @seealso
-#' \code{\link{batsmanFoursSixes}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{batsmanFoursSixes}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
 #'
 #' @import dplyr
 #' @import ggplot2

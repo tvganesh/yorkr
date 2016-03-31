@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Get and details of a match played between 2 countries as a dataframe
+#' Get  match details of 2 countries
 #'
 #' @description
 #' This function  gets the details of a matc palyed between 2 countries from the saved RData files
@@ -54,7 +54,7 @@
 #' \code{\link{getBatsmanDetails}}\cr
 #' \code{\link{getBowlerWicketDetails}}\cr
 #' \code{\link{getTeamBattingDetails}}\cr
-#' \code{\link{getTeamBowlingDetails}}
+#' \code{\link{getTeamBowlingDetails}}\cr
 #'
 #' @export
 #'

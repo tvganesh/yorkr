@@ -44,9 +44,9 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{bowlerMovingAverage}}
-\code{\link{getTeamBowlingDetails}}
-\code{\link{bowlerMeanRunsConceded}}
-\code{\link{teamBowlersWicketRunsOppnAllMatches}}
+\code{\link{bowlerMovingAverage}}\cr
+\code{\link{getTeamBowlingDetails}}\cr
+\code{\link{bowlerMeanRunsConceded}}\cr
+\code{\link{teamBowlersWicketRunsOppnAllMatches}}\cr
 }
 

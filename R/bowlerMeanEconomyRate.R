@@ -2,11 +2,11 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 26 Mar 2016
 # Function: bowlerMeanEconomyRate
-# This function gets the bowling details of a bowler
+#
 #
 ###########################################################################################
 #' @title
-#' Compute and plot mean economy rate versus number of overs
+#' Mean economy rate versus number of overs
 #'
 #' @description
 #' This function computes and plots mean economy rate and the number of
@@ -37,10 +37,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

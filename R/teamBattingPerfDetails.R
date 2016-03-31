@@ -43,7 +43,7 @@
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr
 #' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
-#' \code{\link{teamBattingScorecardMatch}}
+#' \code{\link{teamBattingScorecardMatch}}\cr
 #'
 #'
 #'

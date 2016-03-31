@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function computes and plot the number of deliveries required and the runs scored
+#' Predict deliveries to runs scored
 #'
 #' @description
 #' This function  uses a classification tree to predict the number of deliveries required for
@@ -40,12 +40,11 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{batsmanDismissals}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsPredict}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{batsmanRunsPredict}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
 #'
 #' @export
 #'

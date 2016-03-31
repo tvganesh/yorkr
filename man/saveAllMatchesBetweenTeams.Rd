@@ -29,10 +29,10 @@ Tinniam V Ganesh
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{batsmanDismissals}}
-\code{\link{batsmanRunsVsDeliveries}}
-\code{\link{batsmanRunsVsStrikeRate}}
-\code{\link{getAllMatchesAllOpposition}}
-\code{\link{getAllMatchesBetweenTeams}}
+\code{\link{batsmanDismissals}}\cr
+\code{\link{batsmanRunsVsDeliveries}}\cr
+\code{\link{batsmanRunsVsStrikeRate}}\cr
+\code{\link{getAllMatchesAllOpposition}}\cr
+\code{\link{getAllMatchesBetweenTeams}}\cr
 }
 

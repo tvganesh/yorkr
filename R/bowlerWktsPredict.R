@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute the deliveries required for taking  the number of wickets
+#' Predict the deliveries required to  wickets
 #'
 #' @description
 #' This function uses a classification tree to compute the number deliveries needed
@@ -39,10 +39,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{bowlerMeanRunsConceded}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{bowlerMeanRunsConceded}}\cr
 #'
 #' @export
 #'

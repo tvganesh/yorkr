@@ -62,7 +62,7 @@
 #' \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr
 #' \code{\link{teamBatsmenPartnershipOppnAllMatchesChart}}\cr
 #' \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
-#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}
+#' \code{\link{teamBatsmenVsBowlersOppnAllMatches}}\cr
 #'
 #' @export
 #'

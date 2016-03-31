@@ -8,7 +8,7 @@
 #
 ###########################################################################################
 #' @title
-#' This function gets all the data on all matches  between 2 opposing teams
+#' Get data on all matches  between 2 opposing teams
 #'
 #' @description
 #' This function gets all the data on matches between opposing teams for e.g India-Pakistan,
@@ -53,10 +53,10 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{bowlerMovingAverage}}
-#' \code{\link{bowlerWicketPlot}}
-#' \code{\link{bowlerWicketsVenue}}
-#' \code{\link{getAllMatchesAllOpposition}}
+#' \code{\link{bowlerMovingAverage}}\cr
+#' \code{\link{bowlerWicketPlot}}\cr
+#' \code{\link{bowlerWicketsVenue}}\cr
+#' \code{\link{getAllMatchesAllOpposition}}\cr
 #'
 #' @export
 #'

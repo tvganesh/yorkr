@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Plot the runs scored versus the deliveries. Fit a regression line
+#' Runs versus deliveries faced
 #'
 #' @description
 #' This function plots the runs scored and the deliveries required. A  regression
@@ -38,9 +38,9 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{batsmanFoursSixes}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
+#' \code{\link{batsmanFoursSixes}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
 #'
 #' @export
 #'

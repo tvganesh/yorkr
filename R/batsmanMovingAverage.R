@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot moving average of the batsman over the batsman's career
+#' Moving average of batsman
 #'
 #' @description
 #' This function plots the runs scored by the batsman over the career as a time
@@ -39,12 +39,11 @@
 #' batsmanMovingAverage(kohli,"Kohli")
 #' }
 #' @seealso
-#' \code{\link{batsmanDismissals}}
-#' \code{\link{batsmanRunsVsDeliveries}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsVsStrikeRate}}
-#' \code{\link{batsmanRunsPredict}}
-#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{batsmanRunsPredict}}\cr
+#' \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
 #'
 #' @export
 #'

@@ -6,7 +6,7 @@
 #
 ###########################################################################################
 #' @title
-#' Compute and plot the total runs, fours and sixes of the batsman
+#' Batsman's total runs, fours and sixes
 #'
 #' @description
 #' This function computes and plots the total runs, fours and sixes of
