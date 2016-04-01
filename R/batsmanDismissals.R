@@ -44,6 +44,7 @@
 #' @import dplyr
 #' @import ggplot2
 #' @import reshape2
+#' @import yaml
 #' @import rpart.plot
 #' @importFrom gridExtra grid.arrange
 #' @importFrom stats complete.cases loess
