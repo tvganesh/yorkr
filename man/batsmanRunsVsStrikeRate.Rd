@@ -2,7 +2,7 @@
 % Please edit documentation in R/batsmanRunsVsStrikeRate.R
 \name{batsmanRunsVsStrikeRate}
 \alias{batsmanRunsVsStrikeRate}
-\title{Compute and plot the strike rate of the batsman versus the runs scored}
+\title{Batsman runs versus strike rate}
 \usage{
 batsmanRunsVsStrikeRate(df, name= "A Late Cut")
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanDismissals}}\cr

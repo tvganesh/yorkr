@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingPerfDetails.R
 \name{teamBowlingPerfDetails}
 \alias{teamBowlingPerfDetails}
-\title{Compute the performance of bowlers of a team. This function is used internally by getTeamBowlingDetails}
+\title{get team bowling performance details}
 \usage{
 teamBowlingPerfDetails(match,theTeam,includeInfo=FALSE)
 }

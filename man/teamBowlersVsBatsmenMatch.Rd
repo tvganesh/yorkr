@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlersVsBatsmenMatch.R
 \name{teamBowlersVsBatsmenMatch}
 \alias{teamBowlersVsBatsmenMatch}
-\title{Compute the performance of bowlers of a team in a specific match}
+\title{Team bowlers vs batsmen in a match}
 \usage{
 teamBowlersVsBatsmenMatch(match,theTeam,plot=TRUE)
 }
@@ -41,7 +41,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr

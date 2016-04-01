@@ -2,7 +2,7 @@
 % Please edit documentation in R/getTeamBowlingDetails.R
 \name{getTeamBowlingDetails}
 \alias{getTeamBowlingDetails}
-\title{Get the team bowling details against all oppositions in all matches}
+\title{Get the team bowling details}
 \usage{
 getTeamBowlingDetails(team,dir=".",save=FALSE)
 }
@@ -37,7 +37,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{getBatsmanDetails}}\cr

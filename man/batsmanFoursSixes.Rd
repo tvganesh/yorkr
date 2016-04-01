@@ -2,7 +2,7 @@
 % Please edit documentation in R/batsmanFoursSixes.R
 \name{batsmanFoursSixes}
 \alias{batsmanFoursSixes}
-\title{Compute and plot the total runs, fours and sixes of the batsman}
+\title{Batsman's total runs, fours and sixes}
 \usage{
 batsmanFoursSixes(df,name= "A Leg Glance")
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanDismissals}}

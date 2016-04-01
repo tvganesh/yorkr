@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingWicketRunsAllOppnAllMatches.R
 \name{teamBowlingWicketRunsAllOppnAllMatches}
 \alias{teamBowlingWicketRunsAllOppnAllMatches}
-\title{Compute and plot the wicket taken and runs given by bowlers of team in all matches against all oppositions}
+\title{Team bowling wicket runs all matches against all oppositions}
 \usage{
 teamBowlingWicketRunsAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 }
@@ -45,7 +45,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr

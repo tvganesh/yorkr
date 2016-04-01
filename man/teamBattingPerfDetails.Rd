@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBattingPerfDetails.R
 \name{teamBattingPerfDetails}
 \alias{teamBattingPerfDetails}
-\title{This function gets the team batting details. This function is used internally}
+\title{Gets the team batting details.}
 \usage{
 teamBattingPerfDetails(match,theTeam,includeInfo=FALSE)
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

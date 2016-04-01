@@ -2,8 +2,7 @@
 % Please edit documentation in R/saveAllMatchesAllOpposition.R
 \name{saveAllMatchesAllOpposition}
 \alias{saveAllMatchesAllOpposition}
-\title{This function saves all matches against all opposition to a team as a
-single data frame}
+\title{Saves matches of all opposition as dataframe}
 \usage{
 saveAllMatchesAllOpposition()
 }
@@ -27,7 +26,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanDismissals}}\cr

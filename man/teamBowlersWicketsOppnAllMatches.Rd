@@ -2,8 +2,7 @@
 % Please edit documentation in R/teamBowlersWicketsOppnAllMatches.R
 \name{teamBowlersWicketsOppnAllMatches}
 \alias{teamBowlersWicketsOppnAllMatches}
-\title{Compute the performance of bowlers of a team  and the wicket taken against an
-opposition in all matches}
+\title{Team bowlers  wickets against an opposition in all matches}
 \usage{
 teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
 }
@@ -50,7 +49,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr

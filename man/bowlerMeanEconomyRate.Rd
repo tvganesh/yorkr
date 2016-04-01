@@ -2,7 +2,7 @@
 % Please edit documentation in R/bowlerMeanEconomyRate.R
 \name{bowlerMeanEconomyRate}
 \alias{bowlerMeanEconomyRate}
-\title{Compute and plot mean economy rate versus number of overs}
+\title{Mean economy rate versus number of overs}
 \usage{
 bowlerMeanEconomyRate(df, name)
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

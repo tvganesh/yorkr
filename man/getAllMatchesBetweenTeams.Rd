@@ -2,7 +2,7 @@
 % Please edit documentation in R/getAllMatchesBetweenTeams.R
 \name{getAllMatchesBetweenTeams}
 \alias{getAllMatchesBetweenTeams}
-\title{This function gets all the data on all matches  between 2 opposing teams}
+\title{Get data on all matches  between 2 opposing teams}
 \usage{
 getAllMatchesBetweenTeams(team1,team2,dir=".",save=FALSE)
 }

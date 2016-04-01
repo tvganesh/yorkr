@@ -2,7 +2,7 @@
 % Please edit documentation in R/batsmanMovingAverage.R
 \name{batsmanMovingAverage}
 \alias{batsmanMovingAverage}
-\title{Compute and plot moving average of the batsman over the batsman's career}
+\title{Moving average of batsman}
 \usage{
 batsmanMovingAverage(df, name= "A Leg Glance")
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanDismissals}}\cr

@@ -2,7 +2,7 @@
 % Please edit documentation in R/getDeliveryWickets.R
 \name{getDeliveryWickets}
 \alias{getDeliveryWickets}
-\title{Get and create a data frame of deliveries bowled and wickets taken}
+\title{Get datframe of deliveries bowled and wickets taken}
 \usage{
 getDeliveryWickets(team,dir=".",name,save=FALSE)
 }
@@ -41,7 +41,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingWicketRunsMatch.R
 \name{teamBowlingWicketRunsMatch}
 \alias{teamBowlingWicketRunsMatch}
-\title{Compute and plot the wickets taken and runs given  by bowlers in a match}
+\title{Team bowling wickets runs conceded in match}
 \usage{
 teamBowlingWicketRunsMatch(match,theTeam,plot=TRUE)
 }
@@ -39,7 +39,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBowlingWicketMatch}}\cr

@@ -2,7 +2,7 @@
 % Please edit documentation in R/getBatsmanDetails.R
 \name{getBatsmanDetails}
 \alias{getBatsmanDetails}
-\title{Get the batting details of a batsman from the match}
+\title{Get batting details of  batsman from match}
 \usage{
 getBatsmanDetails(team,name,dir=".")
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanRunsPredict}}\cr

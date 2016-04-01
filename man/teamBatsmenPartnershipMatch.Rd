@@ -2,8 +2,7 @@
 % Please edit documentation in R/teamBatsmenPartnershipMatch.R
 \name{teamBatsmenPartnershipMatch}
 \alias{teamBatsmenPartnershipMatch}
-\title{This function plots the partnerships of batsmen in a match against an opposition. It can also return
-the data frame}
+\title{Team batting partnerships of batsmen in a match}
 \usage{
 teamBatsmenPartnershipMatch(match,theTeam,plot=TRUE)
 }
@@ -40,7 +39,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

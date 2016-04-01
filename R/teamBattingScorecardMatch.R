@@ -25,7 +25,9 @@
 #' A data frame with the batting scorecard
 #' @references
 #' \url{http://cricsheet.org/}\cr
-#' \url{https://gigadom.wordpress.com/}
+#' \url{https://gigadom.wordpress.com/}\cr
+#' \url{https://github.com/tvganesh/yorkrData}
+#'
 #' @author
 #' Tinniam V Ganesh
 #' @note

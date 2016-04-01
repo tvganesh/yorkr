@@ -2,7 +2,7 @@
 % Please edit documentation in R/batsmanRunsAgainstOpposition.R
 \name{batsmanRunsAgainstOpposition}
 \alias{batsmanRunsAgainstOpposition}
-\title{Compute and plot the average runs scored by the batsman against different oppositions}
+\title{Batsman runs against different oppositions}
 \usage{
 batsmanRunsAgainstOpposition(df, name= "A Leg Glance")
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanFoursSixes}}\cr

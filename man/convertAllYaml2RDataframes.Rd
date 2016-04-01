@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertAllYaml2RDataframes.R
 \name{convertAllYaml2RDataframes}
 \alias{convertAllYaml2RDataframes}
-\title{This function converts all Yaml files in source directory to data frames and saves as RData}
+\title{Convert and save all Yaml files  to dataframes}
 \usage{
 convertAllYaml2RDataframes(sourceDir=".",targetDir=".")
 }
@@ -33,7 +33,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

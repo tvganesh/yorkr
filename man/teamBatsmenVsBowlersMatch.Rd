@@ -2,8 +2,7 @@
 % Please edit documentation in R/teamBatsmenVsBowlersMatch.R
 \name{teamBatsmenVsBowlersMatch}
 \alias{teamBatsmenVsBowlersMatch}
-\title{This function plots the performance of batsmen against bowlers in a match . It can also return
-the data frame}
+\title{Team batsmen against bowlers in a match}
 \usage{
 teamBatsmenVsBowlersMatch(match,theTeam,plot=TRUE)
 }
@@ -40,7 +39,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

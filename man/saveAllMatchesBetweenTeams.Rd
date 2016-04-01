@@ -2,7 +2,7 @@
 % Please edit documentation in R/saveAllMatchesBetweenTeams.R
 \name{saveAllMatchesBetweenTeams}
 \alias{saveAllMatchesBetweenTeams}
-\title{This function saves all matches between 2 teams as a single dataframe}
+\title{Saves all matches between 2 teams as  dataframe}
 \usage{
 saveAllMatchesBetweenTeams()
 }
@@ -26,7 +26,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanDismissals}}\cr

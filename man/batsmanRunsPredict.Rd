@@ -2,7 +2,7 @@
 % Please edit documentation in R/batsmansRunsPredict.R
 \name{batsmanRunsPredict}
 \alias{batsmanRunsPredict}
-\title{This function computes and plot the number of deliveries required and the runs scored}
+\title{Predict deliveries to runs scored}
 \usage{
 batsmanRunsPredict(df, name= "A Leg Glance")
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanDismissals}}\cr

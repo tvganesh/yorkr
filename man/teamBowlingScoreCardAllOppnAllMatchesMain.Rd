@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingScorecardAllOppnAllMatchesMain.R
 \name{teamBowlingScorecardAllOppnAllMatchesMain}
 \alias{teamBowlingScorecardAllOppnAllMatchesMain}
-\title{Compute and return a data frame of the best bowlers of a  team against all oppositions in all matches}
+\title{Team bowling scorecard all opposition all matches}
 \usage{
 teamBowlingScorecardAllOppnAllMatchesMain(matches,theTeam)
 }

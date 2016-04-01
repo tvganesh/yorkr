@@ -2,7 +2,7 @@
 % Please edit documentation in R/getAllMatchesAllOpposition.R
 \name{getAllMatchesAllOpposition}
 \alias{getAllMatchesAllOpposition}
-\title{This function gets all the data on all matches against all opposition for a team}
+\title{Get data on all matches against all opposition}
 \usage{
 getAllMatchesAllOpposition(team,dir=".",save=FALSE)
 }
@@ -42,7 +42,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

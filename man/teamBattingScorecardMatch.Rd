@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBattingScorecardMatch.R
 \name{teamBattingScorecardMatch}
 \alias{teamBattingScorecardMatch}
-\title{Compute and return the batting scorecard of a team in a match}
+\title{Team batting scorecard of a team in a match}
 \usage{
 teamBattingScorecardMatch(match,theTeam)
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr

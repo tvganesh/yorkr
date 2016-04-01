@@ -2,8 +2,7 @@
 % Please edit documentation in R/plotWinLossBetweenTeams.R
 \name{plotWinLossBetweenTeams}
 \alias{plotWinLossBetweenTeams}
-\title{This function computes and plots number of wins for each team in all their
-encounters}
+\title{Plot  wins for each team}
 \usage{
 plotWinLossBetweenTeams(team1,team2,dir=".")
 }
@@ -37,7 +36,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanFoursSixes}}\cr

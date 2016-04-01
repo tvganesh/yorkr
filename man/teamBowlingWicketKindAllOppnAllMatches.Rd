@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingWicketKindAllOppnAllMatches.R
 \name{teamBowlingWicketKindAllOppnAllMatches}
 \alias{teamBowlingWicketKindAllOppnAllMatches}
-\title{Compute and plot the wicket kinds taken by bowlers of team in all matches against all oppositions}
+\title{team bowling wicket kind against all opposition all matches}
 \usage{
 teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/bowlerWicketPlot.R
 \name{bowlerWicketPlot}
 \alias{bowlerWicketPlot}
-\title{Compute and plot average wickets taken versus the number of overs bowled}
+\title{Average wickets versus of overs bowled}
 \usage{
 bowlerWicketPlot(df, name)
 }
@@ -33,7 +33,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMeanEconomyRate}}\cr

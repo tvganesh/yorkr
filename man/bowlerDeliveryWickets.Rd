@@ -2,7 +2,7 @@
 % Please edit documentation in R/bowlerDeliveryWickets.R
 \name{bowlerDeliveryWickets}
 \alias{bowlerDeliveryWickets}
-\title{This function creates a dataframe of deliveries bowled and wickets taken}
+\title{Number of deliveries to wickets}
 \usage{
 bowlerDeliveryWickets(match,theTeam,name)
 }
@@ -36,7 +36,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{batsmanFoursSixes}}\cr

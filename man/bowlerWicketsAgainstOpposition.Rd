@@ -2,7 +2,7 @@
 % Please edit documentation in R/bowlerWicketsAgainstOppn.R
 \name{bowlerWicketsAgainstOpposition}
 \alias{bowlerWicketsAgainstOpposition}
-\title{Compute and plot mean wicket taken by the bowler versus  against different teams}
+\title{Bowler wickets versus different teams}
 \usage{
 bowlerWicketsAgainstOpposition(df, name)
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

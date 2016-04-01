@@ -2,7 +2,7 @@
 % Please edit documentation in R/bowlerMovingAverage.R
 \name{bowlerMovingAverage}
 \alias{bowlerMovingAverage}
-\title{Compute and plot the moving average of the wickets taken by bowler over career}
+\title{Bowler's moving average of wickets}
 \usage{
 bowlerMovingAverage(df, name)
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMeanEconomyRate}}\cr

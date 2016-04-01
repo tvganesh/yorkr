@@ -2,8 +2,7 @@
 % Please edit documentation in R/specialProc.R
 \name{specialProc}
 \alias{specialProc}
-\title{This function is used to parse yaml file where deliveries are bigger than 10 deliveries (This is an internal
-function)}
+\title{Used to parse yaml file}
 \usage{
 specialProc(dist, overset, ateam,over,str1,meta)
 }
@@ -42,7 +41,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{getBatsmanDetails}}\cr

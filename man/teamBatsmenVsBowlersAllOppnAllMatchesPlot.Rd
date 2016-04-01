@@ -2,8 +2,7 @@
 % Please edit documentation in R/teamBatsmenvsBowlersAllOppnAllMatchesPlot.R
 \name{teamBatsmenVsBowlersAllOppnAllMatchesPlot}
 \alias{teamBatsmenVsBowlersAllOppnAllMatchesPlot}
-\title{This function computes the performance of the batsmen of a team in all matches against all
-oppositions. The result can be plotted or returned as a dataframe}
+\title{Plot of Team batsmen vs bowlers against all opposition all matches}
 \usage{
 teamBatsmenVsBowlersAllOppnAllMatchesPlot(df,plot=TRUE)
 }
@@ -41,7 +40,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBatsmenVsBowlersAllOppnAllMatchesPlot}}\cr

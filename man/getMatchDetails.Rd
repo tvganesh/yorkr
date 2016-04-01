@@ -2,7 +2,7 @@
 % Please edit documentation in R/getMatchDetails.R
 \name{getMatchDetails}
 \alias{getMatchDetails}
-\title{Get and details of a match played between 2 countries as a dataframe}
+\title{Get  match details of 2 countries}
 \usage{
 getMatchDetails(team1,team2,date,dir=".")
 }
@@ -43,7 +43,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{getBatsmanDetails}}\cr

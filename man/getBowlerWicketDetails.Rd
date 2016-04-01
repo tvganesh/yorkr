@@ -2,7 +2,7 @@
 % Please edit documentation in R/getBowlerWicketDetails.R
 \name{getBowlerWicketDetails}
 \alias{getBowlerWicketDetails}
-\title{Get the bowling details of a bowler of a team}
+\title{Get the bowling details of a bowler}
 \usage{
 getBowlerWicketDetails(team,name,dir=".")
 }
@@ -41,7 +41,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

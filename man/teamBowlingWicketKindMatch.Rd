@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingWicketKindMatch.R
 \name{teamBowlingWicketKindMatch}
 \alias{teamBowlingWicketKindMatch}
-\title{Compute and plot the wicket kinds taken by bowlers in a match}
+\title{Compute and plot the wicket kinds by bowlers in match}
 \usage{
 teamBowlingWicketKindMatch(match,theTeam,plot=TRUE)
 }

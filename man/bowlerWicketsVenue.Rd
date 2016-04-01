@@ -2,7 +2,7 @@
 % Please edit documentation in R/bowlerWicketsVenue.R
 \name{bowlerWicketsVenue}
 \alias{bowlerWicketsVenue}
-\title{Compute and plot mean wicket taken by the bowler at different venues}
+\title{Bowler performance at different venues}
 \usage{
 bowlerWicketsVenue(df, name)
 }
@@ -34,7 +34,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr

@@ -2,7 +2,7 @@
 % Please edit documentation in R/parseYamlOver.R
 \name{parseYamlOver}
 \alias{parseYamlOver}
-\title{Parse the yaml file and convert to data frame (This is an internal function)}
+\title{Parse yaml file and convert to dataframe}
 \usage{
 parseYamlOver(match,s,ateam,overs,delivery,meta)
 }
@@ -41,7 +41,8 @@ Tinniam V Ganesh
 }
 \references{
 \url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://gigadom.wordpress.com/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{getBatsmanDetails}}\cr
