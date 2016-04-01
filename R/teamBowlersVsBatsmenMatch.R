@@ -61,9 +61,9 @@
 teamBowlersVsBatsmenMatch <- function(match,theTeam,plot=TRUE){
 
     batsman=runsConceded=team=runs=bowler=NULL
-    team=bowler=batsman=a=NULL
+    team=bowler=batsman=NULL
     filter(match,team==theTeam)
-    b <-summarise(group_by(a,bowler,batsman),sum(runs))
+    b <-summarise(group_by(match,bowler,batsman),sum(runs))
     names(b) <- c("bowler","batsman","runsConceded")
 
     # Output plot or dataframe
