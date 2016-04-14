@@ -10,7 +10,7 @@
 #'
 #' @description
 #' This function computes and plots number of wins for each team in all their
-#' encounters. The plot includes the number of  wins by each team and the matches
+#' encounters. The plot includes the number of  wins byteam1 each team and the matches
 #' with no result
 #'
 #' @usage
@@ -70,6 +70,7 @@ plotWinLossBetweenTeams <- function(team1,team2,dir="."){
     w <- NULL
     for(i in 1:length(fl3)){
         load(fl3[i])
+        print(i)
         o <- overs[1,]
         a <- select(o,date,venue,winner,result)
         w <- rbind(w,a)

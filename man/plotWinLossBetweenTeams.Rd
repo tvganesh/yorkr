@@ -18,7 +18,7 @@ None
 }
 \description{
 This function computes and plots number of wins for each team in all their
-encounters. The plot includes the number of  wins by each team and the matches
+encounters. The plot includes the number of  wins byteam1 each team and the matches
 with no result
 }
 \note{
