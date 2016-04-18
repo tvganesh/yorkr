@@ -99,11 +99,12 @@ teamBowlingWicketKindMatch <- function(match,theTeam,plot=TRUE){
     }
 
     if(plot == TRUE){
+        plot.title <- paste(theTeam,"Wicket-kind vs Runs conceded by bowlers")
         ggplot(data=j,aes(x=wicketKind,y=runs,fill=factor(wicketKind))) +
             facet_grid(. ~ bowler,scales = "free_x", space = "free_x") +
             geom_bar(stat="identity") +
             xlab("Wicket kind") + ylab("Total runs conceded") +
-            ggtitle(expression(atop("Wicket-kind vs Runs conceded by bowlers",
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }

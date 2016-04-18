@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 30 Mar 2016
+# Date : 15 Apr 2016
 # Function: plotWinLossBetweenTeams
 # This function computes and plots number of wins for each team
 #
@@ -70,7 +70,6 @@ plotWinLossBetweenTeams <- function(team1,team2,dir="."){
     w <- NULL
     for(i in 1:length(fl3)){
         load(fl3[i])
-        print(i)
         o <- overs[1,]
         a <- select(o,date,venue,winner,result)
         w <- rbind(w,a)

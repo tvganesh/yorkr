@@ -63,10 +63,11 @@ teamBatsmenPartnershipMatch <- function(match,theTeam,plot=TRUE){
     names(df) <- c("batsman","nonStriker","runs")
 
     if(plot==TRUE){
+        plot.title <- paste(theTeam,"Batting partnership in match")
         ggplot(data=df,aes(x=batsman,y=runs,fill=nonStriker))+
             geom_bar(data=df,stat="identity") +
             xlab("Batmen") + ylab("Runs Scored") +
-            ggtitle(expression(atop("Batting partnerships in match",
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }

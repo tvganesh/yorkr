@@ -101,11 +101,12 @@ teamBowlingWicketMatch <- function(match,theTeam,plot=TRUE){
     }
 
     if(plot == TRUE){
+        plot.title <- paste(theTeam,"Wickets taken vs Runs conceded by bowlers")
         ggplot(data=j,aes(x=wicketPlayerOut,y=runs,fill=factor(wicketPlayerOut))) +
             facet_grid(. ~ bowler,scales = "free_x", space = "free_x") +
             geom_bar(stat="identity") +
             xlab("Batsman out") + ylab("Total runs conceded") +
-            ggtitle(expression(atop("Wickets taken vs Runs conceded by bowlers",
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }

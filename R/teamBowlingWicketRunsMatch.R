@@ -108,11 +108,12 @@ teamBowlingWicketRunsMatch <- function(match,theTeam,plot=TRUE){
 
     # Plot or ourput data frame
     if(plot == TRUE){
+        plot.title <- paste(theTeam,"Number of wickets vs Runs conceded by bowlers")
         ggplot(data=l,aes(x=factor(wickets),y=runs,fill=factor(wickets))) +
             facet_grid(. ~ bowler,scales = "free_x", space = "free_x") +
             geom_bar(stat="identity") +
             xlab("Number of wickets") + ylab("Total runs conceded") +
-            ggtitle(expression(atop("Number of wickets vs Runs conceded by bowlers",
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }

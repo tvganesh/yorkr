@@ -64,13 +64,13 @@ teamBatsmenVsBowlersMatch <- function(match,theTeam,plot=TRUE)
     names(b) <- c("batsman","bowler","runsConceded")
 
     if(plot == TRUE){
-
+        plot.title <- paste(theTeam,"Batsmen vs Bowlers in Match")
         # Plot the performance of the batsmen as a facted grid
         ggplot(data=b,aes(x=bowler,y=runsConceded,fill=factor(bowler))) +
             facet_grid(~ batsman) + geom_bar(stat="identity") +
             xlab("Opposition bowlers") + ylab("Runs scored") +
             ggtitle('Batsmen vs Bowlers in Match') +
-            ggtitle(expression(atop('Batsmen vs Bowlers in Match',
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }

@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 26 Mar 2016
+# Date : 16 Apr 2016
 # Function: batsmanRunsVenue
 # This function computes and plots the runs scored by the batsman at different venues
 #
@@ -55,7 +55,13 @@ batsmanRunsVenue <- function(df,name= "A Leg Glance"){
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))
     e <- arrange(d,desc(numMatches))
 
-    f <- e[1:25,]
+    # Select only available rows or 25 rows
+    sz <- dim(e)
+    if(sz[1] > 25){
+        f <- e[1:25,]
+    } else{
+        f <- e[1:sz[1],]
+    }
     plot.title = paste(name,"- Mean runs at venue")
     ggplot(f, aes(x=venue, y=meanRuns, fill=venue))+
         geom_bar(stat = "identity",position="dodge") +

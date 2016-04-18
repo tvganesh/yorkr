@@ -4,14 +4,14 @@
 \alias{matchWormGraph}
 \title{Plot the match worm graph}
 \usage{
-matchWormGraph(match,team1,team2)
+matchWormGraph(match,t1,t2)
 }
 \arguments{
 \item{match}{The dataframe of the match}
 
-\item{team1}{The 1st team of the match}
+\item{t1}{The 1st team of the match}
 
-\item{team2}{the 2nd team in the match}
+\item{t2}{the 2nd team in the match}
 }
 \value{
 none

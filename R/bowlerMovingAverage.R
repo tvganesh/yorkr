@@ -52,7 +52,7 @@ bowlerMovingAverage <- function(df,name){
     plot.title = paste(name,"- Moving average of wickets in career")
     ggplot(c) + geom_line(aes(x=date, y=wickets),colour="darkgrey") +
         geom_smooth(aes(x=date, y=wickets)) +
-        xlab("Date") + ylab("Runs") +
+        xlab("Date") + ylab("Wickets") +
         ggtitle(bquote(atop(.(plot.title),
                             atop(italic("Data source:http://cricsheet.org/"),""))))
 }

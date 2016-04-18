@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 22 Mar 2016
+# Date : 15 Apr 2016
 # Function: matchWormGraph
 # This function computes  and plots the match worm chart
 #
@@ -12,15 +12,15 @@
 #' This function  plots the match worm graph between 2 teams in a match
 #'
 #' @usage
-#' matchWormGraph(match,team1,team2)
+#' matchWormGraph(match,t1,t2)
 #'
 #' @param match
 #' The dataframe of the match
 #'
-#' @param team1
+#' @param t1
 #' The 1st team of the match
 #'
-#' @param team2
+#' @param t2
 #' the 2nd team in the match
 #'
 #' @return none
@@ -51,19 +51,31 @@
 #'
 #' @export
 #'
-matchWormGraph <- function(match,team1,team2) {
+matchWormGraph <- function(match,t1,t2) {
     team=ball=totalRuns=NULL
     # Filter the performance of team1
-    a <-filter(match,team==team1)
+    a <-filter(match,team==t1)
     b <- select(a,ball,totalRuns)
-    c <-mutate(b,ball=gsub("1st\\.","",ball))
+    # Check for both possibilities
+    if(grepl("1st",b$ball[1])){
+        c <-mutate(b,ball=gsub("1st\\.","",ball))
+    } else{
+        c <-mutate(b,ball=gsub("2nd\\.","",ball))
+    }
+
     # Compute cumulative sum vs balls bowled
     d <- mutate(c,total=cumsum(totalRuns))
 
     # Filter performance of team2
-    a <-filter(match,team==team2)
+    a <-filter(match,team==t2)
     b1 <- select(a,ball,totalRuns)
-    c1 <-mutate(b1,ball=gsub("2nd\\.","",ball))
+    # Check for both possibilities
+    if(grepl("2nd",b1$ball[1])){
+        c1 <-mutate(b1,ball=gsub("2nd\\.","",ball))
+    } else{
+        c1 <-mutate(b1,ball=gsub("1st\\.","",ball))
+    }
+
     # Compute cumulative sum vs balls bowled
     d1 <- mutate(c1,total=cumsum(totalRuns))
 
@@ -71,7 +83,7 @@ matchWormGraph <- function(match,team1,team2) {
     plot(d$ball,d$total,col="blue",type="l",lwd=2,xlab="Overs",ylab='Runs',
          main="Worm chart of match")
     lines(d1$ball,d1$total,type="l",col="red",lwd=2)
-    teams <-c(team1,team2)
+    teams <-c(t1,t2)
     legend(x="topleft",legend=teams,
            col=c("blue","red"),bty="n",cex=0.8,lty=1,lwd=2)
 }

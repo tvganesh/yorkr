@@ -55,6 +55,7 @@ batsmanCumulativeStrikeRate <- function(df,name= "A Leg Glance"){
     d <- mutate(c,cs=cumsum(strikeRate)/no)
     plot.title= paste(name,"- Cumulative Strike Rate vs No of innings")
     ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+        xlab("No of innings") + ylab("Cumulative Avg. Strike Rates") +
         ggtitle(bquote(atop(.(plot.title),
                             atop(italic("Data source:http://cricsheet.org/"),""))))
 }

@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 20 Mar 2016
+# Date : 15 Apr 2016
 # Function: getAllMatchesBetweenTeams
 # This function gets all the data for matches palyed between teams and creates a large data
 # frame. This data frame can be saved for suture use
@@ -72,7 +72,8 @@ getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE){
     fl1 <- Sys.glob(path1)
     fl2 <- Sys.glob(path2)
     fl3 <-c(fl1,fl2)
-
+    if(length(fl3) != 0){
+    
     # Create a data frame with all matches
     matches <- NULL
     for(i in 1:length(fl3)){
@@ -85,4 +86,5 @@ getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE){
     }
 
     matches
+    }
 }

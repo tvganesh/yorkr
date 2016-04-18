@@ -68,9 +68,10 @@ teamBowlersVsBatsmenMatch <- function(match,theTeam,plot=TRUE){
 
     # Output plot or dataframe
     if(plot == TRUE){
+        plot.title <- paste(theTeam,"Bowler vs Batsman")
         ggplot(data=b,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
             facet_grid(. ~ bowler) + geom_bar(stat="identity") +
-            ggtitle(expression(atop("Bowler vs Batsman",
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }

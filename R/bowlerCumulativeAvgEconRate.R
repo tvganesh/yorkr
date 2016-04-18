@@ -55,6 +55,7 @@ bowlerCumulativeAvgEconRate <- function(df,name){
     d <- mutate(c,cs=cumsum(economyRate)/no)
     plot.title= paste(name,"- Cum. avg Econ Rate vs No innings")
     ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+        xlab("No of innings") + ylab("Cumulative Avg. Economy Rate") +
         ggtitle(bquote(atop(.(plot.title),
                             atop(italic("Data source:http://cricsheet.org/"),""))))
 }

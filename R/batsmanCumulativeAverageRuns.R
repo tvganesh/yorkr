@@ -55,6 +55,7 @@ batsmanCumulativeAverageRuns <- function(df,name="A Leg Glance"){
     d <- mutate(c,cs=cumsum(runs)/no)
     plot.title= paste(name,"- Cumulative Average vs No of innings")
     ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+        xlab("No of innings") + ylab("Cumulative Avg. runs") +
         ggtitle(bquote(atop(.(plot.title),
                             atop(italic("Data source:http://cricsheet.org/"),""))))
 }
