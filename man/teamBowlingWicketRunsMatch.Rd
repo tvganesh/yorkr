@@ -4,18 +4,20 @@
 \alias{teamBowlingWicketRunsMatch}
 \title{Team bowling wickets runs conceded in match}
 \usage{
-teamBowlingWicketRunsMatch(match,theTeam,plot=TRUE)
+teamBowlingWicketRunsMatch(match,theTeam,opposition,plot=TRUE)
 }
 \arguments{
 \item{match}{The match between the teams}
 
 \item{theTeam}{Team for which bowling performance is required}
 
+\item{opposition}{The opposition team}
+
 \item{plot}{If plot= TRUE the dataframe will be plotted else a data frame will be returned}
 }
 \value{
 None or data fame
-A data frame with the bowling performance in alll matches against all oppositions
+A data frame with the bowling performance in all matches against all oppositions
 }
 \description{
 This function computes returns the wickets taken and runs conceded bowlers in a match between 2 teams.
@@ -29,8 +31,8 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #Get the match details
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 
-teamBowlingWicketRunsMatch(a,"England",plot=FALSE)
-teamBowlingWicketRunsMatch(a,"Pakistan")
+teamBowlingWicketRunsMatch(a,"England","Pakistan",plot=FALSE)
+teamBowlingWicketRunsMatch(a,"Pakistan","England")
 }
 
 }

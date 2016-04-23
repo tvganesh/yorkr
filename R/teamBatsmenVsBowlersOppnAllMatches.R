@@ -86,7 +86,7 @@ teamBatsmenVsBowlersOppnAllMatches <- function(matches,main,opposition,plot=TRUE
 
     }
     if(plot == TRUE){
-        plot.title = paste("Batsmen vs bowlers -",main," Vs ",opposition,"(all matches)",sep="")
+        plot.title = paste(main," Batsmen vs bowlers"," (against ",opposition," all matches)",sep="")
         ggplot(data=e,aes(x=bowler,y=runs,fill=factor(bowler))) +
             facet_grid(~ batsman) + geom_bar(stat="identity") +
             xlab("Bowler") + ylab("Runs Scored") +

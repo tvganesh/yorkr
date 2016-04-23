@@ -4,12 +4,14 @@
 \alias{teamBatsmenVsBowlersMatch}
 \title{Team batsmen against bowlers in a match}
 \usage{
-teamBatsmenVsBowlersMatch(match,theTeam,plot=TRUE)
+teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=TRUE)
 }
 \arguments{
 \item{match}{The match between the teams}
 
 \item{theTeam}{The team for which the the batting partnerships are sought}
+
+\item{opposition}{The opposition team}
 
 \item{plot}{If plot=TRUE then a plot is created otherwise a data frame is returned}
 }
@@ -28,9 +30,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 # Get athe match between England and Pakistan
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
-batsmenVsBowlersMatch(a,'Pakistan',plot=TRUE)
-teamBowlingScorecardMatch(a,'England')
-teamBowlingWicketKindMatch(a,"England",plot=FALSE)
+batsmenVsBowlersMatch(a,'Pakistan','England', plot=TRUE)
 }
 
 }

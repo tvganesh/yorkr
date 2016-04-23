@@ -14,13 +14,16 @@
 #' This function computes returns kind of wickets (caught, bowled etc) of bowlers in a match between 2 teams
 #'
 #' @usage
-#' teamBowlingWicketKindMatch(match,theTeam,plot=TRUE)
+#' teamBowlingWicketKindMatch(match,theTeam,opposition,plot=TRUE)
 #'
 #' @param match
 #' The match between the teams
 #'
 #' @param theTeam
 #' Team for which bowling performance is required
+#'
+#' @param opposition
+#' The opposition team
 #'
 #' @param plot
 #' If plot= TRUE the dataframe will be plotted else a data frame will be returned
@@ -41,8 +44,8 @@
 #' #Get the match details
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 #'
-#' teamBowlingWicketKindMatch(a,"England",plot=FALSE)
-#' teamBowlingWicketKindMatch(a,"Pakistan")
+#' teamBowlingWicketKindMatch(a,"England","Pakistan",plot=FALSE)
+#' teamBowlingWicketKindMatch(a,"Pakistan","England")
 #' }
 #'
 #' @seealso
@@ -52,7 +55,7 @@
 #'
 #' @export
 #'
-teamBowlingWicketKindMatch <- function(match,theTeam,plot=TRUE){
+teamBowlingWicketKindMatch <- function(match,theTeam,opposition,plot=TRUE){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
@@ -99,14 +102,17 @@ teamBowlingWicketKindMatch <- function(match,theTeam,plot=TRUE){
     }
 
     if(plot == TRUE){
-        plot.title <- paste(theTeam,"Wicket-kind vs Runs conceded by bowlers")
-        ggplot(data=j,aes(x=wicketKind,y=runs,fill=factor(wicketKind))) +
+        plot.title <- paste(theTeam,"Wicketkind vs Runs given (against",opposition,")")
+        p <- ggplot(data=j,aes(x=wicketKind,y=runs,fill=factor(wicketKind))) +
             facet_grid(. ~ bowler,scales = "free_x", space = "free_x") +
             geom_bar(stat="identity") +
             xlab("Wicket kind") + ylab("Total runs conceded") +
             ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
-            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))  +
+            theme(plot.title = element_text(size=14,margin=margin(10)))
+
+        p
     }
     else{
         j

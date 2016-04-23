@@ -14,13 +14,16 @@
 #' the data frame
 #'
 #' @usage
-#' teamBatsmenVsBowlersMatch(match,theTeam,plot=TRUE)
+#' teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=TRUE)
 #'
 #' @param match
 #' The match between the teams
 #'
 #' @param theTeam
 #' The team for which the the batting partnerships are sought
+#'
+#' @param opposition
+#' The opposition team
 #'
 #' @param plot
 #' If plot=TRUE then a plot is created otherwise a data frame is returned
@@ -42,9 +45,7 @@
 #' \dontrun{
 #' # Get athe match between England and Pakistan
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
-#' batsmenVsBowlersMatch(a,'Pakistan',plot=TRUE)
-#' teamBowlingScorecardMatch(a,'England')
-#' teamBowlingWicketKindMatch(a,"England",plot=FALSE)
+#' batsmenVsBowlersMatch(a,'Pakistan','England', plot=TRUE)
 #' }
 #'
 #' @seealso
@@ -55,7 +56,7 @@
 #'
 #' @export
 #'
-teamBatsmenVsBowlersMatch <- function(match,theTeam,plot=TRUE)
+teamBatsmenVsBowlersMatch <- function(match,theTeam,opposition, plot=TRUE)
 {
     team=batsman=bowler=runs=runsConceded=NULL
     a <-filter(match,team==theTeam)
@@ -64,7 +65,7 @@ teamBatsmenVsBowlersMatch <- function(match,theTeam,plot=TRUE)
     names(b) <- c("batsman","bowler","runsConceded")
 
     if(plot == TRUE){
-        plot.title <- paste(theTeam,"Batsmen vs Bowlers in Match")
+        plot.title <- paste(theTeam,"Batsmen vs Bowlers in Match (vs.",opposition,")")
         # Plot the performance of the batsmen as a facted grid
         ggplot(data=b,aes(x=bowler,y=runsConceded,fill=factor(bowler))) +
             facet_grid(~ batsman) + geom_bar(stat="identity") +

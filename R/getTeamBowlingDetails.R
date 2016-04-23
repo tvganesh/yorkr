@@ -56,9 +56,7 @@ getTeamBowlingDetails <- function(team,dir=".",save=FALSE){
     overs=bowler=NULL
     a <- paste(dir,"/","*",team,"*",sep="")
     # Gather team against all ooposition
-
     fl <- Sys.glob(a)
-
     bowlingDetails <- NULL
     for(i in 1:length(fl)){
         load(fl[i])

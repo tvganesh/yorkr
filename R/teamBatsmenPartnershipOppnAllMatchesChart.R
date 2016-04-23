@@ -68,7 +68,7 @@ teamBatsmenPartnershipOppnAllMatchesChart <- function(matches,main,opposition,pl
 
     df <- arrange(df,desc(runs))
 
-    plot.title = paste("Batting partnership -",main," Vs ",opposition,"(all matches)",sep="")
+    plot.title = paste(main," Batting partnership ","(against ",opposition," all matches)",sep="")
     if(plot==TRUE){
     # Plot the data
     ggplot(data=df,aes(x=batsman,y=runs,fill=nonStriker))+

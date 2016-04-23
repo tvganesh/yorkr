@@ -4,13 +4,15 @@
 \alias{teamBowlersVsBatsmenMatch}
 \title{Team bowlers vs batsmen in a match}
 \usage{
-teamBowlersVsBatsmenMatch(match,theTeam,plot=TRUE)
+teamBowlersVsBatsmenMatch(match,theTeam,opposition, plot=TRUE)
 }
 \arguments{
 \item{match}{The data frame of the match. This can be obtained with the call for e.g
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")}
 
 \item{theTeam}{The team against which the performance is required}
+
+\item{opposition}{The opposition team}
 
 \item{plot}{This parameter specifies if a plot is required, If plot=FALSE then a data frame is returned}
 }
@@ -28,10 +30,9 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 # Get the match between England and Pakistan
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
-
-teamBowlersVsBatsmenMatch(a,"Pakistan")
-teamBowlersVsBatsmenMatch(a,"England")
-m <- teamBowlersVsBatsmenMatch(a,"Pakistan")
+teamBowlersVsBatsmenMatch(a,"Pakistan","England")
+teamBowlersVsBatsmenMatch(a,"England","Pakistan")
+m <- teamBowlersVsBatsmenMatch(a,"Pakistan","England")
 }
 
 

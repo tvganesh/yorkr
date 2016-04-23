@@ -4,12 +4,14 @@
 \alias{teamBatsmenPartnershipMatch}
 \title{Team batting partnerships of batsmen in a match}
 \usage{
-teamBatsmenPartnershipMatch(match,theTeam,plot=TRUE)
+teamBatsmenPartnershipMatch(match,theTeam,opposition, plot=TRUE)
 }
 \arguments{
 \item{match}{The match between the teams}
 
 \item{theTeam}{The team for which the the batting partnerships are sought}
+
+\item{opposition}{The opposition team}
 
 \item{plot}{If plot=TRUE then a plot is created otherwise a data frame is returned}
 }
@@ -28,9 +30,9 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 # Get athe match between England and Pakistan
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
-batsmenPartnershipMatch(a,"Pakistan")
-batsmenPartnershipMatch(a,"England",plot=TRUE)
-m <-batsmenPartnershipMatch(a,"Pakistan",plot=FALSE)
+batsmenPartnershipMatch(a,"Pakistan","England")
+batsmenPartnershipMatch(a,"England","Pakistan", plot=TRUE)
+m <-batsmenPartnershipMatch(a,"Pakistan","England", plot=FALSE)
 }
 
 }

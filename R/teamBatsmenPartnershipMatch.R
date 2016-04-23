@@ -14,13 +14,16 @@
 #' the data frame
 #'
 #' @usage
-#' teamBatsmenPartnershipMatch(match,theTeam,plot=TRUE)
+#' teamBatsmenPartnershipMatch(match,theTeam,opposition, plot=TRUE)
 #'
 #' @param match
 #' The match between the teams
 #'
 #' @param theTeam
 #' The team for which the the batting partnerships are sought
+#'
+#' @param opposition
+#' The opposition team
 #'
 #' @param plot
 #' If plot=TRUE then a plot is created otherwise a data frame is returned
@@ -42,9 +45,9 @@
 #' \dontrun{
 #' # Get athe match between England and Pakistan
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
-#' batsmenPartnershipMatch(a,"Pakistan")
-#' batsmenPartnershipMatch(a,"England",plot=TRUE)
-#' m <-batsmenPartnershipMatch(a,"Pakistan",plot=FALSE)
+#' batsmenPartnershipMatch(a,"Pakistan","England")
+#' batsmenPartnershipMatch(a,"England","Pakistan", plot=TRUE)
+#' m <-batsmenPartnershipMatch(a,"Pakistan","England", plot=FALSE)
 #' }
 #'
 #' @seealso
@@ -55,7 +58,7 @@
 #'
 #' @export
 #'
-teamBatsmenPartnershipMatch <- function(match,theTeam,plot=TRUE){
+teamBatsmenPartnershipMatch <- function(match,theTeam,opposition,plot=TRUE){
     team=batsman=nonStriker=runs=runsScored=NULL
     a <-filter(match,team==theTeam)
     # Group batsman with non strikers and compute partnerships
@@ -63,7 +66,7 @@ teamBatsmenPartnershipMatch <- function(match,theTeam,plot=TRUE){
     names(df) <- c("batsman","nonStriker","runs")
 
     if(plot==TRUE){
-        plot.title <- paste(theTeam,"Batting partnership in match")
+        plot.title <- paste(theTeam,"Batting partnership in match (vs.",opposition,")")
         ggplot(data=df,aes(x=batsman,y=runs,fill=nonStriker))+
             geom_bar(data=df,stat="identity") +
             xlab("Batmen") + ylab("Runs Scored") +

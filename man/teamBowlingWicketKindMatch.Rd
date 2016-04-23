@@ -4,12 +4,14 @@
 \alias{teamBowlingWicketKindMatch}
 \title{Compute and plot the wicket kinds by bowlers in match}
 \usage{
-teamBowlingWicketKindMatch(match,theTeam,plot=TRUE)
+teamBowlingWicketKindMatch(match,theTeam,opposition,plot=TRUE)
 }
 \arguments{
 \item{match}{The match between the teams}
 
 \item{theTeam}{Team for which bowling performance is required}
+
+\item{opposition}{The opposition team}
 
 \item{plot}{If plot= TRUE the dataframe will be plotted else a data frame will be returned}
 }
@@ -28,8 +30,8 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #Get the match details
 a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 
-teamBowlingWicketKindMatch(a,"England",plot=FALSE)
-teamBowlingWicketKindMatch(a,"Pakistan")
+teamBowlingWicketKindMatch(a,"England","Pakistan",plot=FALSE)
+teamBowlingWicketKindMatch(a,"Pakistan","England")
 }
 
 }

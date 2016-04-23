@@ -12,7 +12,7 @@
 #' This function computes performance of bowlers of a team against an opposition in a match
 #'
 #' @usage
-#' teamBowlersVsBatsmenMatch(match,theTeam,plot=TRUE)
+#' teamBowlersVsBatsmenMatch(match,theTeam,opposition, plot=TRUE)
 #'
 #' @param match
 #' The data frame of the match. This can be obtained with the call for e.g
@@ -21,6 +21,9 @@
 #'
 #' @param theTeam
 #' The team against which the performance is required
+#'
+#' @param opposition
+#' The opposition team
 #'
 #' @param plot
 #' This parameter specifies if a plot is required, If plot=FALSE then a data frame is returned
@@ -42,10 +45,9 @@
 #' \dontrun{
 #' # Get the match between England and Pakistan
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
-#'
-#' teamBowlersVsBatsmenMatch(a,"Pakistan")
-#' teamBowlersVsBatsmenMatch(a,"England")
-#' m <- teamBowlersVsBatsmenMatch(a,"Pakistan")
+#' teamBowlersVsBatsmenMatch(a,"Pakistan","England")
+#' teamBowlersVsBatsmenMatch(a,"England","Pakistan")
+#' m <- teamBowlersVsBatsmenMatch(a,"Pakistan","England")
 #' }
 #'
 #'
@@ -58,7 +60,7 @@
 #'
 #' @export
 #'
-teamBowlersVsBatsmenMatch <- function(match,theTeam,plot=TRUE){
+teamBowlersVsBatsmenMatch <- function(match,theTeam,opposition, plot=TRUE){
 
     batsman=runsConceded=team=runs=bowler=NULL
     bowler=batsman=NULL
@@ -68,12 +70,15 @@ teamBowlersVsBatsmenMatch <- function(match,theTeam,plot=TRUE){
 
     # Output plot or dataframe
     if(plot == TRUE){
-        plot.title <- paste(theTeam,"Bowler vs Batsman")
-        ggplot(data=b,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
+        plot.title <- paste(theTeam,"Bowler vs Batsman (against",opposition,")")
+        p <- ggplot(data=b,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
             facet_grid(. ~ bowler) + geom_bar(stat="identity") +
             ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
-            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+            theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+            theme(plot.title = element_text(size=14, face="bold.italic",margin=margin(10)))
+
+        p
     }
     else{
         b

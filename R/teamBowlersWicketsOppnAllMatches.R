@@ -92,16 +92,23 @@ teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,t
     d <- summarise(group_by(c,bowler),wickets=length(unique(wicketPlayerOut)))
 
     e <- arrange(d,desc(wickets))
-    e <- e[1:top,]
+    # Display maximum or the requested 'top' size
+    sz <- dim(e)
+    if(sz[1] > top){
+        e <- e[1:top,]
+    }else{
+        e <- e[1:sz[1],]
+    }
 
     names(e) <- c("bowler","wickets")
 
     if(plot==TRUE){
+        plot.title = paste(main," Bowler performances ","(against ",opposition," all matches)",sep="")
         ggplot(data=e,aes(x=bowler,y=wickets,fill=factor(bowler))) +
             geom_bar(stat="identity") +
             #facet_wrap( ~ bowler,scales = "free", ncol=3,drop=TRUE) + #Does not work.Check!
-            xlab("Batsman") + ylab("Runs conceded") +
-            ggtitle(expression(atop("Performances of bowlers against opposition",
+            xlab("Batsman") + ylab("Wickets taken") +
+            ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
     } else{

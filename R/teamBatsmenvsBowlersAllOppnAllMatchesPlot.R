@@ -61,7 +61,7 @@ teamBatsmenVsBowlersAllOppnAllMatchesPlot <- function(df,plot=TRUE)
     runs=bowler=NULL
     bman <- df$batsman
     if(plot==TRUE){
-        plot.title <- paste(bman,"-Performances against all bowlers ODIs")
+        plot.title <- paste(bman,"-Performances against all bowlers")
         ggplot(data=df,aes(x=bowler,y=runs,fill=factor(bowler))) +
             facet_grid(~ batsman) + geom_bar(stat="identity") +
             ggtitle(bquote(atop(.(plot.title),
