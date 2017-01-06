@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 11 May 2016
+# Date : 13 Dec 2016
 # Function: rankIPLBowlers
 # This function creates a dataframe of all batsmen performances and then
 # ranks the IPL batsmen
@@ -41,8 +41,22 @@
 #' @export
 #'
 rankIPLBowlers <- function() {
+    bowlingDetails=bowler=wickets=economyRate=meanWickets=meanER=NULL
+    #setwd("C:/software/cricket-package/cricsheet/ipl2016/data")
+    #csk_details <- getTeamBowlingDetails("Chennai Super Kings",dir=".", save=TRUE)
+    #dc_details <- getTeamBowlingDetails("Deccan Chargers",dir=".", save=TRUE)
+    #dd_details <- getTeamBowlingDetails("Delhi Daredevils",dir=".",save=TRUE)
+    #kxip_details <- getTeamBowlingDetails("Kings XI Punjab",dir=".",save=TRUE)
+    #ktk_details <- getTeamBowlingDetails("Kochi Tuskers Kerala",dir=".",save=TRUE)
+    #kkr_details <- getTeamBowlingDetails("Kolkata Knight Riders",dir=".",save=TRUE)
+    #mi_details <- getTeamBowlingDetails("Mumbai Indians",dir=".",save=TRUE)
+    #pw_details <- getTeamBowlingDetails("Pune Warriors",dir=".",save=TRUE)
+    #rr_details <- getTeamBowlingDetails("Rajasthan Royals",dir=".",save=TRUE)
+    #rcb_details <- getTeamBowlingDetails("Royal Challengers Bangalore",dir=".",save=TRUE)
+    #sh_details <- getTeamBowlingDetails("Sunrisers Hyderabad",dir=".",save=TRUE)
+    #gl_details <- getTeamBowlingDetails("Gujarat Lions",dir=".",save=TRUE)
+    #rps_details <- getTeamBowlingDetails("Rising Pune Supergiants",dir=".",save=TRUE)
 
-    bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=NULL
     load("Chennai Super Kings-BowlingDetails.RData")
     csk_details <- bowlingDetails
     load("Deccan Chargers-BowlingDetails.RData")
@@ -65,14 +79,19 @@ rankIPLBowlers <- function() {
     rcb_details <- bowlingDetails
     load("Sunrisers Hyderabad-BowlingDetails.RData")
     sh_details <- bowlingDetails
+    load("Gujarat Lions-BowlingDetails.RData")
+    gl_details <- bowlingDetails
+    load("Rising Pune Supergiants-BowlingDetails.RData")
+    rps_details <- bowlingDetails
 
     aa <- list(csk_details,dc_details,dd_details,kxip_details,ktk_details,kkr_details,
-               mi_details,pw_details,rr_details,rcb_details,sh_details)
+               mi_details,pw_details,rr_details,rcb_details,sh_details,gl_details,rps_details)
 
     theTeams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
                  "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
                  "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-                 "Royal Challengers Bangalore","Sunrisers Hyderabad")
+                 "Royal Challengers Bangalore","Sunrisers Hyderabad",
+                 "Gujarat Lions","Rising Pune Supergiants")
 
 
     o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))

@@ -13,7 +13,10 @@
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesAllOppositionIPLT20()
+#' saveAllMatchesAllOppositionIPLT20(dir)
+#'
+#' @param dir
+#' Directory to store saved matches
 #'
 #' @return None
 #' @references
@@ -40,17 +43,18 @@
 #' @export
 #'
 
-saveAllMatchesAllOppositionIPLT20 <- function() {
+saveAllMatchesAllOppositionIPLT20 <- function(dir) {
 
     teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
               "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-              "Royal Challengers Bangalore","Sunrisers Hyderabad")
+              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
+              "Rising Pune Supergiants")
 
     matches <- NULL
     for(i in seq_along(teams)){
         cat("Team1=",teams[i],"\n")
-        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir="../data",save=TRUE),
+        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir=dir,save=TRUE),
                  error = function(e) {
                      print("No matches")
 

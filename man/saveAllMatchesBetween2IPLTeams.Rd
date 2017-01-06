@@ -4,7 +4,10 @@
 \alias{saveAllMatchesBetween2IPLTeams}
 \title{Saves all matches between 2 IPL teams as  dataframe}
 \usage{
-saveAllMatchesBetween2IPLTeams()
+saveAllMatchesBetween2IPLTeams(dir)
+}
+\arguments{
+\item{dir}{Directory to store saved matches}
 }
 \value{
 None

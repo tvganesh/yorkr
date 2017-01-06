@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 11 May 2016
+# Date : 12 Dec 2016
 # Function: rankIPLBatsmen
 # This function creates a dataframe of all IPL batsmen performances and then
 # ranks the IPL batsmen
@@ -41,7 +41,8 @@
 #' @export
 #'
 rankIPLBatsmen <- function() {
-    #setwd("C:/software/cricket-package/york-test/yorkrData/IPL/IPL-T20-matches")
+    battingDetails=batsman=runs=strikeRate=meanRuns=meanSR= NULL
+
     #csk_details <- getTeamBattingDetails("Chennai Super Kings",dir=".", save=TRUE)
     #dc_details <- getTeamBattingDetails("Deccan Chargers",dir=".", save=TRUE)
     #dd_details <- getTeamBattingDetails("Delhi Daredevils",dir=".",save=TRUE)
@@ -53,8 +54,10 @@ rankIPLBatsmen <- function() {
     #rr_details <- getTeamBattingDetails("Rajasthan Royals",dir=".",save=TRUE)
     #rcb_details <- getTeamBattingDetails("Royal Challengers Bangalore",dir=".",save=TRUE)
     #sh_details <- getTeamBattingDetails("Sunrisers Hyderabad",dir=".",save=TRUE)
+    #gl_details <- getTeamBattingDetails("Gujarat Lions",dir=".",save=TRUE)
+    #rps_details <- getTeamBattingDetails("Rising Pune Supergiants",dir=".",save=TRUE)
 
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=NULL
+    setwd("C:/software/cricket-package/cricsheet/ipl2016/details")
     load("Chennai Super Kings-BattingDetails.RData")
     csk_details <- battingDetails
     load("Deccan Chargers-BattingDetails.RData")
@@ -77,7 +80,10 @@ rankIPLBatsmen <- function() {
     rcb_details <- battingDetails
     load("Sunrisers Hyderabad-BattingDetails.RData")
     sh_details <- battingDetails
-
+    load("Gujarat Lions-BattingDetails.RData")
+    gl_details <- battingDetails
+    load("Rising Pune Supergiants-BattingDetails.RData")
+    rps_details <- battingDetails
 
     a <- select(csk_details,batsman,runs,strikeRate)
     b <- select(dc_details,batsman,runs,strikeRate)
@@ -90,8 +96,10 @@ rankIPLBatsmen <- function() {
     i <- select(rr_details,batsman,runs,strikeRate)
     j <- select(rcb_details,batsman,runs,strikeRate)
     k <- select(sh_details,batsman,runs,strikeRate)
+    l <- select(gl_details,batsman,runs,strikeRate)
+    m <- select(rps_details,batsman,runs,strikeRate)
 
-    df <- rbind(a,b,c,d,e,f,g,h,i,j,k)
+    df <- rbind(a,b,c,d,e,f,g,h,i,j,k,l,m)
 
     batsmen <- unique(df$batsman)
 

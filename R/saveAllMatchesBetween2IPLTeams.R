@@ -12,7 +12,10 @@
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesBetween2IPLTeams()
+#' saveAllMatchesBetween2IPLTeams(dir)
+#'
+#' @param dir
+#' Directory to store saved matches
 #'
 #' @return None
 #' @references
@@ -40,12 +43,13 @@
 #' @export
 #'
 
-saveAllMatchesBetween2IPLTeams <- function(){
+saveAllMatchesBetween2IPLTeams <- function(dir){
 
     teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
               "Kings X1 Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-              "Royal Challengers Bangalore","Sunrisers Hyderabad")
+              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
+              "Rising Pune Supergiants")
 
     #teams <-c("Bermuda","Kenya")
 
@@ -55,7 +59,7 @@ saveAllMatchesBetween2IPLTeams <- function(){
         for(j in seq_along(teams)){
             if(teams[i] != teams[j]){
                 cat("Team1=",teams[i],"Team2=",teams[j],"\n")
-                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir="../data",save=TRUE),
+                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE),
                          error = function(e) {
                              print("No matches")
 
