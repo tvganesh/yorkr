@@ -1,6 +1,6 @@
 Package: yorkr
 Type: Package
-Version: 0.0.6
+Version: 0.0.7
 Title: Analyze Cricket Performances Based on  Data from Cricsheet
 Description: Analyzing performances of cricketers and cricket teams
              based on 'yaml' match data from Cricsheet <http://cricsheet.org>.

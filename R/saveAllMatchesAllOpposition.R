@@ -12,8 +12,11 @@
 #' This function saves all matches agaist all opposition as a single dataframe in the
 #' current directory
 #'
+#' @param dir
+#' Directory to store saved matches
+#'
 #' @usage
-#' saveAllMatchesAllOpposition()
+#' saveAllMatchesAllOpposition(dir)
 #'
 #' @return None
 #' @references
@@ -40,16 +43,17 @@
 #' @export
 #'
 
-saveAllMatchesAllOpposition <- function() {
+saveAllMatchesAllOpposition <- function(dir) {
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
-              "Bermuda","Kenya")
+              "Bermuda","Kenya","Hong Kong","Nepal","Oman","Papua New Guinea",
+              "United Arab Emirates")
 
     matches <- NULL
     for(i in seq_along(teams)){
         cat("Team1=",teams[i],"\n")
-        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir="../data",save=TRUE),
+        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir=dir,save=TRUE),
                  error = function(e) {
                      print("No matches")
 

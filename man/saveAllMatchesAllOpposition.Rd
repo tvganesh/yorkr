@@ -4,7 +4,10 @@
 \alias{saveAllMatchesAllOpposition}
 \title{Saves matches of all opposition as dataframe}
 \usage{
-saveAllMatchesAllOpposition()
+saveAllMatchesAllOpposition(dir)
+}
+\arguments{
+\item{dir}{Directory to store saved matches}
 }
 \value{
 None

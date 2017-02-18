@@ -12,7 +12,10 @@
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesBetweenTeams()
+#' saveAllMatchesBetweenTeams(dir)
+#'
+#' @param dir
+#' Directory to store saved matches
 #'
 #' @return None
 #' @references
@@ -40,12 +43,13 @@
 #' @export
 #'
 
-saveAllMatchesBetweenTeams <- function(){
+saveAllMatchesBetweenTeams <- function(dir){
 
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
-              "Bermuda","Kenya")
+              "Bermuda","Kenya","Hong Kong","Nepal","Oman","Papua New Guinea",
+              "United Arab Emirates")
 
     matches <- NULL
     #Create all combinations of teams
@@ -53,7 +57,7 @@ saveAllMatchesBetweenTeams <- function(){
         for(j in seq_along(teams)){
             if(teams[i] != teams[j]){
                 cat("Team1=",teams[i],"Team2=",teams[j],"\n")
-                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir="../data",save=TRUE),
+                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE),
                          error = function(e) {
                              print("No matches")
 
