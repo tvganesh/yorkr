@@ -110,12 +110,19 @@ parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
             over$ball=gsub("\\\\.","",s[i])
             over$team = ateam
 
+    		over$replacementIn=as.factor(0)
+		    over$replacementOut=as.factor(0)
+		    over$replacementReason=as.factor(0)
+		    over$replacementRole=as.factor(0)
+
             # Reorder the  columns
-            over <- select(over, ball,team,batsman,bowler,nonStriker,
-                           byes,legbyes,noballs,
-                           wides,nonBoundary,penalty, runs,
-                           extras,totalRuns,wicketFielder,
-                           wicketKind,wicketPlayerOut)
+	        over <- select(over, ball,team,batsman,bowler,nonStriker,
+	                       byes,legbyes,noballs,
+	                       wides,nonBoundary,penalty, runs,
+	                       extras,totalRuns,wicketFielder,
+	                       wicketKind,wicketPlayerOut,
+	                       replacementIn, replacementOut, replacementReason,
+	                       replacementRole)
 
             over <- cbind(over,meta)
 
@@ -173,12 +180,20 @@ parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
             over$wicketPlayerOut="nobody"
             over$ball=gsub("\\\\.","",s[i])
             over$team = ateam
+
+            over$replacementIn=as.factor(0)
+	        over$replacementOut=as.factor(0)
+            over$replacementReason=as.factor(0)
+            over$replacementRole=as.factor(0)     
+            
             # Reorder
-            over <- select(over, ball,team,batsman,bowler, nonStriker,
+	        over <- select(over, ball,team,batsman,bowler,nonStriker,
                            byes,legbyes,noballs,
-                           wides,nonBoundary,penalty, runs,
-                           extras,totalRuns,wicketFielder,
-                           wicketKind,wicketPlayerOut)
+            	           wides,nonBoundary,penalty, runs,
+                  		   extras,totalRuns,wicketFielder,
+                     	   wicketKind,wicketPlayerOut,
+ 	                       replacementIn, replacementOut, replacementReason,
+       		               replacementRole)
             #over <- over[,c(14,15,1,2,3,4,5,6,7,8,9,10,11,12,13)]
             over <- cbind(over,meta)
         } else if(d[2] ==8){ # A player got out in this over
@@ -197,12 +212,19 @@ parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
             over$ball=gsub("\\\\.","",s[i])
             over$team = ateam
 
+  	        over$replacementIn=as.factor(0)
+	        over$replacementOut=as.factor(0)
+	        over$replacementReason=as.factor(0)
+	        over$replacementRole=as.factor(0)
+
             # Reorder the columns
-            over <- select(over, ball,team,batsman,bowler,nonStriker,
-                           byes,legbyes,noballs,
-                           wides,nonBoundary,penalty,runs,
-                           extras,totalRuns,wicketFielder,
-                           wicketKind,wicketPlayerOut)
+	        over <- select(over, ball,team,batsman,bowler,nonStriker,
+	                       byes,legbyes,noballs,
+	                       wides,nonBoundary,penalty, runs,
+	                       extras,totalRuns,wicketFielder,
+	                       wicketKind,wicketPlayerOut,
+	                       replacementIn, replacementOut, replacementReason,
+	                       replacementRole)
             #over <- over[,c(14,15,1,2,9,10,11,12,3,4,5,6,10,7,8)]
             over <- cbind(over,meta)
 
@@ -219,14 +241,52 @@ parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
             over$nonBoundary <- as.factor(0)
             over$penalty<-as.factor(0)
 
+   	        over$replacementIn=as.factor(0)
+	        over$replacementOut=as.factor(0)
+	        over$replacementReason=as.factor(0)
+	        over$replacementRole=as.factor(0)
+
             over$ball=gsub("\\\\.","",s[i])
             over$team = ateam
-            over <- select(over, ball,team,batsman,bowler,nonStriker,
-                           byes,legbyes,noballs,
-                           wides,nonBoundary,penalty, runs,
-                           extras,totalRuns,wicketFielder,
-                           wicketKind,wicketPlayerOut)
+	        over <- select(over, ball,team,batsman,bowler,nonStriker,
+	                       byes,legbyes,noballs,
+	                       wides,nonBoundary,penalty, runs,
+	                       extras,totalRuns,wicketFielder,
+	                       wicketKind,wicketPlayerOut,
+	                       replacementIn, replacementOut, replacementReason,
+	                       replacementRole)
             over <- cbind(over,meta)
+
+		} else if(d[2] == 10 && sum(grepl("\\.replacements",overset$rnames))>0) { # A player got replaced in this over
+		      names(over) <- c("batsman","bowler","nonStriker","replacementIn","replacementOut",
+		                       "replacementReason","replacementRole","runs","extras","totalRuns")
+
+		      # Add the missing elements for extras
+		      over$byes<-as.factor(0)
+		      over$legbyes<-as.factor(0)
+		      over$noballs<-as.factor(0)
+		      over$wides<-as.factor(0)
+		      over$nonBoundary <- as.factor(0)
+		      over$penalty<-as.factor(0)
+		      
+		      over$wicketFielder="nobody"
+		      over$wicketKind="not-out"
+		      over$wicketPlayerOut="nobody"
+		      over$ball=gsub("\\\\.","",s[i])
+		      over$team = ateam      
+		      
+		      over$ball=gsub("\\\\.","",s[i])
+		      over$team = ateam
+		      
+		      # Reorder the columns
+		      over <- select(over, ball,team,batsman,bowler,nonStriker,
+		                     byes,legbyes,noballs,
+		                     wides,nonBoundary,penalty, runs,
+		                     extras,totalRuns,wicketFielder,
+		                     wicketKind,wicketPlayerOut,
+		                     replacementIn, replacementOut, replacementReason,
+		                     replacementRole)
+		      over <- cbind(over,meta)      
 
         } else if(d[2] == 10) { # The a player got out in this over
             if(sum(grepl("\\.byes",overset$rnames))){
@@ -279,15 +339,22 @@ parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
                 over$nonBoundary <- as.factor(0)
             }
 
+	        over$replacementIn=as.factor(0)
+	        over$replacementOut=as.factor(0)
+	        over$replacementReason=as.factor(0)
+	        over$replacementRole=as.factor(0)
+
             over$ball=gsub("\\\\.","",s[i])
             over$team = ateam
 
             # Reorder the columns
-            over <- select(over, ball,team,batsman,bowler,nonStriker,
-                           byes,legbyes,noballs,
-                           wides,nonBoundary,penalty,runs,
-                           extras,totalRuns,wicketFielder,
-                           wicketKind,wicketPlayerOut)
+	        over <- select(over, ball,team,batsman,bowler,nonStriker,
+	                       byes,legbyes,noballs,
+	                       wides,nonBoundary,penalty, runs,
+	                       extras,totalRuns,wicketFielder,
+	                       wicketKind,wicketPlayerOut,
+	                       replacementIn, replacementOut, replacementReason,
+	                       replacementRole)
             over <- cbind(over,meta)
 
         }else if(d[2] == 0){
