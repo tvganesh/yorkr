@@ -143,14 +143,14 @@ convertYaml2RDataframeT20 <- function(yamlFile,sourceDir=".",targetDir="."){
     s <- paste("1st.",delivery,"\\.",sep="")
     team1 <- b$`1st.team`[1]
     # Parse the yaml file over by over and store as a row of data
-    overs1 <- parse(match,s,team1,delivery,meta)
+    overs1 <- parseYamlOver(match,s,team1,delivery,meta)
 
 
     # Create string for 2nd team
     print("second loop")
     s1 <- paste("2nd.",delivery,"\\.",sep="")
     team2 <- b$`2nd.team`[1]
-    overs2 <- parse(match,s1,team2,delivery,meta)
+    overs2 <- parseYamlOver(match,s1,team2,delivery,meta)
 
     # Row bind the 1dst
     overs <- rbind(overs1,overs2)
