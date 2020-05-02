@@ -1,12 +1,4 @@
 
-#### Package downloads from the [RStudio CRAN Mirror](http://cran-logs.rstudio.com/)</b>
-
-This month      | In total
---------------- | -----------
-![month](http://cranlogs.r-pkg.org/badges/yorkr) | ![total](http://cranlogs.r-pkg.org/badges/grand-total/yorkr)
-
-<hr>
-
 # yorkr
 This R package can be used to analyze performances of cricketers based on match data from [Cricsheet](http://www.cricsheet.org). The yorkr package can handle match data from ODIs, Twenty20s and IPL T20s from Cricsheet. The data has to be in yaml format
 
