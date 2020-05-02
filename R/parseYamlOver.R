@@ -61,7 +61,7 @@
 #'
 #'
 #'
-parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
+parseYamlOver <- function(match,s,ateam,delivery,meta) {
     team=ball=totalRuns=rnames=batsman=bowler=nonStriker=NULL
     byes=legbyes=noballs=wides=nonBoundary=penalty=runs=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
