@@ -4,7 +4,7 @@
 \alias{saveAllMatchesAllOppositionIPLT20}
 \title{Saves matches against all IPL teams as dataframe for an IPL team}
 \usage{
-saveAllMatchesAllOppositionIPLT20(dir)
+saveAllMatchesAllOppositionIPLT20(dir=".",odir=".")
 }
 \arguments{
 \item{dir}{Input Directory}

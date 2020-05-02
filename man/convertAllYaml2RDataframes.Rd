@@ -4,7 +4,7 @@
 \alias{convertAllYaml2RDataframes}
 \title{Convert and save all Yaml files  to dataframes}
 \usage{
-convertAllYaml2RDataframes(sourceDir=".",targetDir=".")
+convertAllYaml2RDataframes(sourceDir=".",targetDirMen=".",targetDirWomen=".")
 }
 \arguments{
 \item{sourceDir}{The source directory of the yaml files}

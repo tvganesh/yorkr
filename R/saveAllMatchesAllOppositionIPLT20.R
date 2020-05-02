@@ -13,7 +13,7 @@
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesAllOppositionIPLT20(dir)
+#' saveAllMatchesAllOppositionIPLT20(dir=".",odir=".")
 #'
 #' @param dir
 #' Input Directory

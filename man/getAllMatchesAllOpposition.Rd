@@ -4,7 +4,7 @@
 \alias{getAllMatchesAllOpposition}
 \title{Get data on all matches against all opposition}
 \usage{
-getAllMatchesAllOpposition(team,dir=".",save=FALSE)
+getAllMatchesAllOpposition(team,dir=".",save=FALSE,odir=".")
 }
 \arguments{
 \item{team}{The team for which all matches and all opposition has to be obtained e.g. India, Pakistan}

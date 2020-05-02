@@ -4,7 +4,7 @@
 \alias{getTeamBowlingDetails}
 \title{Get the team bowling details}
 \usage{
-getTeamBowlingDetails(team,dir=".",save=FALSE)
+getTeamBowlingDetails(team,dir=".",save=FALSE, odir=".")
 }
 \arguments{
 \item{team}{The team for which detailed bowling info is required}
@@ -30,7 +30,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-a <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
+a <- getTeamBowlingDetails("India",dir="../data",save=TRUE,odir=".")
 }
 
 }

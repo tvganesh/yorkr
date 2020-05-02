@@ -14,7 +14,7 @@
 #' This function is then used for analyses of batsmen. This function calls teamBattingPerfDetails()
 #'
 #' @usage
-#' getTeamBattingDetails(team,dir=".",save=FALSE)
+#' getTeamBattingDetails(team,dir=".",save=FALSE,odir=".")
 #'
 #' @param team
 #' The team for which batting details is required

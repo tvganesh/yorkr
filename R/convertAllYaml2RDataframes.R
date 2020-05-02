@@ -15,7 +15,7 @@
 #' are then stored as .RData. The saved files are of the format team1-team2-date.RData
 #' For e.g. England-India-2008-04-06.RData etc
 #' @usage
-#' convertAllYaml2RDataframes(sourceDir=".",targetDir=".")
+#' convertAllYaml2RDataframes(sourceDir=".",targetDirMen=".",targetDirWomen=".")
 #'
 #' @param sourceDir
 #' The source directory of the yaml files
@@ -52,7 +52,7 @@
 
 convertAllYaml2RDataframes <- function(sourceDir=".",targetDirMen=".",targetDirWomen="."){
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
-    info.teams=matchType=winner=result=venue=gender=ball=team=batsman=NULL
+    info.teams=matchType=winner=result=venue=info.gender=ball=team=batsman=gender=NULL
     bowler=nonStriker=byes=legbyes=noballs=wides=nonBoundary=penalty=runs=extras=totalRuns=NULL
     wicketFielder=wicketKind=wicketPlayerOut=replacementIn=replacementOut=replacementReason=replacementRole=NULL
 

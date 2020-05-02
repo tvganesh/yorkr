@@ -14,7 +14,7 @@
 #' wickets, venue, date, winner ec
 #'
 #' @usage
-#' getTeamBowlingDetails(team,dir=".",save=FALSE)
+#' getTeamBowlingDetails(team,dir=".",save=FALSE, odir=".")
 #'
 #' @param team
 #' The team for which detailed bowling info is required
@@ -44,7 +44,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' a <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
+#' a <- getTeamBowlingDetails("India",dir="../data",save=TRUE,odir=".")
 #' }
 #'
 #' @seealso

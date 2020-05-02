@@ -12,7 +12,7 @@
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesBetweenTeams(dir)
+#' saveAllMatchesBetweenTeams(dir=".",odir=".")
 #'
 #' @param dir
 #' Input Directory to store saved matches
@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' saveAllMatchesBetweenTeams
+#' saveAllMatchesBetweenTeams(dir=".",odir=".")
 #' }
 #' @seealso
 #' \code{\link{batsmanDismissals}}\cr

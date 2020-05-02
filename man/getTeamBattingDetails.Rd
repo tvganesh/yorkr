@@ -4,7 +4,7 @@
 \alias{getTeamBattingDetails}
 \title{Get team batting details}
 \usage{
-getTeamBattingDetails(team,dir=".",save=FALSE)
+getTeamBattingDetails(team,dir=".",save=FALSE,odir=".")
 }
 \arguments{
 \item{team}{The team for which batting details is required}

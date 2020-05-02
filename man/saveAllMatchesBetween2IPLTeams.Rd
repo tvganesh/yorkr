@@ -4,10 +4,12 @@
 \alias{saveAllMatchesBetween2IPLTeams}
 \title{Saves all matches between 2 IPL teams as  dataframe}
 \usage{
-saveAllMatchesBetween2IPLTeams(dir)
+saveAllMatchesBetween2IPLTeams(dir=".",odir=".")
 }
 \arguments{
-\item{dir}{Output Directory to store saved matches}
+\item{dir}{Input Directory}
+
+\item{odir}{Output Directory to store saved matches}
 }
 \value{
 None
@@ -21,7 +23,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-saveAllMatchesBetween2IPLTeams
+saveAllMatchesBetween2IPLTeams(dir=".",odir=".")
 }
 }
 \references{

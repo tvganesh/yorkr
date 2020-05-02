@@ -18,7 +18,7 @@
 #' each match and performing an rbind of the data frames for each match
 #'
 #' @usage
-#' getAllMatchesBetweenTeams(team1,team2,dir=".",save=FALSE)
+#' getAllMatchesBetweenTeams(team1,team2,dir=".",save=FALSE,odir = ".")
 #'
 #' @param team1
 #' One of the team in consideration e.g (India, Australia, England)
@@ -64,7 +64,7 @@
 #' @export
 #'
 
-getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE,odir=odir){
+getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE,odir="."){
     overs=NULL
     # Create 2 filenames with both combinations of team1 and team2
     d1 <- paste(team1,"-",team2,"*",sep="")

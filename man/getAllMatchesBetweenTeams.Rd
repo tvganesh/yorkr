@@ -4,7 +4,7 @@
 \alias{getAllMatchesBetweenTeams}
 \title{Get data on all matches  between 2 opposing teams}
 \usage{
-getAllMatchesBetweenTeams(team1,team2,dir=".",save=FALSE)
+getAllMatchesBetweenTeams(team1,team2,dir=".",save=FALSE,odir = ".")
 }
 \arguments{
 \item{team1}{One of the team in consideration e.g (India, Australia, England)}

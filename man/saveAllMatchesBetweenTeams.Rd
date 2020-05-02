@@ -4,7 +4,7 @@
 \alias{saveAllMatchesBetweenTeams}
 \title{Saves all matches between 2 teams as  dataframe}
 \usage{
-saveAllMatchesBetweenTeams(dir)
+saveAllMatchesBetweenTeams(dir=".",odir=".")
 }
 \arguments{
 \item{dir}{Input Directory to store saved matches}
@@ -23,7 +23,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-saveAllMatchesBetweenTeams
+saveAllMatchesBetweenTeams(dir=".",odir=".")
 }
 }
 \references{

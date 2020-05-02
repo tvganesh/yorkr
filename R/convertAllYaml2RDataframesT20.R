@@ -15,7 +15,7 @@
 #' are then stored as .RData. The saved files are of the format team1-team2-date.RData
 #' For e.g. England-India-2008-04-06.RData etc
 #' @usage
-#' convertAllYaml2RDataframesT20(sourceDir=".",targetDir=".")
+#' convertAllYaml2RDataframesT20(sourceDir=".",targetDirMen=".",targetDirWomen=".")
 #'
 #' @param sourceDir
 #' The source directory of the yaml files

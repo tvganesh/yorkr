@@ -12,12 +12,12 @@
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesBetween2IPLTeams(dir)
+#' saveAllMatchesBetween2IPLTeams(dir=".",odir=".")
 #'
 #' @param dir
 #' Input Directory
 #'
-#' @param dir
+#' @param odir
 #' Output Directory to store saved matches
 #'
 #' @return None
@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' saveAllMatchesBetween2IPLTeams
+#' saveAllMatchesBetween2IPLTeams(dir=".",odir=".")
 #' }
 #' @seealso
 #' \code{\link{batsmanDismissals}}\cr

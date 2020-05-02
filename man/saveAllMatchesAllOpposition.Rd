@@ -4,7 +4,7 @@
 \alias{saveAllMatchesAllOpposition}
 \title{Saves matches of all opposition as dataframe}
 \usage{
-saveAllMatchesAllOpposition(dir)
+saveAllMatchesAllOpposition(dir=".",odir=".")
 }
 \arguments{
 \item{dir}{Input Directory}
@@ -23,7 +23,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-saveAllMatchesBetweenTeams
+saveAllMatchesBetweenTeams(dir=".",odir=".")
 }
 }
 \references{

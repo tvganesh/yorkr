@@ -4,7 +4,7 @@
 \alias{convertAllYaml2RDataframesT20}
 \title{Convert and save all T20 Yaml files  to dataframes}
 \usage{
-convertAllYaml2RDataframesT20(sourceDir=".",targetDir=".")
+convertAllYaml2RDataframesT20(sourceDir=".",targetDirMen=".",targetDirWomen=".")
 }
 \arguments{
 \item{sourceDir}{The source directory of the yaml files}

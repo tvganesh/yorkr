@@ -18,7 +18,7 @@
 #' each match and performing an rbind of the data frames for each match
 #'
 #' @usage
-#' getAllMatchesAllOpposition(team,dir=".",save=FALSE)
+#' getAllMatchesAllOpposition(team,dir=".",save=FALSE,odir=".")
 #'
 #' @param team
 #' The team for which all matches and all opposition has to be obtained e.g. India, Pakistan

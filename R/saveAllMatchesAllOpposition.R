@@ -19,7 +19,7 @@
 #' Output Directory to store saved matches
 #'
 #' @usage
-#' saveAllMatchesAllOpposition(dir)
+#' saveAllMatchesAllOpposition(dir=".",odir=".")
 #'
 #' @return None
 #' @references
@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' saveAllMatchesBetweenTeams
+#' saveAllMatchesBetweenTeams(dir=".",odir=".")
 #' }
 #' @seealso
 #' \code{\link{batsmanDismissals}}\cr
