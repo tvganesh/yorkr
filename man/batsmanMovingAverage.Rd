@@ -29,9 +29,6 @@ kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 batsmanMovingAverage(kohli,"Kohli")
 }
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -44,4 +41,6 @@ Tinniam V Ganesh
 \code{\link{batsmanRunsPredict}}\cr
 \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 26 Mar 2016
+# Date : 2 May 2020
 # Function: getTeamBowlingDetails
 # This function uses gets the bowling details of a team
 #
@@ -21,6 +21,9 @@
 #'
 #' @param dir
 #' The source directory of RData files obtained with  convertAllYaml2RDataframes()
+#'
+#' @param odir
+#' The output directory
 #'
 #' @param save
 #' Whether the data frame needs to be saved as RData or not. It is recommended to set save=TRUE
@@ -52,7 +55,7 @@
 #'
 #' @export
 #'
-getTeamBowlingDetails <- function(team,dir=".",save=FALSE){
+getTeamBowlingDetails <- function(team,dir=".",save=FALSE,odir="."){
     overs=bowler=NULL
     a <- paste(dir,"/","*",team,"*",sep="")
     # Gather team against all ooposition
@@ -74,7 +77,7 @@ getTeamBowlingDetails <- function(team,dir=".",save=FALSE){
     }
 
     if(save==TRUE){
-        fl <- paste("./",team,"-BowlingDetails.RData",sep="")
+        fl <- paste(odir,"/",team,"-BowlingDetails.RData",sep="")
         save(bowlingDetails,file=fl)
     }
     bowlingDetails <- arrange(bowlingDetails,bowler,date)

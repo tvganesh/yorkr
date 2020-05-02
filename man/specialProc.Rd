@@ -36,9 +36,6 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -50,4 +47,6 @@ Tinniam V Ganesh
 \code{\link{batsmanDismissals}}\cr
 \code{\link{getTeamBattingDetails}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

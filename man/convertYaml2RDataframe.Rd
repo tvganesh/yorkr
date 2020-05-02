@@ -31,9 +31,6 @@ convertYaml2RDataframe("225171.yaml",".","../data")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -45,4 +42,6 @@ Tinniam V Ganesh
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{convertAllYaml2RDataframes}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

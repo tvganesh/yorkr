@@ -40,16 +40,14 @@ teamBowlingScorecardAllOppnAllMatches(matches,'England')
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
-\code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

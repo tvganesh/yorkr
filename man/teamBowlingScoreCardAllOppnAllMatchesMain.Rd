@@ -2,7 +2,7 @@
 % Please edit documentation in R/teamBowlingScorecardAllOppnAllMatchesMain.R
 \name{teamBowlingScorecardAllOppnAllMatchesMain}
 \alias{teamBowlingScorecardAllOppnAllMatchesMain}
-\title{Team bowling scorecard all opposition all matches}
+\title{Team bowling scorecard all opposition all matches Main}
 \usage{
 teamBowlingScorecardAllOppnAllMatchesMain(matches,theTeam)
 }
@@ -35,16 +35,14 @@ teamBowlingScorecardAllOppnAllMatchesMain(matches,"India")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}
 }
 \seealso{
 \code{\link{teamBowlingScorecardAllOppnAllMatches}}\cr
-\code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

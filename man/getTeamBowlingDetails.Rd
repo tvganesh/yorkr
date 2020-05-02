@@ -13,6 +13,8 @@ getTeamBowlingDetails(team,dir=".",save=FALSE)
 
 \item{save}{Whether the data frame needs to be saved as RData or not. It is recommended to set save=TRUE
 as the data can be used for a lot of analyses of batsmen}
+
+\item{odir}{The output directory}
 }
 \value{
 bowlingDetails
@@ -32,9 +34,6 @@ a <- getTeamBowlingDetails("India",dir="../data",save=TRUE)
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -46,4 +45,6 @@ Tinniam V Ganesh
 \code{\link{batsmanDismissals}}\cr
 \code{\link{getTeamBattingDetails}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

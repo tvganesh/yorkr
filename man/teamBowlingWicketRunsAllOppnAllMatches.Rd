@@ -40,9 +40,6 @@ m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALS
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -53,4 +50,6 @@ Tinniam V Ganesh
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

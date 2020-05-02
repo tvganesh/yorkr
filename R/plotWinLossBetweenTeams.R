@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 15 Apr 2016
+# Date : 2 May 2020
 # Function: plotWinLossBetweenTeams
 # This function computes and plots number of wins for each team
 #
@@ -53,7 +53,7 @@
 #'
 
 plotWinLossBetweenTeams <- function(team1,team2,dir="."){
-    overs=NULL
+    matches=NULL
     venue=winner=result=date=NULL
     # Create 2 filenames with both combinations of team1 and team2
     d1 <- paste(team1,"-",team2,"*",sep="")
@@ -66,16 +66,19 @@ plotWinLossBetweenTeams <- function(team1,team2,dir="."){
     fl3 <-c(fl1,fl2)
 
     # Create a data frame with all matches
-    overs <- NULL
+    matches <- NULL
     w <- NULL
     for(i in 1:length(fl3)){
         load(fl3[i])
-        o <- overs[1,]
-        a <- select(o,date,venue,winner,result)
-        w <- rbind(w,a)
-        overs <- NULL
+        # Find rows by winnner, venue, date and result
+        a <- select(matches,date,venue,winner,result)
+        b=distinct(a) #Get distinct rows
+        w <- rbind(w,b)
+        matches <- NULL
     }
-    winLoss <- summarise(group_by(w,winner),count=n())
+    # Get all unique rows between 2 teams
+    v <- distinct(w)
+    winLoss <- summarise(group_by(v,winner),count=n())
 
     x <- winLoss$winner=="NA"
     winLoss$winner <- as.character(winLoss$winner)

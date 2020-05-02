@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 15 Apr 2016
+# Date : 2 May 2020
 # Function: getAllMatchesBetweenTeams
 # This function gets all the data for matches palyed between teams and creates a large data
 # frame. This data frame can be saved for suture use
@@ -27,7 +27,10 @@
 #' The other team for which matches are needed e.g( India, Sri Lanka, Pakistan)
 #'
 #' @param dir
-#' The directory which has the RData files of matches between teams
+#' The input directory which has the RData files of matches between teams
+#'
+#' @param odir
+#' The output directory
 #'
 #' @param save
 #' Default=FALSE. This parameter indicates whether the combined data frame needs to be saved or not. It is recommended
@@ -61,8 +64,8 @@
 #' @export
 #'
 
-getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE){
-     overs=NULL
+getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE,odir=odir){
+    overs=NULL
     # Create 2 filenames with both combinations of team1 and team2
     d1 <- paste(team1,"-",team2,"*",sep="")
     d2 <- paste(team2,"-",team1,"*",sep="")
@@ -73,18 +76,18 @@ getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE){
     fl2 <- Sys.glob(path2)
     fl3 <-c(fl1,fl2)
     if(length(fl3) != 0){
-    
-    # Create a data frame with all matches
-    matches <- NULL
-    for(i in 1:length(fl3)){
-        load(fl3[i])
-        matches <- rbind(matches,overs)
-    }
-    b <- paste(team1,"-",team2,"-allMatches.RData",sep="")
-    if(save){
-        save(matches,file=b)
-    }
 
-    matches
+        # Create a data frame with all matches
+        matches <- NULL
+        for(i in 1:length(fl3)){
+            load(fl3[i])
+            matches <- rbind(matches,overs)
+        }
+        b <- paste(odir,"/",team1,"-",team2,"-allMatches.RData",sep="")
+        if(save){
+            save(matches,file=b)
+        }
+
+        matches
     }
 }

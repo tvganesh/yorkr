@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 30 Mar 2016
+# Date : 2 May 2020
 # Function: saveAllMatchesAllOppositionIPLT20
 # This function saves all IPL matches between a team and all opposition as a
 # single dataframe
@@ -16,7 +16,10 @@
 #' saveAllMatchesAllOppositionIPLT20(dir)
 #'
 #' @param dir
-#' Directory to store saved matches
+#' Input Directory
+#'
+#' @param odir
+#' Output Directory
 #'
 #' @return None
 #' @references
@@ -43,7 +46,7 @@
 #' @export
 #'
 
-saveAllMatchesAllOppositionIPLT20 <- function(dir) {
+saveAllMatchesAllOppositionIPLT20 <- function(dir=".",odir=".") {
 
     teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
               "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
@@ -54,7 +57,7 @@ saveAllMatchesAllOppositionIPLT20 <- function(dir) {
     matches <- NULL
     for(i in seq_along(teams)){
         cat("Team1=",teams[i],"\n")
-        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir=dir,save=TRUE),
+        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir=dir,save=TRUE,odir=odir),
                  error = function(e) {
                      print("No matches")
 
@@ -63,7 +66,4 @@ saveAllMatchesAllOppositionIPLT20 <- function(dir) {
         matches <- NULL
     }
 }
-
-
-
 

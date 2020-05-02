@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 25 Mar 2016
+# Date : 2 May 2020
 # Function: bowlerDeliveryWickets
 # This function creates a data frame of deliveries bowled and wickets
 #
@@ -53,10 +53,11 @@
 bowlerDeliveryWickets <- function(match,theTeam,name){
     team = bowler = wicketPlayerOut =delivery = wicketNo = NULL
     d <- NULL
-    a <-filter(match,team!=theTeam)
-    b <- filter(a,grepl(name,bowler))
+    #a <-filter(match,opposition!=theTeam)
+    #b <- filter(match,grepl(name,bowler))
+    b=match[match$bowler==name,]
     if(dim(b)[1] != 0){
-        b$delivery<- seq(1:dim(b)[1])
+        b$delivery<- b$over *4
         c <- filter(b,wicketPlayerOut != "nobody")
         if(dim(c)[1] !=0){
             c$wicketNo <- seq(1:dim(c)[1])

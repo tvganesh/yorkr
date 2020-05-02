@@ -31,9 +31,6 @@ a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 matchWormGraph(a,'England',"Pakistan")
 }
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -45,4 +42,6 @@ Tinniam V Ganesh
 \code{\link{batsmanDismissals}}\cr
 \code{\link{getTeamBattingDetails}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

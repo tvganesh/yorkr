@@ -27,9 +27,6 @@ kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 batsmanCumulativeStrikeRate(kohli,"Kohli")
 }
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -42,4 +39,6 @@ Tinniam V Ganesh
 \code{\link{batsmanRunsVsStrikeRate}}
 \code{\link{batsmanRunsPredict}}
 }
-
+\author{
+Tinniam V Ganesh
+}

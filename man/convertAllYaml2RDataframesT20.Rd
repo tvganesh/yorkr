@@ -9,7 +9,9 @@ convertAllYaml2RDataframesT20(sourceDir=".",targetDir=".")
 \arguments{
 \item{sourceDir}{The source directory of the yaml files}
 
-\item{targetDir}{The target directory in which the data frames are stored as RData files}
+\item{targetDirMen}{The target directory in which the data frames of men are stored as RData files}
+
+\item{targetDirWomen}{The target directory in which the data frames of women are stored as RData files}
 }
 \value{
 None
@@ -28,9 +30,6 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 convertAllYaml2RDataframesT20("../yamldir","../data")
 }
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -42,4 +41,6 @@ Tinniam V Ganesh
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{convertYaml2RDataframeT20}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

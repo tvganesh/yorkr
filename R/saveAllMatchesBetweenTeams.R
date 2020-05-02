@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 30 Mar 2016
+# Date : 2 May 2020
 # Function: saveAllMatchesBetweenTeams
 # This function saves all matches between 2 teams as a single dataframe
 ##################################################################################
@@ -15,7 +15,10 @@
 #' saveAllMatchesBetweenTeams(dir)
 #'
 #' @param dir
-#' Directory to store saved matches
+#' Input Directory to store saved matches
+#'
+#' @param odir
+#' Output Directory to store matches between teams
 #'
 #' @return None
 #' @references
@@ -43,13 +46,16 @@
 #' @export
 #'
 
-saveAllMatchesBetweenTeams <- function(dir){
+saveAllMatchesBetweenTeams <- function(dir=".",odir="."){
 
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
               "Bermuda","Kenya","Hong Kong","Nepal","Oman","Papua New Guinea",
-              "United Arab Emirates")
+              "United Arab Emirates","Namibia","Cayman Islands","Singapore",
+              "United States of America","Bhutan","Maldives","Botswana","Nigeria",
+              "Denmark","Germany","Jersey","Norway","Qatar","Malaysia","Vanuatu",
+              "Thailand")
 
     matches <- NULL
     #Create all combinations of teams
@@ -57,7 +63,7 @@ saveAllMatchesBetweenTeams <- function(dir){
         for(j in seq_along(teams)){
             if(teams[i] != teams[j]){
                 cat("Team1=",teams[i],"Team2=",teams[j],"\n")
-                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE),
+                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE,odir=odir),
                          error = function(e) {
                              print("No matches")
 

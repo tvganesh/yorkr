@@ -29,9 +29,6 @@ getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -43,4 +40,6 @@ Tinniam V Ganesh
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{bowlerMeanRunsConceded}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

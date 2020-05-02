@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 20 Mar 2016
+# Date : 2 May 2020
 # Function: convertYaml2RDataframeT20
 # This function converts a given T20 yaml file to a data frame and stores this as n .RData
 # The yaml file is read from a given source directory coverted and saved to a target directory.
@@ -54,7 +54,10 @@
 convertYaml2RDataframeT20 <- function(yamlFile,sourceDir=".",targetDir="."){
 
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
-    info.teams=matchType=winner=result=venue=NULL
+    info.teams=matchType=winner=result=venue=gender=ball=team=batsman=NULL
+    bowler=nonStriker=byes=legbyes=noballs=wides=nonBoundary=penalty=runs=extras=totalRuns=NULL
+    wicketFielder=wicketKind=wicketPlayerOut=replacementIn=replacementOut=replacementReason=replacementRole=NULL
+
     pth = paste(sourceDir,"/",yamlFile,sep="")
     print(pth)
 

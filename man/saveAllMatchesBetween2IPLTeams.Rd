@@ -7,7 +7,7 @@
 saveAllMatchesBetween2IPLTeams(dir)
 }
 \arguments{
-\item{dir}{Directory to store saved matches}
+\item{dir}{Output Directory to store saved matches}
 }
 \value{
 None
@@ -24,9 +24,6 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 saveAllMatchesBetween2IPLTeams
 }
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -39,4 +36,6 @@ Tinniam V Ganesh
 \code{\link{getAllMatchesAllOpposition}}\cr
 \code{\link{getAllMatchesBetweenTeams}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

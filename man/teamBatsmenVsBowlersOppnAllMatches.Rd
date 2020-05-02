@@ -42,9 +42,6 @@ n <- teamBatsmenVsBowlersOppnAllMatches(a,"Australia","India",top=10,plot=FALSE)
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -56,4 +53,6 @@ Tinniam V Ganesh
 \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
 \code{\link{teamBatsmenVsBowlersOppnAllMatches}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

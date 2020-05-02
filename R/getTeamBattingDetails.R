@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 25 Mar 2016
+# Date : 2 May 2020
 # Function: getTeamBattingDetails
 # This function gets the Batting details of a team against all opposition
 #
@@ -20,7 +20,10 @@
 #' The team for which batting details is required
 #'
 #' @param dir
-#' The source directory of RData files obtained with  convertAllYaml2RDataframes()
+#' The source directory
+#'
+#' @param odir
+#' The output directory to store saved files
 #'
 #' @param save
 #' Whether the data frame needs to be saved as RData or not. It is recommended to set save=TRUE
@@ -52,7 +55,7 @@
 #'
 #' @export
 #'
-getTeamBattingDetails <- function(team,dir=".",save=FALSE){
+getTeamBattingDetails <- function(team,dir=".",save=FALSE,odir="."){
     overs=batsman=NULL
     a <- paste(dir,"/","*",team,"*",sep="")
     # Gather team against all ooposition
@@ -75,11 +78,10 @@ getTeamBattingDetails <- function(team,dir=".",save=FALSE){
     }
 
     if(save==TRUE){
-        fl <- paste("./",team,"-BattingDetails.RData",sep="")
+        fl <-paste(odir,"/",team,"-BattingDetails.RData",sep="")
         save(battingDetails,file=fl)
     }
     battingDetails <- arrange(battingDetails,batsman,date)
     battingDetails
-
 
 }

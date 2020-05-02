@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 30 Mar 2016
+# Date : 2 May 2020
 # Function: saveAllMatchesBetween2IPLTeams
 # This function saves all matches between 2 teams as a single dataframe
 ##################################################################################
@@ -15,7 +15,10 @@
 #' saveAllMatchesBetween2IPLTeams(dir)
 #'
 #' @param dir
-#' Directory to store saved matches
+#' Input Directory
+#'
+#' @param dir
+#' Output Directory to store saved matches
 #'
 #' @return None
 #' @references
@@ -43,10 +46,10 @@
 #' @export
 #'
 
-saveAllMatchesBetween2IPLTeams <- function(dir){
+saveAllMatchesBetween2IPLTeams <- function(dir=".",odir="."){
 
     teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
-              "Kings X1 Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
+              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
               "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
               "Rising Pune Supergiants")
@@ -59,7 +62,7 @@ saveAllMatchesBetween2IPLTeams <- function(dir){
         for(j in seq_along(teams)){
             if(teams[i] != teams[j]){
                 cat("Team1=",teams[i],"Team2=",teams[j],"\n")
-                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE),
+                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE,odir=odir),
                          error = function(e) {
                              print("No matches")
 

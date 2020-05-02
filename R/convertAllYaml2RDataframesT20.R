@@ -52,7 +52,9 @@
 
 convertAllYaml2RDataframesT20 <- function(sourceDir=".",targetDirMen=".",targetDirWomen="."){
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
-    info.teams=matchType=winner=result=venue=NULL
+    info.teams=matchType=winner=result=venue=info.gender=ball=team=batsman=NULL
+    bowler=nonStriker=byes=legbyes=noballs=wides=nonBoundary=penalty=runs=extras=totalRuns=NULL
+    wicketFielder=wicketKind=wicketPlayerOut=replacementIn=replacementOut=replacementReason=replacementRole=NULL
     files <- list.files(sourceDir)
     print(length(files))
     for(iii in 1:length(files)){

@@ -7,7 +7,7 @@
 #
 ###########################################################################################
 #' @title
-#' Team bowling scorecard all opposition all matches
+#' Team bowling scorecard all opposition all matches Main
 #'
 #' @description
 #' This function computes returns the bowling dataframe of best bowlers deliveries, maidens, overs, wickets
@@ -48,7 +48,6 @@
 #'
 #' @seealso
 #' \code{\link{teamBowlingScorecardAllOppnAllMatches}}\cr
-#' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 #'
 #' @export

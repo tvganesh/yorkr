@@ -31,9 +31,6 @@ bowlerDeliveryWickets(match,"India","Jadeja")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -47,4 +44,6 @@ Tinniam V Ganesh
 \code{\link{bowlerMeanEconomyRate}}\cr
 \code{\link{bowlerMeanRunsConceded}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

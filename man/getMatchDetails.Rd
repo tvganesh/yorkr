@@ -38,9 +38,6 @@ bowlerWktsPredict(jadeja1,"RA Jadeja")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -52,4 +49,6 @@ Tinniam V Ganesh
 \code{\link{getTeamBattingDetails}}\cr
 \code{\link{getTeamBowlingDetails}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

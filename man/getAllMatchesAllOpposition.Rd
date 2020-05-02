@@ -9,11 +9,13 @@ getAllMatchesAllOpposition(team,dir=".",save=FALSE)
 \arguments{
 \item{team}{The team for which all matches and all opposition has to be obtained e.g. India, Pakistan}
 
-\item{dir}{The directory in which the saved .RData files exist}
+\item{dir}{The input directory}
 
 \item{save}{Default=FALSE. This parameter indicates whether the combined data frame needs to be saved or not. It is recommended
 to save this large dataframe as the creation of this data frame takes a several seconds depending
 on the number of matches}
+
+\item{odir}{The output directory}
 }
 \value{
 match
@@ -37,9 +39,6 @@ getAllMatchesAllOpposition("Australia",dir="./mysavedata/",save=TRUE)
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -51,4 +50,6 @@ Tinniam V Ganesh
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{bowlerMeanRunsConceded}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

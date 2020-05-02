@@ -29,9 +29,6 @@ kohli46 <- select(kohli,batsman,ballsPlayed,fours,sixes,runs)
 batsmanFoursSixes(kohli46,"Kohli")
 }
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -44,4 +41,6 @@ Tinniam V Ganesh
 \code{\link{batsmanRunsVsStrikeRate}}
 \code{\link{batsmanRunsPredict}}
 }
-
+\author{
+Tinniam V Ganesh
+}

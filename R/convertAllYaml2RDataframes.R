@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 20 Mar 2016
+# Date : 2 May 2020
 # Function: convertAllYaml2RDataframes
 # This function converts all yaml files to dataframes and stores as .RData from a given source
 # directory to target directory.
@@ -52,7 +52,10 @@
 
 convertAllYaml2RDataframes <- function(sourceDir=".",targetDirMen=".",targetDirWomen="."){
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
-    info.teams=matchType=winner=result=venue=NULL
+    info.teams=matchType=winner=result=venue=gender=ball=team=batsman=NULL
+    bowler=nonStriker=byes=legbyes=noballs=wides=nonBoundary=penalty=runs=extras=totalRuns=NULL
+    wicketFielder=wicketKind=wicketPlayerOut=replacementIn=replacementOut=replacementReason=replacementRole=NULL
+
     files <- list.files(sourceDir)
     print(length(files))
     for(iii in 1:length(files)){

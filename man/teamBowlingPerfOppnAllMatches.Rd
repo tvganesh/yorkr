@@ -37,9 +37,6 @@ teamBowlingPerfOppnAllMatches(matches,main="Australia",opposition="India")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}
@@ -49,4 +46,6 @@ Tinniam V Ganesh
 \code{\link{teamBowlersWicketRunsOppnAllMatches}}\cr
 \code{\link{teamBowlersWicketKindOppnAllMatches}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

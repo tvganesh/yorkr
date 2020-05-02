@@ -38,9 +38,6 @@ teamBattingScorecardAllOppnAllMatches(matches,theTeam="England")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -52,4 +49,6 @@ Tinniam V Ganesh
 \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
 \code{\link{teamBowlingWicketRunsAllOppnAllMatches}}
 }
-
+\author{
+Tinniam V Ganesh
+}

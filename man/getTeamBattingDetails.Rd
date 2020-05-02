@@ -9,10 +9,12 @@ getTeamBattingDetails(team,dir=".",save=FALSE)
 \arguments{
 \item{team}{The team for which batting details is required}
 
-\item{dir}{The source directory of RData files obtained with  convertAllYaml2RDataframes()}
+\item{dir}{The source directory}
 
 \item{save}{Whether the data frame needs to be saved as RData or not. It is recommended to set save=TRUE
 as the data can be used for a lot of analyses of batsmen}
+
+\item{odir}{The output directory to store saved files}
 }
 \value{
 battingDetails
@@ -32,9 +34,6 @@ a <- getTeamBattingDetails("India",dir="../data", save=TRUE)
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -46,4 +45,6 @@ Tinniam V Ganesh
 \code{\link{batsmanDismissals}}\cr
 \code{\link{getTeamBowlingDetails}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

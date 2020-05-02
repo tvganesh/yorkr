@@ -22,9 +22,6 @@ t20BowlersRank <- rankT20Bowlers()
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -36,4 +33,6 @@ Tinniam V Ganesh
 \code{\link{rankODIBatsmen}}\cr
 \code{\link{rankT20Batsmen}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

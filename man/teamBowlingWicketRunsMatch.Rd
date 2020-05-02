@@ -36,9 +36,6 @@ teamBowlingWicketRunsMatch(a,"Pakistan","England")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -49,4 +46,6 @@ Tinniam V Ganesh
 \code{\link{teamBowlingWicketRunsMatch}}\cr
 \code{\link{teamBowlersVsBatsmenMatch}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

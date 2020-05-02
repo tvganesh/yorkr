@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 30 Mar 2016
+# Date : 2 May 2020
 # Function: saveAllMatchesAllOpposition
 # This function saves all matches between all opposition of a  teams as a
 # single dataframe
@@ -13,7 +13,10 @@
 #' current directory
 #'
 #' @param dir
-#' Directory to store saved matches
+#' Input Directory
+#'
+#' @param odir
+#' Output Directory to store saved matches
 #'
 #' @usage
 #' saveAllMatchesAllOpposition(dir)
@@ -43,17 +46,19 @@
 #' @export
 #'
 
-saveAllMatchesAllOpposition <- function(dir) {
+saveAllMatchesAllOpposition <- function(dir=".",odir=".") {
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
               "Bermuda","Kenya","Hong Kong","Nepal","Oman","Papua New Guinea",
-              "United Arab Emirates")
-
+              "United Arab Emirates","Namibia","Cayman Islands","Singapore",
+              "United States of America","Bhutan","Maldives","Botswana","Nigeria",
+              "Denmark","Germany","Jersey","Norway","Qatar","Malaysia","Vanuatu",
+              "Thailand")
     matches <- NULL
     for(i in seq_along(teams)){
         cat("Team1=",teams[i],"\n")
-        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir=dir,save=TRUE),
+        tryCatch(matches <- getAllMatchesAllOpposition(teams[i],dir=dir,save=TRUE,odir=odir),
                  error = function(e) {
                      print("No matches")
 

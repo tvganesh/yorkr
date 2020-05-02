@@ -29,9 +29,6 @@ batsmanRunsVenue(kohli,"Kohli")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -45,4 +42,6 @@ Tinniam V Ganesh
 \code{\link{teamBatsmenPartnershipAllOppnAllMatches}}\cr
 \code{\link{batsmanRunsAgainstOpposition}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

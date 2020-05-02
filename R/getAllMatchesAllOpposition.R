@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 15 Apr 2016
+# Date : 2 May 2020
 # Function: getAllMatchesAllOpposition
 # This function gets the data for all matches against all opposition for a given team.
 # The user can choose to save the file for later use
@@ -24,7 +24,10 @@
 #' The team for which all matches and all opposition has to be obtained e.g. India, Pakistan
 #'
 #' @param dir
-#' The directory in which the saved .RData files exist
+#' The input directory
+#'
+#' @param odir
+#' The output directory
 #'
 #'@param save
 #' Default=FALSE. This parameter indicates whether the combined data frame needs to be saved or not. It is recommended
@@ -59,21 +62,21 @@
 #' @export
 #'
 
-getAllMatchesAllOpposition <- function(team,dir=".",save=FALSE){
+getAllMatchesAllOpposition <- function(team,dir=".",save=FALSE,odir="."){
     overs=NULL
     # Gather team data  against all ooposition
     d1 <- paste("*",team,"*",sep="")
     path=paste(dir,"/",d1,sep="")
     fl <- Sys.glob(path)
     if(length(fl) !=0){
-        
-        
+
+
         matches <- NULL
         for(i in 1:length(fl)){
             load(fl[i])
             matches <- rbind(matches,overs)
         }
-        b <- paste("allMatchesAllOpposition-",team,".RData",sep="")
+        b <- paste(odir,"/","allMatchesAllOpposition-",team,".RData",sep="")
         if(save){
             save(matches,file=b)
         }

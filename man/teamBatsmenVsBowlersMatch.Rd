@@ -34,9 +34,6 @@ batsmenVsBowlersMatch(a,'Pakistan','England', plot=TRUE)
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -48,4 +45,6 @@ Tinniam V Ganesh
 \code{\link{teamBatsmenPartnershipAllOppnAllMatchesPlot}}\cr
 \code{\link{teamBattingScorecardMatch}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

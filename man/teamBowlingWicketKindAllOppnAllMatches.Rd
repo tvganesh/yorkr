@@ -43,9 +43,6 @@ teamBowlingWicketKindAllOppnAllMatches(matches,t1="India",t2="South Africa")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}
@@ -55,4 +52,6 @@ Tinniam V Ganesh
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}

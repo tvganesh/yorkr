@@ -36,9 +36,6 @@ jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=".")
 }
 
 }
-\author{
-Tinniam V Ganesh
-}
 \references{
 \url{http://cricsheet.org/}\cr
 \url{https://gigadom.wordpress.com/}\cr
@@ -50,4 +47,6 @@ Tinniam V Ganesh
 \code{\link{bowlerMeanRunsConceded}}\cr
 \code{\link{teamBowlersWicketRunsOppnAllMatches}}\cr
 }
-
+\author{
+Tinniam V Ganesh
+}
