@@ -65,346 +65,115 @@ parseYamlOver <- function(match,s,ateam,overs,delivery,meta) {
     team=ball=totalRuns=rnames=batsman=bowler=nonStriker=NULL
     byes=legbyes=noballs=wides=nonBoundary=penalty=runs=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
-    #The xsflag will be used when there are more than 10 deliveries in the over
-    xsflag=FALSE
+    gt9=FALSE
 
-    # Loop through all deliveries one by one. Check whether the over had 6,7,8,9,10 or more deliveries
+    # Create an empty data frame
+    overs <- data.frame(ball=character(),team=character(),batsman=character(),
+                        bowler=character(),nonStriker=character(),byes=character(),
+                        legbyes=character(), noballs=character(), wides=character(),
+                        nonBoundary=character(), penalty=character(),
+                        runs=character(),extras=character(),totalRuns=character(),
+                        wicketFielder=character(), wicketKind=character(),
+                        wicketPlayerOut=character(),replacementIn=factor(),
+                        replacementOut=character(),replacementReason=character(),replacementRole=character(),
+                        date=character(),
+                        matchType=character(),
+                        overs=character(),venue=character(),team1=character(),team2=character(),
+                        winner=character(),result=character())
+    # Loop through all deliveries one by one.
     for(i in 1:length(delivery)){
+        #cat("i=",i,"\n") # Debug
 
         # Filter rows based on the delivery(ball) as overset
-        overset <- filter(match,grepl(s[i],rnames))
+        # Note if an over has more than 10 deliveries then the deliveries are
+        # 1st.0,1.batsman, 1st.0.2.batsman,..., 1st.0.9.batsman, 1st.0.1.batsman.1,
+        # 1st.0.1.batsman.2 and so on.
+        #filter(match,grepl("1st.0.1.\\D*$",rnames))
+        #1      1st.0.1.batsman Shahzaib Hasan
+        #2       1st.0.1.bowler      JA Morkel
+        #3  1st.0.1.non_striker   Imran Farhat
+        #4 1st.0.1.runs.batsman              1
+        #5  1st.0.1.runs.extras              0
+        #6   1st.0.1.runs.total              1
+        #filter(match,grepl("1st.0.1.\\D*.\\d{1}$",rnames))
+        #1      1st.0.1.batsman.1   Imran Farhat
+        #2       1st.0.1.bowler.1      JA Morkel
+        #3  1st.0.1.non_striker.1 Shahzaib Hasan
+        #4 1st.0.1.runs.batsman.1              1
+        #5  1st.0.1.runs.extras.1              0
+        #6   1st.0.1.runs.total.1              1
+        # Assume in the worst case there are 15 deliveries
+        # Compute delivery
+        del <- i %%  15 # Assuming max of 15 deliveries
+
+        # For deliveries 1-9
+        if((del >=1) && (del<= 9)){
+            pattern = paste(s[i],"\\D*$",sep="")
+        } else if(del > 9){ # deliveries 10-15
+            # Find increment above 9
+            gt9=TRUE
+            inc <- del -9
+            # Use pattern with suffix .1,.2,.3 etc
+            pattern = paste(s[i],"\\D*.","[",inc,"]$",sep="")
+        }
+        overset <- filter(match,grepl(pattern,rnames))
+
         #Transpose
-        over <- as.data.frame(t(overset))
-        # Generate a row vector
-        over <- over[2,]
+        over <-as.data.frame(t(overset))
+        # Set column names from 1st row
+        names(over) <- lapply(over[1, ], as.character)
+        # Remove 1st row
+        over <- over[-1, ]
+        names(over)=gsub(s[i],"",names(over))
+
+        #If the over had more than 9 balls then the suffix *.1,*.2 have to be removed also
+        if(gt9){
+            val = paste(".",inc,sep="")
+            names(over)=gsub(val,"",names(over))
+        }
+
 
         #Check the number of deliveries in the over
         d <- dim(over)
-
-
-        # The over had 6 deliveries
-        # Check the number of deliveries in the over
-        # If the number of deliveries in the over was
-        # 6 : This is a notmal over. No extras, no wickets
-        # 7 : There was 1 wide/no ball/legbye/bye/non-boundary/penalty
-        # 8 : There was a wickt in the over (possibly bowled)
-        # 9 : There was a wicket in this over. wicket, wicketKind and wicketPlayerOut
-        # 10 : There was a bye/legbyes/wide/noball etc and a player got out
-        # 10+ : There was more than 10 balls. Split into 10 + x
-
-        if(d[2] == 6){
-            # Set the names of the columns
-            names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns")
-
-            # Add the missing elements for extras
-            over$byes<-as.factor(0)
-            over$legbyes<-as.factor(0)
-            over$noballs<-as.factor(0)
-            over$wides<-as.factor(0)
-            over$nonBoundary <- as.factor(0)
-            over$penalty<-as.factor(0)
-
-            over$wicketFielder="nobody"
-            over$wicketKind="not-out"
-            over$wicketPlayerOut="nobody"
-            over$ball=gsub("\\\\.","",s[i])
-            over$team = ateam
-
-    		over$replacementIn=as.factor(0)
-		    over$replacementOut=as.factor(0)
-		    over$replacementReason=as.factor(0)
-		    over$replacementRole=as.factor(0)
-
-            # Reorder the  columns
-	        over <- select(over, ball,team,batsman,bowler,nonStriker,
-	                       byes,legbyes,noballs,
-	                       wides,nonBoundary,penalty, runs,
-	                       extras,totalRuns,wicketFielder,
-	                       wicketKind,wicketPlayerOut,
-	                       replacementIn, replacementOut, replacementReason,
-	                       replacementRole)
-
-            over <- cbind(over,meta)
-
-        } else if(d[2]==7){
-            # The over had 7 deliveries. The extra delivery is because of a
-            # legbye, bye, wide, no ball,non-boundary or penalty.
-            if(sum(grepl("\\.byes",overset$rnames))){
-                names(over) <-c("batsman","bowler","byes","nonStriker","runs","extras","totalRuns")
-                over$legbyes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty=as.factor(0)
-            } else if(sum(grepl("legbyes",overset$rnames))){
-                names(over) <-c("batsman","bowler","legbyes","nonStriker","runs","extras","totalRuns")
-                over$byes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty=as.factor(0)
-            } else if(sum(grepl("noballs",overset$rnames))){
-                names(over) <-c("batsman","bowler","noballs","nonStriker","runs","extras","totalRuns")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty=as.factor(0)
-            } else if(sum(grepl("wides",overset$rnames))){
-                names(over) <-c("batsman","bowler","wides","nonStriker","runs","extras","totalRuns")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty=as.factor(0)
-            } else if(sum(grepl("non_boundary",overset$rnames))){
-                cat("parse1=",i,"\n")
-                names(over) <-c("batsman","bowler","nonStriker","runs","extras","nonBoundary","totalRuns")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$wides=as.factor(0)
-                over$noballs=as.factor(0)
-                over$penalty=as.factor(0)
-            } else if(sum(grepl("penalty",overset$rnames))){
-                names(over) <-c("batsman","bowler","penalty","nonStriker","runs","extras","totalRuns")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-            }
-
-            # Add missing elements
-            over$wicketFielder="nobody"
-            over$wicketKind="not-out"
-            over$wicketPlayerOut="nobody"
-            over$ball=gsub("\\\\.","",s[i])
-            over$team = ateam
-
-            over$replacementIn=as.factor(0)
-	        over$replacementOut=as.factor(0)
-            over$replacementReason=as.factor(0)
-            over$replacementRole=as.factor(0)     
-            
-            # Reorder
-	        over <- select(over, ball,team,batsman,bowler,nonStriker,
-                           byes,legbyes,noballs,
-            	           wides,nonBoundary,penalty, runs,
-                  		   extras,totalRuns,wicketFielder,
-                     	   wicketKind,wicketPlayerOut,
- 	                       replacementIn, replacementOut, replacementReason,
-       		               replacementRole)
-            #over <- over[,c(14,15,1,2,3,4,5,6,7,8,9,10,11,12,13)]
-            over <- cbind(over,meta)
-        } else if(d[2] ==8){ # A player got out in this over
-            names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns",
-                            "wicketKind","wicketPlayerOut")
-
-            # Add the missing elements for extras
-            over$byes<-as.factor(0)
-            over$legbyes<-as.factor(0)
-            over$noballs<-as.factor(0)
-            over$wides<-as.factor(0)
-            over$nonBoundary <- as.factor(0)
-            over$penalty<-as.factor(0)
-
-            over$wicketFielder="nobody"
-            over$ball=gsub("\\\\.","",s[i])
-            over$team = ateam
-
-  	        over$replacementIn=as.factor(0)
-	        over$replacementOut=as.factor(0)
-	        over$replacementReason=as.factor(0)
-	        over$replacementRole=as.factor(0)
-
-            # Reorder the columns
-	        over <- select(over, ball,team,batsman,bowler,nonStriker,
-	                       byes,legbyes,noballs,
-	                       wides,nonBoundary,penalty, runs,
-	                       extras,totalRuns,wicketFielder,
-	                       wicketKind,wicketPlayerOut,
-	                       replacementIn, replacementOut, replacementReason,
-	                       replacementRole)
-            #over <- over[,c(14,15,1,2,9,10,11,12,3,4,5,6,10,7,8)]
-            over <- cbind(over,meta)
-
-
-        } else if(d[2] ==9){ # A player got out in this over
-            names(over) <-c("batsman","bowler","nonStriker","runs","extras","totalRuns",
-                            "wicketFielder","wicketKind","wicketPlayerOut")
-
-            # Add the missing elements for extras
-            over$byes<-as.factor(0)
-            over$legbyes<-as.factor(0)
-            over$noballs<-as.factor(0)
-            over$wides<-as.factor(0)
-            over$nonBoundary <- as.factor(0)
-            over$penalty<-as.factor(0)
-
-   	        over$replacementIn=as.factor(0)
-	        over$replacementOut=as.factor(0)
-	        over$replacementReason=as.factor(0)
-	        over$replacementRole=as.factor(0)
-
-            over$ball=gsub("\\\\.","",s[i])
-            over$team = ateam
-	        over <- select(over, ball,team,batsman,bowler,nonStriker,
-	                       byes,legbyes,noballs,
-	                       wides,nonBoundary,penalty, runs,
-	                       extras,totalRuns,wicketFielder,
-	                       wicketKind,wicketPlayerOut,
-	                       replacementIn, replacementOut, replacementReason,
-	                       replacementRole)
-            over <- cbind(over,meta)
-
-		} else if(d[2] == 10 && sum(grepl("\\.replacements",overset$rnames))>0) { # A player got replaced in this over
-		      names(over) <- c("batsman","bowler","nonStriker","replacementIn","replacementOut",
-		                       "replacementReason","replacementRole","runs","extras","totalRuns")
-
-		      # Add the missing elements for extras
-		      over$byes<-as.factor(0)
-		      over$legbyes<-as.factor(0)
-		      over$noballs<-as.factor(0)
-		      over$wides<-as.factor(0)
-		      over$nonBoundary <- as.factor(0)
-		      over$penalty<-as.factor(0)
-		      
-		      over$wicketFielder="nobody"
-		      over$wicketKind="not-out"
-		      over$wicketPlayerOut="nobody"
-		      over$ball=gsub("\\\\.","",s[i])
-		      over$team = ateam      
-		      
-		      over$ball=gsub("\\\\.","",s[i])
-		      over$team = ateam
-		      
-		      # Reorder the columns
-		      over <- select(over, ball,team,batsman,bowler,nonStriker,
-		                     byes,legbyes,noballs,
-		                     wides,nonBoundary,penalty, runs,
-		                     extras,totalRuns,wicketFielder,
-		                     wicketKind,wicketPlayerOut,
-		                     replacementIn, replacementOut, replacementReason,
-		                     replacementRole)
-		      over <- cbind(over,meta)      
-
-        } else if(d[2] == 10) { # The a player got out in this over
-            if(sum(grepl("\\.byes",overset$rnames))){
-                names(over) <-c("batsman","bowler","byes","nonStriker","runs","extras","totalRuns",
-                                "wicketFielder","wicketKind","wicketPlayerOut")
-                over$legbyes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty<-as.factor(0)
-            } else if(sum(grepl("legbyes",overset$rnames))){
-                names(over) <-c("batsman","bowler","legbyes","nonStriker","runs","extras","totalRuns",
-                                "wicketFielder","wicketKind","wicketPlayerOut")
-                over$byes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty<-as.factor(0)
-            } else if(sum(grepl("noballs",overset$rnames))){
-                names(over) <-c("batsman","bowler","noballs","nonStriker","runs","extras","totalRuns",
-                                "wicketFielder","wicketKind","wicketPlayerOut")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty<-as.factor(0)
-            } else if(sum(grepl("wides",overset$rnames))){
-                names(over) <-c("batsman","bowler","wides","nonStriker","runs","extras","totalRuns",
-                                "wicketFielder","wicketKind","wicketPlayerOut")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-                over$penalty<-as.factor(0)
-            } else if(sum(grepl("non_boundary",overset$rnames))){
-
-                print("OOOOOO*************************************************")
-                break
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$wides=as.factor(0)
-                over$noballs=as.factor(0)
-                over$penalty=as.factor(0)
-            } else if(sum(grepl("penalty",overset$rnames))){
-                names(over) <-c("batsman","bowler","penalty","nonStriker","runs","extras","totalRuns")
-                over$byes=as.factor(0)
-                over$legbyes=as.factor(0)
-                over$noballs=as.factor(0)
-                over$wides=as.factor(0)
-                over$nonBoundary <- as.factor(0)
-            }
-
-	        over$replacementIn=as.factor(0)
-	        over$replacementOut=as.factor(0)
-	        over$replacementReason=as.factor(0)
-	        over$replacementRole=as.factor(0)
-
-            over$ball=gsub("\\\\.","",s[i])
-            over$team = ateam
-
-            # Reorder the columns
-	        over <- select(over, ball,team,batsman,bowler,nonStriker,
-	                       byes,legbyes,noballs,
-	                       wides,nonBoundary,penalty, runs,
-	                       extras,totalRuns,wicketFielder,
-	                       wicketKind,wicketPlayerOut,
-	                       replacementIn, replacementOut, replacementReason,
-	                       replacementRole)
-            over <- cbind(over,meta)
-
-        }else if(d[2] == 0){
+        if(d[2] == 0){
             next
-        } else if(d[2] >10){
-            # This situation can arise when the the number of no balls and
-            # wides take it over the 10 deliveries.
-            # We need to split the deliveries intp 2 groups - group1 & group2
-            # The two group are required because the deliveries
-            # start from 0.1,0.2,0.3 ...0.9. There is no 0.10, instead this is
-            # written as over.delivery.*.1. The usual nomeclature is
-            # over.delivery.batsman(bowler,etc) e.g 2nd.2.1.batsman,
-            # 2nd.2.1.bowler and so on. The 10th delivery is written as
-            # 2nd.2.1.batsman.1,2nd.2nd.1.bowler.1
-            # Group1
-            overset <- filter(match,grepl(s[i],rnames))
-            jj<-paste(s[i],"batsman",sep="")
-            ll <- grepl(jj,overset$rnames)
-            mm <- which(ll)
-            dist1 = mm[2] - mm[1]
-            o1 <- overset[1:dist1,]
-            o1 <- as.data.frame(t(o1))
-            o1 <- o1[2,]
-            d <- dim(o1)
-            overinit <- specialProc(d[2],overset,ateam,o1,s[i],meta)
+        } else if(d[2] >=10){
+            print("Greater than equal to 10 cols!")
+            #print(d)
+            #print(names(over))
+            #break
+        }
+        cols<-names(over)
+        cols1=c("batsman","bowler","non_striker","byes","legbyes","noballs","wides","nonBoundary","penalty",
+                "runs.batsman","runs.extras","runs.total","wicket.fielders","wicket.kind","wicket.player_out",
+                "replacements.role.in", "replacements.role.out","replacements.role.reason","replacements.role.role")
 
-            # Group 2
-            o2 <- overset[mm[2]:length(ll),]
-            o2 <- as.data.frame(t(o2))
-            o2 <- o2[2,]
-            d <- dim(o2)
-            overfinal <- specialProc(d[2],overset,ateam,o2,s[i],meta)
-
-            xsflag=TRUE
-
+        # Get the missing columns
+        a <- setdiff(cols1,cols)
+        if(length(a) != (length(cols1) - length(cols))){
+            break
         }
 
-        # Row bind the data
-        #print(dim(overs))
-        #print(dim(over))
+        # Create a dataframe with the missing columns
+        over1=data.frame(rbind(a))
+        # Set column names
+        names(over1) <- lapply(over1[1, ], as.character)
+        over1 <- over1[-1, ]
+        over1 <- data.frame(lapply(over1, as.character), stringsAsFactors=FALSE)
 
-        if(!xsflag){
-            overs <- rbind(overs,over)
-        }
+        over1[1,] <- rep(0,times=length(a))
+        newover <- cbind(over,over1)
+        newover$ball=gsub("\\\\.","",s[i])
+        newover$team = ateam
+        newover <- cbind(newover,meta)
 
-        if(xsflag){
-            overs <- rbind(overs,overinit)
-            overs <- rbind(overs,overfinal)
-            xsflag=FALSE
-        }
+        # Convert all columns to character
+        newover <- data.frame(lapply(newover, as.character), stringsAsFactors=FALSE)
+        # Stack the overs
+        overs <- rbind(overs,newover)
+
     }
+
     overs
+
 }
