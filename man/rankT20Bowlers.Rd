@@ -4,7 +4,12 @@
 \alias{rankT20Bowlers}
 \title{Ranks the T20 bowlers}
 \usage{
-rankT20Bowlers()
+rankT20Bowlers(dir='.',odir=".")
+}
+\arguments{
+\item{dir}{The input directory}
+
+\item{odir}{The output directory}
 }
 \value{
 The ranked T20 bowlers

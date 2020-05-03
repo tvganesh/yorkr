@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 11 May 2016
+# Date : 3 May 2020
 # Function: rankODIBatsmen
 # This function creates a dataframe of all T20 batsmen performances and then
 # ranks the  batsmen
@@ -12,7 +12,13 @@
 #' @description
 #' This function creates a single datframe of all ODI batsmen and then ranks them
 #' @usage
-#' rankODIBatsmen()
+#' rankODIBatsmen(dir='.',odir=".")
+#'
+#' @param dir
+#' The input directory
+#'
+#' @param odir
+#' The output directory
 #'
 #'
 #' @return The ranked ODI batsmen
@@ -38,86 +44,58 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankODIBatsmen <- function() {
+rankODIBatsmen <- function(dir='.',odir=".") {
     # This needs to be done once. After it is done, we can use the RData files
-    #setwd("C:/software/cricket-package/york-test/yorkrData/ODI/ODI-matches")
-    #afg_details <- getTeamBattingDetails("Afghanistan",dir=".", save=TRUE)
-    #aus_details <- getTeamBattingDetails("Australia",dir=".", save=TRUE)
-    #ind_details <- getTeamBattingDetails("India",dir=".",save=TRUE)
-    #pak_details <- getTeamBattingDetails("Pakistan",dir=".",save=TRUE)
-    #wi_details <- getTeamBattingDetails("West Indies",dir=".",save=TRUE)
-    #sl_details <- getTeamBattingDetails("Sri Lanka",dir=".",save=TRUE)
-    #eng_details <- getTeamBattingDetails("England",dir=".",save=TRUE)
-    #ban_details <- getTeamBattingDetails("Bangladesh",dir=".",save=TRUE)
-    #nth_details <- getTeamBattingDetails("Netherlands",dir=".",save=TRUE)
-    #sco_details <- getTeamBattingDetails("Scotland",dir=".",save=TRUE)
-    #zim_details <- getTeamBattingDetails("Zimbabwe",dir=".",save=TRUE)
-    #ire_details <- getTeamBattingDetails("Ireland",dir=".",save=TRUE)
-    #nz_details <- getTeamBattingDetails("New Zealand",dir=".",save=TRUE)
-    #sa_details <- getTeamBattingDetails("South Africa",dir=".",save=TRUE)
-    #can_details <- getTeamBattingDetails("Canada",dir=".",save=TRUE)
-    #ber_details <- getTeamBattingDetails("Bermuda",dir=".",save=TRUE)
-    #ken_details <- getTeamBattingDetails("Kenya",dir=".",save=TRUE)
+    currDir= getwd()
+    teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
+              "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
+              "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
+              "Bermuda","Kenya","Hong Kong","Nepal","Oman","Papua New Guinea",
+              "United Arab Emirates","Namibia","Cayman Islands","Singapore",
+              "United States of America","Bhutan","Maldives","Botswana","Nigeria",
+              "Denmark","Germany","Jersey","Norway","Qatar","Malaysia","Vanuatu",
+              "Thailand")
 
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=NULL
-    load("Afghanistan-BattingDetails.RData")
-    afg_details <- battingDetails
-    load("Australia-BattingDetails.RData")
-    aus_details <- battingDetails
-    load("India-BattingDetails.RData")
-    ind_details <- battingDetails
-    load("Pakistan-BattingDetails.RData")
-    pak_details <- battingDetails
-    load("West Indies-BattingDetails.RData")
-    wi_details <- battingDetails
-    load("Sri Lanka-BattingDetails.RData")
-    sl_details <- battingDetails
-    load("England-BattingDetails.RData")
-    eng_details <- battingDetails
-    load("Bangladesh-BattingDetails.RData")
-    ban_details <- battingDetails
-    load("Netherlands-BattingDetails.RData")
-    nth_details <- battingDetails
-    load("Scotland-BattingDetails.RData")
-    sco_details <- battingDetails
-    load("Zimbabwe-BattingDetails.RData")
-    zim_details <- battingDetails
-    load("Ireland-BattingDetails.RData")
-    ire_details <- battingDetails
-    load("New Zealand-BattingDetails.RData")
-    nz_details <- battingDetails
-    load("South Africa-BattingDetails.RData")
-    sa_details <- battingDetails
-    load("Canada-BattingDetails.RData")
-    can_details <- battingDetails
-    load("Bermuda-BattingDetails.RData")
-    ber_details <- battingDetails
-    load("Kenya-BattingDetails.RData")
-    ken_details <- battingDetails
+    #teams <- c("Australia","India","Singapore","West Indies")
 
-    a <- select(afg_details,batsman,runs,strikeRate)
-    b <- select(aus_details,batsman,runs,strikeRate)
-    c <- select(ban_details,batsman,runs,strikeRate)
-    d <- select(ber_details,batsman,runs,strikeRate)
-    e <- select(can_details,batsman,runs,strikeRate)
-    f <- select(eng_details,batsman,runs,strikeRate)
-    g <- select(ind_details,batsman,runs,strikeRate)
-    h <- select(ire_details,batsman,runs,strikeRate)
-    i <- select(ken_details,batsman,runs,strikeRate)
-    j <- select(nth_details,batsman,runs,strikeRate)
-    k <- select(nz_details,batsman,runs,strikeRate)
-    l <- select(pak_details,batsman,runs,strikeRate)
-    m <- select(sa_details,batsman,runs,strikeRate)
-    n <- select(sco_details,batsman,runs,strikeRate)
-    o <- select(sl_details,batsman,runs,strikeRate)
-    p <- select(wi_details,batsman,runs,strikeRate)
-    q <- select(zim_details,batsman,runs,strikeRate)
+    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
+    details=df=NULL
+    teams1 <- NULL
+    for(team in teams){
+        print(team)
+        tryCatch({
+            batting <- getTeamBattingDetails(team,dir=dir, save=TRUE,odir=odir)
+            teams1 <- c(teams1,team)
+        },
+        error = function(e) {
+            print("No data")
+
+        }
+        )
+    }
+    #Change dir
+    setwd(odir)
+    battingDF<-NULL
+    for(team in teams1){
+        battingDetails <- NULL
+        val <- paste(team,"-BattingDetails.RData",sep="")
+        print(val)
+        tryCatch(load(val),
+                 error = function(e) {
+                     print("No data1")
+                     setNext=TRUE
+                 }
 
 
-    df <- rbind(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q)
+        )
+        details <- battingDetails
+        battingDF <- rbind(battingDF,details)
 
+    }
+
+
+    df <- select(battingDF,batsman,runs,strikeRate)
     batsmen <- unique(df$batsman)
-
     o <- NULL
     n <- data.frame(name=character(0),matches=numeric(0),meanRuns=numeric(0),meanSR=numeric(0))
     for (x in 1:length(batsmen)){
@@ -128,10 +106,12 @@ rankODIBatsmen <- function() {
         o <- rbind(o,n)
     }
 
+    # Reset to currDir
+    setwd(currDir)
     # Select only players who have played 60 matches or more
     p <- filter(o,matches >= 50)
 
     ODIBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
     ODIBatsmenRank
-}
 
+}

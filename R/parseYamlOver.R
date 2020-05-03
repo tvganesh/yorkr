@@ -13,7 +13,7 @@
 #' is used by convertAllYaml2RDataframes() & convertYaml2RDataframe()
 #'
 #' @usage
-#' parseYamlOver(match,s,ateam,overs,delivery,meta)
+#' parseYamlOver(match,s,ateam,delivery,meta)
 #'
 #' @param match
 #' The dataframe of the match
@@ -24,8 +24,6 @@
 #' @param ateam
 #' The team
 #'
-#' @param overs
-#' overs
 #'
 #' @param delivery
 #' The delivery of the over

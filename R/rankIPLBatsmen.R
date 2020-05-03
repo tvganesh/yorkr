@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 12 Dec 2016
+# Date : 3 May 2020
 # Function: rankIPLBatsmen
 # This function creates a dataframe of all IPL batsmen performances and then
 # ranks the IPL batsmen
@@ -12,7 +12,13 @@
 #' @description
 #' This function creates a single datframe of all IPL batsmen and then ranks them
 #' @usage
-#' rankIPLBatsmen()
+#' rankIPLBatsmen(dir='.',odir=".")
+#'
+#' @param dir
+#' The input directory
+#'
+#' @param odir
+#' The output directory
 #'
 #'
 #' @return The ranked IPL batsmen
@@ -40,69 +46,54 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankIPLBatsmen <- function() {
-    battingDetails=batsman=runs=strikeRate=meanRuns=meanSR= NULL
+rankIPLBatsmen <- function(dir='.',odir=".") {
 
-    #csk_details <- getTeamBattingDetails("Chennai Super Kings",dir=".", save=TRUE)
-    #dc_details <- getTeamBattingDetails("Deccan Chargers",dir=".", save=TRUE)
-    #dd_details <- getTeamBattingDetails("Delhi Daredevils",dir=".",save=TRUE)
-    #kxip_details <- getTeamBattingDetails("Kings XI Punjab",dir=".",save=TRUE)
-    #ktk_details <- getTeamBattingDetails("Kochi Tuskers Kerala",dir=".",save=TRUE)
-    #kkr_details <- getTeamBattingDetails("Kolkata Knight Riders",dir=".",save=TRUE)
-    #mi_details <- getTeamBattingDetails("Mumbai Indians",dir=".",save=TRUE)
-    #pw_details <- getTeamBattingDetails("Pune Warriors",dir=".",save=TRUE)
-    #rr_details <- getTeamBattingDetails("Rajasthan Royals",dir=".",save=TRUE)
-    #rcb_details <- getTeamBattingDetails("Royal Challengers Bangalore",dir=".",save=TRUE)
-    #sh_details <- getTeamBattingDetails("Sunrisers Hyderabad",dir=".",save=TRUE)
-    #gl_details <- getTeamBattingDetails("Gujarat Lions",dir=".",save=TRUE)
-    #rps_details <- getTeamBattingDetails("Rising Pune Supergiants",dir=".",save=TRUE)
+    currDir= getwd()
+    teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
+              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
+              "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
+              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
+              "Rising Pune Supergiants")
 
-    setwd("C:/software/cricket-package/cricsheet/ipl2016/details")
-    load("Chennai Super Kings-BattingDetails.RData")
-    csk_details <- battingDetails
-    load("Deccan Chargers-BattingDetails.RData")
-    dc_details <- battingDetails
-    load("Delhi Daredevils-BattingDetails.RData")
-    dd_details <- battingDetails
-    load("Kings XI Punjab-BattingDetails.RData")
-    kxip_details <- battingDetails
-    load("Kochi Tuskers Kerala-BattingDetails.RData")
-    ktk_details <- battingDetails
-    load("Kolkata Knight Riders-BattingDetails.RData")
-    kkr_details <- battingDetails
-    load("Mumbai Indians-BattingDetails.RData")
-    mi_details <- battingDetails
-    load("Pune Warriors-BattingDetails.RData")
-    pw_details <- battingDetails
-    load("Rajasthan Royals-BattingDetails.RData")
-    rr_details <- battingDetails
-    load("Royal Challengers Bangalore-BattingDetails.RData")
-    rcb_details <- battingDetails
-    load("Sunrisers Hyderabad-BattingDetails.RData")
-    sh_details <- battingDetails
-    load("Gujarat Lions-BattingDetails.RData")
-    gl_details <- battingDetails
-    load("Rising Pune Supergiants-BattingDetails.RData")
-    rps_details <- battingDetails
 
-    a <- select(csk_details,batsman,runs,strikeRate)
-    b <- select(dc_details,batsman,runs,strikeRate)
-    c <- select(dd_details,batsman,runs,strikeRate)
-    d <- select(kxip_details,batsman,runs,strikeRate)
-    e <- select(ktk_details,batsman,runs,strikeRate)
-    f <- select(kkr_details,batsman,runs,strikeRate)
-    g <- select(mi_details,batsman,runs,strikeRate)
-    h <- select(pw_details,batsman,runs,strikeRate)
-    i <- select(rr_details,batsman,runs,strikeRate)
-    j <- select(rcb_details,batsman,runs,strikeRate)
-    k <- select(sh_details,batsman,runs,strikeRate)
-    l <- select(gl_details,batsman,runs,strikeRate)
-    m <- select(rps_details,batsman,runs,strikeRate)
+    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
+    details=df=NULL
+    teams1 <- NULL
+    for(team in teams){
+        print(team)
+        tryCatch({
+            batting <- getTeamBattingDetails(team,dir=dir, save=TRUE,odir=odir)
+            teams1 <- c(teams1,team)
+        },
+        error = function(e) {
+            print("No data")
 
-    df <- rbind(a,b,c,d,e,f,g,h,i,j,k,l,m)
+        }
+        )
+    }
+    #Change dir
+    setwd(odir)
+    battingDF<-NULL
+    for(team in teams1){
+        battingDetails <- NULL
+        val <- paste(team,"-BattingDetails.RData",sep="")
+        print(val)
+        tryCatch(load(val),
+                 error = function(e) {
+                     print("No data1")
+                     setNext=TRUE
+                 }
 
+
+        )
+        details <- battingDetails
+        battingDF <- rbind(battingDF,details)
+
+    }
+
+
+    df <- select(battingDF,batsman,runs,strikeRate)
     batsmen <- unique(df$batsman)
-
     o <- NULL
     n <- data.frame(name=character(0),matches=numeric(0),meanRuns=numeric(0),meanSR=numeric(0))
     for (x in 1:length(batsmen)){
@@ -113,10 +104,13 @@ rankIPLBatsmen <- function() {
         o <- rbind(o,n)
     }
 
+    # Reset to currDir
+    setwd(currDir)
     # Select only players who have played 60 matches or more
-    p <- filter(o,matches >= 60)
+    p <- filter(o,matches >= 50)
 
     IPLBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
     IPLBatsmenRank
+
 }
 

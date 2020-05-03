@@ -1,6 +1,6 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 13 Dec 2016
+# Date : 3 May 2020
 # Function: rankIPLBowlers
 # This function creates a dataframe of all batsmen performances and then
 # ranks the IPL batsmen
@@ -12,7 +12,13 @@
 #' @description
 #' This function creates a single datframe of all IPL bowlers and then ranks them
 #' @usage
-#' rankIPLBowlers()
+#' rankIPLBowlers(dir='.',odir=".")
+#'
+#' @param dir
+#' The input directory
+#'
+#' @param odir
+#' The output directory
 #'
 #'
 #' @return The ranked IPL batsmen
@@ -40,90 +46,74 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankIPLBowlers <- function() {
-    bowlingDetails=bowler=wickets=economyRate=meanWickets=meanER=NULL
-    #setwd("C:/software/cricket-package/cricsheet/ipl2016/data")
-    #csk_details <- getTeamBowlingDetails("Chennai Super Kings",dir=".", save=TRUE)
-    #dc_details <- getTeamBowlingDetails("Deccan Chargers",dir=".", save=TRUE)
-    #dd_details <- getTeamBowlingDetails("Delhi Daredevils",dir=".",save=TRUE)
-    #kxip_details <- getTeamBowlingDetails("Kings XI Punjab",dir=".",save=TRUE)
-    #ktk_details <- getTeamBowlingDetails("Kochi Tuskers Kerala",dir=".",save=TRUE)
-    #kkr_details <- getTeamBowlingDetails("Kolkata Knight Riders",dir=".",save=TRUE)
-    #mi_details <- getTeamBowlingDetails("Mumbai Indians",dir=".",save=TRUE)
-    #pw_details <- getTeamBowlingDetails("Pune Warriors",dir=".",save=TRUE)
-    #rr_details <- getTeamBowlingDetails("Rajasthan Royals",dir=".",save=TRUE)
-    #rcb_details <- getTeamBowlingDetails("Royal Challengers Bangalore",dir=".",save=TRUE)
-    #sh_details <- getTeamBowlingDetails("Sunrisers Hyderabad",dir=".",save=TRUE)
-    #gl_details <- getTeamBowlingDetails("Gujarat Lions",dir=".",save=TRUE)
-    #rps_details <- getTeamBowlingDetails("Rising Pune Supergiants",dir=".",save=TRUE)
-
-    load("Chennai Super Kings-BowlingDetails.RData")
-    csk_details <- bowlingDetails
-    load("Deccan Chargers-BowlingDetails.RData")
-    dc_details <- bowlingDetails
-    load("Delhi Daredevils-BowlingDetails.RData")
-    dd_details <- bowlingDetails
-    load("Kings XI Punjab-BowlingDetails.RData")
-    kxip_details <- bowlingDetails
-    load("Kochi Tuskers Kerala-BowlingDetails.RData")
-    ktk_details <- bowlingDetails
-    load("Kolkata Knight Riders-BowlingDetails.RData")
-    kkr_details <- bowlingDetails
-    load("Mumbai Indians-BowlingDetails.RData")
-    mi_details <- bowlingDetails
-    load("Pune Warriors-BowlingDetails.RData")
-    pw_details <- bowlingDetails
-    load("Rajasthan Royals-BowlingDetails.RData")
-    rr_details <- bowlingDetails
-    load("Royal Challengers Bangalore-BowlingDetails.RData")
-    rcb_details <- bowlingDetails
-    load("Sunrisers Hyderabad-BowlingDetails.RData")
-    sh_details <- bowlingDetails
-    load("Gujarat Lions-BowlingDetails.RData")
-    gl_details <- bowlingDetails
-    load("Rising Pune Supergiants-BowlingDetails.RData")
-    rps_details <- bowlingDetails
-
-    aa <- list(csk_details,dc_details,dd_details,kxip_details,ktk_details,kkr_details,
-               mi_details,pw_details,rr_details,rcb_details,sh_details,gl_details,rps_details)
-
-    theTeams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
-                 "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
-                 "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-                 "Royal Challengers Bangalore","Sunrisers Hyderabad",
-                 "Gujarat Lions","Rising Pune Supergiants")
+rankIPLBowlers <- function(dir='.',odir=".") {
+    bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
+    currDir= getwd()
+    teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
+              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
+              "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
+              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
+              "Rising Pune Supergiants")
 
 
-    o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(x in 1:length(aa)){
-        bowlers <- unique(aa[[x]]$bowler)
-        for (y in 1:length(bowlers)){
-            #cat("x=",x,"team",theTeams[x],"\n")
-            tryCatch(l <- getBowlerWicketDetails(team=theTeams[x],name=bowlers[y],dir="."),
-                     error = function(e) {
-                         #print("Error!")
+    # Get all bowling details
 
-                     }
-
-            )
-            if(exists("l")){
-
-                l1 <- l %>% group_by(bowler,wickets,economyRate) %>%  distinct(date)
-                l2 <-summarise(group_by(l1,bowler),matches=n(),meanWickets=mean(wickets),
-                               meanER=mean(economyRate))
-
-                o <-rbind(o,l2)
-            }
+    details=df=NULL
+    teams1 <- NULL
+    for(team in teams){
+        print(team)
+        tryCatch({
+            bowling <- getTeamBowlingDetails(team,dir=dir, save=TRUE,odir=odir)
+            teams1 <- c(teams1,team)
+        },
+        error = function(e) {
+            print("No data")
 
         }
+        )
     }
+    #Change dir
+    setwd(odir)
+    bowlingDF<-NULL
 
-    # Select only players who have played 60 matches or more
-    q <- filter(o,matches >= 30)
+    # Compute wickets by bowler in each team
+    o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
+    for(team1 in teams1){
+        bowlingDetails <- NULL
+        val <- paste(team1,"-BowlingDetails.RData",sep="")
+        print(val)
+        tryCatch({
+            load(val)
+            bowlers <- unique(bowlingDetails$bowler)
+            for (y in 1:length(bowlers)){
+                #cat("x=",x,"team",theTeams[x],"\n")
+                tryCatch(l <- getBowlerWicketDetails(team=team1,name=bowlers[y],dir="."),
+                         error = function(e) {
+                             #print("Error!")
 
-    IPLBowlersRank <- arrange(q,desc(meanWickets),desc(meanER))
+                         }
+
+                )
+                if(exists("l")){
+                    l1 <- l %>% group_by(bowler,wickets,economyRate) %>%  distinct(date)
+                    l2 <-summarise(group_by(l1,bowler),matches=n(),totalWickets=sum(wickets),
+                                   meanER=mean(economyRate))
+
+                    o <-rbind(o,l2)
+                }
+
+            }
+        },
+        error = function(e) { # Error in load
+            print("No data1")
+            setNext=TRUE
+        }
+        )
+
+    }
+    setwd(currDir)
+    q <- filter(o,matches >= 20)
+    IPLBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
     IPLBowlersRank
-
-
 
 }

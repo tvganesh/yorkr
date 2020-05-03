@@ -4,7 +4,12 @@
 \alias{rankODIBatsmen}
 \title{Ranks the ODI batsmen}
 \usage{
-rankODIBatsmen()
+rankODIBatsmen(dir='.',odir=".")
+}
+\arguments{
+\item{dir}{The input directory}
+
+\item{odir}{The output directory}
 }
 \value{
 The ranked ODI batsmen
