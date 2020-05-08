@@ -12,7 +12,7 @@
 #' @description
 #' This function creates a single datframe of all ODI bowlers and then ranks them
 #' @usage
-#' rankODIBowlers(dir=".",odir=".")
+#' rankODIBowlers(dir=".",odir=".",minMatches=20)
 #'
 #' @param dir
 #' The input directory
@@ -20,6 +20,8 @@
 #' @param odir
 #' The output directory
 #'
+#' @param minMatches
+#' Minimum matches
 #'
 #'
 #' @return The ranked ODI bowlers
@@ -46,7 +48,7 @@
 #' \code{\link{rankT20Batsmen}}\cr
 #' @export
 #'
-rankODIBowlers <- function(dir='.',odir=".") {
+rankODIBowlers <- function(dir='.',odir=".",minMatches=20) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
     currDir= getwd()
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
@@ -116,7 +118,7 @@ rankODIBowlers <- function(dir='.',odir=".") {
     }
     # Reset to currDir
     setwd(currDir)
-    q <- filter(o,matches >= 20)
+    q <- filter(o,matches >= minMatches)
     ODIBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
     ODIBowlersRank
 

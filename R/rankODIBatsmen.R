@@ -12,7 +12,7 @@
 #' @description
 #' This function creates a single datframe of all ODI batsmen and then ranks them
 #' @usage
-#' rankODIBatsmen(dir='.',odir=".")
+#' rankODIBatsmen(dir='.',odir=".",minMatches=50)
 #'
 #' @param dir
 #' The input directory
@@ -20,6 +20,8 @@
 #' @param odir
 #' The output directory
 #'
+#' @param minMatches
+#' Minimum matches
 #'
 #' @return The ranked ODI batsmen
 #' @references
@@ -44,7 +46,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankODIBatsmen <- function(dir='.',odir=".") {
+rankODIBatsmen <- function(dir='.',odir=".",minMatches=50) {
     # This needs to be done once. After it is done, we can use the RData files
     currDir= getwd()
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
@@ -109,7 +111,7 @@ rankODIBatsmen <- function(dir='.',odir=".") {
     # Reset to currDir
     setwd(currDir)
     # Select only players who have played 60 matches or more
-    p <- filter(o,matches >= 50)
+    p <- filter(o,matches >= minMatches)
 
     ODIBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
     ODIBatsmenRank

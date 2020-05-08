@@ -4,12 +4,14 @@
 \alias{rankT20Batsmen}
 \title{Ranks the T20 batsmen}
 \usage{
-rankT20Batsmen(dir='.',odir=".")
+rankT20Batsmen(dir='.',odir=".",minMatches=50)
 }
 \arguments{
 \item{dir}{The input directory}
 
 \item{odir}{The output directory}
+
+\item{minMatches}{Minimum matches}
 }
 \value{
 The ranked T20 batsmen

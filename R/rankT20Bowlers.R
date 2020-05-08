@@ -12,7 +12,7 @@
 #' @description
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #' @usage
-#' rankT20Bowlers(dir='.',odir=".")
+#' rankT20Bowlers(dir='.',odir=".",minMatches=20)
 #'
 #' @param dir
 #' The input directory
@@ -20,6 +20,8 @@
 #' @param odir
 #' The output directory
 #'
+#' @param minMatches
+#' Minimum matches
 #'
 #' @return The ranked T20 bowlers
 #' @references
@@ -45,7 +47,7 @@
 #' \code{\link{rankT20Batsmen}}\cr
 #' @export
 #'
-rankT20Bowlers <- function(dir='.',odir=".") {
+rankT20Bowlers <- function(dir='.',odir=".",minMatches=20) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
     currDir= getwd()
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
@@ -115,7 +117,7 @@ rankT20Bowlers <- function(dir='.',odir=".") {
     }
     # Reset to currDir
     setwd(currDir)
-    q <- filter(o,matches >= 20)
+    q <- filter(o,matches >= minMatches)
     T20BowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
     T20BowlersRank
 

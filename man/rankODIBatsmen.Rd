@@ -4,12 +4,14 @@
 \alias{rankODIBatsmen}
 \title{Ranks the ODI batsmen}
 \usage{
-rankODIBatsmen(dir='.',odir=".")
+rankODIBatsmen(dir='.',odir=".",minMatches=50)
 }
 \arguments{
 \item{dir}{The input directory}
 
 \item{odir}{The output directory}
+
+\item{minMatches}{Minimum matches}
 }
 \value{
 The ranked ODI batsmen

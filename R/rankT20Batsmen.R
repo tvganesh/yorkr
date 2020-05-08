@@ -12,7 +12,7 @@
 #' @description
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #' @usage
-#' rankT20Batsmen(dir='.',odir=".")
+#' rankT20Batsmen(dir='.',odir=".",minMatches=50)
 #'
 #' @param dir
 #' The input directory
@@ -20,6 +20,8 @@
 #' @param odir
 #' The output directory
 #'
+#' @param minMatches
+#' Minimum matches
 #'
 #' @return The ranked T20 batsmen
 #' @references
@@ -45,7 +47,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Batsmen <- function(dir='.',odir=".") {
+rankT20Batsmen <- function(dir='.',odir=".",minMatches=50) {
 
     currDir= getwd()
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
@@ -110,7 +112,7 @@ rankT20Batsmen <- function(dir='.',odir=".") {
     # Reset to currDir
     setwd(currDir)
     # Select only players who have played 60 matches or more
-    p <- filter(o,matches >= 50)
+    p <- filter(o,matches >= minMatches)
 
     T20BatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
     T20BatsmenRank
