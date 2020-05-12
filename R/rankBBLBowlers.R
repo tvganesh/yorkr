@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 3 May 2020
-# Function: rankIPLBowlers
+# Date : 11 May 2020
+# Function: rankBBLLBowlers
 # This function creates a dataframe of all batsmen performances and then
-# ranks the IPL bowlers
+# ranks the BBL batsmen
 #
 ###########################################################################################
 #' @title
-#' Ranks the IPL bowlers
+#' Ranks the BBL bowlers
 #'
 #' @description
-#' This function creates a single datframe of all IPL bowlers and then ranks them
+#' This function creates a single datframe of all BBL bowlers and then ranks them
 #' @usage
-#' rankIPLBowlers(dir='.',odir=".",minMatches=20)
+#' rankBBLBowlers(dir='.',odir=".",minMatches=20)
 #'
 #' @param dir
 #' The input directory
@@ -23,7 +23,7 @@
 #' @param minMatches
 #' Minimum matches
 #'
-#' @return The ranked IPL batsmen
+#' @return The ranked BBL bowlers
 #' @references
 #' \url{http://cricsheet.org/}\cr
 #' \url{https://gigadom.wordpress.com/}\cr
@@ -37,7 +37,7 @@
 #' @examples
 #' \dontrun{
 #' #
-#' iplBowlersRank <- rankIPLBowlers()
+#' bblBowlersRank <- rankBBLBowlers()
 #' }
 #'
 #' @seealso
@@ -48,14 +48,12 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
+rankBBLBowlers <- function(dir='.',odir=".",minMatches=20) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
     currDir= getwd()
-    teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
-              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
-              "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
-              "Rising Pune Supergiants")
+    teams <-c("Adelaide Strikers", "Brisbane Heat", "Hobart Hurricanes",
+              "Melbourne Renegades", "Melbourne Stars", "Perth Scorchers", "Sydney Sixers",
+              "Sydney Thunder")
 
 
     # Get all bowling details
@@ -115,7 +113,7 @@ rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
     }
     setwd(currDir)
     q <- filter(o,matches >= minMatches)
-    IPLBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
-    IPLBowlersRank
+    BBLBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    BBLBowlersRank
 
 }

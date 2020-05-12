@@ -1,19 +1,19 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 2 May 2020
-# Function: saveAllMatchesAllOppositionIPLT20
-# This function saves all IPL matches between a team and all opposition as a
+# Date : 11 May 2020
+# Function: saveAllMatchesAllOppositionBBLT20
+# This function saves all BBL matches between a team and all opposition as a
 # single dataframe
 ##################################################################################
 #' @title
-#' Saves matches against all IPL teams as dataframe for an IPL team
+#' Saves matches against all BBL teams as dataframe for an BBL team
 #'
 #' @description
-#' This function saves all IPL matches agaist all opposition as a single dataframe in the
+#' This function saves all BBL matches agaist all opposition as a single dataframe in the
 #' output directory
 #'
 #' @usage
-#' saveAllMatchesAllOppositionIPLT20(dir=".",odir=".")
+#' saveAllMatchesAllOppositionBBLT20(dir=".",odir=".")
 #'
 #' @param dir
 #' Input Directory
@@ -46,13 +46,11 @@
 #' @export
 #'
 
-saveAllMatchesAllOppositionIPLT20 <- function(dir=".",odir=".") {
+saveAllMatchesAllOppositionBBLT20 <- function(dir=".",odir=".") {
 
-    teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
-              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
-              "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
-              "Rising Pune Supergiants")
+    teams <-c("Adelaide Strikers", "Brisbane Heat", "Hobart Hurricanes",
+              "Melbourne Renegades", "Melbourne Stars", "Perth Scorchers", "Sydney Sixers",
+              "Sydney Thunder")
 
     matches <- NULL
     for(i in seq_along(teams)){

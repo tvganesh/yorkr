@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 2 May 2020
-# Function: saveAllMatchesBetween2IPLTeams
+# Date : 11 May 2020
+# Function: saveAllMatchesBetween2WBBTeams
 # This function saves all matches between 2 teams as a single dataframe
 ##################################################################################
 #' @title
-#' Saves all matches between 2 IPL teams as  dataframe
+#' Saves all matches between 2 WBB teams as  dataframe
 #'
 #' @description
-#' This function saves all matches between 2 IPL teams as a single dataframe in the
+#' This function saves all matches between 2 WBB teams as a single dataframe in the
 #' current directory
 #'
 #' @usage
-#' saveAllMatchesBetween2IPLTeams(dir=".",odir=".")
+#' saveAllMatchesBetween2WBBTeams(dir=".",odir=".")
 #'
 #' @param dir
 #' Input Directory
@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' saveAllMatchesBetween2IPLTeams(dir=".",odir=".")
+#' saveAllMatchesBetween2BBLTeams(dir=".",odir=".")
 #' }
 #' @seealso
 #' \code{\link{batsmanDismissals}}\cr
@@ -46,14 +46,11 @@
 #' @export
 #'
 
-saveAllMatchesBetween2IPLTeams <- function(dir=".",odir="."){
+saveAllMatchesBetween2WBBTeams <- function(dir=".",odir="."){
 
-    teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
-              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
-              "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
-              "Rising Pune Supergiants")
-
+    teams <-c("Adelaide Strikers", "Brisbane Heat", "Hobart Hurricanes",
+              "Melbourne Renegades", "Melbourne Stars", "Perth Scorchers", "Sydney Sixers",
+              "Sydney Thunder")
 
     matches <- NULL
     #Create all combinations of teams

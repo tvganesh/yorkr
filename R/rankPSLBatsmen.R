@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 11 May 2020
-# Function: rankIPLBatsmen
-# This function creates a dataframe of all IPL batsmen performances and then
-# ranks the IPL batsmen
+# Date : 12 May 2020
+# Function: rankPSLBatsmen
+# This function creates a dataframe of all PSL batsmen performances and then
+# ranks the PSL batsmen
 #
 ###########################################################################################
 #' @title
-#' Ranks the IPL batsmen
+#' Ranks the PSL batsmen
 #'
 #' @description
-#' This function creates a single datframe of all IPL batsmen and then ranks them
+#' This function creates a single datframe of all PSL batsmen and then ranks them
 #' @usage
-#' rankIPLBatsmen(dir='.',odir=".",minMatches=50)
+#' rankPSLBatsmen(dir='.',odir=".",minMatches=50)
 #'
 #' @param dir
 #' The input directory
@@ -23,7 +23,7 @@
 #' @param minMatches
 #' Minimum matches
 #'
-#' @return The ranked IPL batsmen
+#' @return The ranked PSL batsmen
 #' @references
 #' \url{http://cricsheet.org/}\cr
 #' \url{https://gigadom.wordpress.com/}\cr
@@ -37,7 +37,7 @@
 #' @examples
 #' \dontrun{
 #' #
-#' iplBatsmanRank <- rankIPLBatsmen()
+#' pslBatsmanRank <- rankPSLBatsmen()
 #' }
 #'
 #' @seealso
@@ -48,14 +48,11 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankIPLBatsmen <- function(dir='.',odir=".",minMatches=50) {
+rankPSLBatsmen <- function(dir='.',odir=".",minMatches=50) {
 
     currDir= getwd()
-    teams <-c("Chennai Super Kings","Deccan Chargers","Delhi Daredevils",
-              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
-              "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
-              "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
-              "Rising Pune Supergiants")
+    teams <- c("Islamabad United","Karachi Kings", "Lahore Qalandars", "Multan Sultans",
+               "Peshawar Zalmi", "Quetta Gladiators")
 
 
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
@@ -111,8 +108,11 @@ rankIPLBatsmen <- function(dir='.',odir=".",minMatches=50) {
     # Select only players who have played 60 matches or more
     p <- filter(o,matches >= minMatches)
 
-    IPLBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
-    IPLBatsmenRank
+    PSLBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
+    PSLBatsmenRank
 
 }
+
+
+
 
