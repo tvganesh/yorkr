@@ -113,6 +113,7 @@ rankPSLBowlers <- function(dir='.',odir=".",minMatches=20) {
     setwd(currDir)
     q <- filter(o,matches >= minMatches)
     PSLBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    PSLBowlersRank <- distinct(PSLBowlersRank)
     PSLBowlersRank
 
 }

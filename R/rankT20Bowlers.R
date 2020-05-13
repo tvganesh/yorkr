@@ -119,6 +119,6 @@ rankT20Bowlers <- function(dir='.',odir=".",minMatches=20) {
     setwd(currDir)
     q <- filter(o,matches >= minMatches)
     T20BowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    T20BowlersRank <- distinct(T20BowlersRank)
     T20BowlersRank
-
 }

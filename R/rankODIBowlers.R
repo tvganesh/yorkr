@@ -120,6 +120,7 @@ rankODIBowlers <- function(dir='.',odir=".",minMatches=20) {
     setwd(currDir)
     q <- filter(o,matches >= minMatches)
     ODIBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    ODIBowlersRank <- distinct(ODIBowlersRank)
     ODIBowlersRank
 
 }

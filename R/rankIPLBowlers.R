@@ -116,6 +116,7 @@ rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
     setwd(currDir)
     q <- filter(o,matches >= minMatches)
     IPLBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    IPLBowlersRank <- distinct(IPLBowlersRank)
     IPLBowlersRank
 
 }

@@ -114,6 +114,7 @@ rankBBLBowlers <- function(dir='.',odir=".",minMatches=20) {
     setwd(currDir)
     q <- filter(o,matches >= minMatches)
     BBLBowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    BBLBowlersRank <- distinct(BBLBowlersRank)
     BBLBowlersRank
 
 }
