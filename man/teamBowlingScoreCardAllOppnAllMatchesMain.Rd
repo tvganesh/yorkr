@@ -36,8 +36,9 @@ teamBowlingScorecardAllOppnAllMatchesMain(matches,"India")
 
 }
 \references{
-\url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}
+\url{https://cricsheet.org/}\cr
+\url{https://gigadom.in/}\cr
+\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{teamBowlingScorecardAllOppnAllMatches}}\cr
