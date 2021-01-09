@@ -49,6 +49,7 @@
 #'
 rankT20Bowlers <- function(dir='.',odir=".",minMatches=20) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
+    wicketPlayerOut=opposition=venue=NULL
     currDir= getwd()
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
@@ -68,39 +69,33 @@ rankT20Bowlers <- function(dir='.',odir=".",minMatches=20) {
         bowlingDetails <- NULL
         val <- paste(team1,"-BowlingDetails.RData",sep="")
         print(val)
-        tryCatch({
-            load(val)
-            bowlers <- unique(bowlingDetails$bowler)
-            for (y in 1:length(bowlers)){
-                #cat("x=",x,"team",theTeams[x],"\n")
-                tryCatch(l <- getBowlerWicketDetails(team=team1,name=bowlers[y],dir="."),
-                         error = function(e) {
-                             #print("Error!")
+        tryCatch(load(val),
+                 error = function(e) {
+                     print("No data1")
+                     setNext=TRUE
+                 }
 
-                         }
 
-                )
-                if(exists("l")){
-                    l1 <- l %>% group_by(bowler,wickets,economyRate) %>%  distinct(date)
-                    l2 <-summarise(group_by(l1,bowler),matches=n(),totalWickets=sum(wickets),
-                                   meanER=mean(economyRate))
-
-                    o <-rbind(o,l2)
-                }
-
-            }
-        },
-        error = function(e) { # Error in load
-            print("No data1")
-            setNext=TRUE
-        }
         )
-
+        details <- bowlingDetails
+        bowlingDF <- rbind(bowlingDF,details)
     }
-    # Reset to currDir
+    # Compute number of matches played
+    a=bowlingDF %>% select(bowler,date) %>% unique()
+    b=summarise(group_by(a,bowler),matches=n())
+
+    # Compute wickets
+    c <- filter(bowlingDF,wicketPlayerOut != "nobody")
+    d <- select(c,bowler,wicketPlayerOut,economyRate,date,opposition,venue)
+    e <- summarise(group_by(d,bowler,date,economyRate),wickets=length(unique(wicketPlayerOut)))
+    f=summarise(group_by(e,bowler), totalWickets=sum(wickets),meanER=mean(economyRate))
+
+    # Join
+    g=merge(b,f,by="bowler",all.x = TRUE)
+    g[is.na(g)] <- 0
+    h <- filter(g,matches >= minMatches)
     setwd(currDir)
-    q <- filter(o,matches >= minMatches)
-    T20BowlersRank <- arrange(q,desc(totalWickets),desc(meanER))
+    T20BowlersRank <- arrange(h,desc(totalWickets),desc(meanER))
     T20BowlersRank <- distinct(T20BowlersRank)
     T20BowlersRank
 }
