@@ -47,8 +47,8 @@ teamBowlersVsBatsmenAllOppnAllMatchesRept(matches,"Australia",rank=1)
 
 }
 \references{
-\url{https://cricsheet.org/}\cr
-\url{https://gigadom.in/}\cr
+\url{http://cricsheet.org/}\cr
+\url{https://gigadom.wordpress.com/}\cr
 \url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{

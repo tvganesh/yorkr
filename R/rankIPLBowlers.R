@@ -1,9 +1,8 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 3 May 2020
+# Date : 05 Jan 2021
 # Function: rankIPLBowlers
-# This function creates a dataframe of all batsmen performances and then
-# ranks the IPL bowlers
+# This function ranks the IPL bowlers
 #
 ###########################################################################################
 #' @title
@@ -50,37 +49,21 @@
 #'
 rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
-    currDir= getwd()
-    teams <-c("Chennai Super Kings","Delhi Capitals","Deccan Chargers","Delhi Daredevils",
+    teams <-c("Chennai Super Kings","Delhi Capitals", "Deccan Chargers","Delhi Daredevils",
               "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
               "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
               "Rising Pune Supergiants")
+    currDir= getwd()
 
-
-    # Get all bowling details
-
-    details=df=NULL
-    teams1 <- NULL
-    for(team in teams){
-        print(team)
-        tryCatch({
-            bowling <- getTeamBowlingDetails(team,dir=dir, save=TRUE,odir=odir)
-            teams1 <- c(teams1,team)
-        },
-        error = function(e) {
-            print("No data")
-
-        }
-        )
-    }
     #Change dir
     setwd(odir)
     bowlingDF<-NULL
 
     # Compute wickets by bowler in each team
     o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams1){
+    for(team1 in teams){
+        print("loop1")
         bowlingDetails <- NULL
         val <- paste(team1,"-BowlingDetails.RData",sep="")
         print(val)
@@ -88,6 +71,7 @@ rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
             load(val)
             bowlers <- unique(bowlingDetails$bowler)
             for (y in 1:length(bowlers)){
+                print("loop2")
                 #cat("x=",x,"team",theTeams[x],"\n")
                 tryCatch(l <- getBowlerWicketDetails(team=team1,name=bowlers[y],dir="."),
                          error = function(e) {

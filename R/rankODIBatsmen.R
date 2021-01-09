@@ -1,9 +1,8 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 3 May 2020
+# Date : 05 Jan 2021
 # Function: rankODIBatsmen
-# This function creates a dataframe of all T20 batsmen performances and then
-# ranks the  batsmen
+# This function ranks the  batsmen
 #
 ###########################################################################################
 #' @title
@@ -49,6 +48,7 @@
 rankODIBatsmen <- function(dir='.',odir=".",minMatches=50) {
     # This needs to be done once. After it is done, we can use the RData files
     currDir= getwd()
+    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
     teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
               "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
               "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
@@ -58,27 +58,11 @@ rankODIBatsmen <- function(dir='.',odir=".",minMatches=50) {
               "Denmark","Germany","Jersey","Norway","Qatar","Malaysia","Vanuatu",
               "Thailand")
 
-    #teams <- c("Australia","India","Singapore","West Indies")
 
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
-    details=df=NULL
-    teams1 <- NULL
-    for(team in teams){
-        print(team)
-        tryCatch({
-            batting <- getTeamBattingDetails(team,dir=dir, save=TRUE,odir=odir)
-            teams1 <- c(teams1,team)
-        },
-        error = function(e) {
-            print("No data")
-
-        }
-        )
-    }
     #Change dir
     setwd(odir)
     battingDF<-NULL
-    for(team in teams1){
+    for(team in teams){
         battingDetails <- NULL
         val <- paste(team,"-BattingDetails.RData",sep="")
         print(val)

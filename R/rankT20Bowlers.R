@@ -1,8 +1,8 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 3 May 2020
+# Date : 5 Jan 2021
 # Function: rankT20Bowlers
-# This function creates a dataframe of all T20 batsmen performances and then
+# This function ranks the  bowlers
 # ranks the  batsmen
 #
 ###########################################################################################
@@ -58,31 +58,13 @@ rankT20Bowlers <- function(dir='.',odir=".",minMatches=20) {
               "United States of America","Bhutan","Maldives","Botswana","Nigeria",
               "Denmark","Germany","Jersey","Norway","Qatar","Malaysia","Vanuatu",
               "Thailand")
-
-    #teams <- c("Australia","India","Singapore","West Indies")
-    # Get all bowling details
-
-    details=df=NULL
-    teams1 <- NULL
-    for(team in teams){
-        print(team)
-        tryCatch({
-            bowling <- getTeamBowlingDetails(team,dir=dir, save=TRUE,odir=odir)
-            teams1 <- c(teams1,team)
-        },
-        error = function(e) {
-            print("No data")
-
-        }
-        )
-    }
     #Change dir
     setwd(odir)
     bowlingDF<-NULL
 
     # Compute wickets by bowler in each team
     o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams1){
+    for(team1 in teams){
         bowlingDetails <- NULL
         val <- paste(team1,"-BowlingDetails.RData",sep="")
         print(val)

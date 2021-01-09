@@ -1,9 +1,8 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 11 May 2020
+# Date : 05 Jan 2021
 # Function: rankIPLBatsmen
-# This function creates a dataframe of all IPL batsmen performances and then
-# ranks the IPL batsmen
+# This function ranks the IPL batsmen
 #
 ###########################################################################################
 #' @title
@@ -51,32 +50,16 @@
 rankIPLBatsmen <- function(dir='.',odir=".",minMatches=50) {
 
     currDir= getwd()
+    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
     teams <-c("Chennai Super Kings","Delhi Capitals", "Deccan Chargers","Delhi Daredevils",
               "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
               "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
               "Rising Pune Supergiants")
-
-
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
-    details=df=NULL
-    teams1 <- NULL
-    for(team in teams){
-        print(team)
-        tryCatch({
-            batting <- getTeamBattingDetails(team,dir=dir, save=TRUE,odir=odir)
-            teams1 <- c(teams1,team)
-        },
-        error = function(e) {
-            print("No data")
-
-        }
-        )
-    }
     #Change dir
     setwd(odir)
     battingDF<-NULL
-    for(team in teams1){
+    for(team in teams){
         battingDetails <- NULL
         val <- paste(team,"-BattingDetails.RData",sep="")
         print(val)

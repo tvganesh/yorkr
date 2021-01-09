@@ -57,30 +57,13 @@ rankNTBBowlers <- function(dir='.',odir=".",minMatches=20) {
                "Nottinghamshire","Somerset","Surrey","Sussex","Warwickshire",
                "Worcestershire","Yorkshire")
 
-
-    # Get all bowling details
-
-    details=df=NULL
-    teams1 <- NULL
-    for(team in teams){
-        print(team)
-        tryCatch({
-            bowling <- getTeamBowlingDetails(team,dir=dir, save=TRUE,odir=odir)
-            teams1 <- c(teams1,team)
-        },
-        error = function(e) {
-            print("No data")
-
-        }
-        )
-    }
     #Change dir
     setwd(odir)
     bowlingDF<-NULL
 
     # Compute wickets by bowler in each team
     o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams1){
+    for(team1 in teams){
         bowlingDetails <- NULL
         val <- paste(team1,"-BowlingDetails.RData",sep="")
         print(val)

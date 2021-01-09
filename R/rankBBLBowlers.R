@@ -1,9 +1,9 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 11 May 2020
+# Date : 05 Jan 2021
 # Function: rankBBLLBowlers
-# This function creates a dataframe of all batsmen performances and then
-# ranks the BBL batsmen
+# This function ranks the BBL bowlers
+# ranks the BBL bowlers
 #
 ###########################################################################################
 #' @title
@@ -56,29 +56,13 @@ rankBBLBowlers <- function(dir='.',odir=".",minMatches=20) {
               "Sydney Thunder")
 
 
-    # Get all bowling details
-
-    details=df=NULL
-    teams1 <- NULL
-    for(team in teams){
-        print(team)
-        tryCatch({
-            bowling <- getTeamBowlingDetails(team,dir=dir, save=TRUE,odir=odir)
-            teams1 <- c(teams1,team)
-        },
-        error = function(e) {
-            print("No data")
-
-        }
-        )
-    }
     #Change dir
     setwd(odir)
     bowlingDF<-NULL
 
     # Compute wickets by bowler in each team
     o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams1){
+    for(team1 in teams){
         bowlingDetails <- NULL
         val <- paste(team1,"-BowlingDetails.RData",sep="")
         print(val)

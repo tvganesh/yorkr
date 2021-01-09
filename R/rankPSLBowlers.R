@@ -1,9 +1,9 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 12 May 2020
+# Date :  05 Jan 2021
 # Function: rankPSLBowlers
-# This function creates a dataframe of all batsmen performances and then
-# ranks the PSL bowlers
+# This function ranks the PSL bowlers
+#
 #
 ###########################################################################################
 #' @title

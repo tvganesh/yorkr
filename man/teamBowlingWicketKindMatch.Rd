@@ -36,9 +36,8 @@ teamBowlingWicketKindMatch(a,"Pakistan","England")
 
 }
 \references{
-\url{https://cricsheet.org/}\cr
-\url{https://gigadom.in/}\cr
-\url{https://github.com/tvganesh/yorkrData}
+\url{http://cricsheet.org/}\cr
+\url{https://gigadom.wordpress.com/}
 }
 \seealso{
 \code{\link{teamBowlingWicketMatch}}\cr
