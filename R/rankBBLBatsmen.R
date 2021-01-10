@@ -98,4 +98,16 @@ rankBBLBatsmen <- function(dir='.',odir=".",minMatches=50) {
     BBLBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
     BBLBatsmenRank
 
+    df <- select(battingDF,batsman,runs,strikeRate)
+
+    b=summarise(group_by(df,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
+    b[is.na(b)] <- 0
+    # Reset to currDir
+    setwd(currDir)
+    # Select only players based on minMatches
+    c <- filter(b,matches >= minMatches)
+
+    BBLBatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
+    BBLBatsmenRank
+
 }

@@ -75,25 +75,16 @@ rankPSLBatsmen <- function(dir='.',odir=".",minMatches=50) {
 
     }
 
-
     df <- select(battingDF,batsman,runs,strikeRate)
-    batsmen <- unique(df$batsman)
-    o <- NULL
-    n <- data.frame(name=character(0),matches=numeric(0),meanRuns=numeric(0),meanSR=numeric(0))
-    for (x in 1:length(batsmen)){
-        m <- filter(df,batsman==batsmen[x])
-        m <- mutate(m,matches=n(),meanRuns=mean(runs),meanSR=mean(strikeRate))
-        m <- select(m,batsman,matches,meanRuns,meanSR)
-        n <- m[1,]
-        o <- rbind(o,n)
-    }
 
+    b=summarise(group_by(df,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
+    b[is.na(b)] <- 0
     # Reset to currDir
     setwd(currDir)
-    # Select only players who have played 60 matches or more
-    p <- filter(o,matches >= minMatches)
+    # Select only players based on minMatches
+    c <- filter(b,matches >= minMatches)
 
-    PSLBatsmenRank <- arrange(p,desc(meanRuns),desc(meanSR))
+    PSLBatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
     PSLBatsmenRank
 
 }
