@@ -7,11 +7,9 @@
 rankIPLBatsmen(dir='.',odir=".",minMatches=50)
 }
 \arguments{
-\item{dir}{The input directory}
+\item{odir}{The  directory}
 
-\item{odir}{The output directory}
-
-\item{minMatches}{Minimum matches}
+\item{dateValue}{Minimum matches}
 }
 \value{
 The ranked IPL batsmen
@@ -30,9 +28,9 @@ iplBatsmanRank <- rankIPLBatsmen()
 
 }
 \references{
-\url{http://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}\cr
-\url{https://github.com/tvganesh/yorkrData}
+\url{https://cricsheet.org/}\cr
+\url{https://gigadom.in/}\cr
+\url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
 \code{\link{rankIPLBowlers}}\cr

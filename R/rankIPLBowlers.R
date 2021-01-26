@@ -24,9 +24,9 @@
 #'
 #' @return The ranked IPL batsmen
 #' @references
-#' \url{http://cricsheet.org/}\cr
-#' \url{https://gigadom.wordpress.com/}\cr
-#' \url{https://github.com/tvganesh/yorkrData}
+#' \url{https://cricsheet.org/}\cr
+#' \url{https://gigadom.in/}\cr
+#' \url{https://github.com/tvganesh/yorkrData/}
 #'
 #' @author
 #' Tinniam V Ganesh
@@ -47,7 +47,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
+rankIPLBowlers <- function(odir=".",minMatches, years, wicketsVsER) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
     wicketPlayerOut=opposition=venue=NULL
     teams <-c("Chennai Super Kings","Delhi Capitals", "Deccan Chargers","Delhi Daredevils",
@@ -79,12 +79,23 @@ rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
         bowlingDF <- rbind(bowlingDF,details)
     }
 
+    maxDate= max(bowlingDF$date)
+    minDate= min(bowlingDF$date)
+    maxYear = year(maxDate)
+    minYear = year(minDate)
+
+    # Filter out from data frame greater than date
+    dateValue=as.Date(paste(years,"-01-01",sep=""))
+    if (dateValue < minDate)
+        dateValue=minDate
+    df=bowlingDF %>% filter(date > as.Date(dateValue))
+
     # Compute number of matches played
-    a=bowlingDF %>% select(bowler,date) %>% unique()
+    a=df %>% select(bowler,date) %>% unique()
     b=summarise(group_by(a,bowler),matches=n())
 
     # Compute wickets
-    c <- filter(bowlingDF,wicketPlayerOut != "nobody")
+    c <- filter(df,wicketPlayerOut != "nobody")
     d <- select(c,bowler,wicketPlayerOut,economyRate,date,opposition,venue)
     e <- summarise(group_by(d,bowler,date,economyRate),wickets=length(unique(wicketPlayerOut)))
     f=summarise(group_by(e,bowler), totalWickets=sum(wickets),meanER=mean(economyRate))
@@ -94,7 +105,12 @@ rankIPLBowlers <- function(dir='.',odir=".",minMatches=20) {
     g[is.na(g)] <- 0
     h <- filter(g,matches >= minMatches)
     setwd(currDir)
-    IPLBowlersRank <- arrange(h,desc(totalWickets),desc(meanER))
+    if(wicketsVsER == "Wickets over ER"){
+          IPLBowlersRank <- arrange(h,desc(totalWickets),desc(meanER))
+    } else if(wicketsVsER == "ER over Wickets"){
+
+         IPLBowlersRank <- arrange(h,meanER,desc(totalWickets))
+    }
     IPLBowlersRank <- distinct(IPLBowlersRank)
     IPLBowlersRank
 

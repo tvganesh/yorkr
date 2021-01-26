@@ -25,9 +25,9 @@
 #'
 #' @return The ranked T20 batsmen
 #' @references
-#' \url{http://cricsheet.org/}\cr
-#' \url{https://gigadom.wordpress.com/}\cr
-#' \url{https://github.com/tvganesh/yorkrData}
+#' \url{https://cricsheet.org/}\cr
+#' \url{https://gigadom.in/}\cr
+#' \url{https://github.com/tvganesh/yorkrData/}
 #'
 #' @author
 #' Tinniam V Ganesh
@@ -47,18 +47,12 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Batsmen <- function(dir='.',odir=".",minMatches=50) {
+rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR) {
 
+    cat("Entering rank Batsmen1 \n")
     currDir= getwd()
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
-    teams <-c("Australia","India","Pakistan","West Indies", 'Sri Lanka',
-              "England", "Bangladesh","Netherlands","Scotland", "Afghanistan",
-              "Zimbabwe","Ireland","New Zealand","South Africa","Canada",
-              "Bermuda","Kenya","Hong Kong","Nepal","Oman","Papua New Guinea",
-              "United Arab Emirates","Namibia","Cayman Islands","Singapore",
-              "United States of America","Bhutan","Maldives","Botswana","Nigeria",
-              "Denmark","Germany","Jersey","Norway","Qatar","Malaysia","Vanuatu",
-              "Thailand")
+    teams = unlist(teamNames)
     #Change dir
     setwd(odir)
     battingDF<-NULL
@@ -78,18 +72,36 @@ rankT20Batsmen <- function(dir='.',odir=".",minMatches=50) {
         battingDF <- rbind(battingDF,details)
 
     }
+    print(dim(battingDF))
+    maxDate= max(battingDF$date)
+    minDate= min(battingDF$date)
+    maxYear = year(maxDate)
+    minYear = year(minDate)
+    if(is.null(yearSelected) | length(yearSelected)==0){
+        print("Here")
+        return
+    }
+    cat("year err=",yearSelected," minMatches=", minMatches," runsVsSR=", runsvsSR,"\n")
+    dateValue=as.Date(paste(yearSelected,"-01-01",sep=""))
+    if (dateValue < minDate)
+        dateValue=minDate
+    df=battingDF %>% filter(date > as.Date(dateValue))
 
-    df <- select(battingDF,batsman,runs,strikeRate)
+    df1 <- select(df,batsman,runs,strikeRate)
 
-    b=summarise(group_by(df,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
+    b=summarise(group_by(df1,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
+    print(dim(b))
     b[is.na(b)] <- 0
+
+    c <- filter(b,matches >= minMatches)
     # Reset to currDir
     setwd(currDir)
-    # Select only players based on minMatches
-    c <- filter(b,matches >= minMatches)
 
-    T20BatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
+    if(runsvsSR == "Runs over SR"){
+        T20BatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
+    } else if (runsvsSR == "SR over Runs"){
+        T20BatsmenRank <- arrange(c,desc(meanSR),desc(meanRuns))
+    }
     T20BatsmenRank
 
 }
-

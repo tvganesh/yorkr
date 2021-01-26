@@ -9,18 +9,17 @@ getNTBBowlingDetails(dir='.',odir=".")
 \arguments{
 \item{dir}{The input directory}
 
-\item{odir}{The output directory}
+\item{odir}{The output directory
+
+\url{https://cricsheet.org/}\cr
+\url{https://gigadom.in/}\cr
+\url{https://github.com/tvganesh/yorkrData/}}
 }
 \description{
 This function creates a single datframe of all NTB bowling
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
-}
-\references{
-\url{https://cricsheet.org/}\cr
-\url{https://gigadom.wordpress.com/}\cr
-\url{https://github.com/tvganesh/yorkrData}
 }
 \seealso{
 \code{\link{getIPLBattingDetails}}\cr

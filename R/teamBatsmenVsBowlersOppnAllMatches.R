@@ -35,9 +35,9 @@
 #' @return None or dataframe
 #'
 #' @references
-#' \url{http://cricsheet.org/}\cr
-#' \url{https://gigadom.wordpress.com/}\cr
-#' \url{https://github.com/tvganesh/yorkrData}
+#' \url{https://cricsheet.org/}\cr
+#' \url{https://gigadom.in/}\cr
+#' \url{https://github.com/tvganesh/yorkrData/}
 #'
 #' @author
 #' Tinniam V Ganesh
