@@ -1,15 +1,15 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 05 Jan 2021
+# Date : 27 Jan 2021
 # Function: helper
-# This function ranks the IPL batsmen
+# This function is a helper for computing batting details of team
 #
 ###########################################################################################
 #' @title
-#' Gets min and max date from dataframe
+#' Gets min,max date and min and max matches from dataframe
 #'
 #' @description
-#' This function creates a single datframe of all IPL batsmen and then ranks them
+#' This function gets min,max date and min and max matches from dataframe
 #' @usage
 #' helper(teamNames,odir=".")
 #'
@@ -20,7 +20,7 @@
 #' The output directory
 #'
 #'
-#' @return minDate,maxDate, battingDF
+#' @return minDate,maxDate, minMatches, maxMatches
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -31,11 +31,6 @@
 #' @note
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
-#' @examples
-#' \dontrun{
-#' #
-#' iplBatsmanRank <- rankIPLBatsmen()
-#' }
 #'
 #' @seealso
 #' \code{\link{rankIPLBowlers}}\cr
@@ -84,7 +79,6 @@ helper<- function(teamNames,odir=".") {
     maxMatches = max(b$matches)
     setwd(currDir)
 
-    #a=battingDF %>% filter(date > as.Date("2018-02-01"))
-    return(list(minYear,maxYear,minMatches, maxMatches, battingDF))
+    return(list(minYear,maxYear,minMatches, maxMatches))
 
 }

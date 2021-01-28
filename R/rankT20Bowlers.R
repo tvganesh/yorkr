@@ -1,28 +1,32 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 05 Jan 2021
+# Date : 28 Jan 2021
 # Function: rankT20Bowlers
-# This function ranks the IPL bowlers
+# This function ranks the t20 bowlers
 #
 ###########################################################################################
 #' @title
-#' Ranks the IPL bowlers
+#' Ranks the T20 bowlers
 #'
 #' @description
-#' This function creates a single datframe of all IPL bowlers and then ranks them
-#' @usage
-#' rankT20Bowlers(dir='.',odir=".",minMatches=20)
+#' This function creates a single datframe of all T20 bowlers and then ranks them
 #'
-#' @param dir
-#' The input directory
+#' @usage
+#' rankT20Bowlers(teamNames,odir=".",minMatches, years, wicketsVsER)
+#'
+#' @param teamNames
+#' The team names
 #'
 #' @param odir
 #' The output directory
 #'
-#' @param minMatches
-#' Minimum matches
+#' @param yearSelected
+#'  Selected year
 #'
-#' @return The ranked IPL batsmen
+#' @param wicketsVsSR
+#' Wickets  or economy rate
+#'
+#' @return The ranked T20 bowlers
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -36,7 +40,7 @@
 #' @examples
 #' \dontrun{
 #' #
-#' iplBowlersRank <- rankIPLBowlers()
+#' bowlersRank <- rankT20Bowlers()
 #' }
 #'
 #' @seealso

@@ -2,7 +2,7 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 05 Jan 2021
 # Function: rankT20Batsmen
-# This function ranks the  batsmen
+# This function ranks the  T20  batsmen
 #
 #
 ###########################################################################################
@@ -12,16 +12,19 @@
 #' @description
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #' @usage
-#' rankT20Batsmen(dir='.',odir=".",minMatches=50)
+#' rankT20Batsmen(teamNames,odir=".",minMatches, yearSelected, runsvsSR)
 #'
-#' @param dir
-#' The input directory
+#' @param teamNames
+#' The team names
 #'
 #' @param odir
 #' The output directory
 #'
-#' @param minMatches
-#' Minimum matches
+#' @param yearSelected
+#'  Selected year
+#'
+#'#' @param runsVsSR
+#'  Runs or Strike rate
 #'
 #' @return The ranked T20 batsmen
 #' @references

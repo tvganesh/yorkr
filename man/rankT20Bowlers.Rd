@@ -2,22 +2,22 @@
 % Please edit documentation in R/rankT20Bowlers.R
 \name{rankT20Bowlers}
 \alias{rankT20Bowlers}
-\title{Ranks the T20 bowlers}
+\title{Ranks the IPL bowlers}
 \usage{
 rankT20Bowlers(dir='.',odir=".",minMatches=20)
 }
 \arguments{
-\item{dir}{The input directory}
-
 \item{odir}{The output directory}
 
 \item{minMatches}{Minimum matches}
+
+\item{dir}{The input directory}
 }
 \value{
-The ranked T20 bowlers
+The ranked IPL batsmen
 }
 \description{
-This function creates a single datframe of all T20 batsmen and then ranks them
+This function creates a single datframe of all IPL bowlers and then ranks them
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
@@ -25,7 +25,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \examples{
 \dontrun{
 #
-t20BowlersRank <- rankT20Bowlers()
+iplBowlersRank <- rankIPLBowlers()
 }
 
 }
@@ -35,10 +35,11 @@ t20BowlersRank <- rankT20Bowlers()
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{rankIPLBowlers}}\cr
+\code{\link{rankIPLBatsmen}}\cr
 \code{\link{rankODIBowlers}}\cr
 \code{\link{rankODIBatsmen}}\cr
 \code{\link{rankT20Batsmen}}\cr
+\code{\link{rankT20Bowlers}}\cr
 }
 \author{
 Tinniam V Ganesh
