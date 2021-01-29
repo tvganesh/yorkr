@@ -42,8 +42,6 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{rankIPLBowlers}}\cr
-#' \code{\link{rankIPLBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Batsmen}}\cr
 #' @export

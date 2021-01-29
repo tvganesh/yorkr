@@ -33,7 +33,6 @@
 #'
 #'
 #' @seealso
-#' \code{\link{rankIPLBowlers}}\cr
 #' \code{\link{rankODIBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Batsmen}}\cr
@@ -46,6 +45,7 @@ helper<- function(teamNames,odir=".") {
     cat("Dir helper=====",getwd(),"\n")
     currDir= getwd()
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
+    year=NULL
     teams = unlist(teamNames)
     #Change dir
     setwd(odir)
@@ -69,8 +69,8 @@ helper<- function(teamNames,odir=".") {
     cat("Dir helper A=====",getwd(),"\n")
     maxDate= max(battingDF$date)
     minDate= min(battingDF$date)
-    maxYear = year(maxDate)
-    minYear = year(minDate)
+    maxYear = lubridate::year(maxDate)
+    minYear = lubridate::year(minDate)
 
     df <- select(battingDF,batsman,runs,strikeRate)
 

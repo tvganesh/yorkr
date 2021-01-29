@@ -2,30 +2,33 @@
 % Please edit documentation in R/rankT20Bowlers.R
 \name{rankT20Bowlers}
 \alias{rankT20Bowlers}
-\title{Ranks the IPL bowlers}
+\title{Ranks the T20 bowlers}
 \usage{
-rankT20Bowlers(dir='.',odir=".",minMatches=20)
+rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
 }
 \arguments{
+\item{teamNames}{The team names}
+
 \item{odir}{The output directory}
 
-\item{minMatches}{Minimum matches}
+\item{minMatches}{Minimum matches played}
 
-\item{dir}{The input directory}
+\item{yearSelected}{Selected year}
+
+\item{wicketsVsER}{Wickets  or economy rate}
 }
 \value{
-The ranked IPL batsmen
+The ranked T20 bowlers
 }
 \description{
-This function creates a single datframe of all IPL bowlers and then ranks them
+This function creates a single datframe of all T20 bowlers and then ranks them
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-#
-iplBowlersRank <- rankIPLBowlers()
+rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
 }
 
 }
@@ -35,7 +38,6 @@ iplBowlersRank <- rankIPLBowlers()
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{rankIPLBatsmen}}\cr
 \code{\link{rankODIBowlers}}\cr
 \code{\link{rankODIBatsmen}}\cr
 \code{\link{rankT20Batsmen}}\cr

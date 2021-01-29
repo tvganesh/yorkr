@@ -4,7 +4,7 @@
 \alias{getCPLBattingDetails}
 \title{Gets  the CPL batting details}
 \usage{
-getIPLBattingDetails(dir='.',odir=".")
+getCPLBattingDetails(dir='.',odir=".")
 }
 \arguments{
 \item{dir}{The input directory}

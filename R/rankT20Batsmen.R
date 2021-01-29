@@ -20,10 +20,13 @@
 #' @param odir
 #' The output directory
 #'
-#' @param yearSelected
-#'  Selected year
+#' @param minMatches
+#' Minimum matches played
 #'
-#'#' @param runsVsSR
+#' @param yearSelected
+#' Selected year
+#'
+#' @param runsvsSR
 #'  Runs or Strike rate
 #'
 #' @return The ranked T20 batsmen
@@ -39,12 +42,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' #
-#' t20BatsmanRank <- rankT20Batsmen()
+#' rankT20Batsmen(teamNames,odir=".",minMatches, yearSelected, runsvsSR)
 #' }
 #'
 #' @seealso
-#' \code{\link{rankIPLBowlers}}\cr
 #' \code{\link{rankODIBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Bowlers}}\cr
@@ -54,7 +55,7 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR
 
     cat("Entering rank Batsmen1 \n")
     currDir= getwd()
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
+    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
     teams = unlist(teamNames)
     #Change dir
     setwd(odir)
@@ -78,8 +79,8 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR
     print(dim(battingDF))
     maxDate= max(battingDF$date)
     minDate= min(battingDF$date)
-    maxYear = year(maxDate)
-    minYear = year(minDate)
+    maxYear = lubridate::year(maxDate)
+    minYear = lubridate::year(minDate)
     if(is.null(yearSelected) | length(yearSelected)==0){
         print("Here")
         return
@@ -100,9 +101,9 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR
     # Reset to currDir
     setwd(currDir)
 
-    if(runsvsSR == "Runs over SR"){
+    if(runsvsSR == "Runs over Strike rate"){
         T20BatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
-    } else if (runsvsSR == "SR over Runs"){
+    } else if (runsvsSR == "Strike rate over Runs"){
         T20BatsmenRank <- arrange(c,desc(meanSR),desc(meanRuns))
     }
     T20BatsmenRank

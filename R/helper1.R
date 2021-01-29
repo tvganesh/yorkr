@@ -35,7 +35,6 @@
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
 #' @seealso
-#' \code{\link{rankIPLBowlers}}\cr
 #' \code{\link{rankODIBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Batsmen}}\cr
@@ -47,6 +46,7 @@ helper1<- function(teamNames,yearValue, odir=".") {
     currDir= getwd()
     cat("helper yearValue =", yearValue)
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
+    year=NULL
     teams = unlist(teamNames)
     #Change dir
     setwd(odir)
@@ -69,8 +69,8 @@ helper1<- function(teamNames,yearValue, odir=".") {
     }
     maxDate= max(battingDF$date)
     minDate= min(battingDF$date)
-    maxYear = year(maxDate)
-    minYear = year(minDate)
+    maxYear = lubridate::year(maxDate)
+    minYear = lubridate::year(minDate)
 
     dateValue=as.Date(paste(yearValue,"-01-01",sep=""))
     if (dateValue < minDate)

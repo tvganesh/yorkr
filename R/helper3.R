@@ -16,7 +16,7 @@
 #' @param teamNames
 #' The team names
 #'
-#''@param yearValue
+#'@param yearValue
 #' The year
 #'
 #'
@@ -37,7 +37,6 @@
 #'
 #'
 #' @seealso
-#' \code{\link{rankIPLBowlers}}\cr
 #' \code{\link{rankODIBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Batsmen}}\cr
@@ -47,7 +46,8 @@
 helper3<- function(teamNames,yearValue, odir=".") {
 
     currDir= getwd()
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
+
+    year=bowler=NULL
     teams = unlist(teamNames)
     #Change dir
     setwd(odir)
@@ -73,8 +73,8 @@ helper3<- function(teamNames,yearValue, odir=".") {
     }
     maxDate= max(bowlingDF$date)
     minDate= min(bowlingDF$date)
-    maxYear = year(maxDate)
-    minYear = year(minDate)
+    maxYear = lubridate::year(maxDate)
+    minYear = lubridate::year(minDate)
 
     dateValue=as.Date(paste(yearValue,"-01-01",sep=""))
     if (dateValue < minDate)

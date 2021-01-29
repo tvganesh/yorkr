@@ -2,12 +2,14 @@
 % Please edit documentation in R/helper3.R
 \name{helper3}
 \alias{helper3}
-\title{Gets min and max date from dataframe}
+\title{Gets min,max date and min and max matches from dataframe for the year}
 \usage{
 helper3(teamNames,yearValue,odir=".")
 }
 \arguments{
 \item{teamNames}{The team names}
+
+\item{yearValue}{The year}
 
 \item{odir}{The output directory}
 }
@@ -15,17 +17,10 @@ helper3(teamNames,yearValue,odir=".")
 minDate,maxDate, bowingDF
 }
 \description{
-This function creates a single datframe of all IPL batsmen and then ranks them
+This function gets min,max date and min and max matches from dataframe
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
-}
-\examples{
-\dontrun{
-#
-iplBatsmanRank <- rankIPLBatsmen()
-}
-
 }
 \references{
 \url{https://cricsheet.org/}\cr
@@ -33,7 +28,6 @@ iplBatsmanRank <- rankIPLBatsmen()
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{rankIPLBowlers}}\cr
 \code{\link{rankODIBowlers}}\cr
 \code{\link{rankODIBatsmen}}\cr
 \code{\link{rankT20Batsmen}}\cr

@@ -12,7 +12,7 @@
 #' This function creates a single datframe of all T20 bowlers and then ranks them
 #'
 #' @usage
-#' rankT20Bowlers(teamNames,odir=".",minMatches, years, wicketsVsER)
+#' rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
 #'
 #' @param teamNames
 #' The team names
@@ -20,10 +20,13 @@
 #' @param odir
 #' The output directory
 #'
+#' @param minMatches
+#' Minimum matches played
+#'
 #' @param yearSelected
 #'  Selected year
 #'
-#' @param wicketsVsSR
+#' @param wicketsVsER
 #' Wickets  or economy rate
 #'
 #' @return The ranked T20 bowlers
@@ -37,22 +40,21 @@
 #' @note
 #' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 #'
-#' @examples
+#'
+#'@examples
 #' \dontrun{
-#' #
-#' bowlersRank <- rankT20Bowlers()
+#' rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
 #' }
 #'
 #' @seealso
-#' \code{\link{rankIPLBatsmen}}\cr
 #' \code{\link{rankODIBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Batsmen}}\cr
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Bowlers <- function(teamNames,odir=".",minMatches, years, wicketsVsER) {
-    bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=NULL
+rankT20Bowlers <- function(teamNames,odir=".",minMatches, yearSelected, wicketsVsER) {
+    bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=year=NULL
     wicketPlayerOut=opposition=venue=NULL
     teams = unlist(teamNames)
     currDir= getwd()
@@ -81,11 +83,12 @@ rankT20Bowlers <- function(teamNames,odir=".",minMatches, years, wicketsVsER) {
 
     maxDate= max(bowlingDF$date)
     minDate= min(bowlingDF$date)
-    maxYear = year(maxDate)
-    minYear = year(minDate)
+    maxYear = lubridate::year(maxDate)
+    minYear = lubridate::year(minDate)
+    cat("year selected**********************=",yearSelected,"\n")
 
     # Filter out from data frame greater than date
-    dateValue=as.Date(paste(years,"-01-01",sep=""))
+    dateValue=as.Date(paste(yearSelected,"-01-01",sep=""))
     if (dateValue < minDate)
         dateValue=minDate
     df=bowlingDF %>% filter(date > as.Date(dateValue))
@@ -105,9 +108,9 @@ rankT20Bowlers <- function(teamNames,odir=".",minMatches, years, wicketsVsER) {
     g[is.na(g)] <- 0
     h <- filter(g,matches >= minMatches)
     setwd(currDir)
-    if(wicketsVsER == "Wickets over ER"){
+    if(wicketsVsER == "Wickets over Economy rate"){
           T20BowlersRank <- arrange(h,desc(totalWickets),desc(meanER))
-    } else if(wicketsVsER == "ER over Wickets"){
+    } else if(wicketsVsER == "Economy rate over Wickets"){
 
         T20BowlersRank <- arrange(h,meanER,desc(totalWickets))
     }

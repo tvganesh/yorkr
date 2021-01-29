@@ -34,7 +34,6 @@ odiBatsmanRank <- rankODIBatsmen()
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{rankIPLBowlers}}\cr
 \code{\link{rankODIBowlers}}\cr
 \code{\link{rankT20Batsmen}}\cr
 \code{\link{rankT20Bowlers}}\cr

@@ -35,7 +35,6 @@
 #'
 #'
 #' @seealso
-#' \code{\link{rankIPLBowlers}}\cr
 #' \code{\link{rankODIBowlers}}\cr
 #' \code{\link{rankODIBatsmen}}\cr
 #' \code{\link{rankT20Batsmen}}\cr
@@ -45,6 +44,8 @@
 helper2<- function(teamNames, odir=".") {
 
     currDir= getwd()
+
+    year=bowler=NULL
     cat("Dir helper2=====",getwd()," odir=", odir, "\n")
     teams = unlist(teamNames)
     #Change dir
@@ -71,8 +72,8 @@ helper2<- function(teamNames, odir=".") {
     }
     maxDate= max(bowlingDF$date)
     minDate= min(bowlingDF$date)
-    maxYear = year(maxDate)
-    minYear = year(minDate)
+    maxYear = lubridate::year(maxDate)
+    minYear = lubridate::year(minDate)
 
     # Compute number of matches played
     a=bowlingDF %>% select(bowler,date) %>% unique()

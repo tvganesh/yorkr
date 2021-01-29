@@ -4,14 +4,18 @@
 \alias{rankT20Batsmen}
 \title{Ranks the T20 batsmen}
 \usage{
-rankT20Batsmen(dir='.',odir=".",minMatches=50)
+rankT20Batsmen(teamNames,odir=".",minMatches, yearSelected, runsvsSR)
 }
 \arguments{
+\item{teamNames}{The team names}
+
 \item{odir}{The output directory}
 
-\item{minMatches}{Minimum matches}
+\item{minMatches}{Minimum matches played}
 
-\item{dir}{The input directory}
+\item{yearSelected}{Selected year}
+
+\item{runsvsSR}{Runs or Strike rate}
 }
 \value{
 The ranked T20 batsmen
@@ -24,8 +28,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-#
-t20BatsmanRank <- rankT20Batsmen()
+rankT20Batsmen(teamNames,odir=".",minMatches, yearSelected, runsvsSR)
 }
 
 }
@@ -35,7 +38,6 @@ t20BatsmanRank <- rankT20Batsmen()
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{rankIPLBowlers}}\cr
 \code{\link{rankODIBowlers}}\cr
 \code{\link{rankODIBatsmen}}\cr
 \code{\link{rankT20Bowlers}}\cr
