@@ -81,10 +81,7 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR
     minDate= min(battingDF$date)
     maxYear = lubridate::year(maxDate)
     minYear = lubridate::year(minDate)
-    if(is.null(yearSelected) | length(yearSelected)==0){
-        print("Here")
-        return
-    }
+
     cat("year err=",yearSelected," minMatches=", minMatches," runsVsSR=", runsvsSR,"\n")
     dateValue=as.Date(paste(yearSelected,"-01-01",sep=""))
     if (dateValue < minDate)

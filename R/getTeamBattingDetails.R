@@ -63,18 +63,20 @@ getTeamBattingDetails <- function(team,dir=".",save=FALSE,odir="."){
 
     battingDetails <- NULL
     for(i in 1:length(fl)){
-        load(fl[i])
-        match <- overs
-        details <- teamBattingPerfDetails(match,team,includeInfo=TRUE)
-        # If the side has not batted details will be NULL. Skip in that case
-        if(!is.null(dim(details))){
-            battingDetails <- rbind(battingDetails,details)
-        }else {
-            #print("Empty")
+        # Add try-catch to handle issues
+        tryCatch({
+            load(fl[i])
+            match <- overs
+            details <- teamBattingPerfDetails(match,team,includeInfo=TRUE)
+            # If the side has not batted details will be NULL. Skip in that case
+            if(!is.null(dim(details))){
+                battingDetails <- rbind(battingDetails,details)
+            }else {
+                #print("Empty")
 
-            next
-        }
-
+                next
+            }
+        }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
     }
 
     if(save==TRUE){

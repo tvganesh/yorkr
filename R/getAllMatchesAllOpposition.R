@@ -73,8 +73,11 @@ getAllMatchesAllOpposition <- function(team,dir=".",save=FALSE,odir="."){
 
         matches <- NULL
         for(i in 1:length(fl)){
-            load(fl[i])
-            matches <- rbind(matches,overs)
+            # Add try-catch to handle issues
+            tryCatch({
+                load(fl[i])
+                matches <- rbind(matches,overs)
+            }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
         }
         b <- paste(odir,"/","allMatchesAllOpposition-",team,".RData",sep="")
         if(save){
