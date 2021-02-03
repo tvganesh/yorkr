@@ -81,8 +81,11 @@ getAllMatchesBetweenTeams <- function(team1,team2,dir=".",save=FALSE,odir="."){
         # Create a data frame with all matches
         matches <- NULL
         for(i in 1:length(fl3)){
-            load(fl3[i])
-            matches <- rbind(matches,overs)
+            # Add try-catch to handle issues
+            tryCatch({
+                load(fl3[i])
+                matches <- rbind(matches,overs)
+            }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
         }
         b <- paste(odir,"/",team1,"-",team2,"-allMatches.RData",sep="")
         if(save){

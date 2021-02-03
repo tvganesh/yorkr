@@ -50,6 +50,7 @@
 
 bowlerWktsPredict <- function(df,name){
     rpart = NULL
+    print(names(df))
     m <-rpart(wicketNo~delivery,data=df)
     atitle <- paste(name,"- No of deliveries to Wicket")
     rpart.plot(m,main=atitle)

@@ -58,6 +58,7 @@
 #' @export
 #'
 teamBowlingWicketRunsMatch <- function(match,theTeam,opposition, plot=TRUE){
+    print("wicketruns")
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=over=wickets=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
@@ -89,7 +90,7 @@ teamBowlingWicketRunsMatch <- function(match,theTeam,opposition, plot=TRUE){
     f <- select(c,bowler,over)
     g <- summarise(group_by(f,bowler),overs=length(unique(over)))
 
-
+    print("wicketruns1")
     #Compute number of wickets
     h <- b %>%
         select(bowler,wicketKind,wicketPlayerOut) %>%
@@ -103,8 +104,11 @@ teamBowlingWicketRunsMatch <- function(match,theTeam,opposition, plot=TRUE){
     # Add wickets
     l <- full_join(k,i,by="bowler")
 
+
     l$wickets = as.character(l$wickets)
+    print(l$wickets)
     # Set NAs to 0
+
     if(sum(is.na(l$wickets)) != 0){
         l[is.na(l$wickets),]$wickets=0
     }

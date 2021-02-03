@@ -56,5 +56,6 @@ bowlerWicketsAgainstOpposition <- function(df,name){
         geom_hline(aes(yintercept=2))+
         xlab("Opposition") + ylab("Average wickets taken") +
         ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+                            atop(italic("Data source:http://cricsheet.org/"),""))))+
+        theme(axis.text.x = element_text(angle = 90, hjust = 1))
 }

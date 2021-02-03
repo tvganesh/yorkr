@@ -58,5 +58,6 @@ batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance"){
         xlab("Opposition") + ylab("Runs") +
         geom_hline(aes(yintercept=50))+
         ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+                            atop(italic("Data source:http://cricsheet.org/"),""))))+
+        theme(axis.text.x = element_text(angle = 90, hjust = 1))
 }

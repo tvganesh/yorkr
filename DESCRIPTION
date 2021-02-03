@@ -4,7 +4,7 @@ Version: 0.0.19
 Title: Analyze Cricket Performances Based on  Data from Cricsheet
 Description: Analyzing performances of cricketers and cricket teams
              based on 'yaml' match data from Cricsheet <https://cricsheet.org/>.
-Date: 2021-02-02
+Date: 2021-02-03
 Author: Tinniam V Ganesh
 Maintainer: Tinniam V Ganesh <tvganesh.85@gmail.com>
 License: MIT + file LICENSE

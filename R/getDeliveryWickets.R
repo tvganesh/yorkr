@@ -65,20 +65,22 @@ getDeliveryWickets <- function(team,dir=".",name,save=FALSE){
     fl <- Sys.glob(a)
     deliveryWKts <- NULL
     for(i in 1:length(fl)){
+        tryCatch({
         load(fl[i])
-        match <- bowlingDetails
-        #print(i)
-        #print(dim(match))
-        details <- bowlerDeliveryWickets(match,team,name)
-        # If the side has not batted details will be NULL. Skip in that case
-        if(!is.null(dim(details))){
-            deliveryWKts <- rbind(deliveryWKts,details)
-        }else {
-            #print("Empty")
+            match <- bowlingDetails
+            #print(i)
+            #print(dim(match))
+            details <- bowlerDeliveryWickets(match,team,name)
+            # If the side has not batted details will be NULL. Skip in that case
+            if(!is.null(dim(details))){
+                deliveryWKts <- rbind(deliveryWKts,details)
+            }else {
+                #print("Empty")
 
-            next
-        }
-
+                next
+            }
+        }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
     }
+    print(names(deliveryWKts))
     deliveryWKts
 }
