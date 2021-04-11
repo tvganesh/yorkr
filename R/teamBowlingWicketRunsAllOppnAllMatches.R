@@ -54,7 +54,6 @@
 #' }
 #'
 #' @seealso
-#' \code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 #'

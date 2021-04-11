@@ -46,7 +46,6 @@ m <-teamBowlingWicketRunsAllOppnAllMatches(matches,t1="India",t2="All",plot=FALS
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }

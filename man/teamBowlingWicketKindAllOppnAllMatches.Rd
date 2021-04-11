@@ -49,7 +49,6 @@ teamBowlingWicketKindAllOppnAllMatches(matches,t1="India",t2="South Africa")
 \url{https://github.com/tvganesh/yorkrData/}
 }
 \seealso{
-\code{\link{teamBowlingScorecardAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
 }

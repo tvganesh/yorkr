@@ -63,6 +63,7 @@ teamBowlingWicketRunsMatch <- function(match,theTeam,opposition, plot=TRUE){
     team=bowler=ball=wides=noballs=runsConceded=overs=over=wickets=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
     # Filter the bowler's performance
+
     a <-filter(match,team!=theTeam)
 
     # Compute the maidens,runs conceded and overs for the bowlers
@@ -105,10 +106,10 @@ teamBowlingWicketRunsMatch <- function(match,theTeam,opposition, plot=TRUE){
     l <- full_join(k,i,by="bowler")
 
 
-    l$wickets = as.character(l$wickets)
-    print(l$wickets)
+    #l$wickets = as.character(l$wickets)
+    #print(l$wickets)
     # Set NAs to 0
-
+    l$wickets=as.numeric(l$wickets)
     if(sum(is.na(l$wickets)) != 0){
         l[is.na(l$wickets),]$wickets=0
     }

@@ -56,7 +56,11 @@ teamBowlingPerfDetails <- function(match,theTeam,includeInfo=FALSE){
     team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
     # Initialise to NULL
     l <- NULL
-    a <-filter(match,team!=theTeam)
+    if(theTeam == "Punjab Kings"){
+        a <-filter(match,team !="Punjab Kings" & team !="Kings XI Punjab")
+    } else{
+        a <-filter(match,team!=theTeam)
+    }
     sz <- dim(a)
     if(sz[1] == 0){
         #cat("No bowling records.\n")

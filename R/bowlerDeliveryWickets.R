@@ -52,15 +52,18 @@
 
 bowlerDeliveryWickets <- function(match,theTeam,name){
     team = bowler = wicketPlayerOut =delivery = wicketNo = NULL
+
     d <- NULL
     #a <-filter(match,opposition!=theTeam)
     #b <- filter(match,grepl(name,bowler))
     b=match[match$bowler==name,]
     if(dim(b)[1] != 0){
-        b$delivery<- b$over *4
+        print(head(b))
+        # Compute the delivery in which wicket was taken (1.. no of deliveries)
+        b$delivery<- seq(1:dim(b)[1])
         c <- filter(b,wicketPlayerOut != "nobody")
         if(dim(c)[1] !=0){
-            c$wicketNo <- seq(1:dim(c)[1])
+            c$wicketNo <- seq(1:dim(c)[1]) # wicket no 1.. no of wickets
             d <- select(c,bowler,delivery,wicketNo,date)
         }
 

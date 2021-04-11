@@ -42,7 +42,7 @@ getIPLBattingDetails <- function(dir='.',odir=".") {
 
     currDir= getwd()
     teams <-c("Chennai Super Kings","Delhi Capitals", "Deccan Chargers","Delhi Daredevils",
-              "Kings XI Punjab", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
+              "Punjab Kings", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
               "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
               "Rising Pune Supergiants")
