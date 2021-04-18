@@ -55,12 +55,8 @@ teamBattingPerfDetails <- function(match,theTeam,includeInfo=FALSE){
     wicketKind=wicketPlayerOut=NULL
     # Initialise to NULL
     details <- NULL
-    if(theTeam == "Punjab Kings"){
-        a <-filter(match,team =="Punjab Kings" | team =="Kings XI Punjab")
+    a <-filter(match,team==theTeam)
 
-    } else {
-        a <-filter(match,team==theTeam)
-    }
     sz <- dim(a)
     if(sz[1] == 0){
         #cat("No batting records.\n")

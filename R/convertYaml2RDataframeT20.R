@@ -205,11 +205,6 @@ convertYaml2RDataframeT20 <- function(yamlFile,sourceDir=".",targetDir="."){
 
     teams <- as.character(unique(overs$team))
 
-    # Take into account name change for IPL "Kings XI Punjab" to "Punjab Kings"
-    if(meta$team1 == "Kings XI Punjab")
-        meta$team1 = "Punjab Kings"
-    if(meta$team2 == "Kings XI Punjab")
-        meta$team2 = "Punjab Kings"
     #Create a unique file which is based on the opposing teams and the date of the match
     filename <- paste(meta$team1,"-",meta$team2,"-",meta$date,".",
                       "RData",sep="")
