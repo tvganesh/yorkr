@@ -52,10 +52,10 @@ batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance"){
     b <- select(df,batsman,runs,opposition)
     c <-b[complete.cases(b),]
     d <- summarise(group_by(c,opposition),meanRuns=mean(runs),numMatches=n())
-    plot.title = paste(name,"- Runs against opposition")
+    plot.title = paste(name,"- Mean runs against opposition")
     ggplot(d, aes(x=opposition, y=meanRuns, fill=opposition))+
         geom_bar(stat = "identity",position="dodge") +
-        xlab("Opposition") + ylab("Runs") +
+        xlab("Opposition") + ylab("Mean Runs") +
         geom_hline(aes(yintercept=50))+
         ggtitle(bquote(atop(.(plot.title),
                             atop(italic("Data source:http://cricsheet.org/"),""))))+

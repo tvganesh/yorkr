@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 24 Apr 2021
-# Function: plotWinLossBetweenTeams
+# Function: plotWinLossTeamVsAllTeams
 # This function computes and plots number of wins for each team
 #
 ###########################################################################################
@@ -9,21 +9,19 @@
 #' Plot  wins for each team
 #'
 #' @description
-#' This function computes and plots number of wins for each team in all their
-#' encounters. The plot includes the number of  wins byteam1 each team and the matches
+#' This function computes and plots number of wins for a team against all
+#' other teams. The plot includes the number of  wins by team each team and the matches
 #' with no result
 #'
 #' @usage
-#' plotWinLossBetweenTeams(team1,team2,dir=".")
+#' plotWinLossTeamVsAllTeams(team1,dir=".")
 #'
 #' @param team1
 #' The 1st team
 #'
-#' @param team2
-#' The 2nd team
 #'
 #' @param dir
-#' The source directory of teh RData files
+#' The source directory of the RData files
 #'
 #' @return None
 #'
@@ -52,15 +50,16 @@
 #' @export
 #'
 
-plotWinLossBetweenTeams <- function(team1,team2,dir="."){
+plotWinLossTeamVsAllTeams <- function(team1,dir="."){
     matches=NULL
     venue=winner=result=date=NULL
     # Create 2 filenames with both combinations of team1 and team2
-    d1 <-paste(team1,"-",team2,"-allMatches.RData",sep="")
+    d1 <-paste("allMatchesAllOpposition-",team1,".RData",sep="")
     fl1 <- paste(dir,"/",d1,sep="")
     load(fl1)
     a <- select(matches,date,venue,winner,result)
     b=distinct(a) #Get distinct rows
+
 
     winLoss <- summarise(group_by(b,winner),count=n())
 
@@ -70,11 +69,12 @@ plotWinLossBetweenTeams <- function(team1,team2,dir="."){
         winLoss[x,]$winner <-"NoResult"
     }
 
-    plot.title <- paste("Number of wins in",team1," vs ",team2, " matches")
+    plot.title <- paste("Number of wins of",team1,"against all teams in all  matches")
     ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
         geom_bar(stat = "identity",position="dodge") +
         xlab("Winner") + ylab("Numer of Wins") +
         ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+                            atop(italic("Data source:http://cricsheet.org/"),"")))) +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 }
