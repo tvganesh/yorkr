@@ -89,6 +89,7 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR
     df=battingDF %>% filter(date > as.Date(dateValue))
 
     df1 <- select(df,batsman,runs,strikeRate)
+    df1 <- distinct(df1)
 
     b=summarise(group_by(df1,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
     print(dim(b))
