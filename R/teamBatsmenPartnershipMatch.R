@@ -64,15 +64,18 @@ teamBatsmenPartnershipMatch <- function(match,theTeam,opposition,plot=TRUE){
     # Group batsman with non strikers and compute partnerships
     df <- data.frame(summarise(group_by(a,batsman,nonStriker),sum(runs)))
     names(df) <- c("batsman","nonStriker","runs")
+    print(dim(df))
 
     if(plot==TRUE){
         plot.title <- paste(theTeam,"Batting partnership in match (vs.",opposition,")")
-        ggplot(data=df,aes(x=batsman,y=runs,fill=nonStriker))+
+
+        g <- ggplot(data=df,aes(x=batsman,y=runs,fill=nonStriker))+
             geom_bar(data=df,stat="identity") +
             xlab("Batmen") + ylab("Runs Scored") +
-            ggtitle(bquote(atop(.(plot.title),
-                                    atop(italic("Data source:http://cricsheet.org/"),"")))) +
+            labs(title=plot.title,subtitle="Data source:http://cricsheet.org/") +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+        ggplotly(g)
     }
     else{
         # Output dataframe

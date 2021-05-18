@@ -46,7 +46,7 @@
 #'
 #' @export
 #'
-batsmanCumulativeAverageRuns <- function(df,name="A Leg Glance"){
+batsmanCumulativeAverageRuns <- function(df,name="A Leg Glance",staticIntv=1){
     runs=cs=no=NULL
     b <- select(df,runs)
     b$no<-seq.int(nrow(b))
@@ -54,8 +54,18 @@ batsmanCumulativeAverageRuns <- function(df,name="A Leg Glance"){
 
     d <- mutate(c,cs=cumsum(runs)/no)
     plot.title= paste(name,"- Cumulative Average vs No of innings")
-    ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
-        xlab("No of innings") + ylab("Cumulative Avg. runs") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+    if(staticIntv ==1){ #ggplot2
+        ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+            xlab("No of innings") + ylab("Cumulative Avg. runs") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),""))))
+    } else { #ggplotly
+        g <- ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+            ggtitle(plot.title) +
+            xlab("No of innings") + ylab("Cumulative Avg. runs")
+
+        ggplotly(g)
+     }
+
+
 }

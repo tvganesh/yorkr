@@ -47,14 +47,26 @@
 #'
 #' @export
 #'
-batsmanRunsVsStrikeRate <- function(df,name= "A Late Cut"){
+batsmanRunsVsStrikeRate <- function(df,name= "A Late Cut",staticIntv=1){
     batsman = runs = strikeRate = NULL
     b <- select(df,batsman,runs,strikeRate)
 
     plot.title = paste(name,"- Runs vs Strike Rate")
-    ggplot(b) + geom_point(aes(x=runs, y=strikeRate),colour="darkgrey") +
-        geom_smooth(aes(x=runs, y=strikeRate)) +
-        xlab("Strike rate(%)") + ylab("Runs") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+    if(staticIntv ==1){ #ggplot2
+        ggplot(b) + geom_point(aes(x=runs, y=strikeRate),colour="darkgrey") +
+            geom_smooth(aes(x=runs, y=strikeRate)) +
+            xlab("Strike rate(%)") + ylab("Runs") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),""))))
+
+   } else { #ggplotly
+
+       g <- ggplot(b) + geom_point(aes(x=runs, y=strikeRate),colour="darkgrey") +
+           geom_smooth(aes(x=runs, y=strikeRate)) +
+           xlab("Strike rate(%)") + ylab("Runs") +
+           ggtitle(plot.title)
+       ggplotly(g)
+
+   }
 }
+
