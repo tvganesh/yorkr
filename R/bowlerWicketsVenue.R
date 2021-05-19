@@ -46,18 +46,30 @@
 #' @export
 #'
 
-bowlerWicketsVenue <- function(df,name){
+bowlerWicketsVenue <- function(df,name,staticIntv=1){
     meanWickets = numMatches =wickets = venue = NULL
     c <- summarise(group_by(df,venue),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))
     e <- arrange(d,desc(meanWickets))
     f <- e[1:20,]
     plot.title = paste(name,"- Wickets in venue(number innings)")
-    ggplot(f, aes(x=venue, y=meanWickets, fill=venue))+
-        geom_bar(stat = "identity",position="dodge") +
-        geom_hline(aes(yintercept=2))+
-        xlab("Venue") + ylab("Average wickets taken") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))+
-        theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    if(staticIntv ==1){ #ggplot2
+        ggplot(f,aes(x=venue, y=meanWickets, fill=venue))+
+            geom_bar(stat = "identity",position="dodge") +
+            geom_hline(aes(yintercept=2))+
+            xlab("Venue") + ylab("Average wickets taken") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),""))))+
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+    } else { #ggplotly
+        g <- ggplot(f, aes(x=venue, y=meanWickets, fill=venue))+
+            geom_bar(stat = "identity",position="dodge") +
+            geom_hline(aes(yintercept=2))+
+            xlab("Venue") + ylab("Average wickets taken") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g,height=600)
+
+    }
 }

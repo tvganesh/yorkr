@@ -45,14 +45,22 @@
 #'
 #' @export
 #'
-bowlerMovingAverage <- function(df,name){
+bowlerMovingAverage <- function(df,name,staticIntv1=1){
     bowler = wickets = NULL
     c <- select(df,bowler,wickets,date)
 
     plot.title = paste(name,"- Moving average of wickets in career")
-    ggplot(c) + geom_line(aes(x=date, y=wickets),colour="darkgrey") +
-        geom_smooth(aes(x=date, y=wickets)) +
-        xlab("Date") + ylab("Wickets") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+    if(staticIntv1 ==1){ #ggplot2
+        ggplot(c) + geom_line(aes(x=date, y=wickets),colour="darkgrey") +
+            geom_smooth(aes(x=date, y=wickets)) +
+            xlab("Date") + ylab("Wickets") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),""))))
+    } else { #ggplotly
+        g <- ggplot(c) + geom_line(aes(x=date, y=wickets),colour="darkgrey") +
+            geom_smooth(aes(x=date, y=wickets)) +
+            xlab("Date") + ylab("Wickets") +
+            ggtitle(plot.title)
+        ggplotly(g)
+    }
 }

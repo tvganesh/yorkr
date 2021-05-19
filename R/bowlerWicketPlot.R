@@ -43,15 +43,23 @@
 #'
 #' @export
 #'
-bowlerWicketPlot <- function(df,name){
+bowlerWicketPlot <- function(df,name,staticIntv1=1){
     overs = runs = maidens = meanRuns = wickets = bowler = meanWickets = NULL
      c <- summarise(group_by(df,overs),meanRuns=mean(runs),meanMaidens=mean(maidens),
                     meanWickets=mean(wickets))
 
      plot.title <- paste(name,"- Average wickets vs overs")
-     ggplot(c,aes(x=overs, y=meanWickets,fill=overs)) +
-         geom_bar(data=c,stat="identity" ) +
-         xlab("Overs") + ylab("Mean Wickets") +
-         ggtitle(bquote(atop(.(plot.title),
-                             atop(italic("Data source:http://cricsheet.org/"),""))))
+     if(staticIntv1 ==1){ #ggplot2
+         ggplot(c,aes(x=overs, y=meanWickets,fill=overs)) +
+             geom_bar(data=c,stat="identity" ) +
+             xlab("Overs") + ylab("Mean Wickets") +
+             ggtitle(bquote(atop(.(plot.title),
+                                 atop(italic("Data source:http://cricsheet.org/"),""))))
+     } else { #ggplotly
+         g <-ggplot(c,aes(x=overs, y=meanWickets,fill=overs)) +
+             geom_bar(data=c,stat="identity" ) +
+             xlab("Overs") + ylab("Mean Wickets") +
+             ggtitle(plot.title)
+         ggplotly(g)
+     }
 }

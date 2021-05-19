@@ -46,7 +46,7 @@
 #'
 #' @export
 #'
-bowlerCumulativeAvgWickets <- function(df,name){
+bowlerCumulativeAvgWickets <- function(df,name,staticIntv1=1){
     wickets=cs=no=NULL
     b <- select(df,wickets)
     b$no<-seq.int(nrow(b))
@@ -54,8 +54,15 @@ bowlerCumulativeAvgWickets <- function(df,name){
 
     d <- mutate(c,cs=cumsum(wickets)/no)
     plot.title= paste(name,"- Cumulative avg wkts vs No innings")
-    ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
-        xlab("No of innings") + ylab("Cumulative Avg. wickets") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+    if(staticIntv1 ==1){ #ggplot2
+        ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+            xlab("No of innings") + ylab("Cumulative Avg. wickets") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),""))))
+    } else {
+       g <- ggplot(d) + geom_line(aes(x=no,y=cs),col="blue") +
+            xlab("No of innings") + ylab("Cumulative Avg. wickets") +
+           ggtitle(plot.title)
+       ggplotly(g)
+    }
 }
