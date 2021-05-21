@@ -61,7 +61,7 @@
 #'
 #' @export
 #'
-teamBowlersWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=TRUE){
+teamBowlersWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=1){
     team=bowler=ball=NULL
     runs=over=wickets=NULL
     byes=legbyes=noballs=wides=runsConceded=NULL
@@ -108,7 +108,7 @@ teamBowlersWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=TRU
         l[is.na(l$wickets),]$wickets=0
     }
 
-    if(plot==TRUE){
+    if(plot == 1){ #ggplot2
         plot.title = paste("Wicket taken cs Runs conceded -",main," Vs ",opposition,"(all matches)",sep="")
         ggplot(data=l,aes(x=factor(wickets),y=runs,fill=factor(wickets))) +
             facet_wrap( ~ bowler,scales = "fixed", ncol=8) +
@@ -117,6 +117,16 @@ teamBowlersWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=TRU
             ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2){ #ggplotly
+        plot.title = paste("Wicket taken cs Runs conceded -",main," Vs ",opposition,"(all matches)",sep="")
+        g <- ggplot(data=l,aes(x=factor(wickets),y=runs,fill=factor(wickets))) +
+            facet_wrap( ~ bowler,scales = "fixed", ncol=8) +
+            geom_bar(stat="identity") +
+            xlab("Number of wickets") + ylab('Runs conceded') +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g,height=500)
+
     } else {
         l
     }

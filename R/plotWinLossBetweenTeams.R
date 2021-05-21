@@ -52,7 +52,7 @@
 #' @export
 #'
 
-plotWinLossBetweenTeams <- function(team1,team2,dir="."){
+plotWinLossBetweenTeams <- function(team1,team2,dir=".",plot=1){
     matches=NULL
     venue=winner=result=date=NULL
     # Create 2 filenames with both combinations of team1 and team2
@@ -71,10 +71,19 @@ plotWinLossBetweenTeams <- function(team1,team2,dir="."){
     }
 
     plot.title <- paste("Number of wins in",team1," vs ",team2, " matches")
-    ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
-        geom_bar(stat = "identity",position="dodge") +
-        xlab("Winner") + ylab("Numer of Wins") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+    if(plot == 1){ #ggplot2
+        ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
+            geom_bar(stat = "identity",position="dodge") +
+            xlab("Winner") + ylab("Numer of Wins") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),""))))
+    } else if(plot == 2 || plot == 3){
+        g <- ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
+            geom_bar(stat = "identity",position="dodge") +
+            xlab("Winner") + ylab("Numer of Wins") +
+            ggtitle(plot.title)
+        ggplotly(g)
+    }
+
 
 }

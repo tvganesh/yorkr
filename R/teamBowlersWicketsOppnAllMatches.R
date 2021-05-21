@@ -68,7 +68,7 @@
 #'
 #' @export
 #'
-teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=20){
+teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=1,top=20){
 
     team=bowler=ball=noballs=runs=NULL
     wicketKind=wicketPlayerOut=over=wickets=NULL
@@ -102,7 +102,7 @@ teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,t
 
     names(e) <- c("bowler","wickets")
 
-    if(plot==TRUE){
+    if(plot == 1){ #ggplot2
         plot.title = paste(main," Bowler performances ","(against ",opposition," all matches)",sep="")
         ggplot(data=e,aes(x=bowler,y=wickets,fill=factor(bowler))) +
             geom_bar(stat="identity") +
@@ -111,6 +111,17 @@ teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=TRUE,t
             ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2){ #ggplotly
+
+        plot.title = paste(main," Bowler performances ","(against ",opposition," all matches)",sep="")
+        g <- ggplot(data=e,aes(x=bowler,y=wickets,fill=factor(bowler))) +
+            geom_bar(stat="identity") +
+            #facet_wrap( ~ bowler,scales = "free", ncol=3,drop=TRUE) + #Does not work.Check!
+            xlab("Batsman") + ylab("Wickets taken") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g,500)
+
     } else{
         e
     }

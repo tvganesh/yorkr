@@ -70,7 +70,7 @@
 #'
 #' @export
 #'
-teamBowlersVsBatsmenOppnAllMatches <- function(matches,main,opposition,plot=TRUE,top=5){
+teamBowlersVsBatsmenOppnAllMatches <- function(matches,main,opposition,plot=1,top=5){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=batsman=NULL
     a <-filter(matches,team != main)
@@ -94,7 +94,7 @@ teamBowlersVsBatsmenOppnAllMatches <- function(matches,main,opposition,plot=TRUE
     }
     names(e) <- c("bowler","batsman","runsConceded")
 
-    if( plot == TRUE){
+    if(plot == 1){ #ggplot2
         plot.title = paste("Bowlers vs batsmen -",main," Vs ",opposition,"(all matches)",sep="")
         ggplot(data=e,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
             facet_grid(. ~ bowler) + geom_bar(stat="identity") +
@@ -103,6 +103,17 @@ teamBowlersVsBatsmenOppnAllMatches <- function(matches,main,opposition,plot=TRUE
             ggtitle(bquote(atop(.(plot.title),
                                     atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2){ #ggplotly
+        plot.title = paste("Bowlers vs batsmen -",main," Vs ",opposition,"(all matches)",sep="")
+        g <- ggplot(data=e,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
+            facet_grid(. ~ bowler) + geom_bar(stat="identity") +
+            #facet_wrap( ~ bowler,scales = "free", ncol=3,drop=TRUE) + #Does not work.Check!
+            xlab("Batsman") + ylab("Runs conceded") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g,height=500)
+
+
     } else{
         e
     }

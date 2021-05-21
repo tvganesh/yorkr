@@ -56,7 +56,7 @@
 #'
 #' @export
 #'
-teamBowlingWicketKindMatch <- function(match,theTeam,opposition,plot=TRUE){
+teamBowlingWicketKindMatch <- function(match,theTeam,opposition,plot=1){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
@@ -102,7 +102,7 @@ teamBowlingWicketKindMatch <- function(match,theTeam,opposition,plot=TRUE){
        j[is.na(j$wicketPlayerOut),]$wicketPlayerOut="noWicket"
     }
 
-    if(plot == TRUE){
+    if(plot == 1){ #ggplot2
         plot.title <- paste(theTeam,"Wicketkind vs Runs given (against",opposition,")")
         p <- ggplot(data=j,aes(x=wicketKind,y=runs,fill=factor(wicketKind))) +
             facet_grid(. ~ bowler,scales = "free_x", space = "free_x") +
@@ -114,6 +114,16 @@ teamBowlingWicketKindMatch <- function(match,theTeam,opposition,plot=TRUE){
             theme(plot.title = element_text(size=14,margin=margin(10)))
 
         p
+    }   else if(plot == 2){ #ggplotly
+        plot.title <- paste(theTeam,"Wicketkind vs Runs given (against",opposition,")")
+        p <- ggplot(data=j,aes(x=wicketKind,y=runs,fill=factor(wicketKind))) +
+            facet_grid(. ~ bowler,scales = "free_x", space = "free_x") +
+            geom_bar(stat="identity") +
+            xlab("Wicket kind") + ylab("Total runs conceded") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))  +
+            theme(plot.title = element_text(size=14,margin=margin(10)))
+        ggplotly(p)
     }
     else{
         j

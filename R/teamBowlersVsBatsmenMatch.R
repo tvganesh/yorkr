@@ -60,7 +60,7 @@
 #'
 #' @export
 #'
-teamBowlersVsBatsmenMatch <- function(match,theTeam,opposition, plot=TRUE){
+teamBowlersVsBatsmenMatch <- function(match,theTeam,opposition, plot=1){
 
     batsman=runsConceded=team=runs=bowler=NULL
     bowler=batsman=NULL
@@ -69,7 +69,7 @@ teamBowlersVsBatsmenMatch <- function(match,theTeam,opposition, plot=TRUE){
     names(b) <- c("bowler","batsman","runsConceded")
 
     # Output plot or dataframe
-    if(plot == TRUE){
+    if(plot == 1){ #ggplot2
         plot.title <- paste(theTeam,"Bowler vs Batsman (against",opposition,")")
         p <- ggplot(data=b,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
             facet_grid(. ~ bowler) + geom_bar(stat="identity") +
@@ -79,6 +79,14 @@ teamBowlersVsBatsmenMatch <- function(match,theTeam,opposition, plot=TRUE){
             theme(plot.title = element_text(size=14, face="bold.italic",margin=margin(10)))
 
         p
+    }  else if(plot == 2){ #ggplotly
+        plot.title <- paste(theTeam,"Bowler vs Batsman (against",opposition,")")
+        p <- ggplot(data=b,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
+            facet_grid(. ~ bowler) + geom_bar(stat="identity") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+            theme(plot.title = element_text(size=14, face="bold.italic",margin=margin(10)))
+           ggplotly(p)
     }
     else{
         b
