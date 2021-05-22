@@ -50,7 +50,7 @@
 #' @export
 #'
 
-plotWinLossTeamVsAllTeams <- function(team1,dir="."){
+plotWinLossTeamVsAllTeams <- function(team1,dir=".",plot=1){
     matches=NULL
     venue=winner=result=date=NULL
     # Create 2 filenames with both combinations of team1 and team2
@@ -70,11 +70,21 @@ plotWinLossTeamVsAllTeams <- function(team1,dir="."){
     }
 
     plot.title <- paste("Number of wins of",team1,"against all teams in all  matches")
-    ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
-        geom_bar(stat = "identity",position="dodge") +
-        xlab("Winner") + ylab("Numer of Wins") +
-        ggtitle(bquote(atop(.(plot.title),
-                            atop(italic("Data source:http://cricsheet.org/"),"")))) +
-        theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    if(plot == 1){ #ggplot2
+        ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
+            geom_bar(stat = "identity",position="dodge") +
+            xlab("Winner") + ylab("Numer of Wins") +
+            ggtitle(bquote(atop(.(plot.title),
+                                atop(italic("Data source:http://cricsheet.org/"),"")))) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2 || plot == 3){ #ggplotly
+        g <- ggplot(winLoss, aes(x=winner, y=count, fill=winner))+
+            geom_bar(stat = "identity",position="dodge") +
+            xlab("Winner") + ylab("Numer of Wins") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g)
+
+    }
 
 }

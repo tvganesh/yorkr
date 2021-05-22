@@ -69,7 +69,7 @@ teamBatsmenPartnershipOppnAllMatchesChart <- function(matches,main,opposition,pl
     df <- arrange(df,desc(runs))
 
     print("here")
-    cat("plot=",plot)
+    cat("plot=")
     plot.title = paste(main," Batting partnership ","(against ",opposition," all matches)",sep="")
 
     # Plot the data

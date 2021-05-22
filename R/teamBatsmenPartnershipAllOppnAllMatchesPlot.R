@@ -61,7 +61,7 @@
 #'
 #' @export
 #'
-teamBatsmenPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plot=TRUE){
+teamBatsmenPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plot=1){
     team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
     a <- NULL
     a <-filter(matches,team==theTeam)
@@ -76,7 +76,7 @@ teamBatsmenPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plo
     df <- filter(df,runs!=0)
     df <- arrange(df,desc(runs))
 
-    if(plot==TRUE){
+    if(plot == 1){ #ggplot2
         if(theTeam==main){
              plot.title <- paste(theTeam," batting partnerships")
         }else if(theTeam != main){
@@ -88,6 +88,20 @@ teamBatsmenPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plo
             ggtitle(bquote(atop(.(plot.title),
                                 atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2){ #ggplotly
+
+        if(theTeam==main){
+            plot.title <- paste(theTeam," batting partnerships")
+        }else if(theTeam != main){
+            plot.title <- paste(theTeam," batting partnerships against ", main)
+        }
+        g <- ggplot(data=df,aes(x=batsman,y=runs,fill=nonStriker))+
+            geom_bar(data=df,stat="identity") +
+            xlab("Batsman") + ylab("Partnership runs") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g)
+
     } else{
         df
     }

@@ -62,7 +62,7 @@
 #' @export
 #'
 
-teamBowlingWicketKindAllOppnAllMatches <- function(matches,t1,t2="All",plot=TRUE){
+teamBowlingWicketKindAllOppnAllMatches <- function(matches,t1,t2="All",plot=1){
 
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
@@ -115,7 +115,7 @@ teamBowlingWicketKindAllOppnAllMatches <- function(matches,t1,t2="All",plot=TRUE
     # Summarise by the different wicket kinds for each bowler
     p <- summarise(group_by(n,bowler,wicketKind),m=n())
 
-    if(plot==TRUE){
+    if(plot == 1){ #ggplot2
         plot.title <- paste(t1,"vs",t2,"wicket-kind of bowlers")
         # Plot
         ggplot(data=p,aes(x=wicketKind,y=m,fill=factor(wicketKind))) +
@@ -125,6 +125,17 @@ teamBowlingWicketKindAllOppnAllMatches <- function(matches,t1,t2="All",plot=TRUE
             ggtitle(bquote(atop(.(plot.title),
                                 atop(italic("Data source:http://cricsheet.org/"),"")))) +
             theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2){ #ggplotly
+        plot.title <- paste(t1,"vs",t2,"wicket-kind of bowlers")
+        # Plot
+        g <- ggplot(data=p,aes(x=wicketKind,y=m,fill=factor(wicketKind))) +
+            facet_wrap( ~ bowler,scales = "fixed", ncol=8) +
+            geom_bar(stat="identity") +
+            xlab("Wicket kind") + ylab("Wickets") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g,height=500)
+
     }else{
         p
     }

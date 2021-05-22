@@ -58,7 +58,7 @@
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesRept}}\cr
 #' @export
 #'
-teamBowlersVsBatsmenAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){
+teamBowlersVsBatsmenAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2,plot=1){
     batsman=runsConceded=team=NULL
     bwlr <- bowlerDF$bowler
     if(t2 != "India"){
@@ -67,10 +67,19 @@ teamBowlersVsBatsmenAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2){
     }else{
         plot.title <- paste(bwlr,"-Performance against all batsmen")
     }
-    ggplot(data=bowlerDF,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
-        facet_grid(. ~ bowler) + geom_bar(stat="identity") +
-        xlab("Batsman") + ylab("Runs conceded") +
-        ggtitle(bquote(atop(.(plot.title),
-                                atop(italic("Data source:http://cricsheet.org/"),"")))) +
-        theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    if(plot == 1){ #ggplot2
+        ggplot(data=bowlerDF,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
+            facet_grid(. ~ bowler) + geom_bar(stat="identity") +
+            xlab("Batsman") + ylab("Runs conceded") +
+            ggtitle(bquote(atop(.(plot.title),
+                                    atop(italic("Data source:http://cricsheet.org/"),"")))) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    } else if(plot == 2){ #ggplotly
+        g <- ggplot(data=bowlerDF,aes(x=batsman,y=runsConceded,fill=factor(batsman))) +
+            facet_grid(. ~ bowler) + geom_bar(stat="identity") +
+            xlab("Batsman") + ylab("Runs conceded") +
+            ggtitle(plot.title) +
+            theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        ggplotly(g,height=500)
+    }
 }
