@@ -55,8 +55,8 @@ batsmanFoursSixes <- function(df,name= "A Leg Glance",staticIntv=1){
     print(head(df,30))
     c <- mutate(df, RunsFromFours=fours*4,RunsFromSixes=sixes*6)
     d <- select(c, batsman,ballsPlayed,RunsFromFours,RunsFromSixes,TotalRuns)
-    e <- melt(d,id=c("batsman","ballsPlayed")
-    print(e)
+    e <- melt(d,id=c("batsman","ballsPlayed"))
+
 
     plot.title = paste(name,"- Total runs, 4s and 6s vs Balls Faced")
     if(staticIntv ==1){ #ggplot2{

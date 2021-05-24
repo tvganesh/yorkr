@@ -1,0 +1,72 @@
+##########################################################################################
+# Designed and developed by Tinniam V Ganesh
+# Date : 24 May 2021
+# Function: saveAllMatchesBetween2SSMTeams
+# This function saves all matches between 2 SSM teams as a single dataframe
+##################################################################################
+#' @title
+#' Saves all matches between 2 SSM teams as  dataframe
+#'
+#' @description
+#' This function saves all matches between 2 SSM teams as a single dataframe in the
+#' current directory
+#'
+#' @usage
+#' saveAllMatchesBetween2SSMTeams(dir=".",odir=".")
+#'
+#' @param dir
+#' Input Directory
+#'
+#' @param odir
+#' Output Directory to store saved matches
+#'
+#' @return None
+#' @references
+#' \url{https://cricsheet.org/}\cr
+#' \url{https://gigadom.in/}\cr
+#' \url{https://github.com/tvganesh/yorkrData/}
+#'
+#'
+#' @author
+#' Tinniam V Ganesh
+#' @note
+#' Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+#'
+#' @examples
+#' \dontrun{
+#' saveAllMatchesBetween2SSMTeams(dir=".",odir=".")
+#' }
+#' @seealso
+#' \code{\link{batsmanDismissals}}\cr
+#' \code{\link{batsmanRunsVsDeliveries}}\cr
+#' \code{\link{batsmanRunsVsStrikeRate}}\cr
+#' \code{\link{getAllMatchesAllOpposition}}\cr
+#' \code{\link{getAllMatchesBetweenTeams}}\cr
+#'
+#' @export
+#'
+
+saveAllMatchesBetween2SSMTeams <- function(dir=".",odir="."){
+
+    teams <-c("Auckland", "Canterbury", "Central Districts",
+              "Northern Districts", "Otago", "Wellington")
+
+
+    matches <- NULL
+    #Create all combinations of teams
+    for(i in seq_along(teams)){
+        for(j in seq_along(teams)){
+            if(teams[i] != teams[j]){
+                cat("Team1=",teams[i],"Team2=",teams[j],"\n")
+                tryCatch(matches <- getAllMatchesBetweenTeams(teams[i],teams[j],dir=dir,save=TRUE,odir=odir),
+                         error = function(e) {
+                             print("No matches")
+
+                         }
+                )
+            }
+        }
+        matches <- NULL
+    }
+}
+
