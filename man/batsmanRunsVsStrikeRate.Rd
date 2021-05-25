@@ -4,12 +4,14 @@
 \alias{batsmanRunsVsStrikeRate}
 \title{Batsman runs versus strike rate}
 \usage{
-batsmanRunsVsStrikeRate(df, name= "A Late Cut")
+batsmanRunsVsStrikeRate(df, name= "A Late Cut",staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
 \value{
 None

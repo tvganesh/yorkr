@@ -4,12 +4,14 @@
 \alias{batsmanFoursSixes}
 \title{Batsman's total runs, fours and sixes}
 \usage{
-batsmanFoursSixes(df,name= "A Leg Glance")
+batsmanFoursSixes(df,name= "A Leg Glance",staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
 \value{
 None

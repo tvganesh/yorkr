@@ -4,7 +4,7 @@
 \alias{teamBowlersVsBatsmenOppnAllMatches}
 \title{Team bowlers vs batsmen against an opposition in all matches}
 \usage{
-teamBowlersVsBatsmenOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
+teamBowlersVsBatsmenOppnAllMatches(matches,main,opposition,plot=1,top=5)
 }
 \arguments{
 \item{matches}{The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -14,7 +14,7 @@ matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")}
 
 \item{opposition}{The opposition team against which the performance is require}
 
-\item{plot}{If true plot else return dataframe}
+\item{plot}{plot=1 (static),plot=2(interactive),plot=3(table)}
 
 \item{top}{The number of rows to be returned. 5 by default}
 }

@@ -14,7 +14,7 @@
 #' the data frame
 #'
 #' @usage
-#' teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=TRUE)
+#' teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=1)
 #'
 #' @param match
 #' The match between the teams
@@ -26,7 +26,7 @@
 #' The opposition team
 #'
 #' @param plot
-#' If plot=TRUE then a plot is created otherwise a data frame is returned
+#' lot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return b
 #' The data frame of the batsmen vs bowlers performance
@@ -59,6 +59,7 @@
 teamBatsmenVsBowlersMatch <- function(match,theTeam,opposition, plot=1)
 {
     team=batsman=bowler=runs=runsConceded=NULL
+    ggplotly=NULL
     a <-filter(match,team==theTeam)
     # Summarise the performance of the batsmen against the bowlers vs total runs scored
     b <-summarise(group_by(a,batsman,bowler),sum(runs))

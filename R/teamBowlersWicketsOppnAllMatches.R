@@ -15,7 +15,7 @@
 #' opposition in all matches against the opposition
 #'
 #' @usage
-#' teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
+#' teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=1,top=20)
 #'
 #' @param matches
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -28,7 +28,7 @@
 #' The opposing team
 #'
 #' @param plot
-#' If plot=TRUE then a plot is displayed else a dataframe is returned
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @param top
 #' The number of top bowlers to be included in the result
@@ -71,6 +71,7 @@
 teamBowlersWicketsOppnAllMatches <- function(matches,main,opposition,plot=1,top=20){
 
     team=bowler=ball=noballs=runs=NULL
+    ggplotly=NULL
     wicketKind=wicketPlayerOut=over=wickets=NULL
     batsman=wides=NULL
 

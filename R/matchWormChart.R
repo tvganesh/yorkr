@@ -12,7 +12,7 @@
 #' This function  plots the match worm graph between 2 teams in a match
 #'
 #' @usage
-#' matchWormGraph(match,t1,t2)
+#' matchWormGraph(match,t1,t2,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
@@ -22,6 +22,9 @@
 #'
 #' @param t2
 #' the 2nd team in the match
+#'
+#' @param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @return none
 #'
@@ -52,7 +55,8 @@
 #' @export
 #'
 matchWormGraph <- function(match,t1,t2,plot=1) {
-    team=ball=totalRuns=NULL
+    team=ball=totalRuns=total=NULL
+    ggplotly=NULL
     # Filter the performance of team1
     a <-filter(match,team==t1)
     b <- select(a,ball,totalRuns)

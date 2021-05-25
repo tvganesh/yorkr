@@ -14,7 +14,7 @@
 #' with no result
 #'
 #' @usage
-#' plotWinLossBetweenTeams(team1,team2,dir=".")
+#' plotWinLossBetweenTeams(team1,team2,dir=".",plot=1)
 #'
 #' @param team1
 #' The 1st team
@@ -24,6 +24,9 @@
 #'
 #' @param dir
 #' The source directory of teh RData files
+#'
+#' @param plot
+#' plot=1 (static),plot=2(interactive)
 #'
 #' @return None
 #'
@@ -54,6 +57,7 @@
 
 plotWinLossBetweenTeams <- function(team1,team2,dir=".",plot=1){
     matches=NULL
+    ggplotly=NULL
     venue=winner=result=date=NULL
     # Create 2 filenames with both combinations of team1 and team2
     d1 <-paste(team1,"-",team2,"-allMatches.RData",sep="")

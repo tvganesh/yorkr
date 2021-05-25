@@ -12,13 +12,16 @@
 #' This function computes and plots mean number of wickets taken by the bowler  against different
 #' opposition
 #' @usage
-#' bowlerWicketsAgainstOpposition(df, name)
+#' bowlerWicketsAgainstOpposition(df, name,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param staticIntv1
+#' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -48,6 +51,7 @@
 
 bowlerWicketsAgainstOpposition <- function(df,name,staticIntv1=1){
     meanWickets = numMatches = wickets = opposition = NULL
+    ggplotly=NULL
     c <- summarise(group_by(df,opposition),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,opposition=paste(opposition,"(",numMatches,")",sep=""))
     plot.title = paste(name,"- Wickets against Opposition(number innings)")

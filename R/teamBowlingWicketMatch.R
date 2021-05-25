@@ -13,7 +13,7 @@
 #' This function computes returns the wickets taken bowlers in a match between 2 teams
 #'
 #' @usage
-#' teamBowlingWicketMatch(match,theTeam,opposition, plot=TRUE)
+#' teamBowlingWicketMatch(match,theTeam,opposition, plot=1)
 #'
 #' @param match
 #' The match between the teams
@@ -25,7 +25,7 @@
 #' The opposition team
 #'
 #' @param plot
-#' If plot= TRUE the dataframe will be plotted else a data frame will be returned
+#' plot=1 (static),plot=2(interactive), plot=3 (table)
 #'
 #' @return None or data fame
 #' A data frame with the bowling performance in alll matches against all oppositions
@@ -58,6 +58,7 @@
 #'
 teamBowlingWicketMatch <- function(match,theTeam,opposition,plot=1){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    ggplotly=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
     # The bowlers performance of the team is got when the other side is batting. Hence '!-"
     # Filter the data frame

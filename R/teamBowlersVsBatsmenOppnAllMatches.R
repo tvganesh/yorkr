@@ -15,7 +15,7 @@
 #' against the opposition
 #'
 #' @usage
-#' teamBowlersVsBatsmenOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
+#' teamBowlersVsBatsmenOppnAllMatches(matches,main,opposition,plot=1,top=5)
 #'
 #' @param matches
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -28,7 +28,7 @@
 #' The opposition team against which the performance is require
 #'
 #' @param plot
-#' If true plot else return dataframe
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @param top
 #' The number of rows to be returned. 5 by default
@@ -72,6 +72,7 @@
 #'
 teamBowlersVsBatsmenOppnAllMatches <- function(matches,main,opposition,plot=1,top=5){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    ggplotly=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=batsman=NULL
     a <-filter(matches,team != main)
 

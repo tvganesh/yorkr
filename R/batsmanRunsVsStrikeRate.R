@@ -12,13 +12,16 @@
 #' by the batsman. A loess line is fitted over the points
 #'
 #' @usage
-#' batsmanRunsVsStrikeRate(df, name= "A Late Cut")
+#' batsmanRunsVsStrikeRate(df, name= "A Late Cut",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -49,6 +52,7 @@
 #'
 batsmanRunsVsStrikeRate <- function(df,name= "A Late Cut",staticIntv=1){
     batsman = runs = strikeRate = NULL
+    ggplotly=NULL
     b <- select(df,batsman,runs,strikeRate)
 
     plot.title = paste(name,"- Runs vs Strike Rate")

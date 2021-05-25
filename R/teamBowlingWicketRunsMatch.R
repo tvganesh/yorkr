@@ -14,7 +14,7 @@
 #' The user can choose to plot or return a dataframe
 #'
 #' @usage
-#' teamBowlingWicketRunsMatch(match,theTeam,opposition,plot=TRUE)
+#' teamBowlingWicketRunsMatch(match,theTeam,opposition,plot=1)
 #'
 #' @param match
 #' The match between the teams
@@ -26,7 +26,7 @@
 #' The opposition team
 #'
 #' @param plot
-#' If plot= TRUE the dataframe will be plotted else a data frame will be returned
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return None or data fame
 #' A data frame with the bowling performance in all matches against all oppositions
@@ -60,6 +60,7 @@
 teamBowlingWicketRunsMatch <- function(match,theTeam,opposition, plot=1){
     print("wicketruns")
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    ggplotly=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=over=wickets=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
     # Filter the bowler's performance

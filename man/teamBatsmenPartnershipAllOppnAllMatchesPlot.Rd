@@ -4,7 +4,7 @@
 \alias{teamBatsmenPartnershipAllOppnAllMatchesPlot}
 \title{Plots team batting partnership  all matches all oppositions}
 \usage{
-teamBatsmenPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=TRUE)
+teamBatsmenPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=1)
 }
 \arguments{
 \item{matches}{All the matches of the team against all oppositions}
@@ -13,7 +13,7 @@ teamBatsmenPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=TRUE)
 
 \item{main}{The main team for which the the batting partnerships are sought}
 
-\item{plot}{Whether the partnerships have top be rendered as a plot. If plot=FALSE the data frame is returned}
+\item{plot}{Whether the partnerships have top be rendered as a plot. Plot=1 (static),plot=2(interactive),plot=3(table)}
 }
 \value{
 None or partnerships

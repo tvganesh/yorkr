@@ -15,7 +15,7 @@
 #' opposition in all matches against the opposition
 #'
 #' @usage
-#' teamBowlersWicketRunsOppnAllMatches(matches,main,opposition,plot=TRUE)
+#' teamBowlersWicketRunsOppnAllMatches(matches,main,opposition,plot=1)
 #'
 #' @param matches
 #' The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -28,7 +28,7 @@
 #' The opposing team
 #'
 #' @param plot
-#' If plot=TRUE then a plot is displayed else a dataframe is returned
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return None or dataframe
 #' The return depends on the value of the plot
@@ -63,6 +63,7 @@
 #'
 teamBowlersWicketRunsOppnAllMatches <- function(matches,main,opposition,plot=1){
     team=bowler=ball=NULL
+    ggplotly=NULL
     runs=over=wickets=NULL
     byes=legbyes=noballs=wides=runsConceded=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL

@@ -4,12 +4,14 @@
 \alias{bowlerCumulativeAvgEconRate}
 \title{Bowler's cumulative average economy rate}
 \usage{
-bowlerCumulativeAvgEconRate(df,name)
+bowlerCumulativeAvgEconRate(df,name,staticIntv1=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{staticIntv1}{Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)}
 }
 \value{
 None

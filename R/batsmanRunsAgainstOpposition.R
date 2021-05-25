@@ -12,13 +12,16 @@
 #' This function computes and plots the mean runs scored by the batsman against different
 #' oppositions
 #' @usage
-#' batsmanRunsAgainstOpposition(df, name= "A Leg Glance")
+#' batsmanRunsAgainstOpposition(df, name= "A Leg Glance",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -49,6 +52,7 @@
 
 batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance",staticIntv=1){
     batsman = runs = opposition = meanRuns =  NULL
+    ggplotly=NULL
     b <- select(df,batsman,runs,opposition)
     c <-b[complete.cases(b),]
     d <- summarise(group_by(c,opposition),meanRuns=mean(runs),numMatches=n())

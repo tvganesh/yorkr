@@ -15,7 +15,7 @@
 #' This function also returns a  dataframe  with the batting partnerships
 #'
 #' @usage
-#' teamBatsmenPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=TRUE)
+#' teamBatsmenPartnershipAllOppnAllMatchesPlot(matches,theTeam,main,plot=1)
 #'
 #' @param matches
 #' All the matches of the team against all oppositions
@@ -28,7 +28,7 @@
 
 #'
 #'@param plot
-#' Whether the partnerships have top be rendered as a plot. If plot=FALSE the data frame is returned
+#' Whether the partnerships have top be rendered as a plot. Plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return None or partnerships
 #'
@@ -63,6 +63,7 @@
 #'
 teamBatsmenPartnershipAllOppnAllMatchesPlot <- function(matches,theTeam,main,plot=1){
     team=batsman=nonStriker=runs=partnershipRuns=totalRuns=NULL
+    ggplotly=NULL
     a <- NULL
     a <-filter(matches,team==theTeam)
 

@@ -4,12 +4,14 @@
 \alias{bowlerMovingAverage}
 \title{Bowler's moving average of wickets}
 \usage{
-bowlerMovingAverage(df, name)
+bowlerMovingAverage(df, name,staticIntv1=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of bowler}
+
+\item{staticIntv1}{Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)}
 }
 \value{
 None

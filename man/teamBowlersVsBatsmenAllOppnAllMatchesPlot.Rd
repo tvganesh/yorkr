@@ -4,7 +4,7 @@
 \alias{teamBowlersVsBatsmenAllOppnAllMatchesPlot}
 \title{Plot bowlers vs batsmen against all opposition all matches}
 \usage{
-teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2)
+teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2,plot=1)
 }
 \arguments{
 \item{bowlerDF}{The data frame of the bowler whose performance is required}
@@ -12,6 +12,8 @@ teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2)
 \item{t1}{The team against to which the player belong}
 
 \item{t2}{The opposing team}
+
+\item{plot}{plot=1 (static),plot=2(interactive)}
 }
 \value{
 none

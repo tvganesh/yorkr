@@ -14,13 +14,16 @@
 #' the batsman
 #'
 #' @usage
-#' batsmanMovingAverage(df, name= "A Leg Glance")
+#' batsmanMovingAverage(df, name= "A Leg Glance",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -50,6 +53,7 @@
 #'
 batsmanMovingAverage <- function(df,name = "A Leg Glance",staticIntv=1){
     batsman = runs = NULL
+    ggplotly=NULL
     b <- select(df,batsman,runs,date)
 
     plot.title = paste(name,"- Moving average of runs in career")

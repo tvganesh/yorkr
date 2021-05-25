@@ -4,7 +4,7 @@
 \alias{teamBowlingWicketKindMatch}
 \title{Compute and plot the wicket kinds by bowlers in match}
 \usage{
-teamBowlingWicketKindMatch(match,theTeam,opposition,plot=TRUE)
+teamBowlingWicketKindMatch(match,theTeam,opposition,plot=1)
 }
 \arguments{
 \item{match}{The match between the teams}

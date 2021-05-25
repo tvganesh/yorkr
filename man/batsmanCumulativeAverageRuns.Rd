@@ -4,12 +4,14 @@
 \alias{batsmanCumulativeAverageRuns}
 \title{Batsman's cumulative average runs}
 \usage{
-batsmanCumulativeAverageRuns(df,name= "A Leg Glance")
+batsmanCumulativeAverageRuns(df,name= "A Leg Glance",staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
 \value{
 None

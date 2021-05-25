@@ -13,7 +13,7 @@
 #' all oppositions. The user can chose to plot or return a data frame
 #'
 #' @usage
-#' teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
+#' teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=1)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches
@@ -26,7 +26,7 @@
 #' ) will give the performance against this  team
 #'
 #' @param plot
-#' If plot= TRUE the dataframe will be plotted else a data frame will be returned
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return None or data fame
 #' A data frame with the bowling performance in alll matches against all oppositions
@@ -65,6 +65,7 @@
 teamBowlingWicketKindAllOppnAllMatches <- function(matches,t1,t2="All",plot=1){
 
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    ggplotly=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     over=wickets=NULL
     a <- NULL

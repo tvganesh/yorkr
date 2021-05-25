@@ -12,7 +12,7 @@
 #' This function computes performance of bowlers of a team against an opposition in a match
 #'
 #' @usage
-#' teamBowlersVsBatsmenMatch(match,theTeam,opposition, plot=TRUE)
+#' teamBowlersVsBatsmenMatch(match,theTeam,opposition, plot=1)
 #'
 #' @param match
 #' The data frame of the match. This can be obtained with the call for e.g
@@ -26,7 +26,7 @@
 #' The opposition team
 #'
 #' @param plot
-#' This parameter specifies if a plot is required, If plot=FALSE then a data frame is returned
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return None or dataframe
 #' If plot=TRUE there is no return. If plot=TRUE then the dataframe is returned
@@ -63,6 +63,7 @@
 teamBowlersVsBatsmenMatch <- function(match,theTeam,opposition, plot=1){
 
     batsman=runsConceded=team=runs=bowler=NULL
+    ggplotly=NULL
     bowler=batsman=NULL
     c <- filter(match,team !=theTeam)
     b <-summarise(group_by(c,bowler,batsman),sum(runs))

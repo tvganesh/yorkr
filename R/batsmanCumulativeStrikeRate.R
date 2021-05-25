@@ -12,13 +12,16 @@
 #' This function computes and plots the cumulative average strike rate  of a batsman
 #'
 #' @usage
-#' batsmanCumulativeStrikeRate(df,name= "A Leg Glance")
+#' batsmanCumulativeStrikeRate(df,name= "A Leg Glance",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -48,6 +51,7 @@
 #'
 batsmanCumulativeStrikeRate <- function(df,name= "A Leg Glance",staticIntv=1){
     strikeRate=cs=no=NULL
+    ggplotly=NULL
     b <- select(df,strikeRate)
     b$no<-seq.int(nrow(b))
     c <- select(b,no,strikeRate)

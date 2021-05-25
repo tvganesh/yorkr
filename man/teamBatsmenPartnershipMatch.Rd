@@ -4,7 +4,7 @@
 \alias{teamBatsmenPartnershipMatch}
 \title{Team batting partnerships of batsmen in a match}
 \usage{
-teamBatsmenPartnershipMatch(match,theTeam,opposition, plot=TRUE)
+teamBatsmenPartnershipMatch(match,theTeam,opposition, plot=1)
 }
 \arguments{
 \item{match}{The match between the teams}
@@ -13,7 +13,7 @@ teamBatsmenPartnershipMatch(match,theTeam,opposition, plot=TRUE)
 
 \item{opposition}{The opposition team}
 
-\item{plot}{If plot=TRUE then a plot is created otherwise a data frame is returned}
+\item{plot}{Plot=1 (static),plot=2(interactive),plot=3(table)}
 }
 \value{
 df

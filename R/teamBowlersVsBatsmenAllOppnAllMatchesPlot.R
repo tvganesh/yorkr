@@ -12,7 +12,7 @@
 #' This function computes performance of bowlers of a team against all opposition in all matches
 #'
 #' @usage
-#' teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2)
+#' teamBowlersVsBatsmenAllOppnAllMatchesPlot(bowlerDF,t1,t2,plot=1)
 #'
 #' @param bowlerDF
 #' The data frame of the bowler whose performance is required
@@ -23,6 +23,8 @@
 #' @param t2
 #' The opposing team
 #'
+#' @param plot
+#' plot=1 (static),plot=2(interactive)
 #'
 #' @return none
 #'
@@ -60,6 +62,7 @@
 #'
 teamBowlersVsBatsmenAllOppnAllMatchesPlot <- function(bowlerDF,t1,t2,plot=1){
     batsman=runsConceded=team=NULL
+    ggplotly=NULL
     bwlr <- bowlerDF$bowler
     if(t2 != "India"){
         plot.title <- paste(bwlr,"-Performance against",t2,"batsmen")

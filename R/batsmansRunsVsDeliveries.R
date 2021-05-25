@@ -13,13 +13,16 @@
 #' smoothing function is used to fit the points
 #'
 #' @usage
-#' batsmanRunsVsDeliveries(df, name= "A Late Cut")
+#' batsmanRunsVsDeliveries(df, name= "A Late Cut",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -48,6 +51,7 @@
 
 batsmanRunsVsDeliveries <- function(df,name= "A Late Cut",staticIntv=1){
     batsman = runs  = ballsPlayed= NULL
+    ggplotly=NULL
 
     plot.title = paste(name,"- Runs vs balls faced")
     if(staticIntv ==1){ #ggplot2

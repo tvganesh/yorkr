@@ -4,7 +4,7 @@
 \alias{teamBowlersWicketsOppnAllMatches}
 \title{Team bowlers  wickets against an opposition in all matches}
 \usage{
-teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=TRUE,top=20)
+teamBowlersWicketsOppnAllMatches(matches,main,opposition,plot=1,top=20)
 }
 \arguments{
 \item{matches}{The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -14,7 +14,7 @@ matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")}
 
 \item{opposition}{The opposing team}
 
-\item{plot}{If plot=TRUE then a plot is displayed else a dataframe is returned}
+\item{plot}{plot=1 (static),plot=2(interactive),plot=3(table)}
 
 \item{top}{The number of top bowlers to be included in the result}
 }

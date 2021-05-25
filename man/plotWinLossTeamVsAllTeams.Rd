@@ -4,12 +4,14 @@
 \alias{plotWinLossTeamVsAllTeams}
 \title{Plot  wins for each team}
 \usage{
-plotWinLossTeamVsAllTeams(team1,dir=".")
+plotWinLossTeamVsAllTeams(team1,dir=".",plot=1)
 }
 \arguments{
 \item{team1}{The 1st team}
 
 \item{dir}{The source directory of the RData files}
+
+\item{plot}{plot=1 (static), plot=2(interactive)}
 }
 \value{
 None

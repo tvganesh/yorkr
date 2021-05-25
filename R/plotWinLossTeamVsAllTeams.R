@@ -14,7 +14,7 @@
 #' with no result
 #'
 #' @usage
-#' plotWinLossTeamVsAllTeams(team1,dir=".")
+#' plotWinLossTeamVsAllTeams(team1,dir=".",plot=1)
 #'
 #' @param team1
 #' The 1st team
@@ -22,6 +22,9 @@
 #'
 #' @param dir
 #' The source directory of the RData files
+#'
+#' @param plot
+#' plot=1 (static), plot=2(interactive)
 #'
 #' @return None
 #'
@@ -53,6 +56,7 @@
 plotWinLossTeamVsAllTeams <- function(team1,dir=".",plot=1){
     matches=NULL
     venue=winner=result=date=NULL
+    ggplotly=NULL
     # Create 2 filenames with both combinations of team1 and team2
     d1 <-paste("allMatchesAllOpposition-",team1,".RData",sep="")
     fl1 <- paste(dir,"/",d1,sep="")

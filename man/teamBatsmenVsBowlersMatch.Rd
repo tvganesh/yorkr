@@ -4,7 +4,7 @@
 \alias{teamBatsmenVsBowlersMatch}
 \title{Team batsmen against bowlers in a match}
 \usage{
-teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=TRUE)
+teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=1)
 }
 \arguments{
 \item{match}{The match between the teams}
@@ -13,7 +13,7 @@ teamBatsmenVsBowlersMatch(match,theTeam,opposition, plot=TRUE)
 
 \item{opposition}{The opposition team}
 
-\item{plot}{If plot=TRUE then a plot is created otherwise a data frame is returned}
+\item{plot}{lot=1 (static),plot=2(interactive),plot=3(table)}
 }
 \value{
 b

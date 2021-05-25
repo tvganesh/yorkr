@@ -4,7 +4,7 @@
 \alias{teamBowlingWicketMatch}
 \title{Compute and plot wickets  by bowlers in  match}
 \usage{
-teamBowlingWicketMatch(match,theTeam,opposition, plot=TRUE)
+teamBowlingWicketMatch(match,theTeam,opposition, plot=1)
 }
 \arguments{
 \item{match}{The match between the teams}
@@ -13,7 +13,7 @@ teamBowlingWicketMatch(match,theTeam,opposition, plot=TRUE)
 
 \item{opposition}{The opposition team}
 
-\item{plot}{If plot= TRUE the dataframe will be plotted else a data frame will be returned}
+\item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
 }
 \value{
 None or data fame

@@ -14,7 +14,7 @@
 #' This function computes returns kind of wickets (caught, bowled etc) of bowlers in a match between 2 teams
 #'
 #' @usage
-#' teamBowlingWicketKindMatch(match,theTeam,opposition,plot=TRUE)
+#' teamBowlingWicketKindMatch(match,theTeam,opposition,plot=1)
 #'
 #' @param match
 #' The match between the teams
@@ -58,6 +58,7 @@
 #'
 teamBowlingWicketKindMatch <- function(match,theTeam,opposition,plot=1){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
+    ggplotly=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=over=NULL
     # The performance of bowlers of the team is got when the other side is batting. Hence '!-"
     # Filter the bowler's performance

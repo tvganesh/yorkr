@@ -4,7 +4,7 @@
 \alias{teamBowlingWicketKindAllOppnAllMatches}
 \title{team bowling wicket kind against all opposition all matches}
 \usage{
-teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
+teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=1)
 }
 \arguments{
 \item{matches}{The matches of the team against all oppositions and all matches}
@@ -14,7 +14,7 @@ teamBowlingWicketKindAllOppnAllMatches(matches,t1,t2="All",plot=TRUE)
 \item{t2}{t2=All gives the performance of the team against all opponents. Giving a opposing team (Australia, India
 ) will give the performance against this  team}
 
-\item{plot}{If plot= TRUE the dataframe will be plotted else a data frame will be returned}
+\item{plot}{plot=1 (static),plot=2(interactive),plot=3(table)}
 }
 \value{
 None or data fame

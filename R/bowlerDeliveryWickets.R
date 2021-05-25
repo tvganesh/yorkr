@@ -52,6 +52,7 @@
 
 bowlerDeliveryWickets <- function(match,theTeam,name){
     team = bowler = wicketPlayerOut =delivery = wicketNo = NULL
+    ggplotly=NULL
 
     d <- NULL
     #a <-filter(match,opposition!=theTeam)

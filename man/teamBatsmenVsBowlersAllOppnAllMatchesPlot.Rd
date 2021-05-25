@@ -4,12 +4,12 @@
 \alias{teamBatsmenVsBowlersAllOppnAllMatchesPlot}
 \title{Plot of Team batsmen vs bowlers against all opposition all matches}
 \usage{
-teamBatsmenVsBowlersAllOppnAllMatchesPlot(df,plot=TRUE)
+teamBatsmenVsBowlersAllOppnAllMatchesPlot(df,plot=1)
 }
 \arguments{
 \item{df}{The dataframe of all the matches of the team against all oppositions}
 
-\item{plot}{If plot=TRUE the result is plotted or else the data frame is returned}
+\item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
 }
 \value{
 None or dataframe

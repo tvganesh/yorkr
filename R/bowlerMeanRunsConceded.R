@@ -12,13 +12,16 @@
 #' This function computes and plots mean runs conceded by the bowler for the
 #' number of overs bowled by the bowler
 #' @usage
-#' bowlerMeanRunsConceded(df, name)
+#' bowlerMeanRunsConceded(df, name,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param staticIntv1
+#' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -48,6 +51,7 @@
 
 bowlerMeanRunsConceded <- function(df,name,staticIntv1=1){
     overs = runs = maidens = meanRuns = wickets = NULL
+    ggplotly=NULL
     c <- summarise(group_by(df,overs),meanRuns=mean(runs),meanMaidens=mean(maidens),
                    meanWickets=mean(wickets))
     plot.title <- paste(name,"- Average runs conceded vs Overs")

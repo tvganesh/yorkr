@@ -12,13 +12,16 @@
 #' This function computes and plots mean number of wickets taken by the bowler  in different
 #' venues
 #' @usage
-#' bowlerWicketsVenue(df, name)
+#' bowlerWicketsVenue(df, name,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param staticIntv1
+#' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -46,14 +49,15 @@
 #' @export
 #'
 
-bowlerWicketsVenue <- function(df,name,staticIntv=1){
+bowlerWicketsVenue <- function(df,name,staticIntv1=1){
     meanWickets = numMatches =wickets = venue = NULL
+    ggplotly=NULL
     c <- summarise(group_by(df,venue),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))
     e <- arrange(d,desc(meanWickets))
     f <- e[1:20,]
     plot.title = paste(name,"- Wickets in venue(number innings)")
-    if(staticIntv ==1){ #ggplot2
+    if(staticIntv1 ==1){ #ggplot2
         ggplot(f,aes(x=venue, y=meanWickets, fill=venue))+
             geom_bar(stat = "identity",position="dodge") +
             geom_hline(aes(yintercept=2))+

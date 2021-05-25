@@ -4,12 +4,14 @@
 \alias{batsmanRunsVenue}
 \title{Batsman runs at different venues}
 \usage{
-batsmanRunsVenue(df, name= "A Leg Glance")
+batsmanRunsVenue(df, name= "A Leg Glance",staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
 \value{
 None

@@ -12,13 +12,16 @@
 #' This function computes and plots the cumulative average wickets of a bowler
 #'
 #' @usage
-#' bowlerCumulativeAvgWickets(df,name)
+#' bowlerCumulativeAvgWickets(df,name,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv1
+#' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -48,6 +51,7 @@
 #'
 bowlerCumulativeAvgWickets <- function(df,name,staticIntv1=1){
     wickets=cs=no=NULL
+    ggplotly=NULL
     b <- select(df,wickets)
     b$no<-seq.int(nrow(b))
     c <- select(b,no,wickets)

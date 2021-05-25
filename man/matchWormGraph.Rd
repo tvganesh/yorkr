@@ -4,7 +4,7 @@
 \alias{matchWormGraph}
 \title{Plot the match worm graph}
 \usage{
-matchWormGraph(match,t1,t2)
+matchWormGraph(match,t1,t2,plot=1)
 }
 \arguments{
 \item{match}{The dataframe of the match}
@@ -12,6 +12,8 @@ matchWormGraph(match,t1,t2)
 \item{t1}{The 1st team of the match}
 
 \item{t2}{the 2nd team in the match}
+
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \value{
 none

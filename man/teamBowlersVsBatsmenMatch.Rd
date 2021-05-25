@@ -4,7 +4,7 @@
 \alias{teamBowlersVsBatsmenMatch}
 \title{Team bowlers vs batsmen in a match}
 \usage{
-teamBowlersVsBatsmenMatch(match,theTeam,opposition, plot=TRUE)
+teamBowlersVsBatsmenMatch(match,theTeam,opposition, plot=1)
 }
 \arguments{
 \item{match}{The data frame of the match. This can be obtained with the call for e.g
@@ -14,7 +14,7 @@ a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")}
 
 \item{opposition}{The opposition team}
 
-\item{plot}{This parameter specifies if a plot is required, If plot=FALSE then a data frame is returned}
+\item{plot}{plot=1 (static),plot=2(interactive),plot=3(table)}
 }
 \value{
 None or dataframe

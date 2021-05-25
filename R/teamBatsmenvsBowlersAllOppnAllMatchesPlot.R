@@ -14,13 +14,13 @@
 #' The data frame can be either plotted or returned to the user
 #'
 #' @usage
-#' teamBatsmenVsBowlersAllOppnAllMatchesPlot(df,plot=TRUE)
+#' teamBatsmenVsBowlersAllOppnAllMatchesPlot(df,plot=1)
 #'
 #' @param df
 #' The dataframe of all the matches of the team against all oppositions
 #'
 #' @param plot
-#' If plot=TRUE the result is plotted or else the data frame is returned
+#' plot=1 (static),plot=2(interactive), plot=3 (table)
 #'
 #'
 #' @return None or dataframe
@@ -59,6 +59,7 @@
 teamBatsmenVsBowlersAllOppnAllMatchesPlot <- function(df,plot=1)
 {
     runs=bowler=NULL
+    ggplotly=NULL
     bman <- df$batsman
     if(plot == 1){ #ggplot2
         plot.title <- paste(bman,"-Performances against all bowlers")

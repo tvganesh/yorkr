@@ -4,7 +4,7 @@
 \alias{teamBatsmenVsBowlersOppnAllMatches}
 \title{Team batsmen vs bowlers all matches of an opposition}
 \usage{
-teamBatsmenVsBowlersOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
+teamBatsmenVsBowlersOppnAllMatches(matches,main,opposition,plot=1,top=5)
 }
 \arguments{
 \item{matches}{All the matches of the team against one specific opposition}
@@ -13,7 +13,7 @@ teamBatsmenVsBowlersOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
 
 \item{opposition}{The opposition team}
 
-\item{plot}{If plot=TRUE then a plot will be displayed else a data frame will be returned}
+\item{plot}{lot=1 (static),plot=2(interactive),plot=3(table)}
 
 \item{top}{The number of players to be plotted or returned as a dataframe. The default is 5}
 }

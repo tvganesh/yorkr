@@ -4,7 +4,7 @@
 \alias{teamBowlersWicketRunsOppnAllMatches}
 \title{Team bowlers wicket runs against an opposition in all matches}
 \usage{
-teamBowlersWicketRunsOppnAllMatches(matches,main,opposition,plot=TRUE)
+teamBowlersWicketRunsOppnAllMatches(matches,main,opposition,plot=1)
 }
 \arguments{
 \item{matches}{The data frame of all matches between a team the opposition. This dataframe can be obtained with
@@ -14,7 +14,7 @@ matches <- getAllMatchesBetweenTeams("Australia","India",dir="../data")}
 
 \item{opposition}{The opposing team}
 
-\item{plot}{If plot=TRUE then a plot is displayed else a dataframe is returned}
+\item{plot}{plot=1 (static),plot=2(interactive),plot=3(table)}
 }
 \value{
 None or dataframe

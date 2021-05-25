@@ -14,7 +14,7 @@
 #' This function computes the performance of batsmen against the  bowlers of an oppositions in all matches
 #'
 #' @usage
-#' teamBatsmenVsBowlersOppnAllMatches(matches,main,opposition,plot=TRUE,top=5)
+#' teamBatsmenVsBowlersOppnAllMatches(matches,main,opposition,plot=1,top=5)
 #'
 #' @param matches
 #' All the matches of the team against one specific opposition
@@ -26,7 +26,7 @@
 #' The opposition team
 #'
 #' @param plot
-#' If plot=TRUE then a plot will be displayed else a data frame will be returned
+#' lot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @param top
 #' The number of players to be plotted or returned as a dataframe. The default is 5
@@ -69,6 +69,7 @@
 #'
 teamBatsmenVsBowlersOppnAllMatches <- function(matches,main,opposition,plot=1,top=5){
     team=batsman=bowler=runs=runsScored=NULL
+    ggplotly=NULL
     a <-filter(matches,team==main)
     b <-summarise(group_by(a,batsman,bowler),sum(runs))
     names(b) <- c("batsman","bowler","runs")

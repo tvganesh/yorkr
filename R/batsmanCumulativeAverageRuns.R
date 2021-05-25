@@ -12,13 +12,16 @@
 #' This function computes and plots the cumulative average runs of a batsman
 #'
 #' @usage
-#' batsmanCumulativeAverageRuns(df,name= "A Leg Glance")
+#' batsmanCumulativeAverageRuns(df,name= "A Leg Glance",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -48,6 +51,7 @@
 #'
 batsmanCumulativeAverageRuns <- function(df,name="A Leg Glance",staticIntv=1){
     runs=cs=no=NULL
+    ggplotly=NULL
     b <- select(df,runs)
     b$no<-seq.int(nrow(b))
     c <- select(b,no,runs)

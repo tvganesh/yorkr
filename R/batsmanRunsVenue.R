@@ -12,13 +12,16 @@
 #' This function computes and plots the mean runs scored by the batsman at different
 #' venues of the world
 #' @usage
-#' batsmanRunsVenue(df, name= "A Leg Glance")
+#' batsmanRunsVenue(df, name= "A Leg Glance",staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param staticIntv
+#' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
 #'
 #' @return None
 #' @references
@@ -50,6 +53,7 @@
 
 batsmanRunsVenue <- function(df,name= "A Leg Glance",staticIntv=1){
     batsman = runs = venue = numMatches = meanRuns = NULL
+    ggplotly=NULL
     b <- select(df,batsman,runs,venue)
     c <- summarise(group_by(b,venue),meanRuns=mean(runs),numMatches=n())
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))
