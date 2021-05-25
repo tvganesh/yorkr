@@ -26,7 +26,7 @@
 #' The opposition team
 #'
 #' @param plot
-#' If plot= TRUE the dataframe will be plotted else a data frame will be returned
+#' plot=1 (static),plot=2(interactive),plot=3(table)
 #'
 #' @return None or data fame
 #' A data frame with the bowling performance in alll matches against all oppositions

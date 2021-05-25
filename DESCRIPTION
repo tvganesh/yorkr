@@ -4,7 +4,7 @@ Version: 0.0.24
 Title: Analyze Cricket Performances Based on  Data from Cricsheet
 Description: Analyzing performances of cricketers and cricket teams
              based on 'yaml' match data from Cricsheet <https://cricsheet.org/>.
-Date: 2021-05-26
+Date: 2021-05-25
 Author: Tinniam V Ganesh
 Maintainer: Tinniam V Ganesh <tvganesh.85@gmail.com>
 License: MIT + file LICENSE
@@ -21,6 +21,5 @@ Imports:
     rpart.plot,
     stats,
     lubridate,
-    plotly,
     utils
 URL: https://github.com/tvganesh/yorkr/

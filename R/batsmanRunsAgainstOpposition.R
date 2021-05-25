@@ -50,6 +50,7 @@
 #' @export
 #'
 
+
 batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance",staticIntv=1){
     batsman = runs = opposition = meanRuns =  NULL
     ggplotly=NULL

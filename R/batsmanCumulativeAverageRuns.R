@@ -49,6 +49,7 @@
 #'
 #' @export
 #'
+#'
 batsmanCumulativeAverageRuns <- function(df,name="A Leg Glance",staticIntv=1){
     runs=cs=no=NULL
     ggplotly=NULL

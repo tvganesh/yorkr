@@ -49,6 +49,7 @@
 #'
 #' @export
 #'
+#'
 batsmanCumulativeStrikeRate <- function(df,name= "A Leg Glance",staticIntv=1){
     strikeRate=cs=no=NULL
     ggplotly=NULL

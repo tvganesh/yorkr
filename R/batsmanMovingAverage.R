@@ -51,6 +51,7 @@
 #'
 #' @export
 #'
+#'
 batsmanMovingAverage <- function(df,name = "A Leg Glance",staticIntv=1){
     batsman = runs = NULL
     ggplotly=NULL
