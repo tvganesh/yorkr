@@ -64,6 +64,7 @@ batsmanDismissals <- function(df,name="A Leg Glance"){
     d <- mutate(c,wicketKind=paste(wicketKind,"(",dismissal,")",sep=""))
     names(d) <-c("batsman","DismissalType","dismissal")
     plot.title = paste(name,"- Dismissals")
+    # Does not handle polar coordinates in ggplotly
     ggplot(d, aes(x="", y=dismissal, fill=DismissalType))+
         geom_bar(width=1,stat = "identity")+
         coord_polar("y", start=0) +
