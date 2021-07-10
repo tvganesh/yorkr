@@ -23,6 +23,9 @@
 #' @param dir
 #' The source directory of the RData files
 #'
+#' @param dateRange
+#' Date Range
+#'
 #' @param plot
 #' plot=1 (static), plot=2(interactive)
 #'
@@ -53,7 +56,7 @@
 #' @export
 #'
 
-plotWinLossTeamVsAllTeams <- function(team1,dir=".",plot=1){
+plotWinLossTeamVsAllTeams <- function(team1,dir=".",dateRange, plot=1){
     matches=NULL
     venue=winner=result=date=NULL
     ggplotly=NULL
@@ -61,6 +64,15 @@ plotWinLossTeamVsAllTeams <- function(team1,dir=".",plot=1){
     d1 <-paste("allMatchesAllOpposition-",team1,".RData",sep="")
     fl1 <- paste(dir,"/",d1,sep="")
     load(fl1)
+
+    # FIlter matches in date Range
+    print(dim(matches))
+    print(as.Date(dateRange[1]))
+    print(as.Date(dateRange[2]))
+    matches=matches %>% filter(date >= dateRange[1] & date <= dateRange[2])
+    print("b")
+    print(dim(matches))
+
     a <- select(matches,date,venue,winner,result)
     b=distinct(a) #Get distinct rows
 
