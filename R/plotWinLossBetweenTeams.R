@@ -14,7 +14,7 @@
 #' with no result
 #'
 #' @usage
-#' plotWinLossBetweenTeams(team1,team2,dir=".",plot=1)
+#' plotWinLossBetweenTeams(team1,team2,dir=".",dateRange, plot=1)
 #'
 #' @param team1
 #' The 1st team

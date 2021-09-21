@@ -4,7 +4,7 @@
 \alias{plotWinLossTeamVsAllTeams}
 \title{Plot  wins for each team}
 \usage{
-plotWinLossTeamVsAllTeams(team1,dir=".",plot=1)
+plotWinLossTeamVsAllTeams(team1,dir=".",dateRange, plot=1)
 }
 \arguments{
 \item{team1}{The 1st team}
