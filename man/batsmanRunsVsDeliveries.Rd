@@ -4,12 +4,14 @@
 \alias{batsmanRunsVsDeliveries}
 \title{Runs versus deliveries faced}
 \usage{
-batsmanRunsVsDeliveries(df, name= "A Late Cut",staticIntv=1)
+batsmanRunsVsDeliveries(df, name= "A Late Cut",dateRange,staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }

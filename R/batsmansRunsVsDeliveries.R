@@ -13,13 +13,16 @@
 #' smoothing function is used to fit the points
 #'
 #' @usage
-#' batsmanRunsVsDeliveries(df, name= "A Late Cut",staticIntv=1)
+#' batsmanRunsVsDeliveries(df, name= "A Late Cut",dateRange,staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv
 #' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
@@ -49,10 +52,12 @@
 #' @export
 #'
 
-batsmanRunsVsDeliveries <- function(df,name= "A Late Cut",staticIntv=1){
+batsmanRunsVsDeliveries <- function(df,name= "A Late Cut",dateRange, staticIntv=1){
     batsman = runs  = ballsPlayed= NULL
     ggplotly=NULL
-
+    print(as.Date(dateRange[1]))
+    print(as.Date(dateRange[2]))
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     plot.title = paste(name,"- Runs vs balls faced")
     if(staticIntv ==1){ #ggplot2
         ggplot(df,aes(x=ballsPlayed,y=runs)) +

@@ -14,13 +14,16 @@
 #' the batsman to score the runs. It uses the package rpart to perform the classification
 #'
 #' @usage
-#' batsmanRunsPredict(df, name= "A Leg Glance")
+#' batsmanRunsPredict(df, name= "A Leg Glance",dateRange)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @return None
 #' @references
@@ -37,7 +40,7 @@
 #' \dontrun{
 #' #Get the data frame for Kohli
 #' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-#' batsmanRunsVsStrikeRate(kohli,"Kohli")
+#' batsmanRunsVsStrikeRate(kohli,"Kohli",dateRange)
 #' }
 #'
 #' @seealso
@@ -49,8 +52,9 @@
 #'
 #' @export
 #'
-batsmanRunsPredict <- function(df,name= "A Leg Glance"){
+batsmanRunsPredict <- function(df,name= "A Leg Glance",dateRange){
     batsman = ballsPlayed = runs = rpart =  NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <- select(df,batsman,ballsPlayed,runs)
     names(b) <-c("batsman","deliveries","runs")
     m <-rpart(runs~deliveries,data=b)

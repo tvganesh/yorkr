@@ -12,7 +12,7 @@
 #' @description
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #' @usage
-#' rankT20Batsmen(teamNames,odir=".",minMatches, yearSelected, runsvsSR)
+#' rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
 #'
 #' @param teamNames
 #' The team names
@@ -23,8 +23,8 @@
 #' @param minMatches
 #' Minimum matches played
 #'
-#' @param yearSelected
-#' Selected year
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param runsvsSR
 #'  Runs or Strike rate
@@ -42,7 +42,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' rankT20Batsmen(teamNames,odir=".",minMatches, yearSelected, runsvsSR)
+#' rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
 #' }
 #'
 #' @seealso
@@ -51,13 +51,15 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR) {
+rankT20Batsmen <- function(teamNames,odir=".",minMatches, dateRange, runsvsSR) {
 
     cat("Entering rank Batsmen1 \n")
     currDir= getwd()
+    cat("T20batmandir=",currDir,"\n")
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
     teams = unlist(teamNames)
     #Change dir
+    cat("odir=",odir)
     setwd(odir)
     battingDF<-NULL
     for(team in teams){
@@ -77,16 +79,27 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, yearSelected, runsvsSR
 
     }
     print(dim(battingDF))
-    maxDate= max(battingDF$date)
-    minDate= min(battingDF$date)
-    maxYear = lubridate::year(maxDate)
-    minYear = lubridate::year(minDate)
+    print(names(battingDF))
+      # Note: If the date Range is NULL setback to root directory
+     tryCatch({
 
-    cat("year err=",yearSelected," minMatches=", minMatches," runsVsSR=", runsvsSR,"\n")
-    dateValue=as.Date(paste(yearSelected,"-01-01",sep=""))
-    if (dateValue < minDate)
-        dateValue=minDate
-    df=battingDF %>% filter(date > as.Date(dateValue))
+           df=battingDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
+
+     },
+     warning=function(war)
+     {
+           print(paste("NULL values: ", war))
+      },
+     error=function(err)
+     {
+           # Change to root directory on error
+           setwd(currDir)
+           cat("Back to root",getwd(),"\n")
+     })
+
+
+
+
 
     df1 <- select(df,batsman,runs,strikeRate)
     df1 <- distinct(df1)

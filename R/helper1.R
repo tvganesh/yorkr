@@ -11,13 +11,13 @@
 #' @description
 #' This function gets min,max date and min and max matches from dataframe
 #' @usage
-#' helper1(teamNames,yearValue,odir=".")
+#' helper1(teamNames,dateRange,odir=".")
 #'
 #' @param teamNames
 #' The team names
 #'
-#'@param yearValue
-#' The year
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param odir
 #' The output directory
@@ -41,12 +41,12 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-helper1<- function(teamNames,yearValue, odir=".") {
+helper1<- function(teamNames,dateRange, odir=".") {
 
     currDir= getwd()
-    cat("helper yearValue =", yearValue)
+
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
-    year=NULL
+
     teams = unlist(teamNames)
     #Change dir
     setwd(odir)
@@ -67,15 +67,12 @@ helper1<- function(teamNames,yearValue, odir=".") {
         battingDF <- rbind(battingDF,details)
 
     }
-    maxDate= max(battingDF$date)
-    minDate= min(battingDF$date)
-    maxYear = lubridate::year(maxDate)
-    minYear = lubridate::year(minDate)
 
-    dateValue=as.Date(paste(yearValue,"-01-01",sep=""))
-    if (dateValue < minDate)
-        dateValue=minDate
-    a=battingDF %>% filter(date > as.Date(dateValue))
+    maxDate= as.Date(max(battingDF$date))
+    minDate= as.Date(min(battingDF$date))
+
+
+    a=battingDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
 
     df <- select(a,batsman,runs,strikeRate)
     # Compute matches
@@ -84,7 +81,6 @@ helper1<- function(teamNames,yearValue, odir=".") {
     maxMatches = max(b$matches)
     setwd(currDir)
 
-    #a=battingDF %>% filter(date > as.Date("2018-02-01"))
-    return(list(minYear,maxYear,minMatches, maxMatches))
+    return(list(minMatches, maxMatches))
 
 }

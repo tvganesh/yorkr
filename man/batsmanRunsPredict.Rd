@@ -4,12 +4,14 @@
 \alias{batsmanRunsPredict}
 \title{Predict deliveries to runs scored}
 \usage{
-batsmanRunsPredict(df, name= "A Leg Glance")
+batsmanRunsPredict(df, name= "A Leg Glance",dateRange)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{dateRange}{Date interval to consider}
 }
 \value{
 None
@@ -25,7 +27,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 #Get the data frame for Kohli
 kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-batsmanRunsVsStrikeRate(kohli,"Kohli")
+batsmanRunsVsStrikeRate(kohli,"Kohli",dateRange)
 }
 
 }

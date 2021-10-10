@@ -70,10 +70,10 @@ helper2<- function(teamNames, odir=".") {
         details <- bowlingDetails
         bowlingDF <- rbind(bowlingDF,details)
     }
-    maxDate= max(bowlingDF$date)
-    minDate= min(bowlingDF$date)
-    maxYear = lubridate::year(maxDate)
-    minYear = lubridate::year(minDate)
+
+    maxDate= as.Date(max(bowlingDF$date))
+    minDate= as.Date(min(bowlingDF$date))
+    print(minDate,maxDate)
 
     # Compute number of matches played
     a=bowlingDF %>% select(bowler,date) %>% unique()
@@ -84,6 +84,6 @@ helper2<- function(teamNames, odir=".") {
     setwd(currDir)
 
     #a=battingDF %>% filter(date > as.Date("2018-02-01"))
-    return(list(minYear,maxYear,minMatches, maxMatches))
+    return(list(minDate,maxDate,minMatches, maxMatches))
 
 }

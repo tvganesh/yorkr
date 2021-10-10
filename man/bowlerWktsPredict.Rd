@@ -4,12 +4,14 @@
 \alias{bowlerWktsPredict}
 \title{Predict the deliveries required to  wickets}
 \usage{
-bowlerWktsPredict(df, name)
+bowlerWktsPredict(df, name,dateRange)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of bowler}
+
+\item{dateRange}{Date interval to consider}
 }
 \value{
 None
@@ -25,7 +27,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 # Get the data frame for RA Jadeja
 jadeja1 <- getDeliveryWickets(team="India",name="Jadeja",save=FALSE)
-bowlerWktsPredict(jadeja1,"RA Jadeja")
+bowlerWktsPredict(jadeja1,"RA Jadeja",dateRange)
 }
 
 }

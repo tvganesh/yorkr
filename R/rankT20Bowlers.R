@@ -12,19 +12,21 @@
 #' This function creates a single datframe of all T20 bowlers and then ranks them
 #'
 #' @usage
-#' rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
+#' rankT20Bowlers(teamNames,odir=".",minMatches, dateRange, wicketsVsER)
 #'
 #' @param teamNames
 #' The team names
 #'
 #' @param odir
+#'
+#'
 #' The output directory
 #'
 #' @param minMatches
 #' Minimum matches played
 #'
-#' @param yearSelected
-#'  Selected year
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param wicketsVsER
 #' Wickets  or economy rate
@@ -43,7 +45,7 @@
 #'
 #'@examples
 #' \dontrun{
-#' rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
+#' rankT20Bowlers(teamNames,odir=".",minMatches, dateRange, wicketsVsER)
 #' }
 #'
 #' @seealso
@@ -53,7 +55,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Bowlers <- function(teamNames,odir=".",minMatches, yearSelected, wicketsVsER) {
+rankT20Bowlers <- function(teamNames,odir=".",minMatches, dateRange, wicketsVsER) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=year=NULL
     wicketPlayerOut=opposition=venue=NULL
     teams = unlist(teamNames)
@@ -81,17 +83,23 @@ rankT20Bowlers <- function(teamNames,odir=".",minMatches, yearSelected, wicketsV
         bowlingDF <- rbind(bowlingDF,details)
     }
 
-    maxDate= max(bowlingDF$date)
-    minDate= min(bowlingDF$date)
-    maxYear = lubridate::year(maxDate)
-    minYear = lubridate::year(minDate)
-    cat("year selected**********************=",yearSelected,"\n")
+    # Note: If the date Range is NULL setback to root directory
+    tryCatch({
 
-    # Filter out from data frame greater than date
-    dateValue=as.Date(paste(yearSelected,"-01-01",sep=""))
-    if (dateValue < minDate)
-        dateValue=minDate
-    df=bowlingDF %>% filter(date > as.Date(dateValue))
+        df=bowlingDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
+
+    },
+    warning=function(war)
+    {
+        print(paste("NULL values: ", war))
+    },
+    error=function(err)
+    {
+        # Change to root directory on error
+        setwd(currDir)
+        cat("Back to root",getwd(),"\n")
+    })
+
 
     # Compute number of matches played
     a=df %>% select(bowler,date) %>% unique()

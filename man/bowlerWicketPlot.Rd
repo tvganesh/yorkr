@@ -4,12 +4,14 @@
 \alias{bowlerWicketPlot}
 \title{Average wickets versus of overs bowled}
 \usage{
-bowlerWicketPlot(df, name,staticIntv1=1)
+bowlerWicketPlot(df, name,dateRange,staticIntv1=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of bowler}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv1}{Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)}
 }

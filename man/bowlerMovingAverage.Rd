@@ -4,12 +4,14 @@
 \alias{bowlerMovingAverage}
 \title{Bowler's moving average of wickets}
 \usage{
-bowlerMovingAverage(df, name,staticIntv1=1)
+bowlerMovingAverage(df, name,dateRange,staticIntv1=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of bowler}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv1}{Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)}
 }
@@ -27,7 +29,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 # Get the data frame for RA Jadeja
 jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-bowlerMeanRunsConceded(jadeja,"RA Jadeja")
+bowlerMeanRunsConceded(jadeja,"RA Jadeja",dateRange,staticIntv=1)
 }
 
 }

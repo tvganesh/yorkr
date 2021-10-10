@@ -4,12 +4,14 @@
 \alias{batsmanCumulativeStrikeRate}
 \title{Batsman's cumulative average strike rate}
 \usage{
-batsmanCumulativeStrikeRate(df,name= "A Leg Glance",staticIntv=1)
+batsmanCumulativeStrikeRate(df,name= "A Leg Glance",dateRange, staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
@@ -26,7 +28,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 #Get the data frame for Kohli
 kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-batsmanCumulativeStrikeRate(kohli,"Kohli")
+batsmanCumulativeStrikeRate(kohli,"Kohli",dateRange)
 }
 }
 \references{

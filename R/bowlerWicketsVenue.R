@@ -12,13 +12,16 @@
 #' This function computes and plots mean number of wickets taken by the bowler  in different
 #' venues
 #' @usage
-#' bowlerWicketsVenue(df, name,staticIntv1=1)
+#' bowlerWicketsVenue(df, name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -37,7 +40,7 @@
 #' \dontrun{
 #' # Get the data frame for RA Jadeja
 #' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-#' bowlerWicketsVenue(jadeja,"RA Jadeja")
+#' bowlerWicketsVenue(jadeja,"RA Jadeja",dateRange)
 #' }
 #'
 #' @seealso
@@ -49,9 +52,10 @@
 #' @export
 #'
 
-bowlerWicketsVenue <- function(df,name,staticIntv1=1){
+bowlerWicketsVenue <- function(df,name,dateRange,staticIntv1=1){
     meanWickets = numMatches =wickets = venue = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     c <- summarise(group_by(df,venue),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,venue=paste(venue,"(",numMatches,")",sep=""))
     e <- arrange(d,desc(meanWickets))

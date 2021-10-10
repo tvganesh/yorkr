@@ -12,13 +12,16 @@
 #' This function computes and plots the wickets taken by the bowler over career. A loess
 #' regression fit plots the moving average of wickets taken by bowler
 #' @usage
-#' bowlerMovingAverage(df, name,staticIntv1=1)
+#' bowlerMovingAverage(df, name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -37,7 +40,7 @@
 #' \dontrun{
 #' # Get the data frame for RA Jadeja
 #' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-#' bowlerMeanRunsConceded(jadeja,"RA Jadeja")
+#' bowlerMeanRunsConceded(jadeja,"RA Jadeja",dateRange,staticIntv=1)
 #' }
 #'
 #' @seealso
@@ -48,9 +51,10 @@
 #'
 #' @export
 #'
-bowlerMovingAverage <- function(df,name,staticIntv1=1){
+bowlerMovingAverage <- function(df,name,dateRange,staticIntv1=1){
     bowler = wickets = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     c <- select(df,bowler,wickets,date)
 
     plot.title = paste(name,"- Moving average of wickets in career")

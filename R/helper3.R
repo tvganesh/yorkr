@@ -11,13 +11,13 @@
 #' @description
 #' This function gets min,max date and min and max matches from dataframe
 #' @usage
-#' helper3(teamNames,yearValue,odir=".")
+#' helper3(teamNames,dateRange,odir=".")
 #'
 #' @param teamNames
 #' The team names
 #'
-#'@param yearValue
-#' The year
+#'@param dateRange
+#' Date interval to consider
 #'
 #'
 #' @param odir
@@ -43,7 +43,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-helper3<- function(teamNames,yearValue, odir=".") {
+helper3<- function(teamNames,dateRange, odir=".") {
 
     currDir= getwd()
 
@@ -53,7 +53,7 @@ helper3<- function(teamNames,yearValue, odir=".") {
     setwd(odir)
     bowlingDF<-NULL
 
-    cat("yearValue1 =", yearValue)
+
     # Compute wickets by bowler in each team
     o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
     for(team1 in teams){
@@ -71,16 +71,10 @@ helper3<- function(teamNames,yearValue, odir=".") {
         details <- bowlingDetails
         bowlingDF <- rbind(bowlingDF,details)
     }
-    maxDate= max(bowlingDF$date)
-    minDate= min(bowlingDF$date)
-    maxYear = lubridate::year(maxDate)
-    minYear = lubridate::year(minDate)
+    maxDate= as.Date(max(bowlingDF$date))
+    minDate= as.Date(min(bowlingDF$date))
 
-    dateValue=as.Date(paste(yearValue,"-01-01",sep=""))
-    if (dateValue < minDate)
-        dateValue=minDate
-    a=bowlingDF %>% filter(date > as.Date(dateValue))
-
+    a=bowlingDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
     # Compute number of matches played
     b=a %>% select(bowler,date) %>% unique()
     c=summarise(group_by(b,bowler),matches=n())
@@ -90,7 +84,6 @@ helper3<- function(teamNames,yearValue, odir=".") {
     setwd(currDir)
 
     cat("max matxhes =", maxMatches)
-    #a=battingDF %>% filter(date > as.Date("2018-02-01"))
-    return(list(minYear,maxYear,minMatches, maxMatches))
+    return(list(minMatches, maxMatches))
 
 }

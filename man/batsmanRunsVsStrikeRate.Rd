@@ -4,12 +4,14 @@
 \alias{batsmanRunsVsStrikeRate}
 \title{Batsman runs versus strike rate}
 \usage{
-batsmanRunsVsStrikeRate(df, name= "A Late Cut",staticIntv=1)
+batsmanRunsVsStrikeRate(df, name= "A Late Cut",dateRange,staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
@@ -27,7 +29,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 #Get the data frame for Kohli
 kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-batsmanRunsVsStrikeRate(kohli,"Kohli")
+batsmanRunsVsStrikeRate(kohli,"Kohli",dateRange)
 }
 
 }

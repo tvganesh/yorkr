@@ -4,7 +4,7 @@
 \alias{rankT20Bowlers}
 \title{Ranks the T20 bowlers}
 \usage{
-rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
+rankT20Bowlers(teamNames,odir=".",minMatches, dateRange, wicketsVsER)
 }
 \arguments{
 \item{teamNames}{The team names}
@@ -13,7 +13,7 @@ rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
 
 \item{minMatches}{Minimum matches played}
 
-\item{yearSelected}{Selected year}
+\item{dateRange}{Date interval to consider}
 
 \item{wicketsVsER}{Wickets  or economy rate}
 }
@@ -28,7 +28,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-rankT20Bowlers(teamNames,odir=".",minMatches, yearSelected, wicketsVsER)
+rankT20Bowlers(teamNames,odir=".",minMatches, dateRange, wicketsVsER)
 }
 
 }

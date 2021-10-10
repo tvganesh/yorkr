@@ -4,12 +4,12 @@
 \alias{helper3}
 \title{Gets min,max date and min and max matches from dataframe for the year}
 \usage{
-helper3(teamNames,yearValue,odir=".")
+helper3(teamNames,dateRange,odir=".")
 }
 \arguments{
 \item{teamNames}{The team names}
 
-\item{yearValue}{The year}
+\item{dateRange}{Date interval to consider}
 
 \item{odir}{The output directory}
 }

@@ -12,13 +12,16 @@
 #' This function computes and plots the total runs, fours and sixes of
 #' the batsman
 #' @usage
-#' batsmanFoursSixes(df,name= "A Leg Glance",staticIntv=1)
+#' batsmanFoursSixes(df,name= "A Leg Glance",dateRange,staticIntv)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv
 #' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
@@ -39,7 +42,7 @@
 #' #Get the data frame for Kohli
 #' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
 #' kohli46 <- select(kohli,batsman,ballsPlayed,fours,sixes,runs)
-#' batsmanFoursSixes(kohli46,"Kohli")
+#' batsmanFoursSixes(kohli46,"Kohli",dateRange)
 #' }
 #' @seealso
 #' \code{\link{batsmanDismissals}}
@@ -50,12 +53,14 @@
 #'
 #' @export
 #'
-batsmanFoursSixes <- function(df,name= "A Leg Glance",staticIntv=1){
+batsmanFoursSixes <- function(df,name= "A Leg Glance",dateRange,staticIntv){
     fours <- sixes <- batsman <- ballsPlayed <- RunsFromFours <- runs <- NULL
     ggplotly=NULL
     RunsFromSixes <- TotalRuns <- value <- variable <- NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     df <- select(df,batsman,ballsPlayed,fours,sixes,runs)
     names(df) <- c("batsman","ballsPlayed","fours","sixes","TotalRuns")
+
     print(head(df,30))
     c <- mutate(df, RunsFromFours=fours*4,RunsFromSixes=sixes*6)
     d <- select(c, batsman,ballsPlayed,RunsFromFours,RunsFromSixes,TotalRuns)

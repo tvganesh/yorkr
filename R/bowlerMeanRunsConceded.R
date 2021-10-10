@@ -12,13 +12,16 @@
 #' This function computes and plots mean runs conceded by the bowler for the
 #' number of overs bowled by the bowler
 #' @usage
-#' bowlerMeanRunsConceded(df, name,staticIntv1=1)
+#' bowlerMeanRunsConceded(df, name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -37,7 +40,7 @@
 #' \dontrun{
 #' # Get the data frame for RA Jadeja
 #' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-#' bowlerMeanRunsConceded(jadeja,"RA Jadeja")
+#' bowlerMeanRunsConceded(jadeja,"RA Jadeja",dateRange)
 #' }
 #'
 #' @seealso
@@ -49,9 +52,10 @@
 #' @export
 #'
 
-bowlerMeanRunsConceded <- function(df,name,staticIntv1=1){
+bowlerMeanRunsConceded <- function(df,name,dateRange,staticIntv1=1){
     overs = runs = maidens = meanRuns = wickets = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     c <- summarise(group_by(df,overs),meanRuns=mean(runs),meanMaidens=mean(maidens),
                    meanWickets=mean(wickets))
     plot.title <- paste(name,"- Average runs conceded vs Overs")

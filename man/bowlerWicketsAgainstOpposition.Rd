@@ -4,12 +4,14 @@
 \alias{bowlerWicketsAgainstOpposition}
 \title{Bowler wickets versus different teams}
 \usage{
-bowlerWicketsAgainstOpposition(df, name,staticIntv1=1)
+bowlerWicketsAgainstOpposition(df, name,dateRange,staticIntv1=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of bowler}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv1}{Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)}
 }
@@ -27,7 +29,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 # Get the data frame for RA Jadeja
 jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-bowlerWicketsAgainstOpposition(jadeja,"RA Jadeja")
+bowlerWicketsAgainstOpposition(jadeja,"RA Jadeja",dateRange)
 }
 
 }

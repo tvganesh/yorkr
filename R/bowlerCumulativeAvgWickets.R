@@ -12,13 +12,16 @@
 #' This function computes and plots the cumulative average wickets of a bowler
 #'
 #' @usage
-#' bowlerCumulativeAvgWickets(df,name,staticIntv1=1)
+#' bowlerCumulativeAvgWickets(df,name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -38,7 +41,7 @@
 #' \dontrun{)
 #' #'Get the data frame for RA Jadeja
 #' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-#' bowlerCumulativeAvgWickets(jadeja,"RA Jadeja")
+#' bowlerCumulativeAvgWickets(jadeja,"RA Jadeja",dateRange)
 #' }
 #' @seealso
 #' \code{\link{batsmanCumulativeAverageRuns}}
@@ -49,9 +52,10 @@
 #'
 #' @export
 #'
-bowlerCumulativeAvgWickets <- function(df,name,staticIntv1=1){
+bowlerCumulativeAvgWickets <- function(df,name,dateRange,staticIntv1=1){
     wickets=cs=no=NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <- select(df,wickets)
     b$no<-seq.int(nrow(b))
     c <- select(b,no,wickets)

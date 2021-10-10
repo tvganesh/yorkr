@@ -12,13 +12,16 @@
 #' This function computes and plots the mean runs scored by the batsman against different
 #' oppositions
 #' @usage
-#' batsmanRunsAgainstOpposition(df, name= "A Leg Glance",staticIntv=1)
+#' batsmanRunsAgainstOpposition(df, name= "A Leg Glance",dateRange,staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv
 #' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
@@ -37,7 +40,7 @@
 #' \dontrun{
 #' #Get the data frame for Kohli
 #' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-#' batsmanRunsAgainstOpposition(kohli,"Kohli")
+#' batsmanRunsAgainstOpposition(kohli,"Kohli",dateRange)
 #' }
 #'
 #' @seealso
@@ -51,9 +54,10 @@
 #'
 
 
-batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance",staticIntv=1){
+batsmanRunsAgainstOpposition <- function(df,name= "A Leg Glance",dateRange,staticIntv=1){
     batsman = runs = opposition = meanRuns =  NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <- select(df,batsman,runs,opposition)
     c <-b[complete.cases(b),]
     d <- summarise(group_by(c,opposition),meanRuns=mean(runs),numMatches=n())

@@ -12,13 +12,16 @@
 #' This function computes and plots the average wickets taken by the bowler versus the
 #' number of overs bowled
 #' @usage
-#' bowlerWicketPlot(df, name,staticIntv1=1)
+#' bowlerWicketPlot(df, name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -46,9 +49,10 @@
 #'
 #' @export
 #'
-bowlerWicketPlot <- function(df,name,staticIntv1=1){
+bowlerWicketPlot <- function(df,name,dateRange,staticIntv1=1){
     overs = runs = maidens = meanRuns = wickets = bowler = meanWickets = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
      c <- summarise(group_by(df,overs),meanRuns=mean(runs),meanMaidens=mean(maidens),
                     meanWickets=mean(wickets))
 

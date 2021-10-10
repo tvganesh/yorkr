@@ -4,12 +4,14 @@
 \alias{batsmanMovingAverage}
 \title{Moving average of batsman}
 \usage{
-batsmanMovingAverage(df, name= "A Leg Glance",staticIntv=1)
+batsmanMovingAverage(df, name= "A Leg Glance",dateRange,staticIntv=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv}{Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)}
 }
@@ -28,7 +30,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 #Get the data frame for Kohli
 kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-batsmanMovingAverage(kohli,"Kohli")
+batsmanMovingAverage(kohli,"Kohli",dateRange)
 }
 }
 \references{

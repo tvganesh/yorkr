@@ -12,13 +12,16 @@
 #' This function computes and plots the cumulative average economy rate  of a bowler
 #'
 #' @usage
-#' bowlerCumulativeAvgEconRate(df,name,staticIntv1=1)
+#' bowlerCumulativeAvgEconRate(df,name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -38,7 +41,7 @@
 #' \dontrun{)
 #' #'Get the data frame for RA Jadeja
 #' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-#' bowlerCumulativeAvgEconRate(jadeja,"RA Jadeja")
+#' bowlerCumulativeAvgEconRate(jadeja,"RA Jadeja",dateRange)
 #' }
 #' @seealso
 #' \code{\link{batsmanCumulativeAverageRuns}}
@@ -49,9 +52,10 @@
 #'
 #' @export
 #'
-bowlerCumulativeAvgEconRate <- function(df,name,staticIntv1=1){
+bowlerCumulativeAvgEconRate <- function(df,name,dateRange,staticIntv1=1){
     economyRate=cs=no=NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <- select(df,economyRate)
     b$no<-seq.int(nrow(b))
     c <- select(b,no,economyRate)

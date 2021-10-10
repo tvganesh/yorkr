@@ -12,13 +12,16 @@
 #' by the batsman. A loess line is fitted over the points
 #'
 #' @usage
-#' batsmanRunsVsStrikeRate(df, name= "A Late Cut",staticIntv=1)
+#' batsmanRunsVsStrikeRate(df, name= "A Late Cut",dateRange,staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv
 #' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
@@ -38,7 +41,7 @@
 #' \dontrun{
 #' #Get the data frame for Kohli
 #' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-#' batsmanRunsVsStrikeRate(kohli,"Kohli")
+#' batsmanRunsVsStrikeRate(kohli,"Kohli",dateRange)
 #' }
 #'
 #' @seealso
@@ -50,9 +53,10 @@
 #'
 #' @export
 #'
-batsmanRunsVsStrikeRate <- function(df,name= "A Late Cut",staticIntv=1){
+batsmanRunsVsStrikeRate <- function(df,name= "A Late Cut",dateRange,staticIntv=1){
     batsman = runs = strikeRate = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <- select(df,batsman,runs,strikeRate)
 
     plot.title = paste(name,"- Runs vs Strike Rate")

@@ -12,13 +12,16 @@
 #' This function computes and plots the type of dismissals of the
 #' the batsman
 #' @usage
-#' batsmanDismissals(df,name="A Leg Glance")
+#' batsmanDismissals(df,name="A Leg Glance",dateRange)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @return None
 #' @references
@@ -34,7 +37,7 @@
 #' \dontrun{
 #' #Get the data frame for Kohli
 #' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-#' batsmanDismissals(kohli,"Kohli")
+#' batsmanDismissals(kohli,"Kohli",dateRange)
 #' }
 #' @seealso
 #' \code{\link{batsmanFoursSixes}}\cr
@@ -55,9 +58,10 @@
 #' @export
 #'
 
-batsmanDismissals <- function(df,name="A Leg Glance"){
+batsmanDismissals <- function(df,name="A Leg Glance",dateRange){
     batsman <- wicketKind <-dismissal <- NULL
     DismissalType <- NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <-select(df,batsman,wicketKind)
 
     c <- summarise(group_by(b,batsman,wicketKind),dismissal=n())

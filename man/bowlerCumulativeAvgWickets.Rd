@@ -4,12 +4,14 @@
 \alias{bowlerCumulativeAvgWickets}
 \title{Bowler's cumulative average wickets}
 \usage{
-bowlerCumulativeAvgWickets(df,name,staticIntv1=1)
+bowlerCumulativeAvgWickets(df,name,dateRange,staticIntv1=1)
 }
 \arguments{
 \item{df}{Data frame}
 
 \item{name}{Name of batsman}
+
+\item{dateRange}{Date interval to consider}
 
 \item{staticIntv1}{Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)}
 }
@@ -26,7 +28,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{)
 #'Get the data frame for RA Jadeja
 jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-bowlerCumulativeAvgWickets(jadeja,"RA Jadeja")
+bowlerCumulativeAvgWickets(jadeja,"RA Jadeja",dateRange)
 }
 }
 \references{

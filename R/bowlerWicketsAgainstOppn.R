@@ -12,13 +12,16 @@
 #' This function computes and plots mean number of wickets taken by the bowler  against different
 #' opposition
 #' @usage
-#' bowlerWicketsAgainstOpposition(df, name,staticIntv1=1)
+#' bowlerWicketsAgainstOpposition(df, name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -37,7 +40,7 @@
 #' \dontrun{
 #' # Get the data frame for RA Jadeja
 #' jadeja <- getBowlerWicketDetails(team="India",name="Jadeja",dir=pathToFile)
-#' bowlerWicketsAgainstOpposition(jadeja,"RA Jadeja")
+#' bowlerWicketsAgainstOpposition(jadeja,"RA Jadeja",dateRange)
 #' }
 #'
 #' @seealso
@@ -49,9 +52,10 @@
 #' @export
 #'
 
-bowlerWicketsAgainstOpposition <- function(df,name,staticIntv1=1){
+bowlerWicketsAgainstOpposition <- function(df,name,dateRange,staticIntv1=1){
     meanWickets = numMatches = wickets = opposition = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     c <- summarise(group_by(df,opposition),meanWickets=mean(wickets),numMatches=n())
     d <- mutate(c,opposition=paste(opposition,"(",numMatches,")",sep=""))
     plot.title = paste(name,"- Wickets against Opposition(number innings)")

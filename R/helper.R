@@ -40,15 +40,14 @@
 #' @export
 #'
 helper<- function(teamNames,odir=".") {
-
-
-    cat("Dir helper=====",getwd(),"\n")
     currDir= getwd()
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
     year=NULL
     teams = unlist(teamNames)
+
     #Change dir
     setwd(odir)
+
     battingDF<-NULL
     for(team in teams){
         battingDetails <- NULL
@@ -66,11 +65,10 @@ helper<- function(teamNames,odir=".") {
         battingDF <- rbind(battingDF,details)
 
     }
-    cat("Dir helper A=====",getwd(),"\n")
-    maxDate= max(battingDF$date)
-    minDate= min(battingDF$date)
-    maxYear = lubridate::year(maxDate)
-    minYear = lubridate::year(minDate)
+    cat("Dir helper =====",getwd(),"\n")
+    maxDate= as.Date(max(battingDF$date))
+    minDate= as.Date(min(battingDF$date))
+    print(minDate,maxDate)
 
     df <- select(battingDF,batsman,runs,strikeRate)
 
@@ -79,6 +77,8 @@ helper<- function(teamNames,odir=".") {
     maxMatches = max(b$matches)
     setwd(currDir)
 
-    return(list(minYear,maxYear,minMatches, maxMatches))
+
+    cat("Helper **********************************************\n")
+    return(list(minDate,maxDate,minMatches, maxMatches))
 
 }

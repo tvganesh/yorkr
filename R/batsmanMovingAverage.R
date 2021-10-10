@@ -14,13 +14,16 @@
 #' the batsman
 #'
 #' @usage
-#' batsmanMovingAverage(df, name= "A Leg Glance",staticIntv=1)
+#' batsmanMovingAverage(df, name= "A Leg Glance",dateRange,staticIntv=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of batsman
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv
 #' Static or interactive -staticIntv =1 (static plot) &  staticIntv =2 (interactive  plot)
@@ -40,7 +43,7 @@
 #' \dontrun{
 #' #Get the data frame for Kohli
 #' kohli <- getBatsmanDetails(team="India",name="Kohli",dir=pathToFile)
-#' batsmanMovingAverage(kohli,"Kohli")
+#' batsmanMovingAverage(kohli,"Kohli",dateRange)
 #' }
 #' @seealso
 #' \code{\link{batsmanDismissals}}\cr
@@ -52,9 +55,10 @@
 #' @export
 #'
 #'
-batsmanMovingAverage <- function(df,name = "A Leg Glance",staticIntv=1){
+batsmanMovingAverage <- function(df,name = "A Leg Glance",dateRange,staticIntv=1){
     batsman = runs = NULL
     ggplotly=NULL
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     b <- select(df,batsman,runs,date)
 
     plot.title = paste(name,"- Moving average of runs in career")

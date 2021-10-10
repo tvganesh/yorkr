@@ -75,14 +75,16 @@ plotWinLossTeamVsAllTeams <- function(team1,dir=".",dateRange, plot=1){
 
     a <- select(matches,date,venue,winner,result)
     b=distinct(a) #Get distinct rows
-
+    print("xxxxxxxxxxxxxxxxx")
+    print(b)
 
     winLoss <- summarise(group_by(b,winner),count=n())
-
+    print("xxxxxxxxxxxxxxxxx")
+    print(winLoss)
     x <- winLoss$winner=="NA"
     winLoss$winner <- as.character(winLoss$winner)
     if(sum(x) !=0) {
-        winLoss[x,]$winner <-"NoResult"
+        winLoss[x,]$winner <-"Tie"
     }
 
     plot.title <- paste("Number of wins of",team1,"against all teams in all  matches")

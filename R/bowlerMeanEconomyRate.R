@@ -12,13 +12,16 @@
 #' This function computes and plots mean economy rate and the number of
 #' overs bowled by the bowler
 #' @usage
-#' bowlerMeanEconomyRate(df, name,staticIntv1=1)
+#' bowlerMeanEconomyRate(df, name,dateRange,staticIntv1=1)
 #'
 #' @param df
 #' Data frame
 #'
 #' @param name
 #' Name of bowler
+#'
+#' @param dateRange
+#' Date interval to consider
 #'
 #' @param staticIntv1
 #' Static or interactive -staticIntv1 =1 (static plot) &  staticIntv1 =2 (interactive  plot)
@@ -49,9 +52,11 @@
 #' @export
 #'
 
-bowlerMeanEconomyRate <- function(df,name,staticIntv1=1){
+bowlerMeanEconomyRate <- function(df,name,dateRange,staticIntv1=1){
     overs =meanEconomyRate = economyRate = NULL
     ggplotly=NULL
+    print(dateRange[1])
+    df=df %>% filter(date >= dateRange[1] & date <= dateRange[2])
     c <- summarise(group_by(df,overs),meanEconomyRate=mean(economyRate))
 
     plot.title <- paste(name,"- Mean Economy Rate vs Overs")
