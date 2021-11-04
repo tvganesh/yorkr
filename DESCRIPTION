@@ -20,6 +20,6 @@ Imports:
     gridExtra,
     rpart.plot,
     stats,
-    stringr,
+    tidyverse,
     utils
 URL: https://github.com/tvganesh/yorkr/
