@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 4 Nov 2021
-# Function: teamRunsAcrossOvers
-# This function the plots runs scored in powerplay, middle and death overs
+# Function: teamSRAcrossOvers
+# This function the computes the Strike Rate  in powerplay, middle and death overs
 #
 ###########################################################################################
 #' @title
-#' Compute the runs scored in powerplay, middle and death overs
+#' Compute the Strike Rate  in powerplay, middle and death overs
 #'
 #' @description
-#' This function  plots the runs scored in powerplay, middle and death overs
+#' This function  plots strike rate scored in powerplay, middle and death overs
 #'
 #' @usage
-#' teamRunsAcrossOvers(match,t1,t2,plot=1)
+#' teamSRAcrossOvers(match,t1,t2,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
@@ -42,7 +42,7 @@
 #' \dontrun{
 #'
 #' # Plot tne match worm plot
-#' teamRunsAcrossOvers(match,'England',"Pakistan")
+#' teamSRAcrossOvers(match,'England',"Pakistan")
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
@@ -52,67 +52,81 @@
 #'
 #' @export
 #'
-teamRunsAcrossOvers <- function(match,t1,t2,plot=1) {
+teamSRAcrossOvers <- function(match,t1,t2,plot=1) {
     team=ball=totalRuns=total=NULL
     ggplotly=NULL
 
     # Filter the performance of team1
-    a <-filter(match,team==t1)
+    a <-filter(match,team ==t1)
     # Power play
     a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
     a2 <- select(a1,team,totalRuns)
-    a3 <- a2 %>% group_by(team) %>% summarise(total=sum(totalRuns))
-    a3$type="1-Power Play"
+    a3 <- a2 %>% group_by(team) %>% summarise(total=sum(totalRuns),count=n())
+    a3$SR=ifelse(dim(a3)[1]==0, 0,a3$total/a3$count *100)
+    if(dim(a3)[1]!=0)
+        a3$type="1-Power Play"
 
     # Middle overs I
     b1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
     b2 <- select(b1,team,totalRuns)
-    b3 <- b2 %>% group_by(team) %>% summarise(total=sum(totalRuns))
-    b3$type="2-Middle Overs"
+    b3 <- b2 %>% group_by(team) %>% summarise(total=sum(totalRuns),count=n())
+    b3$SR=ifelse(dim(b3)[1]==0, 0,b3$total/b3$count *100)
+    if(dim(b3)[1]!=0)
+        b3$type="2-Middle Overs"
 
-    #Death overs
+    ##Death overs
     c1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1, 20.0))
     c2 <- select(c1,team,totalRuns)
-    c3 <- c2 %>% group_by(team) %>% summarise(total=sum(totalRuns))
-    c3$type="3-Death Overs"
+    c3 <- c2 %>% group_by(team) %>% summarise(total=sum(totalRuns),count=n())
+    c3$SR=ifelse(dim(c3)[1]==0, 0,c3$total/c3$count *100)
+    if(dim(c3)[1]!=0)
+        c3$type="3-Death Overs"
+
+
 
     ####################
     # Filter the performance of team2
-    a <-filter(match,team==t2)
+    a <-filter(match,team ==t2)
     # Power play
     a11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
     a21 <- select(a11,team,totalRuns)
-    a31 <- a21 %>% group_by(team) %>% summarise(total=sum(totalRuns))
-    a31$type="1-Power Play"
-
+    a31 <- a21 %>% group_by(team) %>% summarise(total=sum(totalRuns),count=n())
+    a31$SR=ifelse(dim(a31)[1]==0, 0,a31$total/a31$count *100)
+    if(dim(a31)[1]!=0)
+        a31$type="1-Power Play"
 
     # Middle overs I
     b11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
     b21 <- select(b11,team,totalRuns)
-    b31 <- b21 %>% group_by(team) %>% summarise(total=sum(totalRuns))
-    b31$type="2-Middle Overs"
+    b31 <- b21 %>% group_by(team) %>% summarise(total=sum(totalRuns),count=n())
+    b31$SR=ifelse(dim(b31)[1]==0, 0,b31$total/b31$count *100)
+    if(dim(b31)[1]!=0)
+        b31$type="2-Middle Overs"
 
-    #Death overs
-    c11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1,20.0))
+    ##Death overs
+    c11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1, 20.0))
     c21 <- select(c11,team,totalRuns)
-    c31 <- c21 %>% group_by(team) %>% summarise(total=sum(totalRuns))
-    c31$type="3-Death Overs"
+    c31 <- c21 %>% group_by(team) %>% summarise(total=sum(totalRuns),count=n())
+    c31$SR=ifelse(dim(c31)[1]==0, 0,c31$total/c31$count *100)
+    if(dim(c31)[1]!=0)
+        c31$type="3-Death Overs"
 
     m=rbind(a3,b3,c3,a31,b31,c31)
+    plot.title= paste("Strike rate across 20 overs of ",t1, "and", t2, sep=" ")
 
     # Plot both lines
     if(plot ==1){ #ggplot2
-        plot.title= paste("Runs scored across 20 overs by ",t1, "and", t2, sep=" ")
-        ggplot(m,aes(x=type, y=total, fill=team)) +
+        ggplot(m,aes(x=type, y=SR, fill=team)) +
             geom_bar(stat="identity", position = "dodge") +
             ggtitle(bquote(atop(.(plot.title),
                                 atop(italic("Data source:http://cricsheet.org/"),""))))
 
+
     }else { #ggplotly
-        plot.title= paste("Runs scored across 20 overs by ",t1, "and", t2, sep=" ")
-        g <- ggplot(m,aes(x=type, y=total, fill=team)) +
+        g <-    ggplot(data = m,mapping=aes(x=type, y=SR, fill=team)) +
             geom_bar(stat="identity", position = "dodge") +
             ggtitle(plot.title)
+
 
         ggplotly(g)
 
