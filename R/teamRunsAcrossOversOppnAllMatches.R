@@ -42,7 +42,7 @@
 #' \dontrun{
 #'
 #' # Plot tne match worm plot
-#' teamRunsAcrossOversOppnAllMatches(match,'England',"Pakistan")
+#' teamRunsAcrossOversOppnAllMatches(matches,'England',"Pakistan")
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
@@ -56,7 +56,6 @@ teamRunsAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
     team=ball=totalRuns=total=NULL
     ggplotly=NULL
 
-    matches=matches %>% filter(date >= as.Date("2019-01-01") & date <= as.Date("2021-10-01"))
     # Filter the performance of team1
     a <-filter(matches,team==t1)
     # Power play
@@ -110,7 +109,7 @@ teamRunsAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
 
 
     m=rbind(a4,b4,c4,a41,b41,c41)
-    plot.title= paste("Runs across 20 overs by ",t1, "and", t2, "in all matches", sep=" ")
+    plot.title= paste("Mean runs across 20 overs by ",t1, "and", t2, "in all matches", sep=" ")
 
 
     # Plot both lines
