@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 5 Nov 2021
-# Function: teamTopRunsBatsmenOppnAllMatches
-# This function computes the top runs scorers in matches against opposition in powerplay, middle and death overs
+# Function: topSRBatsmenAcrossOversOppnAllMatches.R
+# This function computes the highest SR by batsmen in matches against opposition in powerplay, middle and death overs
 #
 ###########################################################################################
 #' @title
-#' Compute the most runs scored by batsmen against team in powerplay, middle and death overs
+#' Compute the highest SR by batsmen against team in powerplay, middle and death overs
 #'
 #' @description
-#' This function  computes the most runs by batsman against team in in powerplay, middle and death overs
+#' This function  computes the highest SR by batsmen by batsman against team in in powerplay, middle and death overs
 #'
 #' @usage
-#' teamTopRunsBatsmenOppnAllMatches(matches,t1,plot=1)
+#' topSRBatsmenAcrossOversOppnAllMatches(matches,t1,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
@@ -40,7 +40,7 @@
 #' \dontrun{
 #'
 #' # Plot tne match worm plot
-#' teamTopRunsBatsmenOppnAllMatches(matches,'England')
+#' topSRBatsmenAcrossOversOppnAllMatches(matches,'England')
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
@@ -50,24 +50,26 @@
 #'
 #' @export
 #'
-teamTopRunsBatsmenOppnAllMatches <- function(matches,t1,plot=1) {
+topSRBatsmenAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
     team=ball=totalRuns=total=NULL
     ggplotly=NULL
     # Filter the performance of team1
     a <-filter(matches,team==t1)
     a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
-    a2 <- select(a1,ball,totalRuns,batsman)
-    a3 <- a2 %>% group_by(batsman) %>% summarise(runsPowerPlay= sum(totalRuns)) %>% arrange(desc(runsPowerPlay))
-
+    a2 <- select(a1,ball,totalRuns,batsman,date)
+    a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRinPowerpPlay=runs/count*100) %>% arrange(desc(SRinPowerpPlay)) %>%
+          select(batsman,SRinPowerpPlay)
 
     # Middle overs I
     b1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
-    b2 <- select(b1,ball,totalRuns,batsman)
-    b3 <- b2 %>% group_by(batsman) %>% summarise(runsMiddleOvers= sum(totalRuns)) %>% arrange(desc(runsMiddleOvers))
+    b2 <- select(b1,ball,totalRuns,batsman,date)
+    b3 <- b2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRinMiddleOvers=runs/count*100) %>% arrange(desc(SRinMiddleOvers)) %>%
+        select(batsman,SRinMiddleOvers)
 
     c1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1, 20.0))
-    c2 <- select(c1,ball,totalRuns,batsman)
-    c3 <- c2 %>% group_by(batsman) %>% summarise(runsDeathOvers= sum(totalRuns)) %>% arrange(desc(runsDeathOvers))
+    c2 <- select(c1,ball,totalRuns,batsman,date)
+    c3 <- c2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRinDeathOvers=runs/count*100) %>% arrange(desc(SRinDeathOvers)) %>%
+        select(batsman,SRinDeathOvers)
 
     val=min(dim(a3)[1],dim(b3)[1],dim(c3)[1])
     m=cbind(a3[1:val,],b3[1:val,],c3[1:val,])
