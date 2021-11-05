@@ -7,11 +7,9 @@
 topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 }
 \arguments{
-\item{t1}{The 1st team of the match}
+\item{matches}{The dataframe of the matches}
 
-\item{plot}{Plot=1 (static), Plot=2(interactive)}
-
-\item{match}{The dataframe of the match}
+\item{t1}{The team of the match}
 }
 \value{
 none

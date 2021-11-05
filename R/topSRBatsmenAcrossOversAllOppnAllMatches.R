@@ -14,15 +14,12 @@
 #' @usage
 #' topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 #'
-#' @param match
-#' The dataframe of the match
+#' @param matches
+#' The dataframe of the matches
 #'
 #' @param t1
-#' The 1st team of the match
+#' The team of the match
 #'
-#'
-#' @param plot
-#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @return none
 #'
@@ -50,7 +47,7 @@
 #'
 #' @export
 #'
-topSRBatsmenAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
+topSRBatsmenAcrossOversAllOppnAllMatches <- function(matches,t1) {
     team=ball=totalRuns=total=NULL
     ggplotly=NULL
     # Filter the performance of team1

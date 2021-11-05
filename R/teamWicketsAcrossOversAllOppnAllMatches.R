@@ -81,9 +81,6 @@ teamWicketsAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   c4$type="3-Death Overs"
 
 
-
-
-
   m=rbind(a4,b4,c4)
 
   plot.title= paste("Wickets across 20 overs by ",t1,  "in all matches against all teams", sep=" ")
