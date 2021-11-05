@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 5 Nov 2021
-# Function: topSRBatsmenAcrossOversOppnAllMatches.R
-# This function computes the highest SR by batsmen in matches against opposition in powerplay, middle and death overs
+# Function: topSRBatsmenAcrossOversAllOppnAllMatches.R
+# This function computes the highest SR by batsmen in matches against all opposition in powerplay, middle and death overs
 #
 ###########################################################################################
 #' @title
-#' Compute the highest SR by batsmen against team in powerplay, middle and death overs
+#' Compute the highest SR by batsmen against all team in powerplay, middle and death overs
 #'
 #' @description
-#' This function  computes the highest SR by batsmen by batsman against team in in powerplay, middle and death overs
+#' This function  computes the highest SR by batsmen by batsman against all team in in powerplay, middle and death overs
 #'
 #' @usage
-#' topSRBatsmenAcrossOversOppnAllMatches(matches,t1,plot=1)
+#' topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
@@ -40,7 +40,7 @@
 #' \dontrun{
 #'
 #' # Plot tne match worm plot
-#' topSRBatsmenAcrossOversOppnAllMatches(matches,'England')
+#' topSRBatsmenAcrossOversAllOppnAllMatches(matches,'England')
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
@@ -50,7 +50,7 @@
 #'
 #' @export
 #'
-topSRBatsmenAcrossOversOppnAllMatches <- function(matches,t1,plot=1) {
+topSRBatsmenAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
     team=ball=totalRuns=total=NULL
     ggplotly=NULL
     # Filter the performance of team1
