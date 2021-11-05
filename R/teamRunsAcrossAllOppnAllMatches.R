@@ -1,27 +1,24 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 4 Nov 2021
-# Function: teamRunsAcrossOversOppnAllMatches
-# This function computes runs across overs in all matches against opposition in powerplay, middle and death overs
+# Date : 5 Nov 2021
+# Function: teamRunsAcrossOversAllOppnAllMatches
+# This function computes runs across overs in all matches against all opposition in powerplay, middle and death overs
 #
 ###########################################################################################
 #' @title
-#' Compute the runs by team against team in powerplay, middle and death overs
+#' Compute the runs by team against all team in powerplay, middle and death overs
 #'
 #' @description
-#' This function  plots the runs by team against team in in powerplay, middle and death overs
+#' This function  plots the runs by team against all teams in in powerplay, middle and death overs
 #'
 #' @usage
-#' teamRunsAcrossOversOppnAllMatches(matches,t1,t2,plot=1)
+#' teamRunsAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
 #'
 #' @param t1
-#' The 1st team of the match
-#'
-#' @param t2
-#' the 2nd team in the match
+#' The  team for which  the runs is required
 #'
 #' @param plot
 #' Plot=1 (static), Plot=2(interactive)
@@ -42,7 +39,7 @@
 #' \dontrun{
 #'
 #' # Plot tne match worm plot
-#' teamRunsAcrossOversOppnAllMatches(matches,'England',"Pakistan")
+#' teamRunsAcrossOversAllOppnAllMatches(matches,'England')
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
@@ -52,7 +49,7 @@
 #'
 #' @export
 #'
-teamRunsAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
+teamRunsAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
     team=ball=totalRuns=total=NULL
     ggplotly=NULL
 
@@ -81,35 +78,8 @@ teamRunsAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
     c4$type="3-Death Overs"
 
 
-
-    ####################
-    # Filter the performance of team2
-    a <-filter(matches,team==t2)
-    # Power play
-    a11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
-    a21 <- select(a11,team,totalRuns,date)
-    a31 <- a21 %>% group_by(team,date) %>% summarise(total=sum(totalRuns))
-    a41 = a31 %>% summarise(meanRuns=mean(total))
-    a41$type="1-Power Play"
-
-    # Middle overs I
-    b11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
-    b21 <- select(b11,team,totalRuns,date)
-    b31 <- b21 %>% group_by(team,date) %>% summarise(total=sum(totalRuns))
-    b41 = b31 %>% summarise(meanRuns=mean(total))
-    b41$type="2-Middle Overs"
-
-    # Death overs 2
-    c11 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1,20.0))
-    c21 <- select(c11,team,totalRuns,date)
-    c31 <- c21 %>% group_by(team,date) %>% summarise(total=sum(totalRuns))
-    c41 = c31 %>% summarise(meanRuns=mean(total))
-    c41$type="3-Death Overs"
-
-
-
-    m=rbind(a4,b4,c4,a41,b41,c41)
-    plot.title= paste("Mean runs across 20 overs by ",t1, "and", t2, "in all matches", sep=" ")
+    m=rbind(a4,b4,c4)
+    plot.title= paste("Mean runs across 20 overs by ",t1, "in all matches against all teams", sep=" ")
 
 
     # Plot both lines
