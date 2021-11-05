@@ -12,7 +12,7 @@
 #' This function  plots the wickets by team against team in in powerplay, middle and death overs
 #'
 #' @usage
-#' teamWicketsAcrossOversOppnAllMatches.R(match,t1,t2,plot=1)
+#' teamWicketsAcrossOversOppnAllMatches(match,t1,t2,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
