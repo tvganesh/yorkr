@@ -51,7 +51,7 @@
 #' @export
 #'
 teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=ER=NULL
   ggplotly=NULL
 
   # Filter the performance of team1
@@ -62,7 +62,6 @@ teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   a3 <- a2 %>% group_by(team,date) %>% summarise(total=sum(totalRuns),count=n())
   a3$ER=a3$total/a3$count * 6
   a4 = a3 %>% select(team,ER) %>% summarise(meanER=mean(ER))
-  a4$opposition=t2
   a4$type="1-Power Play"
 
   # Middle overs I
@@ -71,7 +70,6 @@ teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   b3 <- b2 %>% group_by(team,date) %>% summarise(total=sum(totalRuns),count=n())
   b3$ER=b3$total/b3$count * 6
   b4 = b3 %>% select(team,ER) %>% summarise(meanER=mean(ER))
-  b4$opposition=t2
   b4$type="2-Middle Overs"
 
   ##Death overs
@@ -80,12 +78,7 @@ teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   c3 <- c2 %>% group_by(team,date) %>% summarise(total=sum(totalRuns),count=n())
   c3$ER=c3$total/c3$count * 6
   c4 = c3 %>% select(team,ER) %>% summarise(meanER=mean(ER))
-  c4$opposition=t2
   c4$type="3-Death Overs"
-
-
-
-
 
   m=rbind(a4,b4,c4)
   plot.title= paste("Wickets across 20 overs by ",t1,"in all matches against all teams", sep=" ")
