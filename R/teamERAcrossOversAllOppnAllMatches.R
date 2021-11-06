@@ -88,7 +88,7 @@ teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
 
 
   m=rbind(a4,b4,c4)
-  plot.title= paste("Wickets cross 20 overs by ",t1, "and", t2, "in all matches", sep=" ")
+  plot.title= paste("Wickets across 20 overs by ",t1,"in all matches against all teams", sep=" ")
 
   # Plot both lines
   if(plot ==1){ #ggplot2
