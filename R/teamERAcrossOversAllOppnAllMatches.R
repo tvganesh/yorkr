@@ -51,7 +51,7 @@
 #' @export
 #'
 teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
-  team=ball=totalRuns=total=ER=NULL
+  team=ball=totalRuns=total=ER=type=meanER=NULL
   ggplotly=NULL
 
   # Filter the performance of team1
