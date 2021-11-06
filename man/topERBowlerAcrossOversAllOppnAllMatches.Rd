@@ -7,9 +7,9 @@
 topERBowlerAcrossOversAllOppnAllMatches(matches,t1)
 }
 \arguments{
-\item{t1}{The 1st team of the match}
+\item{matches}{The dataframe of the matches}
 
-\item{match}{The dataframe of the match}
+\item{t1}{The 1st team of the match}
 }
 \value{
 none

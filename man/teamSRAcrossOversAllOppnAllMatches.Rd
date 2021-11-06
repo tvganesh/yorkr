@@ -7,11 +7,11 @@
 teamSRAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 }
 \arguments{
+\item{matches}{The dataframe of the matches}
+
 \item{t1}{The team of the matches}
 
 \item{plot}{Plot=1 (static), Plot=2(interactive)}
-
-\item{match}{The dataframe of the match}
 }
 \value{
 none

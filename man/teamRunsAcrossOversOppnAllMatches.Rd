@@ -7,13 +7,13 @@
 teamRunsAcrossOversOppnAllMatches(matches,t1,t2,plot=1)
 }
 \arguments{
+\item{matches}{The dataframe of the matches}
+
 \item{t1}{The 1st team of the match}
 
 \item{t2}{the 2nd team in the match}
 
 \item{plot}{Plot=1 (static), Plot=2(interactive)}
-
-\item{match}{The dataframe of the match}
 }
 \value{
 none

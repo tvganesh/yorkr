@@ -14,8 +14,8 @@
 #' @usage
 #' topWicketsBowlerAcrossOversAllOppnAllMatches(matches,t1)
 #'
-#' @param match
-#' The dataframe of the match
+#' @param matches
+#' The dataframe of the matches
 #'
 #' @param t1
 #' The 1st team of the match
