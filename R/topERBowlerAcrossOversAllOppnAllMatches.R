@@ -48,7 +48,7 @@
 #' @export
 #'
 topERBowlerAcrossOversAllOppnAllMatches <- function(matches,t1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=ERPowerPlay=ERMiddleOvers=ERDeathOvers=quantile=bowler=str_extract=NULL
   ggplotly=NULL
 
   # Filter the performance of team1

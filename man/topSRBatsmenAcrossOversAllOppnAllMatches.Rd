@@ -4,7 +4,7 @@
 \alias{topSRBatsmenAcrossOversAllOppnAllMatches}
 \title{Compute the highest SR by batsmen against all team in powerplay, middle and death overs}
 \usage{
-topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1,plot=1)
+topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1)
 }
 \arguments{
 \item{matches}{The dataframe of the matches}

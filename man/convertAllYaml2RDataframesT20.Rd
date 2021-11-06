@@ -37,7 +37,6 @@ convertAllYaml2RDataframesT20("../yamldir","../data")
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr
-\code{\link{bowlerWicketPlot}}\cr
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{convertYaml2RDataframeT20}}\cr
 }

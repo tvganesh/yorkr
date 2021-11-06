@@ -12,7 +12,7 @@
 #' This function  computes the best ER by bowlers against team in in powerplay, middle and death overs
 #'
 #' @usage
-#' topERBowlerAcrossOversOppnAllMatches(matches,t1,plot=1)
+#' topERBowlerAcrossOversOppnAllMatches(matches,t1)
 #'
 #' @param match
 #' The dataframe of the match
@@ -20,7 +20,6 @@
 #' @param t1
 #' The 1st team of the match
 #'
-#
 #'
 #' @return none
 #'
@@ -49,7 +48,7 @@
 #' @export
 #'
 topERBowlerAcrossOversOppnAllMatches <- function(matches,t1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=ERPowerPlay=ERMiddleOvers=ERDeathOvers=bowler=str_extract=NULL
   ggplotly=NULL
 
   # Filter the performance of team1

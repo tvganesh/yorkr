@@ -48,8 +48,8 @@
 #' @export
 #'
 topWicketsBowlerAcrossOversAllOppnAllMatches <- function(matches,t1) {
-  team=ball=totalRuns=total=NULL
-  ggplotly=NULL
+  team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=str_extract=NULL
+  ggplotly=wicketPlayerOut=NULL
 
   # Filter the performance of team1
   matches= matches %>% filter(date >= "2019-01-01" & date <= "2021-11-01")

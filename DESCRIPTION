@@ -20,6 +20,5 @@ Imports:
     gridExtra,
     rpart.plot,
     stats,
-    tidyverse,
     utils
 URL: https://github.com/tvganesh/yorkr/

@@ -38,7 +38,6 @@ convertYaml2RDataframe("225171.yaml",".","../data")
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr
-\code{\link{bowlerWicketPlot}}\cr
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{convertAllYaml2RDataframesT20}}\cr
 }

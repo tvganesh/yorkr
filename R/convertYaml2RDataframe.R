@@ -45,7 +45,6 @@
 #'
 #' @seealso
 #' \code{\link{bowlerMovingAverage}}\cr
-#' \code{\link{bowlerWicketPlot}}\cr
 #' \code{\link{bowlerWicketsVenue}}\cr
 #' \code{\link{convertAllYaml2RDataframes}}\cr
 #'

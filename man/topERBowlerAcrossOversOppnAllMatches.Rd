@@ -4,7 +4,7 @@
 \alias{topERBowlerAcrossOversOppnAllMatches}
 \title{Compute the best ER by bowlers against team in powerplay, middle and death overs}
 \usage{
-topERBowlerAcrossOversOppnAllMatches(matches,t1,plot=1)
+topERBowlerAcrossOversOppnAllMatches(matches,t1)
 }
 \arguments{
 \item{t1}{The 1st team of the match}

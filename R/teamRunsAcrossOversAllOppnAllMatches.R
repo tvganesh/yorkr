@@ -14,8 +14,8 @@
 #' @usage
 #' teamRunsAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 #'
-#' @param match
-#' The dataframe of the match
+#' @param matches
+#' The dataframe of the matches
 #'
 #' @param t1
 #' The  team for which  the runs is required
@@ -50,7 +50,7 @@
 #' @export
 #'
 teamRunsAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
-    team=ball=totalRuns=total=NULL
+    team=ball=totalRuns=total=meanRuns=type=str_extract=NULL
     ggplotly=NULL
 
     # Filter the performance of team1

@@ -45,7 +45,6 @@
 #'
 #' @seealso
 #' \code{\link{bowlerMeanEconomyRate}}\cr
-#' \code{\link{bowlerWicketPlot}}\cr
 #' \code{\link{bowlerWicketsVenue}}\cr
 #' \code{\link{bowlerMeanRunsConceded}}\cr
 #'

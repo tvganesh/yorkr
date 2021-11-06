@@ -12,10 +12,10 @@
 #' This function  plots the ER by team against team in in powerplay, middle and death overs
 #'
 #' @usage
-#' teamERAcrossOversOppnAllMatches(match,t1,t2,plot=1)
+#' teamERAcrossOversOppnAllMatches(matches,t1,t2,plot=1)
 #'
-#' @param match
-#' The dataframe of the match
+#' @param matches
+#' The dataframe of the matches
 #'
 #' @param t1
 #' The 1st team of the match
@@ -53,7 +53,7 @@
 #' @export
 #'
 teamERAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
-  team=ball=totalRuns=total=type=meanER=opposition=ER=NULL
+  team=ball=totalRuns=total=type=meanER=opposition=ER=str_extract=NULL
   ggplotly=NULL
 
   # Filter the performance of team1

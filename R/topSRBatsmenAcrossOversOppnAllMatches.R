@@ -51,7 +51,7 @@
 #' @export
 #'
 topSRBatsmenAcrossOversOppnAllMatches <- function(matches,t1,plot=1) {
-    team=ball=totalRuns=total=NULL
+    team=ball=totalRuns=total=SRinPowerpPlay=SRinMiddleOvers=SRinDeathOvers=batsman=runs=str_extract=NULL
     ggplotly=NULL
     # Filter the performance of team1
     a <-filter(matches,team==t1)

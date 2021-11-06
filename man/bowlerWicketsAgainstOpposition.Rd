@@ -40,7 +40,6 @@ bowlerWicketsAgainstOpposition(jadeja,"RA Jadeja",dateRange)
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr
-\code{\link{bowlerWicketPlot}}\cr
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{bowlerMeanRunsConceded}}\cr
 }

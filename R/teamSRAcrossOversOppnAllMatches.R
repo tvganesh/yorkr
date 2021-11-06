@@ -12,10 +12,10 @@
 #' This function  plots the SR by team against team in in powerplay, middle and death overs
 #'
 #' @usage
-#' teamSRAcrossOversOppnAllMatches(match,t1,t2,plot=1)
+#' teamSRAcrossOversOppnAllMatches(matches,t1,t2,plot=1)
 #'
-#' @param match
-#' The dataframe of the match
+#' @param matches
+#' The dataframe of the matches
 #'
 #' @param t1
 #' The 1st team of the match
@@ -53,7 +53,7 @@
 #' @export
 #'
 teamSRAcrossOversOppnAllMatches <- function(matches,t1,t2,plot=1) {
-    team=ball=totalRuns=total=NULL
+    team=ball=totalRuns=total=type=SR=meanSR=str_extract=NULL
     ggplotly=NULL
 
 

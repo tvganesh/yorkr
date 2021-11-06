@@ -51,7 +51,7 @@
 #' @export
 #'
 topWicketsBowlerAcrossOversOppnAllMatches <- function(matches,t1,plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=wicketPlayerOut=str_extract=NULL
   ggplotly=NULL
 
   # Filter the performance of team1

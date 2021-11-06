@@ -14,8 +14,8 @@
 #' @usage
 #' teamERAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 #'
-#' @param match
-#' The dataframe of the match
+#' @param matches
+#' The dataframe of the matches
 #'
 #' @param t1
 #' The 1st team of the match
@@ -51,7 +51,7 @@
 #' @export
 #'
 teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
-  team=ball=totalRuns=total=ER=type=meanER=NULL
+  team=ball=totalRuns=total=ER=type=meanER=str_extract=NULL
   ggplotly=NULL
 
   # Filter the performance of team1
@@ -85,7 +85,7 @@ teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
 
   # Plot both lines
   if(plot ==1){ #ggplot2
-    ggplot(m,aes(x=type, y=meanER, fill=opposition)) +
+    ggplot(m,aes(x=type, y=meanER, fill=t1)) +
       geom_bar(stat="identity", position = "dodge") +
       ggtitle(bquote(atop(.(plot.title),
                           atop(italic("Data source:http://cricsheet.org/"),""))))
@@ -93,7 +93,7 @@ teamERAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
 
 
   }else { #ggplotly
-    g <-   ggplot(m,aes(x=type, y=meanER, fill=opposition)) +
+    g <-   ggplot(m,aes(x=type, y=meanER, fill=t1)) +
       geom_bar(stat="identity", position = "dodge") +
       ggtitle(plot.title)
 

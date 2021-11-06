@@ -50,7 +50,7 @@
 #' @export
 #'
 teamSRAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
-    team=ball=totalRuns=total=NULL
+    team=ball=totalRuns=total=type=SR=meanSR=str_extract=NULL
     ggplotly=NULL
 
 

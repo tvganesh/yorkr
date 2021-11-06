@@ -12,7 +12,7 @@
 #' This function  computes the highest SR by batsmen by batsman against all team in in powerplay, middle and death overs
 #'
 #' @usage
-#' topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1,plot=1)
+#' topSRBatsmenAcrossOversAllOppnAllMatches(matches,t1)
 #'
 #' @param matches
 #' The dataframe of the matches
@@ -48,7 +48,7 @@
 #' @export
 #'
 topSRBatsmenAcrossOversAllOppnAllMatches <- function(matches,t1) {
-    team=ball=totalRuns=total=NULL
+    team=ball=totalRuns=total=SRinPowerpPlay=SRinMiddleOvers=SRinDeathOvers=batsman=str_extract=euns=count=NULL
     ggplotly=NULL
     # Filter the performance of team1
     a <-filter(matches,team==t1)
