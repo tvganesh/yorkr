@@ -61,7 +61,7 @@ teamWicketsAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   a2 <- select(a1,team,date,wicketPlayerOut)
   a3 <- a2 %>% group_by(team,date) %>% filter(wicketPlayerOut != "nobody") %>% mutate(count =n())
   a4 = select(a3,team,count)  %>% group_by(team) %>% summarise(meanWickets=mean(count))
-  a4$opposition=t2
+  a4$opposition=t1
   a4$type="1-Power Play"
 
   # Middle overs
@@ -69,7 +69,7 @@ teamWicketsAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   b2 <- select(b1,team,date,wicketPlayerOut)
   b3 <- b2 %>% group_by(team,date) %>% filter(wicketPlayerOut != "nobody") %>% mutate(count =n())
   b4 = select(b3,team,count)  %>% group_by(team) %>% summarise(meanWickets=mean(count))
-  b4$opposition=t2
+  b4$opposition=t1
   b4$type="2-Middle Overs"
 
   #Death overs
@@ -77,7 +77,7 @@ teamWicketsAcrossOversAllOppnAllMatches <- function(matches,t1,plot=1) {
   c2 <- select(c1,team,date,wicketPlayerOut)
   c3 <- c2 %>% group_by(team,date) %>% filter(wicketPlayerOut != "nobody") %>% mutate(count =n())
   c4 = select(c3,team,count)  %>% group_by(team) %>% summarise(meanWickets=mean(count))
-  c4$opposition=t2
+  c4$opposition=t1
   c4$type="3-Death Overs"
 
 
