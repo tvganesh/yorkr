@@ -54,7 +54,7 @@ topRunsBatsmenAcrossOversOppnAllMatches <- function(matches,t1,plot=1) {
     team=ball=totalRuns=total=runsPowerPlay=runsMiddleOvers=runsDeathOvers=matches=str_extract=NULL
     ggplotly=batsman=NULL
     # Filter the performance of team1
-    matches= matches %>% filter(date >= "2019-01-01" & date <= "2021-11-01")
+
     a <-filter(matches,team==t1)
     a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
     a2 <- select(a1,ball,totalRuns,batsman)

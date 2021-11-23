@@ -65,7 +65,7 @@ teamERAcrossOvers <- function(match,t1,t2,plot=1) {
 
     a3$ER=ifelse(dim(a3)[1]==0, 0,a3$total/a3$count * 6)
     if(dim(a3)[1]!=0){
-        a3$type="1-PowerPlay"
+        a3$type="1-Power Play"
         a3$opposition=t2
     }
 
@@ -106,7 +106,7 @@ teamERAcrossOvers <- function(match,t1,t2,plot=1) {
 
     a31$ER=ifelse(dim(a31)[1]==0, 0,a31$total/a31$count * 6)
     if(dim(a31)[1]!=0){
-        a31$type="1-PowerPlay"
+        a31$type="1-Power Play"
         a31$opposition=t1
     }
 
