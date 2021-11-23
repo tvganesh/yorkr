@@ -47,7 +47,7 @@
 #' @export
 #'
 
-teamWicketsERPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
+teamWicketsERPlotMatch <- function(match,t1,t2,plot=1){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     over=wickets=maidens=NULL
@@ -101,8 +101,6 @@ teamWicketsERPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
 
     x_lower <- quantile(l$wickets,p=0.66)
     y_lower <- quantile(l$ER,p=0.66)
-
-
 
     plot.title <- paste("Wickets-ER Plot of", t1, "in  match against ", t2)
     if(plot == 1){ #ggplot2

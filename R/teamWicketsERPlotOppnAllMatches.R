@@ -38,7 +38,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' wicketsERAllOppnAllMatches
+#' teamWicketsERPlotOppnAllMatches(matches,t1,t2,plot=1)
 #'
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
@@ -104,7 +104,7 @@ teamWicketsERPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
 
 
 
-    plot.title <- paste("Wickets-ER Plot of", y2, "in all matches against ", t2)
+    plot.title <- paste("Wickets-ER Plot of", t1, "in all matches against ", t2)
     if(plot == 1){ #ggplot2
         l %>%
             mutate(quadrant = case_when(wickets > x_lower & ER > y_lower   ~ "Q1",
