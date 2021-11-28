@@ -7,11 +7,13 @@
 teamRunSRDeathOversPlotOppnAllMatches(matches,t1, t2, plot=1)
 }
 \arguments{
+\item{matches}{All matches of the team in all matches with all oppositions}
+
 \item{t1}{The team}
 
 \item{t2}{The  opposition team}
 
-\item{matches}{All matches of the team in all matches with all oppositions}
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \description{
 This function computes and plots runs vs SR  in middle overs of a team in all matches against

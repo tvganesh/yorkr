@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 27 Nov 2021
-# Function: teamWicketERMiddleOversPlotAllMatchesAllOppn
-# This function computes the  wickets vs ER of team in middle overs against all opposition in all matches
+# Function: teamWicketERMiddleOversPlotOppnAllMatches
+# This function computes the  wickets vs ER of team in middle overs against  opposition in all matches
 #
 ###########################################################################################
 #' @title
-#' Team wickets vs ER in middle overs against  all opposition all matches
+#' Team wickets vs ER in middle overs against  a pposition all matches
 #'
 #' @description
 #' This function computes wickets vs ER in middle overs against all oppositions in all matches
 #'
 #' @usage
-#' teamWicketERMiddleOversPlotAllMatchesAllOppn(matches,t1, t2, plot=1)
+#' teamWicketERMiddleOversPlotOppnAllMatches(matches,t1, t2, plot=1)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches
@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' teamWicketERMiddleOversPlotAllMatchesAllOppn(matches, t1, plot=1)
+#' teamWicketERMiddleOversPlotOppnAllMatches(matches, t1, plot=1)
 #'
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
@@ -42,7 +42,7 @@
 #'
 #' @export
 #'
-teamWicketERMiddleOversPlotAllMatchesAllOppn <- function(matches,t1,t2,plot=1) {
+teamWicketERMiddleOversPlotOppnAllMatches <- function(matches,t1,t2,plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=str_extract=NULL
   ggplotly=wicketPlayerOut=NULL
 

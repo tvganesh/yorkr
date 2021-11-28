@@ -26,6 +26,8 @@
 #' @param t2
 #' The  opposition team
 #'
+#' @param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr
@@ -54,7 +56,7 @@
 #'
 #' @export
 #'
-teamRunsSRPMiddleOversPlotOppnAllMatches <- function(match,t1,t2, plot=1) {
+teamRunsSRPMiddleOversPlotOppnAllMatches <- function(matches,t1,t2, plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
   # Filter the performance of team1
@@ -66,7 +68,7 @@ teamRunsSRPMiddleOversPlotOppnAllMatches <- function(match,t1,t2, plot=1) {
   x_lower <- quantile(a3$runs,p=0.66)
   y_lower <- quantile(a3$SRMiddleOvers,p=0.66)
 
-  plot.title <- paste(t1, "best batsmen in middle overs in all matches against ", t2)
+  plot.title <- paste(t1, "Runs vs SR in middle overs in all matches against ", t2)
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRMiddleOvers > y_lower   ~ "Q1",

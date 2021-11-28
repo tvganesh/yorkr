@@ -26,6 +26,8 @@
 #' @param t2
 #' The  opposition team
 #'
+#' @param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr
@@ -54,7 +56,7 @@
 #'
 #' @export
 #'
-teamRunSRDeathOversPlotOppnAllMatches <- function(match,t1,t2, plot=1) {
+teamRunSRDeathOversPlotOppnAllMatches <- function(matches,t1,t2, plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
   # Filter the performance of team1
