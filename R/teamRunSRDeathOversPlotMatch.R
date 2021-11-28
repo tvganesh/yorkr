@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 26 Nov 2021
-# Function: teamRunsSRPMiddleOversPlotMatch
+# Date : 28 Nov 2021
+# Function: teamRunSRDeathOversPlotMatch
 # This function plot the runs vs SR for  the team batsman during death overs against opposition in match
 #
 #
@@ -14,7 +14,7 @@
 #' opposition.
 #'
 #' @usage
-#' teamRunsSRPMiddleOversPlotMatch(match,t1, t2, plot=1)
+#' teamRunSRDeathOversPlotMatch(match,t1, t2, plot=1)
 #'
 #' @param match
 #' Match
@@ -25,6 +25,8 @@
 #' @param t2
 #' The  opposition team
 #'
+#' @param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr
@@ -41,7 +43,7 @@
 #'
 #'
 #' # Top batsman is displayed in descending order of runs
-#' teamRunsSRPMiddleOversPlotMatch(match,t1="India",t2="England")
+#' teamRunSRDeathOversPlotMatch(match,t1="India",t2="England")
 #'
 #' }
 #'
@@ -53,7 +55,7 @@
 #'
 #' @export
 #'
-teamRunSRDeathOversPlotOppnMatch <- function(match,t1,t2, plot=1) {
+teamRunSRDeathOversPlotMatch <- function(match,t1,t2, plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
   # Filter the performance of team1

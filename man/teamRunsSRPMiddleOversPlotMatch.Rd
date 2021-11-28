@@ -12,6 +12,8 @@ teamRunsSRPMiddleOversPlotMatch(match,t1, t2, plot=1)
 \item{t1}{The team}
 
 \item{t2}{The  opposition team}
+
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \description{
 This function computes and plots runs vs SR  in middle overs of a team in match against

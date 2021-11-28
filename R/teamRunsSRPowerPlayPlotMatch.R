@@ -67,7 +67,7 @@ teamRunsSRPowerPlayPlotMatch <- function(match,t1,t2, plot=1) {
   x_lower <- quantile(a3$runs,p=0.66)
   y_lower <- quantile(a3$SRPowerPlay,p=0.66)
 
-  plot.title <- paste(t1, "best batsmen in powerplay in match against ", t2)
+  plot.title <- paste(t1, "Runs vs SR in powerplay in match against ", t2)
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRPowerPlay > y_lower   ~ "Q1",

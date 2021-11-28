@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' teamWicketsERMiddleOversPlotMatch(matches, t1,t2, plot=1)
+#' teamWicketsERMiddleOversPlotMatch(match, t1,t2, plot=1)
 #'
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr

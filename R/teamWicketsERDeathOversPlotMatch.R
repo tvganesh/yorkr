@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' teamWicketsERDeathOversPlotMatch(matches, t1, plot=1)
+#' teamWicketsERDeathOversPlotMatch(match, t1, plot=1)
 #'
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
@@ -42,7 +42,7 @@
 #'
 #' @export
 #'
-teamWicketsERDeathOversPlotMatch <- function(matches,t1,t2,plot=1) {
+teamWicketsERDeathOversPlotMatch <- function(match,t1,t2,plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsDeathOvers=wicketsDeathOvers=bowler=str_extract=NULL
   ggplotly=wicketPlayerOut=NULL
 

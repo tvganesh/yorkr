@@ -7,11 +7,11 @@
 teamWicketsERDeathOversPlotMatch(matches,t1, t2, plot=1)
 }
 \arguments{
-\item{matches}{The matches of the team against all oppositions and all matches}
-
 \item{t1}{Team for which bowling performance is required}
 
 \item{plot}{Plot=1 (static), Plot=2(interactive)}
+
+\item{matches}{The matches of the team against all oppositions and all matches}
 }
 \description{
 This function computes wickets vs ER in death overs against  oppositions in  match

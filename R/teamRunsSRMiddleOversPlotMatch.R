@@ -25,6 +25,8 @@
 #' @param t2
 #' The  opposition team
 #'
+#' @param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr
