@@ -2,16 +2,15 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Nov 2021
 # Function: teamRunsSRPlotMatch
-# This function computes the performances of the teams batsman against all opposition in
-# all matches
+# This function plots the Runs vs SR of a team in a match
 #
 #
 ###########################################################################################
 #' @title
-#' Team batting picture scorecard  match
+#' Team Runs vs SR in  match
 #'
 #' @description
-#' This function computes and plots the batting scorecard of a team in matches
+#' This function computes and plots the Runs vs SR  of a team in matches
 #'
 #' @usage
 #' teamRunsSRPlotMatch(match,theTeam, opposition, plot=1)
@@ -22,11 +21,11 @@
 #' @param theTeam
 #' The team for which the the batting partnerships are sought
 #'
-#'
 #' @param opposition
 #' The opposition team
-#' @return details
-#' The data frame of the scorecard of the team in all matches against all oppositions
+#'
+#' @param plot
+#' plot=1 (static),plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr
@@ -42,10 +41,8 @@
 #' \dontrun{
 #'
 #' # Top batsman is displayed in descending order of runs
-#' teamRunsSRPlotMatch(matches,theTeam="India")
+#' teamRunsSRPlotMatch(matches,theTeam="India",opposition="England")
 #'
-#' # The best England players scorecard against India is shown
-#' teamRunsSRPlotMatch(matches,theTeam="England")
 #' }
 #'
 #' @seealso
@@ -56,7 +53,7 @@
 #'
 #' @export
 #'
-teamRunsSRPlotMatch <- function(matches,theTeam,opposition,plot=1){
+teamRunsSRPlotMatch <- function(match,theTeam,opposition,plot=1){
   team=batsman=runs=fours=sixes=NULL
   byes=legbyes=noballs=wides=NULL
 

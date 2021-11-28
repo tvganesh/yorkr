@@ -18,15 +18,16 @@
 #' teamRunsSRPlotOppnAllMatches(matches,t1,t2,plot=1)
 #'
 #' @param matches
-#' All matches of the team in all matches with all oppositions
+#' All matches of the team in all matches with opposition
 #'
 #' @param t1
-#' The team for which the the batting partnerships are sought
+#' The team t
 #'
 #' @param t2
 #' The opposition team
 #'
-
+#'@param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr

@@ -2,14 +2,14 @@
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Nov 2021
 # Function: teamWicketsERPlotMatch
-# This function computes the  wickets vs ER of team against all opposition in all matches
+# This function computes the  wickets vs ER of team in  match
 #
 ###########################################################################################
 #' @title
-#' Team wickets vs ER against  all opposition all matches
+#' Team wickets vs ER against  in  match
 #'
 #' @description
-#' This function computes wickets vs ER against all oppositions in all matches
+#' This function computes wickets vs ER in  match
 #'
 #' @usage
 #' teamWicketsERPlotMatch(match,t1,t2,plot=1)

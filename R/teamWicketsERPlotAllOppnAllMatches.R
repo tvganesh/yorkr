@@ -12,7 +12,7 @@
 #' This function computes wickets vs ER against all oppositions in all matches
 #'
 #' @usage
-#' teamWicketsERPlotAllOppnAllMatches(matches,theTeam)
+#' teamWicketsERPlotAllOppnAllMatches(matches,theTeam, plot=1)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches
@@ -21,6 +21,9 @@
 #' Team for which bowling performance is required
 #'
 #'
+#' @param plot
+#' Plot=1 (static), Plot=2(interactive)
+
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -41,7 +44,7 @@
 #' @export
 #'
 
-teamWicketsERPlotAllOppnAllMatches <- function(matches,theTeam){
+teamWicketsERPlotAllOppnAllMatches <- function(matches,theTeam,plot=1){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
     over=wickets=maidens=NULL
