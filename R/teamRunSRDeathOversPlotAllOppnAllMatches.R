@@ -1,21 +1,21 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 26 Nov 2021
-# Function: teamRunsSRMiddleOversPlotAllOppnAllMatches
-# This function plot the runs vs SR for  the team batsman during middle overs against all opposition in
+# Function: teamRunSRDeathOversPlotAllOppnAllMatches
+# This function plot the runs vs SR for  the team batsman during death overs against all opposition in
 # in all matches
 #
 #
 ###########################################################################################
 #' @title
-#' Team batting plots runs vs SR in middle overs for team against all oppositions in all matches
+#' Team batting plots runs vs SR in death overs for team against all oppositions in all matches
 #'
 #' @description
-#' This function computes and plots runs vs SR  in middle overs of a team in all matches against all
+#' This function computes and plots runs vs SR  in death overs of a team in all matches against all
 #' oppositions.
 #'
 #' @usage
-#' teamRunsSRMiddleOversPlotAllOppnAllMatches(matches,theTeam,plot=1)
+#' teamRunSRDeathOversPlotAllOppnAllMatches(matches,theTeam)
 #'
 #' @param matches
 #' All matches of the team in all matches with all oppositions
@@ -24,7 +24,7 @@
 #' The team for which the the batting partnerships are sought
 #'
 #'
-#'  @param plot
+#' @param plot
 #' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
@@ -42,7 +42,7 @@
 #'
 #'
 #' # Top batsman is displayed in descending order of runs
-#' teamRunsSRMiddleOversPlotAllOppnAllMatches(matches,t1="India")
+#' teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1="India")
 #'
 #' }
 #'
@@ -54,45 +54,45 @@
 #'
 #' @export
 #'
-teamRunsSRMiddleOversPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
+teamRunSRDeathOversPlotAllOppnAllMatches <- function(match,t1,plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
   # Filter the performance of team1
   a <-filter(matches,team==t1)
-  a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
+  a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1, 20.0))
   a2 <- select(a1,ball,totalRuns,batsman,date)
-  a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRMiddleOvers=runs/count*100)
+  a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRDeathOvers=runs/count*100)
 
   x_lower <- quantile(a3$runs,p=0.66)
-  y_lower <- quantile(a3$SRPowerPlay,p=0.66)
+  y_lower <- quantile(a3$SRDeathOvers,p=0.66)
 
-  plot.title <- paste("Top T20 batsmen of in Middle overs of T20 Internationals")
+
+  plot.title <- paste(t1, "best batsmen in death overs in all matches against ", t2)
   if(plot == 1){ #ggplot2
     a3 %>%
-      mutate(quadrant = case_when(runs > x_lower & SRMiddleOvers > y_lower   ~ "Q1",
-                                  runs <= x_lower & SRMiddleOvers > y_lower  ~ "Q2",
-                                  runs <= x_lower & SRMiddleOvers <= y_lower ~ "Q3",
+      mutate(quadrant = case_when(runs > x_lower & SRDeathOvers > y_lower   ~ "Q1",
+                                  runs <= x_lower & SRDeathOvers > y_lower  ~ "Q2",
+                                  runs <= x_lower & SRDeathOvers <= y_lower ~ "Q3",
                                   TRUE ~ "Q4")) %>%
-      ggplot(aes(runs,SRMiddleOvers,color=quadrant)) +
-      geom_text(aes(runs,SRMiddleOvers,label=batsman,color=quadrant)) + geom_point() +
+      ggplot(aes(runs,SRDeathOvers,color=quadrant)) +
+      geom_text(aes(runs,SRDeathOvers,label=batsman,color=quadrant)) + geom_point() +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
 
   } else if(plot == 2){ #ggplotly
     g <-  a3 %>%
-      mutate(quadrant = case_when(runs > x_lower & SRMiddleOvers > y_lower   ~ "Q1",
-                                  runs <= x_lower & SRMiddleOvers > y_lower  ~ "Q2",
-                                  runs <= x_lower & SRMiddleOvers <= y_lower ~ "Q3",
+      mutate(quadrant = case_when(runs > x_lower & SRDeathOvers > y_lower   ~ "Q1",
+                                  runs <= x_lower & SRDeathOvers > y_lower  ~ "Q2",
+                                  runs <= x_lower & SRDeathOvers <= y_lower ~ "Q3",
                                   TRUE ~ "Q4")) %>%
-      ggplot(aes(runs,SRMiddleOvers,color=quadrant)) +
-      geom_text(aes(runs,SRMiddleOvers,label=batsman,color=quadrant)) + geom_point() +
+      ggplot(aes(runs,SRDeathOvers,color=quadrant)) +
+      geom_text(aes(runs,SRDeathOvers,label=batsman,color=quadrant)) + geom_point() +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
 
     ggplotly(g)
   }
-
 
 }

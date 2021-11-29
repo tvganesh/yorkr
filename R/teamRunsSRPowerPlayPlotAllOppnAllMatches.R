@@ -24,8 +24,8 @@
 #' The team for which the the batting partnerships are sought
 #'
 #'
-#' @return details
-#' The data frame of the scorecard of the team in all matches against all oppositions
+#'  @param plot
+#' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
 #' \url{https://cricsheet.org/}\cr
@@ -42,7 +42,7 @@
 #'
 #'
 #' # Top batsman is displayed in descending order of runs
-#' teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India")
+#' teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India",plot=1)
 #'
 #' }
 #'
@@ -54,7 +54,7 @@
 #'
 #' @export
 #'
-teamRunsSRPowerPlayPlotAllOppnAllMatches <- function(match,t1,plot=1) {
+teamRunsSRPowerPlayPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
   # Filter the performance of team1
