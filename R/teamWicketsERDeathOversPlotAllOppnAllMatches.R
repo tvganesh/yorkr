@@ -42,7 +42,7 @@
 #'
 #' @export
 #'
-teamWicketsERDeathOversPlotAllOppnAllMatches <- function(matches,t1) {
+teamWicketsERDeathOversPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsDeathOvers=wicketsDeathOvers=bowler=str_extract=NULL
   ggplotly=wicketPlayerOut=NULL
 
@@ -63,7 +63,7 @@ teamWicketsERDeathOversPlotAllOppnAllMatches <- function(matches,t1) {
   x_lower <- quantile(a42$wicketsDeathOvers,p=0.66)
   y_lower <- quantile(a42$ERDeathOvers,p=0.66)
 
-  plot.title <- paste("Wickets-ER Plot of", t1, "against all opposition all matches")
+  plot.title <- paste("Wickets-ER Plot in death overs of", t1, "against all opposition all matches")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsDeathOvers > x_lower & ERDeathOvers > y_lower   ~ "Q1",

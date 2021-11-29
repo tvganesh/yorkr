@@ -64,7 +64,10 @@ teamRunsSRMiddleOversPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
   a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRMiddleOvers=runs/count*100)
 
   x_lower <- quantile(a3$runs,p=0.66)
-  y_lower <- quantile(a3$SRPowerPlay,p=0.66)
+  y_lower <- quantile(a3$SRMiddleOvers,p=0.66)
+
+  print("xx")
+  print(x_lower)
 
   plot.title <- paste("Top T20 batsmen of in Middle overs of T20 Internationals")
   if(plot == 1){ #ggplot2

@@ -7,13 +7,13 @@
 teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,theTeam)
 }
 \arguments{
-\item{t1}{The team for which the the batting partnerships are sought}
-
 \item{matches}{All matches of the team in all matches with all oppositions}
-}
-\value{
-details
-The data frame of the scorecard of the team in all matches against all oppositions
+
+\item{t1}{The team for which the the batting partnerships are sought
+
+
+ @param plot
+Plot=1 (static), Plot=2(interactive)}
 }
 \description{
 This function computes and plots runs vs SR  in power play of a team in all matches against all
@@ -27,7 +27,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 
 
 # Top batsman is displayed in descending order of runs
-teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India")
+teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India",plot=1)
 
 }
 

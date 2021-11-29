@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 27 Nov 2021
-# Function: teamWicketERMiddleOversPlotAllMatchesAllOppn
+# Function: teamWicketERMiddleOversPlotAllOppnAllMatches
 # This function computes the  wickets vs ER of team in middle overs against all opposition in all matches
 #
 ###########################################################################################
@@ -12,7 +12,7 @@
 #' This function computes wickets vs ER in middle overs against all oppositions in all matches
 #'
 #' @usage
-#' teamWicketERMiddleOversPlotAllMatchesAllOppn(matches,t1, plot=1)
+#' teamWicketERMiddleOversPlotAllOppnAllMatches(matches,t1, plot=1)
 #'
 #' @param matches
 #' The matches of the team against all oppositions and all matches
@@ -34,7 +34,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' teamWicketERMiddleOversPlotAllMatchesAllOppn(matches, t1, plot=1)
+#' teamWicketERMiddleOversPlotAllOppnAllMatches(matches, t1, plot=1)
 #'
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
@@ -42,7 +42,7 @@
 #'
 #' @export
 #'
-teamWicketERMiddleOversPlotAllMatchesAllOppn <- function(matches,t1) {
+teamWicketERMiddleOversPlotAllOppnAllMatches <- function(matches,t1, plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=str_extract=NULL
   ggplotly=wicketPlayerOut=NULL
 
@@ -63,7 +63,7 @@ teamWicketERMiddleOversPlotAllMatchesAllOppn <- function(matches,t1) {
   x_lower <- quantile(a42$wicketsMiddleOvers,p=0.66)
   y_lower <- quantile(a42$ERMiddleOvers,p=0.33)
 
-  plot.title <- paste("Wickets-ER Plot of", t1, "against ", t2, "in middle overs all matches")
+  plot.title <- paste("Wickets-ER Plot of", t1, "in middle overs against all opposition  all matches")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsMiddleOvers > x_lower & ERMiddleOvers > y_lower   ~ "Q1",
