@@ -52,33 +52,21 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRPlotT20M <- function(dir=".", dateRange) {
+overallRunsSRPlotT20M <- function(teamNames,dir=".",minMatches, dateRange,type="IPL",plot=1) {
 
 
   currDir= getwd()
   cat("T20batmandir=",currDir,"\n")
   battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
   teams = unlist(teamNames)
-  #Change dir
-  cat("odir=",odir)
-  setwd(odir)
+
+  setwd(dir)
   battingDF<-NULL
-  for(team in teams){
-    battingDetails <- NULL
-    val <- paste(team,"-BattingDetails.RData",sep="")
-    print(val)
-    tryCatch(load(val),
-             error = function(e) {
-               print("No data1")
-               setNext=TRUE
-             }
+  battingDetails <- paste(type,"-BattingDetails.RData",sep="")
+  print(battingDetails)
+  load(battingDetails)
+  print(dim(battingDF))
 
-
-    )
-    details <- battingDetails
-    battingDF <- rbind(battingDF,details)
-
-  }
   print(dim(battingDF))
   print(names(battingDF))
   # Note: If the date Range is NULL setback to root directory

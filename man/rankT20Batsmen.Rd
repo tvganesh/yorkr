@@ -9,13 +9,13 @@ rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
 \arguments{
 \item{teamNames}{The team names}
 
-\item{odir}{The output directory}
-
 \item{minMatches}{Minimum matches played}
 
 \item{dateRange}{Date interval to consider}
 
 \item{runsvsSR}{Runs or Strike rate}
+
+\item{odir}{The output directory}
 }
 \value{
 The ranked T20 batsmen

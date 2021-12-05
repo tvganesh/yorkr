@@ -25,7 +25,6 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \examples{
 \dontrun{
 
-
 # Top batsman is displayed in descending order of runs
 teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India",plot=1)
 

@@ -51,33 +51,19 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Batsmen <- function(teamNames,odir=".",minMatches, dateRange, runsvsSR) {
+rankT20Batsmen <- function(teamNames,dir=".",minMatches, dateRange, runsvsSR,type) {
 
     cat("Entering rank Batsmen1 \n")
     currDir= getwd()
     cat("T20batmandir=",currDir,"\n")
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
     teams = unlist(teamNames)
-    #Change dir
-    cat("odir=",odir)
-    setwd(odir)
+    cat("dir=",dir)
+    setwd(dir)
     battingDF<-NULL
-    for(team in teams){
-        battingDetails <- NULL
-        val <- paste(team,"-BattingDetails.RData",sep="")
-        print(val)
-        tryCatch(load(val),
-                 error = function(e) {
-                     print("No data1")
-                     setNext=TRUE
-                 }
-
-
-        )
-        details <- battingDetails
-        battingDF <- rbind(battingDF,details)
-
-    }
+    battingDetails <- paste(type,"-BattingDetails.RData",sep="")
+    print(battingDetails)
+    load(battingDetails)
     print(dim(battingDF))
     print(names(battingDF))
       # Note: If the date Range is NULL setback to root directory
