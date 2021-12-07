@@ -43,7 +43,6 @@
 #' }
 #' @seealso
 #' \code{\link{bowlerMovingAverage}}\cr
-#' \code{\link{bowlerWicketPlot}}\cr
 #' \code{\link{bowlerWicketsVenue}}\cr
 #' \code{\link{convertYaml2RDataframe}}\cr
 #'
@@ -67,6 +66,11 @@ convertAllYaml2RDataframes <- function(sourceDir=".",targetDirMen=".",targetDirW
 
         # Load yaml file
         a <- yaml.load_file(pth)
+        # This is a temporary change.
+        # Removing elements of Players,Registry and balls per over from yaml file
+        a[[2]][['players']] <- NULL #Players
+        a[[2]][['registry']] <- NULL #Registry
+        a[[2]][['balls_per_over']] <- NULL  #balls per over
 
         # Cast as data frame for easy processing
         tryCatch(b <- as.data.frame(a),

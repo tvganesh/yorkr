@@ -41,32 +41,18 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-helper1<- function(teamNames,dateRange, odir=".") {
+helper1<- function(teamNames,dateRange, dir=".",type="IPL") {
 
     currDir= getwd()
 
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
-
+    setwd(dir)
     teams = unlist(teamNames)
-    #Change dir
-    setwd(odir)
-    battingDF<-NULL
-    for(team in teams){
-        battingDetails <- NULL
-        val <- paste(team,"-BattingDetails.RData",sep="")
-        print(val)
-        tryCatch(load(val),
-                 error = function(e) {
-                     print("No data1")
-                     setNext=TRUE
-                 }
-
-
-        )
-        details <- battingDetails
-        battingDF <- rbind(battingDF,details)
-
-    }
+    battingDetails <- paste(type,"-BattingDetails.RData",sep="")
+    print(battingDetails)
+    load(battingDetails)
+    print(dim(battingDF))
+    print(names(battingDF))
 
     maxDate= as.Date(max(battingDF$date))
     minDate= as.Date(min(battingDF$date))
@@ -79,7 +65,6 @@ helper1<- function(teamNames,dateRange, odir=".") {
     b=summarise(group_by(df,batsman),matches=n())
     minMatches = min(b$matches)
     maxMatches = max(b$matches)
-    setwd(currDir)
 
     return(list(minMatches, maxMatches))
 

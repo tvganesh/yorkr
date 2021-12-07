@@ -46,7 +46,6 @@ getAllMatchesAllOpposition("Australia",dir="./mysavedata/",save=TRUE)
 }
 \seealso{
 \code{\link{bowlerMovingAverage}}\cr
-\code{\link{bowlerWicketPlot}}\cr
 \code{\link{bowlerWicketsVenue}}\cr
 \code{\link{bowlerMeanRunsConceded}}\cr
 }

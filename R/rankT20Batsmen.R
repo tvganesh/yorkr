@@ -51,17 +51,17 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Batsmen <- function(teamNames,odir=".",minMatches, dateRange, runsvsSR) {
+rankT20Batsmen <- function(teamNames,dir=".",minMatches, dateRange, runsvsSR,type) {
 
     cat("Entering rank Batsmen1 \n")
     currDir= getwd()
     cat("T20batmandir=",currDir,"\n")
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
     teams = unlist(teamNames)
-    #Change dir
-    cat("odir=",odir)
-    setwd(odir)
+    cat("dir=",dir)
+    setwd(dir)
     battingDF<-NULL
+<<<<<<< HEAD
     for(team in teams){
         battingDetails <- NULL
         val <- paste(team,"-BattingDetails.RData",sep="")
@@ -81,6 +81,11 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, dateRange, runsvsSR) {
     print("max***********")
     print(max(battingDF$date))
     print("max***********")
+=======
+    battingDetails <- paste(type,"-BattingDetails.RData",sep="")
+    print(battingDetails)
+    load(battingDetails)
+>>>>>>> d7ca839f9649092d8a53f73dbe2e8dc4481f0c53
     print(dim(battingDF))
     print(names(battingDF))
     if(is.null(dateRange[1]))
