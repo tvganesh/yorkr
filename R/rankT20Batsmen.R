@@ -55,7 +55,7 @@ rankT20Batsmen <- function(teamNames,dir=".",minMatches, dateRange, runsvsSR,typ
 
     cat("Entering rank Batsmen1 \n")
     currDir= getwd()
-    cat("T20batmandir=",currDir,"\n")
+    cat("T20batman   dir=",currDir,"\n")
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
     teams = unlist(teamNames)
     cat("dir=",dir)
