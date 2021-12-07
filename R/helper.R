@@ -43,7 +43,10 @@ helper<- function(teamNames,dir=".",type="IPL") {
     currDir= getwd()
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=NULL
     year=NULL
+    print("Helper")
+    print(getwd())
     setwd(dir)
+    print(getwd())
     teams = unlist(teamNames)
 
     battingDF<-NULL
@@ -62,6 +65,7 @@ helper<- function(teamNames,dir=".",type="IPL") {
     b=summarise(group_by(df,batsman),matches=n())
     minMatches = min(b$matches)
     maxMatches = max(b$matches)
+    setwd(currDir)
 
 
 

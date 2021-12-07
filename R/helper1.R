@@ -65,6 +65,7 @@ helper1<- function(teamNames,dateRange, dir=".",type="IPL") {
     b=summarise(group_by(df,batsman),matches=n())
     minMatches = min(b$matches)
     maxMatches = max(b$matches)
+    setwd(currDir)
 
     return(list(minMatches, maxMatches))
 
