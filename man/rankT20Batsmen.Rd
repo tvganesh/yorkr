@@ -4,11 +4,9 @@
 \alias{rankT20Batsmen}
 \title{Ranks the T20 batsmen}
 \usage{
-rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
+rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
 }
 \arguments{
-\item{teamNames}{The team names}
-
 \item{minMatches}{Minimum matches played}
 
 \item{dateRange}{Date interval to consider}
@@ -28,7 +26,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
+rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
 }
 
 }

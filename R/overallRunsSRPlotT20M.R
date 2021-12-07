@@ -13,10 +13,11 @@
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #'
 #' @usage
-#' overallRunsSRPlotT20M(dir=".", dateRange)
+#' overallRunsSRPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #'
-#' @param teamNames
-#' The team names
+#'
+#' @param dir
+#' The input directory
 #'
 #' @param odir
 #' The output directory
@@ -27,10 +28,12 @@
 #' @param dateRange
 #' Date interval to consider
 #'
-#' @param runsvsSR
-#'  Runs or Strike rate
+#' @param type
+#' T20 league
 #'
-#' @return The ranked T20 batsmen
+#' @param plot
+#' plot=1 (static),plot=2(interactive), plot=3 (table)
+#'
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -43,7 +46,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' rankT20Batsmen(dir=".",dateRange)
+#' overallRunsSRPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -52,13 +55,12 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRPlotT20M <- function(teamNames,dir=".",minMatches, dateRange,type="IPL",plot=1) {
+overallRunsSRPlotT20M <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
 
 
   currDir= getwd()
   cat("T20batmandir=",currDir,"\n")
   battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
-  teams = unlist(teamNames)
 
   setwd(dir)
   battingDF<-NULL

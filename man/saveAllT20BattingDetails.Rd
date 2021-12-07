@@ -12,9 +12,8 @@ saveAllT20BattingDetails(teamNames,dir=".",odir=".",type="IPL",save=TRUE)
 \item{dir}{The output directory}
 
 \item{odir}{The output directory}
-}
-\value{
-The ranked T20 batsmen
+
+\item{save}{To save or not}
 }
 \description{
 This function creates a single dataframe of all T20 batting details

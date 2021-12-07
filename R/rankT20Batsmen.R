@@ -12,10 +12,8 @@
 #' @description
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #' @usage
-#' rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
+#' rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
 #'
-#' @param teamNames
-#' The team names
 #'
 #' @param odir
 #' The output directory
@@ -42,7 +40,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' rankT20Batsmen(teamNames,odir=".",minMatches, dateRange, runsvsSR)
+#' rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
 #' }
 #'
 #' @seealso
@@ -51,13 +49,13 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Batsmen <- function(teamNames,dir=".",minMatches, dateRange, runsvsSR,type) {
+rankT20Batsmen <- function(dir=".",minMatches, dateRange, runsvsSR,type) {
 
   cat("Entering rank Batsmen1 \n")
   currDir= getwd()
   cat("T20batman   dir=",currDir,"\n")
   battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
-  teams = unlist(teamNames)
+
   cat("dir=",dir)
   setwd(dir)
   battingDF<-NULL

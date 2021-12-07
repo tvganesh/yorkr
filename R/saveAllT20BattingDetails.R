@@ -23,8 +23,9 @@
 #' @param odir
 #' The output directory
 #'
+#' @param save
+#' To save or not
 #'
-#' @return The ranked T20 batsmen
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -51,7 +52,6 @@ saveAllT20BattingDetails <- function(teamNames,dir=".",odir=".",type="IPL",save=
     currDir= getwd()
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
     teams = unlist(teamNames)
-    #Change dir
 
     battingDF<-NULL
     for(team in teams){
