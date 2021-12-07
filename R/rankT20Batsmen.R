@@ -78,8 +78,15 @@ rankT20Batsmen <- function(teamNames,odir=".",minMatches, dateRange, runsvsSR) {
         battingDF <- rbind(battingDF,details)
 
     }
+    print("max***********")
+    print(max(battingDF$date))
+    print("max***********")
     print(dim(battingDF))
     print(names(battingDF))
+    if(is.null(dateRange[1]))
+       return
+    print(dateRange[1])
+    print(dateRange[2])
       # Note: If the date Range is NULL setback to root directory
      tryCatch({
 
