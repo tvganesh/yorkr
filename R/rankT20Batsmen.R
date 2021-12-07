@@ -53,82 +53,56 @@
 #'
 rankT20Batsmen <- function(teamNames,dir=".",minMatches, dateRange, runsvsSR,type) {
 
-    cat("Entering rank Batsmen1 \n")
-    currDir= getwd()
-    cat("T20batman   dir=",currDir,"\n")
-    battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
-    teams = unlist(teamNames)
-    cat("dir=",dir)
-    setwd(dir)
-    battingDF<-NULL
-<<<<<<< HEAD
-    for(team in teams){
-        battingDetails <- NULL
-        val <- paste(team,"-BattingDetails.RData",sep="")
-        print(val)
-        tryCatch(load(val),
-                 error = function(e) {
-                     print("No data1")
-                     setNext=TRUE
-                 }
+  cat("Entering rank Batsmen1 \n")
+  currDir= getwd()
+  cat("T20batman   dir=",currDir,"\n")
+  battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
+  teams = unlist(teamNames)
+  cat("dir=",dir)
+  setwd(dir)
+  battingDF<-NULL
+  battingDetails <- paste(type,"-BattingDetails.RData",sep="")
+  print(battingDetails)
+  load(battingDetails)
+  print(dim(battingDF))
+  print(names(battingDF))
+  # Note: If the date Range is NULL setback to root directory
+  tryCatch({
 
+    df=battingDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
 
-        )
-        details <- battingDetails
-        battingDF <- rbind(battingDF,details)
-
-    }
-    print("max***********")
-    print(max(battingDF$date))
-    print("max***********")
-=======
-    battingDetails <- paste(type,"-BattingDetails.RData",sep="")
-    print(battingDetails)
-    load(battingDetails)
->>>>>>> d7ca839f9649092d8a53f73dbe2e8dc4481f0c53
-    print(dim(battingDF))
-    print(names(battingDF))
-    if(is.null(dateRange[1]))
-       return
-    print(dateRange[1])
-    print(dateRange[2])
-      # Note: If the date Range is NULL setback to root directory
-     tryCatch({
-
-           df=battingDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
-
-     },
-     warning=function(war)
-     {
-           print(paste("NULL values: ", war))
-      },
-     error=function(err)
-     {
-           # Change to root directory on error
-           setwd(currDir)
-           cat("Back to root",getwd(),"\n")
-     })
-
-
-
-
-
-    df1 <- select(df,batsman,runs,strikeRate)
-    df1 <- distinct(df1)
-
-    b=summarise(group_by(df1,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
-    print(dim(b))
-    b[is.na(b)] <- 0
-
-    c <- filter(b,matches >= minMatches)
-    # Reset to currDir
+  },
+  warning=function(war)
+  {
+    print(paste("NULL values: ", war))
+  },
+  error=function(err)
+  {
+    # Change to root directory on error
     setwd(currDir)
+    cat("Back to root",getwd(),"\n")
+  })
 
-    if(runsvsSR == "Runs over Strike rate"){
-        T20BatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
-    } else if (runsvsSR == "Strike rate over Runs"){
-        T20BatsmenRank <- arrange(c,desc(meanSR),desc(meanRuns))
-    }
-    T20BatsmenRank
+
+
+
+
+  df1 <- select(df,batsman,runs,strikeRate)
+  df1 <- distinct(df1)
+
+  b=summarise(group_by(df1,batsman),matches=n(), meanRuns=mean(runs),meanSR=mean(strikeRate))
+  print(dim(b))
+  b[is.na(b)] <- 0
+
+  c <- filter(b,matches >= minMatches)
+  # Reset to currDir
+  setwd(currDir)
+
+  if(runsvsSR == "Runs over Strike rate"){
+    T20BatsmenRank <- arrange(c,desc(meanRuns),desc(meanSR))
+  } else if (runsvsSR == "Strike rate over Runs"){
+    T20BatsmenRank <- arrange(c,desc(meanSR),desc(meanRuns))
+  }
+  T20BatsmenRank
 
 }
