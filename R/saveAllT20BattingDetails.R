@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 04 Dec 2021
-# Function: saveAllIPLBattingDetails
-# This function saves all IPL batting Details
+# Function: saveAllT20BattingDetails
+# This function saves all T20 batting Details
 #
 #
 ###########################################################################################
 #' @title
-#' Save all IPL batting details
+#' Save all T20 batting details
 #'
 #' @description
-#' This function creates a single dataframe of all IPL batting details
+#' This function creates a single dataframe of all T20 batting details
 #' @usage
-#' saveAllIPLBattingDetails(teamNames,dir=".",odir=".",type="IPL",save=TRUE)
+#' saveAllT20BattingDetails(teamNames,dir=".",odir=".",type="IPL",save=TRUE)
 #'
 #' @param teamNames
 #' The team names
@@ -37,7 +37,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' saveAllIPLBattingDetails(teamNames,dir=".",odir=".",type="IPL",save=TRUE)
+#' saveAllT20BattingDetails(teamNames,dir=".",odir=".",type="IPL",save=TRUE)
 #' }
 #'
 #' @seealso
@@ -46,7 +46,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-saveAllIPLBattingDetails <- function(teamNames,dir=".",odir=".",type="IPL",save=TRUE) {
+saveAllT20BattingDetails <- function(teamNames,dir=".",odir=".",type="IPL",save=TRUE) {
 
     currDir= getwd()
     battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL

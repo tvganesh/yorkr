@@ -100,7 +100,7 @@ overallRunsSRPlotT20M <- function(teamNames,dir=".",minMatches, dateRange,type="
   x_lower <- quantile(c$meanRuns,p=0.66)
   y_lower <- quantile(c$meanSR,p=0.66)
 
-  plot.title <- paste("Runs vs SR of batsmen in T20 Internationals")
+  plot.title <- paste("Runs vs SR of batsmen in ",type)
   if(plot == 1){ #ggplot2
     c %>%
       mutate(quadrant = case_when(meanRuns > x_lower & meanSR > y_lower   ~ "Q1",
@@ -114,7 +114,7 @@ overallRunsSRPlotT20M <- function(teamNames,dir=".",minMatches, dateRange,type="
       ggtitle(plot.title)
 
   } else if(plot == 2){ #ggplotly
-    g <-  details %>%
+    g <-  c %>%
       mutate(quadrant = case_when(meanRuns > x_lower & meanSR > y_lower   ~ "Q1",
                                   meanRuns <= x_lower & meanSR > y_lower  ~ "Q2",
                                   meanRuns <= x_lower & meanSR <= y_lower ~ "Q3",
