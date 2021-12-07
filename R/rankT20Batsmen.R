@@ -61,11 +61,37 @@ rankT20Batsmen <- function(teamNames,dir=".",minMatches, dateRange, runsvsSR,typ
     cat("dir=",dir)
     setwd(dir)
     battingDF<-NULL
+<<<<<<< HEAD
+    for(team in teams){
+        battingDetails <- NULL
+        val <- paste(team,"-BattingDetails.RData",sep="")
+        print(val)
+        tryCatch(load(val),
+                 error = function(e) {
+                     print("No data1")
+                     setNext=TRUE
+                 }
+
+
+        )
+        details <- battingDetails
+        battingDF <- rbind(battingDF,details)
+
+    }
+    print("max***********")
+    print(max(battingDF$date))
+    print("max***********")
+=======
     battingDetails <- paste(type,"-BattingDetails.RData",sep="")
     print(battingDetails)
     load(battingDetails)
+>>>>>>> d7ca839f9649092d8a53f73dbe2e8dc4481f0c53
     print(dim(battingDF))
     print(names(battingDF))
+    if(is.null(dateRange[1]))
+       return
+    print(dateRange[1])
+    print(dateRange[2])
       # Note: If the date Range is NULL setback to root directory
      tryCatch({
 
