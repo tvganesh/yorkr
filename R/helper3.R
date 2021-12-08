@@ -11,17 +11,19 @@
 #' @description
 #' This function gets min,max date and min and max matches from dataframe
 #' @usage
-#' helper3(teamNames,dateRange,odir=".")
+#' helper3(teamNames,dateRange, dir=".",type="IPL")
 #'
 #' @param teamNames
 #' The team names
 #'
-#'@param dateRange
+#' @param dateRange
 #' Date interval to consider
 #'
+#' @param dir
+#' The input directory
 #'
-#' @param odir
-#' The output directory
+#' @param type
+#' T20 format
 #'
 #'
 #' @return minDate,maxDate, bowingDF
@@ -43,34 +45,19 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-helper3<- function(teamNames,dateRange, odir=".") {
+helper3<- function(teamNames,dateRange, dir=".",type="IPL") {
 
     currDir= getwd()
-
+    setwd(dir)
     year=bowler=NULL
     teams = unlist(teamNames)
-    #Change dir
-    setwd(odir)
+
     bowlingDF<-NULL
 
+    bowlingDetails <- paste(type,"-BowlingDetails.RData",sep="")
+    print(bowlingDetails)
+    load(bowlingDetails)
 
-    # Compute wickets by bowler in each team
-    o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams){
-        bowlingDetails <- NULL
-        val <- paste(team1,"-BowlingDetails.RData",sep="")
-        print(val)
-        tryCatch(load(val),
-                 error = function(e) {
-                     print("No data1")
-                     setNext=TRUE
-                 }
-
-
-        )
-        details <- bowlingDetails
-        bowlingDF <- rbind(bowlingDF,details)
-    }
     maxDate= as.Date(max(bowlingDF$date))
     minDate= as.Date(min(bowlingDF$date))
 

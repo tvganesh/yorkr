@@ -4,10 +4,12 @@
 \alias{helper2}
 \title{Gets min,max date and min and max matches from dataframe}
 \usage{
-helper2(teamNames,odir=".")
+helper2(teamNames,dir=".",type="IPL")
 }
 \arguments{
 \item{teamNames}{The team names}
+
+\item{type}{T20 format}
 
 \item{odir}{The output directory}
 }

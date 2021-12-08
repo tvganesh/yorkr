@@ -17,10 +17,8 @@
 #' @param teamNames
 #' The team names
 #'
-#' @param odir
-#'
-#'
-#' The output directory
+#' @param dir
+#' The directory
 #'
 #' @param minMatches
 #' Minimum matches played
@@ -55,33 +53,20 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-rankT20Bowlers <- function(teamNames,odir=".",minMatches, dateRange, wicketsVsER) {
+rankT20Bowlers <- function(dir=".",minMatches, dateRange, wicketsVsER,type) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=year=NULL
     wicketPlayerOut=opposition=venue=NULL
-    teams = unlist(teamNames)
     currDir= getwd()
 
     #Change dir
-    setwd(odir)
+    setwd(dir)
     bowlingDF<-NULL
 
-    # Compute wickets by bowler in each team
-    o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams){
-        bowlingDetails <- NULL
-        val <- paste(team1,"-BowlingDetails.RData",sep="")
-        print(val)
-        tryCatch(load(val),
-                 error = function(e) {
-                     print("No data1")
-                     setNext=TRUE
-                 }
 
-
-        )
-        details <- bowlingDetails
-        bowlingDF <- rbind(bowlingDF,details)
-    }
+    bowlingDetails <- paste(type,"-BowlingDetails.RData",sep="")
+    print(bowlingDetails)
+    load(bowlingDetails)
+    print(dim(bowlingDF))
 
     # Note: If the date Range is NULL setback to root directory
     tryCatch({

@@ -11,7 +11,7 @@
 #' @description
 #' This function gets min,max date and min and max matches from dataframe
 #' @usage
-#' helper1(teamNames,dateRange,odir=".")
+#' helper1(teamNames,dateRange, dir=".",type="IPL")
 #'
 #' @param teamNames
 #' The team names
@@ -19,9 +19,11 @@
 #' @param dateRange
 #' Date interval to consider
 #'
-#' @param odir
-#' The output directory
+#' @param dir
+#' The input directory
 #'
+#' @param type
+#' T20 format
 #'
 #' @return minDate,maxDate,minMatches, maxMatches
 #' @references

@@ -4,14 +4,16 @@
 \alias{helper1}
 \title{Gets min,max date and min and max matches from dataframe from the year}
 \usage{
-helper1(teamNames,dateRange,odir=".")
+helper1(teamNames,dateRange, dir=".",type="IPL")
 }
 \arguments{
 \item{teamNames}{The team names}
 
 \item{dateRange}{Date interval to consider}
 
-\item{odir}{The output directory}
+\item{dir}{The input directory}
+
+\item{type}{T20 format}
 }
 \value{
 minDate,maxDate,minMatches, maxMatches
