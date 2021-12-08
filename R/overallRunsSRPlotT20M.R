@@ -102,6 +102,9 @@ overallRunsSRPlotT20M <- function(dir=".",minMatches, dateRange,type="IPL",plot=
   x_lower <- quantile(c$meanRuns,p=0.66)
   y_lower <- quantile(c$meanSR,p=0.66)
 
+  print("!!!!!!!!!!!!!!!!!!!!!!!!!")
+  print(plot)
+  print("!!!!!!!!!!!!!!!!!!!!!!!!!")
   plot.title <- paste("Runs vs SR of batsmen in ",type)
   if(plot == 1){ #ggplot2
     c %>%
