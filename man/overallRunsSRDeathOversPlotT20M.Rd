@@ -4,18 +4,18 @@
 \alias{overallRunsSRDeathOversPlotT20M}
 \title{Plot the Runs vs SR in  death overs  of Intl. T20 batsmen}
 \usage{
-overallRunsSRDeathOversPlotT20M(dir=".",minMatches, dateRange)
+overallRunsSRDeathOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
 }
 \arguments{
-\item{minMatches}{Minimum matches played}
+\item{dir}{The input directory}
 
 \item{dateRange}{Date interval to consider}
 
-\item{teamNames}{The team names}
+\item{type}{T20 league}
+
+\item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
 
 \item{odir}{The output directory}
-
-\item{runsvsSR}{Runs or Strike rate}
 }
 \value{
 The ranked T20 batsmen
@@ -28,7 +28,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-overallRunsSRDeathOversPlotT20M(dir=".",dateRange)
+overallRunsSRDeathOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
 }
 
 }

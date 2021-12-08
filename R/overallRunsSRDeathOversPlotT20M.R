@@ -13,22 +13,23 @@
 #' Runs vs SR in  middle death  of Intl. T20 batsmen
 #'
 #' @usage
-#' overallRunsSRDeathOversPlotT20M(dir=".",minMatches, dateRange)
+#' overallRunsSRDeathOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
 #'
-#' @param teamNames
-#' The team names
+#' @param dir
+#' The input directory
 #'
 #' @param odir
 #' The output directory
 #'
-#' @param minMatches
-#' Minimum matches played
 #'
 #' @param dateRange
 #' Date interval to consider
 #'
-#' @param runsvsSR
-#'  Runs or Strike rate
+#' @param type
+#' T20 league
+#'
+#' @param plot
+#' plot=1 (static),plot=2(interactive), plot=3 (table)
 #'
 #' @return The ranked T20 batsmen
 #' @references
@@ -43,7 +44,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' overallRunsSRDeathOversPlotT20M(dir=".",dateRange)
+#' overallRunsSRDeathOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -52,12 +53,13 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRDeathOversPlotT20M <- function(dir=".",minMatches, dateRange) {
+overallRunsSRDeathOversPlotT20M <- function(dir=".", dateRange,type="IPL",plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
-  fl <- paste(dir,"/T20MDataFrame.RData",sep="")
+  fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")
   load(fl)
 
+  # Filter by date range
   df=t20MDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
   a1 <- df  %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1, 20.0))
   a2 <- select(a1,ball,totalRuns,batsman,date)
