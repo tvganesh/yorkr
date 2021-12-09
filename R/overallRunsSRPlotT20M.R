@@ -19,9 +19,6 @@
 #' @param dir
 #' The input directory
 #'
-#' @param odir
-#' The output directory
-#'
 #' @param minMatches
 #' Minimum matches played
 #'

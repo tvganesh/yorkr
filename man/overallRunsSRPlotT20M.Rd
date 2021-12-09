@@ -16,8 +16,6 @@ overallRunsSRPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 \item{type}{T20 league}
 
 \item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
-
-\item{odir}{The output directory}
 }
 \description{
 This function creates a single datframe of all T20 batsmen and then ranks them

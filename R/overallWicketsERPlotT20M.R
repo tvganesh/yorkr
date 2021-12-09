@@ -12,7 +12,7 @@
 #' This function plots the overall wickets vs ER in T20 men
 #'
 #' @usage
-#' overallWicketsERPlotT20M(dir="."dateRange)
+#' overallWicketsERPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #'
 #'
 #' @param dir
@@ -37,7 +37,7 @@
 #'
 #'@examples
 #' \dontrun{
-#' overallWicketsERPlotT20M(odir=".",dateRange)
+#' overallWicketsERPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -47,33 +47,21 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallWicketsERPlotT20M <- function(dir=".", minMatches, dateRange) {
+overallWicketsERPlotT20M <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=year=NULL
     wicketPlayerOut=opposition=venue=NULL
-    teams = unlist(teamNames)
     currDir= getwd()
-
-    #Change dir
-    setwd(odir)
     bowlingDF<-NULL
 
-    # Compute wickets by bowler in each team
-    o <- data.frame(bowler=character(0),wickets=numeric(0),economyRate=numeric(0))
-    for(team1 in teams){
-        bowlingDetails <- NULL
-        val <- paste(team1,"-BowlingDetails.RData",sep="")
-        print(val)
-        tryCatch(load(val),
-                 error = function(e) {
-                     print("No data1")
-                     setNext=TRUE
-                 }
+
+    setwd(dir)
+    bowlingDF<-NULL
 
 
-        )
-        details <- bowlingDetails
-        bowlingDF <- rbind(bowlingDF,details)
-    }
+    bowlingDetails <- paste(type,"-BowlingDetails.RData",sep="")
+    print(bowlingDetails)
+    load(bowlingDetails)
+    print(dim(bowlingDF))
 
     # Note: If the date Range is NULL setback to root directory
     tryCatch({
@@ -120,7 +108,7 @@ overallWicketsERPlotT20M <- function(dir=".", minMatches, dateRange) {
                                         totalWickets <= x_lower & meanER <= y_lower ~ "Q3",
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(totalWickets,meanER,color=quadrant)) +
-            geom_text(aes(totalWickets,meanER,label=batsman,color=quadrant)) + geom_point() +
+            geom_text(aes(totalWickets,meanER,label=bowler,color=quadrant)) + geom_point() +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)
@@ -132,7 +120,7 @@ overallWicketsERPlotT20M <- function(dir=".", minMatches, dateRange) {
                                         totalWickets <= x_lower & meanER <= y_lower ~ "Q3",
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(totalWickets,meanER,color=quadrant)) +
-            geom_text(aes(totalWickets,meanER,label=batsman,color=quadrant)) + geom_point() +
+            geom_text(aes(totalWickets,meanER,label=bowler,color=quadrant)) + geom_point() +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)

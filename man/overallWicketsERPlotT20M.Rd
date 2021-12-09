@@ -4,7 +4,7 @@
 \alias{overallWicketsERPlotT20M}
 \title{Ranks the T20 bowlers}
 \usage{
-overallWicketsERPlotT20M(dir="."dateRange)
+overallWicketsERPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 }
 \arguments{
 \item{dir}{The directory}
@@ -22,7 +22,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-overallWicketsERPlotT20M(odir=".",dateRange)
+overallWicketsERPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
 }
 
 }
