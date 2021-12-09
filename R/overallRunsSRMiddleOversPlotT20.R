@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Nov 2021
-# Function: overallRunsSRMiddleOversPlotT20M
+# Function: overallRunsSRMiddleOversPlotT20
 # This function plots Runs vs SR in middle overs Intl.  T20  batsmen
 #
 #
@@ -13,7 +13,7 @@
 #' Runs vs SR in  middle overs  of Intl. T20 batsmen
 #'
 #' @usage
-#' overallRunsSRMiddleOversPlotT20M(dir=".", dateRange,type="IPL",plot=1e)
+#' overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1e)
 #'
 #' @param dir
 #' The input directory
@@ -44,7 +44,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' overallRunsSRMiddleOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
+#' overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -53,7 +53,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRMiddleOversPlotT20M <- function(dir=".",dateRange,type="IPL",plot=1) {
+overallRunsSRMiddleOversPlotT20 <- function(dir=".",dateRange,type="IPL",plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
 

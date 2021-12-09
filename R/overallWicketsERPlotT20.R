@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 26 Nov 2021
-# Function: overallWicketsERPlotT20M
+# Function: overallWicketsERPlotT20
 # This function plots the overall wickets vs ER in T20 men
 #
 ###########################################################################################
@@ -12,7 +12,7 @@
 #' This function plots the overall wickets vs ER in T20 men
 #'
 #' @usage
-#' overallWicketsERPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
+#' overallWicketsERPlotT20(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #'
 #'
 #' @param dir
@@ -37,7 +37,7 @@
 #'
 #'@examples
 #' \dontrun{
-#' overallWicketsERPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
+#' overallWicketsERPlotT20(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -47,7 +47,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallWicketsERPlotT20M <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
+overallWicketsERPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=year=NULL
     wicketPlayerOut=opposition=venue=NULL
     currDir= getwd()

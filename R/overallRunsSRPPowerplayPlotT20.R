@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 27 Nov 2021
-# Function: overallRunsSRPPowerplayPlotT20M
+# Function: overallRunsSRPPowerplayPlotT20
 # This function plots Runs vs SR in power play of T20 batsmen
 #
 #
@@ -13,13 +13,10 @@
 #' Runs vs SR in power play  of  T20 batsmen
 #'
 #' @usage
-#' overallRunsSRPPowerplayPlotT20M(dir=".", dateRange,type="IPL",plot=1e)
+#' overallRunsSRPPowerplayPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #'
 #' @param dir
 #' The input directory
-#'
-#' @param odir
-#' The output directory
 #'
 #'
 #' @param dateRange
@@ -43,7 +40,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' overallRunsSRPPowerplayPlotT20M(dir=".", dateRange,type="IPL",plot=1)
+#' overallRunsSRPPowerplayPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -52,7 +49,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRPPowerplayPlotT20M <- function(dir=".", dateRange,type="IPL",plot=1){
+overallRunsSRPPowerplayPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1){
 
   fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")
   load(fl)

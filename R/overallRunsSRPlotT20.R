@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Nov 2021
-# Function: overallRunsSRPlotT20M
+# Function: overallRunsSRPlotT20
 # This function plots Runs vs SR of Intl.  T20  batsmen
 #
 #
@@ -13,7 +13,7 @@
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #'
 #' @usage
-#' overallRunsSRPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
+#' overallRunsSRPlotT20(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #'
 #'
 #' @param dir
@@ -43,7 +43,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' overallRunsSRPlotT20M(dir=".",minMatches, dateRange,type="IPL",plot=1)
+#' overallRunsSRPlotT20(dir=".",minMatches, dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -52,7 +52,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRPlotT20M <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
+overallRunsSRPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
 
 
   currDir= getwd()

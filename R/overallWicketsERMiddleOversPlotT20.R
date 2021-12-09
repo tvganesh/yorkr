@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 27 Nov 2021
-# Function: overallWicketsERMiddleOversPlotT20M
+# Function: overallWicketsERMiddleOversPlotT20
 # This function plots Wickets vs ER in power play of Intl.  T20  batsmen
 #
 #
@@ -13,22 +13,21 @@
 #' Wickets vs ER in middle overs  of Intl. T20 batsmen
 #'
 #' @usage
-#' overallWicketsERMiddleOversPlotT20M(dir=".",minMatches, dateRange)
+#' overallWicketsERMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #'
-#' @param teamNames
-#' The team names
+#' @param dir
+#' The input directory
 #'
-#' @param odir
-#' The output directory
-#'
-#' @param minMatches
-#' Minimum matches played
 #'
 #' @param dateRange
 #' Date interval to consider
 #'
+#' @param type
+#' T20 league
 #'
-#' @return The ranked T20 batsmen
+#' @param plot
+#' plot=1 (static),plot=2(interactive), plot=3 (table)
+#'
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -41,7 +40,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' overallWicketsERPowerPlayPlotT20M(dir=".",minmatches, dateRange)
+#' overallWicketsERMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -50,14 +49,16 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallWicketsERMiddleOversPlotT20M <- function(dir=".",minMatches, dateRange) {
+overallWicketsERMiddleOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=str_extract=NULL
   ggplotly=wicketPlayerOut=NULL
 
-  fl <- paste(dir,"/T20MDataFrame.RData",sep="")
+  fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")
   load(fl)
 
+  # Filter by date range
   df=t20MDF %>% filter(date >= dateRange[1]  & date <= dateRange[2])
+
   # Middle overs
   a1 <- df %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
   a2 <- select(a1,date,bowler,wicketPlayerOut)
