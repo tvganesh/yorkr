@@ -62,7 +62,8 @@ rankT20Bowlers <- function(dir=".",minMatches, dateRange, wicketsVsER,type) {
     setwd(dir)
     bowlingDF<-NULL
 
-
+    print("*******")
+    print(type)
     bowlingDetails <- paste(type,"-BowlingDetails.RData",sep="")
     print(bowlingDetails)
     load(bowlingDetails)
@@ -100,6 +101,7 @@ rankT20Bowlers <- function(dir=".",minMatches, dateRange, wicketsVsER,type) {
     g=merge(b,f,by="bowler",all.x = TRUE)
     g[is.na(g)] <- 0
     h <- filter(g,matches >= minMatches)
+    # Reset to currDir
     setwd(currDir)
     if(wicketsVsER == "Wickets over Economy rate"){
           T20BowlersRank <- arrange(h,desc(totalWickets),desc(meanER))

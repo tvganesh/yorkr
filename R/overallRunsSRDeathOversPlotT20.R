@@ -1,7 +1,7 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 23 Nov 2021
-# Function: overallRunsSRDeathOversPlotT20M
+# Function: overallRunsSRDeathOversPlotT20
 # This function plots Runs vs SR in death overs Intl.  T20  batsmen
 #
 #
@@ -13,7 +13,7 @@
 #' Runs vs SR in  middle death  of Intl. T20 batsmen
 #'
 #' @usage
-#' overallRunsSRDeathOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
+#' overallRunsSRDeathOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #'
 #' @param dir
 #' The input directory
@@ -44,7 +44,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' overallRunsSRDeathOversPlotT20M(dir=".", dateRange,type="IPL",plot=1)
+#' overallRunsSRDeathOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #' }
 #'
 #' @seealso
@@ -53,7 +53,7 @@
 #' \code{\link{rankT20Bowlers}}\cr
 #' @export
 #'
-overallRunsSRDeathOversPlotT20M <- function(dir=".", dateRange,type="IPL",plot=1) {
+overallRunsSRDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1) {
   team=ball=totalRuns=total=NULL
   ggplotly=NULL
   fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")
