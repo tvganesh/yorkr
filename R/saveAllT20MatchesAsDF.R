@@ -23,6 +23,9 @@
 #' @param odir
 #' The output directory
 #'
+#' @param type
+#' T20 format
+#'
 #' @param save
 #' To save or not
 #'
@@ -52,7 +55,7 @@ saveAllT20MatchesAsDF <- function(teamNames,dir=".",odir=".",type="IPL",save=TRU
   cat("Entering rank Batsmen1 \n")
   currDir= getwd()
   cat("T20batmandir=",currDir,"\n")
-  battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=NULL
+  battingDetails=batsman=runs=strikeRate=matches=meanRuns=meanSR=battingDF=val=year=overs=NULL
 
   teams = unlist(teamNames)
 

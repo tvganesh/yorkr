@@ -53,7 +53,7 @@
 #' @export
 #'
 overallRunsSRPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
-
+  quantile=quadrant=ggplotly=NULL
 
   currDir= getwd()
   cat("T20batmandir=",currDir,"\n")

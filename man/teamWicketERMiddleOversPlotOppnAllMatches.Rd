@@ -11,6 +11,8 @@ teamWicketERMiddleOversPlotOppnAllMatches(matches,t1, t2, plot=1)
 
 \item{t1}{Team for which bowling performance is required}
 
+\item{t2}{Opposition Team}
+
 \item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \description{
@@ -18,6 +20,11 @@ This function computes wickets vs ER in middle overs against all oppositions in 
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+}
+\examples{
+\dontrun{
+teamWicketERMiddleOversPlotOppnAllMatches(matches,t1,t2,plot=1)
+}
 }
 \references{
 \url{https://cricsheet.org/}\cr

@@ -40,7 +40,7 @@
 #' \dontrun{
 #'
 #' # Plot tne match worm plot
-#' teamWicketsAcrossOversAllOppnAllMatches(matches,'England',)
+#' teamWicketsAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr

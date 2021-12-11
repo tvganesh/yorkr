@@ -12,11 +12,11 @@
 #' @description
 #' This function creates a single datframe of all T20 batsmen and then ranks them
 #' @usage
-#' rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
+#' rankT20Batsmen(dir=".",minMatches, dateRange, runsvsSR,type)
 #'
 #'
-#' @param odir
-#' The output directory
+#' @param dir
+#' The input directory
 #'
 #' @param minMatches
 #' Minimum matches played
@@ -27,7 +27,9 @@
 #' @param runsvsSR
 #'  Runs or Strike rate
 #'
-#' @return The ranked T20 batsmen
+#' @param type
+#' T20 format
+#'
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -40,7 +42,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
+#' rankT20Batsmen(dir=".",minMatches, dateRange, runsvsSR,type)
 #' }
 #'
 #' @seealso

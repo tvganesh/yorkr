@@ -9,9 +9,9 @@ helper(teamNames,dir=".",type="IPL")
 \arguments{
 \item{teamNames}{The team names}
 
-\item{type}{T20 format}
+\item{dir}{The output directory}
 
-\item{odir}{The output directory}
+\item{type}{T20 format}
 }
 \value{
 minDate,maxDate, minMatches, maxMatches

@@ -19,6 +19,11 @@ This function computes wickets vs ER in powewrplay against all oppositions in al
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
+\examples{
+\dontrun{
+teamWicketsERPowerPlayPlotAllOppnAllMatches(matches, t1, plot=1)
+}
+}
 \references{
 \url{https://cricsheet.org/}\cr
 \url{https://gigadom.in/}\cr

@@ -16,7 +16,7 @@ helper1(teamNames,dateRange, dir=".",type="IPL")
 \item{type}{T20 format}
 }
 \value{
-minDate,maxDate,minMatches, maxMatches
+minMatches, maxMatches
 }
 \description{
 This function gets min,max date and min and max matches from dataframe

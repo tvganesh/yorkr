@@ -13,13 +13,11 @@
 #' Runs vs SR in  middle overs  of Intl. T20 batsmen
 #'
 #' @usage
-#' overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1e)
+#' overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 #'
 #' @param dir
 #' The input directory
 #'
-#' @param odir
-#' The output directory
 #'
 #'
 #' @param dateRange
@@ -54,7 +52,7 @@
 #' @export
 #'
 overallRunsSRMiddleOversPlotT20 <- function(dir=".",dateRange,type="IPL",plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=t20MDF=str_extract=batsman=quantile=SRMiddleOvers=quadrant=runs=NULL
   ggplotly=NULL
 
   fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")

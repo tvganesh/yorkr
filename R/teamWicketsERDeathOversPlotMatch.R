@@ -12,13 +12,16 @@
 #' This function computes wickets vs ER in death overs against  oppositions in  match
 #'
 #' @usage
-#' teamWicketsERDeathOversPlotMatch(matches,t1, t2, plot=1)
+#' teamWicketsERDeathOversPlotMatch(match,t1, t2, plot=1)
 #'
-#' @param matches
-#' The matches of the team against all oppositions and all matches
+#' @param match
+#' The match of the team against  opposition
 #'
 #' @param t1
 #' Team for which bowling performance is required
+#'
+#' @param t2
+#' Opposition Team
 #'
 #' @param plot
 #' Plot=1 (static), Plot=2(interactive)
@@ -34,8 +37,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' teamWicketsERDeathOversPlotMatch(match, t1, plot=1)
-#'
+#' teamWicketsERDeathOversPlotMatch(match,t1,t2,plot=1)
+#'}
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
@@ -44,7 +47,7 @@
 #'
 teamWicketsERDeathOversPlotMatch <- function(match,t1,t2,plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsDeathOvers=wicketsDeathOvers=bowler=str_extract=NULL
-  ggplotly=wicketPlayerOut=NULL
+  ggplotly=wicketPlayerOut=str_extract=quantile=quadrant=ERDeathOvers=NULL
 
   # Filter the performance of team1
   a <-filter(match,team!=t1)

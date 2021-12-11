@@ -16,14 +16,20 @@
 #'
 #'
 #' @param dir
-#' The directory
+#' The input directory
 #'
+#' @param minMatches
+#' Minimum matches played
 #'
 #' @param dateRange
 #' Date interval to consider
 #'
+#' @param type
+#' T20 league
 #'
-#' @return The ranked T20 bowlers
+#' @param plot
+#' plot=1 (static),plot=2(interactive), plot=3 (table)
+#'
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -49,7 +55,7 @@
 #'
 overallWicketsERPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plot=1) {
     bowlingDetails=bowler=wickets=economyRate=matches=meanWickets=meanER=totalWickets=year=NULL
-    wicketPlayerOut=opposition=venue=NULL
+    wicketPlayerOut=opposition=venue=quantile=quadrant=bowlingDF=ggplotly=NULL
     currDir= getwd()
     bowlingDF<-NULL
 

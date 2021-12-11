@@ -4,16 +4,14 @@
 \alias{teamRunsSRMiddleOversPlotAllOppnAllMatches}
 \title{Team batting plots runs vs SR in middle overs for team against all oppositions in all matches}
 \usage{
-teamRunsSRMiddleOversPlotAllOppnAllMatches(matches,theTeam,plot=1)
+teamRunsSRMiddleOversPlotAllOppnAllMatches(matches,t1,plot=1)
 }
 \arguments{
 \item{matches}{All matches of the team in all matches with all oppositions}
 
-\item{t1}{The team for which the the batting partnerships are sought
+\item{t1}{The team for which the the batting partnerships are sought}
 
-
- @param plot
-Plot=1 (static), Plot=2(interactive)}
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \description{
 This function computes and plots runs vs SR  in middle overs of a team in all matches against all
@@ -27,7 +25,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 
 
 # Top batsman is displayed in descending order of runs
-teamRunsSRMiddleOversPlotAllOppnAllMatches(matches,t1="India")
+teamRunsSRMiddleOversPlotAllOppnAllMatches(matches,t1,plot=1)
 
 }
 

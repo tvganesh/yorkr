@@ -14,8 +14,6 @@ overallRunsSRDeathOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 \item{type}{T20 league}
 
 \item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
-
-\item{odir}{The output directory}
 }
 \value{
 The ranked T20 batsmen

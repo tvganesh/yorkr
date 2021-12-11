@@ -13,6 +13,8 @@ saveAllT20BattingDetails(teamNames,dir=".",odir=".",type="IPL",save=TRUE)
 
 \item{odir}{The output directory}
 
+\item{type}{T20 format}
+
 \item{save}{To save or not}
 }
 \description{

@@ -19,6 +19,11 @@ This function computes wickets vs ER against all oppositions in all matches
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
+\examples{
+\dontrun{
+wicketsERAllOppnAllMatches
+}
+}
 \references{
 \url{https://cricsheet.org/}\cr
 \url{https://gigadom.in/}\cr

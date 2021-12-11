@@ -15,7 +15,7 @@
 #' oppositions.
 #'
 #' @usage
-#' teamRunSRDeathOversPlotAllOppnAllMatches(matches,theTeam)
+#' teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1,plot=1)
 #'
 #' @param matches
 #' All matches of the team in all matches with all oppositions
@@ -42,7 +42,7 @@
 #'
 #'
 #' # Top batsman is displayed in descending order of runs
-#' teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1="India")
+#' teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1,plot=1)
 #'
 #' }
 #'
@@ -55,7 +55,7 @@
 #' @export
 #'
 teamRunSRDeathOversPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=str_extract=batsman=runs=quantile=quadrant=SRDeathOvers=NULL
   ggplotly=NULL
   # Filter the performance of team1
   a <-filter(matches,team==t1)

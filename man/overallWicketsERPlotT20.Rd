@@ -7,12 +7,15 @@
 overallWicketsERPlotT20(dir=".",minMatches, dateRange,type="IPL",plot=1)
 }
 \arguments{
-\item{dir}{The directory}
+\item{dir}{The input directory}
+
+\item{minMatches}{Minimum matches played}
 
 \item{dateRange}{Date interval to consider}
-}
-\value{
-The ranked T20 bowlers
+
+\item{type}{T20 league}
+
+\item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
 }
 \description{
 This function plots the overall wickets vs ER in T20 men

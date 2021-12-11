@@ -4,7 +4,7 @@
 \alias{teamRunSRDeathOversPlotAllOppnAllMatches}
 \title{Team batting plots runs vs SR in death overs for team against all oppositions in all matches}
 \usage{
-teamRunSRDeathOversPlotAllOppnAllMatches(matches,theTeam)
+teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1,plot=1)
 }
 \arguments{
 \item{matches}{All matches of the team in all matches with all oppositions}
@@ -25,7 +25,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 
 
 # Top batsman is displayed in descending order of runs
-teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1="India")
+teamRunSRDeathOversPlotAllOppnAllMatches(matches,t1,plot=1)
 
 }
 

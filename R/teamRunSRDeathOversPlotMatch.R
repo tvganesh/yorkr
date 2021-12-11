@@ -56,7 +56,7 @@
 #' @export
 #'
 teamRunSRDeathOversPlotMatch <- function(match,t1,t2, plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=str_extract=batsman=runs=quantile=quadrant=SRDeathOvers=NULL
   ggplotly=NULL
   # Filter the performance of team1
   a <-filter(match,team==t1)

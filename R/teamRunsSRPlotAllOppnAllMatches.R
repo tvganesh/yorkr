@@ -23,7 +23,7 @@
 #' @param theTeam
 #' The team for which the the batting partnerships are sought
 #'
-#'#' @param plot
+#' @param plot
 #' Plot=1 (static), Plot=2(interactive)
 #'
 #' @return details
@@ -63,8 +63,8 @@
 #' @export
 #'
 teamRunsSRPlotAllOppnAllMatches <- function(matches,theTeam, plot=1){
-    team=batsman=runs=fours=sixes=NULL
-    byes=legbyes=noballs=wides=NULL
+    team=batsman=runs=fours=sixes=SR=quantile=quadrant=NULL
+    byes=legbyes=noballs=wides=ggplotly=NULL
 
     a <-filter(matches,team==theTeam)
     b <- select(a,batsman,runs)

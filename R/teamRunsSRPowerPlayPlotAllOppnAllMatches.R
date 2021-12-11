@@ -15,7 +15,7 @@
 #' oppositions.
 #'
 #' @usage
-#' teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,theTeam)
+#' teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1,plot=1)
 #'
 #' @param matches
 #' All matches of the team in all matches with all oppositions
@@ -24,7 +24,7 @@
 #' The team for which the the batting partnerships are sought
 #'
 #'
-#'  @param plot
+#' @param plot
 #' Plot=1 (static), Plot=2(interactive)
 #'
 #' @references
@@ -41,7 +41,7 @@
 #' \dontrun{
 #'
 #' # Top batsman is displayed in descending order of runs
-#' teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India",plot=1)
+#' teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1,plot=1)
 #'
 #' }
 #'
@@ -54,7 +54,7 @@
 #' @export
 #'
 teamRunsSRPowerPlayPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=str_extract=batsman=runs=quantile=quadrant=SRPowerPlay=NULL
   ggplotly=NULL
   # Filter the performance of team1
   a <-filter(matches,team==t1)

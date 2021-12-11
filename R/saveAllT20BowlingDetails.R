@@ -23,6 +23,9 @@
 #' @param odir
 #' The output directory
 #'
+#' @param type
+#' T20 format
+#'
 #' @param save
 #' To save or not
 #'

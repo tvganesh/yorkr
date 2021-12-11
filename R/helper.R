@@ -16,7 +16,7 @@
 #' @param teamNames
 #' The team names
 #'
-#' @param odir
+#' @param dir
 #' The output directory
 #'
 #' @param type

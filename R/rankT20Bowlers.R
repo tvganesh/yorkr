@@ -12,10 +12,8 @@
 #' This function creates a single datframe of all T20 bowlers and then ranks them
 #'
 #' @usage
-#' rankT20Bowlers(teamNames,odir=".",minMatches, dateRange, wicketsVsER)
+#' rankT20Bowlers(dir=".",minMatches, dateRange, wicketsVsER,type)
 #'
-#' @param teamNames
-#' The team names
 #'
 #' @param dir
 #' The directory
@@ -29,7 +27,9 @@
 #' @param wicketsVsER
 #' Wickets  or economy rate
 #'
-#' @return The ranked T20 bowlers
+#' @param type
+#' T20 format
+#'
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr
@@ -43,7 +43,7 @@
 #'
 #'@examples
 #' \dontrun{
-#' rankT20Bowlers(teamNames,odir=".",minMatches, dateRange, wicketsVsER)
+#' rankT20Bowlers(dir=".",minMatches, dateRange, wicketsVsER,type)
 #' }
 #'
 #' @seealso

@@ -4,20 +4,27 @@
 \alias{teamWicketsERDeathOversPlotMatch}
 \title{Team wickets vs ER in death overs against opposition in match}
 \usage{
-teamWicketsERDeathOversPlotMatch(matches,t1, t2, plot=1)
+teamWicketsERDeathOversPlotMatch(match,t1, t2, plot=1)
 }
 \arguments{
+\item{match}{The match of the team against  opposition}
+
 \item{t1}{Team for which bowling performance is required}
 
-\item{plot}{Plot=1 (static), Plot=2(interactive)}
+\item{t2}{Opposition Team}
 
-\item{matches}{The matches of the team against all oppositions and all matches}
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \description{
 This function computes wickets vs ER in death overs against  oppositions in  match
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+}
+\examples{
+\dontrun{
+teamWicketsERDeathOversPlotMatch(match,t1,t2,plot=1)
+}
 }
 \references{
 \url{https://cricsheet.org/}\cr

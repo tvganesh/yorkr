@@ -25,7 +25,7 @@
 #' @param type
 #' T20 format
 #'
-#' @return minDate,maxDate,minMatches, maxMatches
+#' @return minMatches, maxMatches
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr

@@ -26,7 +26,7 @@
 #' T20 format
 #'
 #'
-#' @return minDate,maxDate, bowingDF
+#' @return minMatches, maxMatches
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr

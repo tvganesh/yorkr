@@ -36,7 +36,7 @@
 #' @examples
 #' \dontrun{
 #' wicketsERAllOppnAllMatches
-#'
+#'}
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
@@ -45,8 +45,8 @@
 #'
 
 teamWicketsERPlotAllOppnAllMatches <- function(matches,theTeam,plot=1){
-    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
-    team=bowler=ball=wides=noballs=runsConceded=overs=NULL
+    noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=ER=quantile=quadrant=NULL
+    team=bowler=ball=wides=noballs=runsConceded=overs=ggplotly=NULL
     over=wickets=maidens=NULL
     a <-filter(matches,team!=theTeam)
 

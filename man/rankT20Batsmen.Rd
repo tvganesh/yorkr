@@ -4,19 +4,18 @@
 \alias{rankT20Batsmen}
 \title{Ranks the T20 batsmen}
 \usage{
-rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
+rankT20Batsmen(dir=".",minMatches, dateRange, runsvsSR,type)
 }
 \arguments{
+\item{dir}{The input directory}
+
 \item{minMatches}{Minimum matches played}
 
 \item{dateRange}{Date interval to consider}
 
 \item{runsvsSR}{Runs or Strike rate}
 
-\item{odir}{The output directory}
-}
-\value{
-The ranked T20 batsmen
+\item{type}{T20 format}
 }
 \description{
 This function creates a single datframe of all T20 batsmen and then ranks them
@@ -26,7 +25,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
 \examples{
 \dontrun{
-rankT20Batsmen(odir=".",minMatches, dateRange, runsvsSR)
+rankT20Batsmen(dir=".",minMatches, dateRange, runsvsSR,type)
 }
 
 }

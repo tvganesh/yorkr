@@ -19,6 +19,12 @@ This function computes wickets vs ER in death overs against all oppositions in a
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
+\examples{
+\dontrun{
+teamWicketsERDeathOversPlotAllOppnAllMatches(matches, t1, plot=1)
+
+}
+}
 \references{
 \url{https://cricsheet.org/}\cr
 \url{https://gigadom.in/}\cr

@@ -14,8 +14,8 @@
 #' @usage
 #' teamWicketsERPlotMatch(match,t1,t2,plot=1)
 #'
-#' @param matches
-#' The matches of the team against all oppositions and all matches
+#' @param match
+#' The match of the team against  opposition
 #'
 #' @param t1
 #' The 1st team of the match
@@ -39,7 +39,7 @@
 #' @examples
 #' \dontrun{
 #' teamWicketsERPlotMatch(match,t1,t2,plot=1)
-#'
+#'}
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
@@ -50,7 +50,7 @@
 teamWicketsERPlotMatch <- function(match,t1,t2,plot=1){
     noBalls=wides=team=runs=bowler=wicketKind=wicketPlayerOut=NULL
     team=bowler=ball=wides=noballs=runsConceded=overs=NULL
-    over=wickets=maidens=NULL
+    over=wickets=maidens=str_extract=quantile=quadrant=ER=ggplotly=NULL
     a <-filter(match,team!=t1)
 
     a1 <- unlist(strsplit(a$ball[1],"\\."))

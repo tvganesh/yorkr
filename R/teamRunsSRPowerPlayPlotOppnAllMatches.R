@@ -57,38 +57,38 @@
 #' @export
 #'
 teamRunsSRPowerPlayPlotOppnAllMatches <- function(matches,t1,t2,plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=str_extract=batsman=runs=quantile=quadrant=SRPowerPlay=NULL
   ggplotly=NULL
   # Filter the performance of team1
   a <-filter(matches,team==t1)
   a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
   a2 <- select(a1,ball,totalRuns,batsman,date)
-  a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRinPowerPlay=runs/count*100)
+  a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRPowerPlay=runs/count*100)
 
   x_lower <- quantile(a3$runs,p=0.66)
-  y_lower <- quantile(a3$SRinPowerPlay,p=0.66)
+  y_lower <- quantile(a3$SRPowerPlay,p=0.66)
 
   plot.title <- paste(t1, " Runs vs SR in Powerplay in all matches against ",t2)
   if(plot == 1){ #ggplot2
     a3 %>%
-      mutate(quadrant = case_when(runs > x_lower & SRinPowerPlay > y_lower   ~ "Q1",
-                                  runs <= x_lower & SRinPowerPlay > y_lower  ~ "Q2",
-                                  runs <= x_lower & SRinPowerPlay <= y_lower ~ "Q3",
+      mutate(quadrant = case_when(runs > x_lower & SRPowerPlay > y_lower   ~ "Q1",
+                                  runs <= x_lower & SRPowerPlay > y_lower  ~ "Q2",
+                                  runs <= x_lower & SRPowerPlay <= y_lower ~ "Q3",
                                   TRUE ~ "Q4")) %>%
-      ggplot(aes(runs,SRinPowerPlay,color=quadrant)) +
-      geom_text(aes(runs,SRinPowerPlay,label=batsman,color=quadrant)) + geom_point() +
+      ggplot(aes(runs,SRPowerPlay,color=quadrant)) +
+      geom_text(aes(runs,SRPowerPlay,label=batsman,color=quadrant)) + geom_point() +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
 
   } else if(plot == 2){ #ggplotly
     g <-  a3 %>%
-      mutate(quadrant = case_when(runs > x_lower & SRinPowerPlay > y_lower   ~ "Q1",
-                                  runs <= x_lower & SRinPowerPlay > y_lower  ~ "Q2",
-                                  runs <= x_lower & SRinPowerPlay <= y_lower ~ "Q3",
+      mutate(quadrant = case_when(runs > x_lower & SRPowerPlay > y_lower   ~ "Q1",
+                                  runs <= x_lower & SRPowerPlay > y_lower  ~ "Q2",
+                                  runs <= x_lower & SRPowerPlay <= y_lower ~ "Q3",
                                   TRUE ~ "Q4")) %>%
-      ggplot(aes(runs,SRinPowerPlay,color=quadrant)) +
-      geom_text(aes(runs,SRinPowerPlay,label=batsman,color=quadrant)) + geom_point() +
+      ggplot(aes(runs,SRPowerPlay,color=quadrant)) +
+      geom_text(aes(runs,SRPowerPlay,label=batsman,color=quadrant)) + geom_point() +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)

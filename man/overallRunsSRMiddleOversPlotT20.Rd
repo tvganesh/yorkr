@@ -4,7 +4,7 @@
 \alias{overallRunsSRMiddleOversPlotT20}
 \title{Plot the Runs vs SR in  middle overs  of Intl. T20 batsmen}
 \usage{
-overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1e)
+overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1)
 }
 \arguments{
 \item{dir}{The input directory}
@@ -14,8 +14,6 @@ overallRunsSRMiddleOversPlotT20(dir=".", dateRange,type="IPL",plot=1e)
 \item{type}{T20 league}
 
 \item{plot}{plot=1 (static),plot=2(interactive), plot=3 (table)}
-
-\item{odir}{The output directory}
 }
 \value{
 The ranked T20 batsmen

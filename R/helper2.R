@@ -19,14 +19,14 @@
 #' @param teamNames
 #' The team names
 #'
-#' @param odir
+#' @param dir
 #' The output directory
 #'
 #' @param type
 #' T20 format
 #'
 #'
-#' @return minDate,maxDate, bowingDF
+#' @return minDate,maxDate, minMatches, maxMatches
 #' @references
 #' \url{https://cricsheet.org/}\cr
 #' \url{https://gigadom.in/}\cr

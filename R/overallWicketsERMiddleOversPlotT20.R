@@ -51,7 +51,7 @@
 #'
 overallWicketsERMiddleOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1) {
   team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=str_extract=NULL
-  ggplotly=wicketPlayerOut=NULL
+  ggplotly=wicketPlayerOut=quantile=quadrant=t20MDF=ERMiddleOvers=NULL
 
   fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")
   load(fl)

@@ -26,7 +26,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 
 # Plot tne match worm plot
-teamWicketsAcrossOversAllOppnAllMatches(matches,'England',)
+teamWicketsAcrossOversAllOppnAllMatches(matches,t1,plot=1)
 }
 }
 \references{

@@ -54,8 +54,8 @@
 #' @export
 #'
 teamRunsSRPlotMatch <- function(match,theTeam,opposition,plot=1){
-  team=batsman=runs=fours=sixes=NULL
-  byes=legbyes=noballs=wides=NULL
+  team=batsman=runs=fours=sixes=str_extract=batsman=runs=quantile=quadrant=SR=NULL
+  byes=legbyes=noballs=wides=ggplotly=NULL
 
   a <-filter(match,team==theTeam)
   b <- select(a,batsman,runs)

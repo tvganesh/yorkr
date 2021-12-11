@@ -35,7 +35,7 @@
 #' @examples
 #' \dontrun{
 #' teamWicketsERPowerPlayPlotAllOppnAllMatches(matches, t1, plot=1)
-#'
+#'}
 #' @seealso
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesMain}}\cr
 #' \code{\link{teamBowlersVsBatsmenAllOppnAllMatchesPlot}}\cr
@@ -46,7 +46,7 @@
 
 teamWicketsERPowerPlayPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
     team=ball=totalRuns=total=wickets=wicketsPowerPlay=wicketsMiddleOvers=wicketsDeathOvers=bowler=str_extract=NULL
-    ggplotly=wicketPlayerOut=NULL
+    ggplotly=wicketPlayerOut=str_extract=quantile=quadrant=ERPowerPlay=NULL
 
     # Filter the performance of team1
     a <-filter(matches,team!=t1)

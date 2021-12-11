@@ -19,6 +19,11 @@ This function computes wickets vs ER in middle overs against all oppositions in 
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 }
+\examples{
+\dontrun{
+teamWicketERMiddleOversPlotAllOppnAllMatches(matches, t1, plot=1)
+}
+}
 \references{
 \url{https://cricsheet.org/}\cr
 \url{https://gigadom.in/}\cr

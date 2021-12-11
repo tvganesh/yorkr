@@ -4,16 +4,14 @@
 \alias{teamRunsSRPowerPlayPlotAllOppnAllMatches}
 \title{Team batting plots runs vs SR in powerplay for team against all oppositions in all matches}
 \usage{
-teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,theTeam)
+teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1,plot=1)
 }
 \arguments{
 \item{matches}{All matches of the team in all matches with all oppositions}
 
-\item{t1}{The team for which the the batting partnerships are sought
+\item{t1}{The team for which the the batting partnerships are sought}
 
-
- @param plot
-Plot=1 (static), Plot=2(interactive)}
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \description{
 This function computes and plots runs vs SR  in power play of a team in all matches against all
@@ -26,7 +24,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \dontrun{
 
 # Top batsman is displayed in descending order of runs
-teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1="India",plot=1)
+teamRunsSRPowerPlayPlotAllOppnAllMatches(matches,t1,plot=1)
 
 }
 

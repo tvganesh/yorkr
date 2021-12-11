@@ -4,12 +4,14 @@
 \alias{teamWicketERPowerPlayPlotOppnAllMatches}
 \title{Team wickets vs ER in powewrplay against   opposition all matches}
 \usage{
-teamWicketERPowerPlayPlotOppnAllMatches(matches,t1, plot=1)
+teamWicketERPowerPlayPlotOppnAllMatches(matches,t1,t2,plot=1)
 }
 \arguments{
 \item{matches}{The matches of the team against all oppositions and all matches}
 
 \item{t1}{Team for which bowling performance is required}
+
+\item{t2}{Opposition Team}
 
 \item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
@@ -18,6 +20,11 @@ This function computes wickets vs ER in powewrplay against  oppositions in all m
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+}
+\examples{
+\dontrun{
+teamWicketERPowerPlayPlotOppnAllMatches(matches,t1,t2,plot=1)
+}
 }
 \references{
 \url{https://cricsheet.org/}\cr

@@ -9,10 +9,9 @@ teamRunsSRPlotAllOppnAllMatches(matches,theTeam,plot=1)
 \arguments{
 \item{matches}{All matches of the team in all matches with all oppositions}
 
-\item{theTeam}{The team for which the the batting partnerships are sought
+\item{theTeam}{The team for which the the batting partnerships are sought}
 
-#' @param plot
-Plot=1 (static), Plot=2(interactive)}
+\item{plot}{Plot=1 (static), Plot=2(interactive)}
 }
 \value{
 details

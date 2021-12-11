@@ -18,9 +18,6 @@
 #' @param dir
 #' The input directory
 #'
-#' @param odir
-#' The output directory
-#'
 #'
 #' @param dateRange
 #' Date interval to consider
@@ -54,7 +51,7 @@
 #' @export
 #'
 overallRunsSRDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1) {
-  team=ball=totalRuns=total=NULL
+  team=ball=totalRuns=total=t20MDF=str_extract=batsman=quantile=SRDeathOvers=quadrant=runs=NULL
   ggplotly=NULL
   fl <- paste(dir,"/",type,"-MatchesDataFrame.RData",sep="")
   load(fl)

@@ -7,19 +7,24 @@
 teamWicketsERPlotMatch(match,t1,t2,plot=1)
 }
 \arguments{
+\item{match}{The match of the team against  opposition}
+
 \item{t1}{The 1st team of the match}
 
 \item{t2}{the 2nd team in the match}
 
 \item{plot}{Plot=1 (static), Plot=2(interactive)}
-
-\item{matches}{The matches of the team against all oppositions and all matches}
 }
 \description{
 This function computes wickets vs ER in  match
 }
 \note{
 Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
+}
+\examples{
+\dontrun{
+teamWicketsERPlotMatch(match,t1,t2,plot=1)
+}
 }
 \references{
 \url{https://cricsheet.org/}\cr
