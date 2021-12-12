@@ -115,6 +115,7 @@ overallWicketsERPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plo
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(totalWickets,meanER,color=quadrant)) +
             geom_text(aes(totalWickets,meanER,label=bowler,color=quadrant)) + geom_point() +
+            xlab("Wickets") + ylab("Economy rate") +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)
@@ -127,6 +128,7 @@ overallWicketsERPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plo
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(totalWickets,meanER,color=quadrant)) +
             geom_text(aes(totalWickets,meanER,label=bowler,color=quadrant)) + geom_point() +
+            xlab("Wickets") + ylab("Economy rate") +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)

@@ -123,6 +123,7 @@ teamRunsSRPlotAllOppnAllMatches <- function(matches,theTeam, plot=1){
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(runs,SR,color=quadrant)) +
             geom_text(aes(runs,SR,label=batsman,color=quadrant)) + geom_point() +
+            xlab("Runs") + ylab("Strike rate") +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)
@@ -135,6 +136,7 @@ teamRunsSRPlotAllOppnAllMatches <- function(matches,theTeam, plot=1){
                                         TRUE ~ "Q4")) %>%
          ggplot(aes(runs,SR,color=quadrant)) +
              geom_text(aes(runs,SR,label=batsman,color=quadrant)) + geom_point() +
+           xlab("Runs") + ylab("Strike rate") +
              geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
              geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)

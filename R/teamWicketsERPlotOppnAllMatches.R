@@ -113,6 +113,7 @@ teamWicketsERPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(wickets,ER,color=quadrant)) +
             geom_text(aes(wickets,ER,label=bowler,color=quadrant)) + geom_point() +
+            xlab("Wickets") + ylab("Economy rate") +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)
@@ -125,6 +126,7 @@ teamWicketsERPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
                                         TRUE ~ "Q4")) %>%
             ggplot(aes(wickets,ER,color=quadrant)) +
             geom_text(aes(wickets,ER,label=bowler,color=quadrant)) + geom_point() +
+            xlab("Wickets") + ylab("Economy rate") +
             geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
             geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
             ggtitle(plot.title)

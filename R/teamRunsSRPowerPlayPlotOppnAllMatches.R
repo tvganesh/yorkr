@@ -77,6 +77,7 @@ teamRunsSRPowerPlayPlotOppnAllMatches <- function(matches,t1,t2,plot=1) {
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(runs,SRPowerPlay,color=quadrant)) +
       geom_text(aes(runs,SRPowerPlay,label=batsman,color=quadrant)) + geom_point() +
+      xlab("Runs - Power play") + ylab("Strike rate - Power play") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
@@ -89,6 +90,7 @@ teamRunsSRPowerPlayPlotOppnAllMatches <- function(matches,t1,t2,plot=1) {
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(runs,SRPowerPlay,color=quadrant)) +
       geom_text(aes(runs,SRPowerPlay,label=batsman,color=quadrant)) + geom_point() +
+      xlab("Runs - Power play") + ylab("Strike rate - Power play") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)

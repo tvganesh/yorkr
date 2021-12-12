@@ -116,6 +116,7 @@ teamRunsSRPlotMatch <- function(match,theTeam,opposition,plot=1){
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(runs,SR,color=quadrant)) +
       geom_text(aes(runs,SR,label=batsman,color=quadrant)) + geom_point() +
+      xlab("Runs") + ylab("Strike rate") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
@@ -127,6 +128,7 @@ teamRunsSRPlotMatch <- function(match,theTeam,opposition,plot=1){
                                   runs <= x_lower & SR <= y_lower ~ "Q3",
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(runs,SR,color=quadrant)) +
+      xlab("Runs") + ylab("Strike rate") +
       geom_text(aes(runs,SR,label=batsman,color=quadrant)) + geom_point() +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
