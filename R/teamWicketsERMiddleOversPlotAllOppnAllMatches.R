@@ -63,7 +63,7 @@ teamWicketERMiddleOversPlotAllOppnAllMatches <- function(matches,t1, plot=1) {
   x_lower <- quantile(a42$wicketsMiddleOvers,p=0.66)
   y_lower <- quantile(a42$ERMiddleOvers,p=0.33)
 
-  plot.title <- paste("Wickets-ER Plot of", t1, "in middle overs against all opposition  all matches")
+  plot.title <- paste("Wickets-ER Plot of", t1, "in Middle overs against all opposition  all matches")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsMiddleOvers > x_lower & ERMiddleOvers > y_lower   ~ "Q1",

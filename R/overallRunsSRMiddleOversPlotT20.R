@@ -70,7 +70,7 @@ overallRunsSRMiddleOversPlotT20 <- function(dir=".",dateRange,type="IPL",plot=1)
   x_lower <- 1/3*  min(a3$runs + max(a3$runs))
   y_lower <- 1/3 * min(a3$SRMiddleOvers + max(a3$SRMiddleOvers))
 
-  plot.title <- paste("Top batsmen in Middle overs Intl. T20 (men)")
+  plot.title <- paste("Overall Runs vs SR in Middle overs in ",type,sep="")
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRMiddleOvers > y_lower   ~ "Q1",

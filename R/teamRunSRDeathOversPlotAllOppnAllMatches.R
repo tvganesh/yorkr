@@ -67,7 +67,7 @@ teamRunSRDeathOversPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
   y_lower <- quantile(a3$SRDeathOvers,p=0.66)
 
 
-  plot.title <- paste(t1, " Runs vs SR in death overs in all matches against all opposition ")
+  plot.title <- paste(t1, " Runs vs SR in Death overs in all matches against all opposition")
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRDeathOvers > y_lower   ~ "Q1",

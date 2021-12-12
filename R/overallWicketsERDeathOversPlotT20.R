@@ -73,7 +73,7 @@ overallWicketsERDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot
 
   x_lower <- quantile(a42$wicketsDeathOvers,p=0.66)
   y_lower <- quantile(a42$ERDeathOvers,p=0.66)
-  plot.title <- paste("Top T20 bowlers in Death overs in Intl. T20 (men)")
+  plot.title <- paste("Overall Wickets vs ER in Death overs in ",type,sep="")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsDeathOvers > x_lower & ERDeathOvers > y_lower   ~ "Q1",

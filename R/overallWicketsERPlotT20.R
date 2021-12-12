@@ -106,7 +106,7 @@ overallWicketsERPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plo
     x_lower <- quantile(h$totalWickets,p=0.66)
     y_lower <- quantile(h$meanER,p=0.66)
 
-    plot.title <- paste("Wickets vs ER  of bowlers in T20 Internationals")
+    plot.title <- paste("Overall Wickets vs ER in ",type,sep="")
     if(plot == 1){ #ggplot2
         h %>%
             mutate(quadrant = case_when(totalWickets > x_lower & meanER > y_lower   ~ "Q1",

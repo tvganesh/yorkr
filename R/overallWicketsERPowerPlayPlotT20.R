@@ -73,7 +73,7 @@ overallWicketsERPowerPlayPlotT20 <- function(dir=".", dateRange,type="IPL",plot=
   y_lower <- 1/2 * min(a42$ERPowerPlay + max(a42$ERPowerPlay))
 
 
-  plot.title <- paste("Top T20 bowlers in Power play in Intl. T20 (men)")
+  plot.title <- paste("Overall Wickets vs ER in Power play in ",type,sep="")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsPowerPlay > x_lower & ERPowerPlay > y_lower   ~ "Q1",

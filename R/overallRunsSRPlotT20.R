@@ -102,7 +102,7 @@ overallRunsSRPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plot=1
   print("!!!!!!!!!!!!!!!!!!!!!!!!!")
   print(plot)
   print("!!!!!!!!!!!!!!!!!!!!!!!!!")
-  plot.title <- paste("Runs vs SR of batsmen in ",type)
+  plot.title <- paste("Overall Runs vs SR in ",type,sep="")
   if(plot == 1){ #ggplot2
     c %>%
       mutate(quadrant = case_when(meanRuns > x_lower & meanSR > y_lower   ~ "Q1",

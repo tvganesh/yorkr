@@ -74,7 +74,7 @@ overallWicketsERMiddleOversPlotT20 <- function(dir=".", dateRange,type="IPL",plo
   y_lower <- 1/2 * min(a42$ERMiddleOvers + max(a42$ERMiddleOvers))
 
 
-  plot.title <- paste("Top T20 bowlers in Middle overs in Intl. T20 (men)")
+  plot.title <- paste("Overall Wickets vs ER in Middle overs in ",type,sep="")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsMiddleOvers > x_lower & ERMiddleOvers > y_lower   ~ "Q1",

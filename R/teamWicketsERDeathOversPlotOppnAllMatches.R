@@ -67,7 +67,7 @@ teamWicketERDeathOversPlotOppnAllMatches <- function(matches,t1,t2,plot=1) {
 
   x_lower <- quantile(a42$wicketsDeathOvers,p=0.66)
   y_lower <- quantile(a42$ERDeathOvers,p=0.33)
-  plot.title <- paste("Wickets-ER Plot of", t1, "against ", t2, " in death overs all matches")
+  plot.title <- paste("Wickets-ER in Death overs of", t1, " against ", t2, " in all matches")
   if(plot == 1){ #ggplot2
     a42 %>%
       mutate(quadrant = case_when(wicketsDeathOvers > x_lower & ERDeathOvers > y_lower   ~ "Q1",

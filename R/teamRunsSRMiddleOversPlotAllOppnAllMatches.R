@@ -69,7 +69,7 @@ teamRunsSRMiddleOversPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
   print("xx")
   print(x_lower)
 
-  plot.title <- paste("Top T20 batsmen of in Middle overs of T20 Internationals")
+  plot.title <- paste(t1, " Runs vs SR in Death overs in all matches against all opposition")
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRMiddleOvers > y_lower   ~ "Q1",

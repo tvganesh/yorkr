@@ -65,7 +65,7 @@ overallRunsSRDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1)
   x_lower <- quantile(a3$runs,p=0.66)
   y_lower <- quantile(a3$SRDeathOvers,p=0.66)
 
-  plot.title <- paste("Top T20 batsmen of in Death overs of Intl. T20 (men)")
+  plot.title <- paste("Overall Runs vs SR in Death overs in ",type,sep="")
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRDeathOvers > y_lower   ~ "Q1",

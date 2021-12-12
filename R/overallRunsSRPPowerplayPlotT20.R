@@ -68,7 +68,7 @@ overallRunsSRPPowerplayPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1)
   x_lower <- quantile(a3$runs,p=0.66)
   y_lower <- quantile(a3$SRPowerPlay,p=0.66)
 
-  plot.title <- paste("Top T20 batsmen in Power play in Intl. T20 (men)")
+  plot.title <- paste("Overall Runs vs SR in Power play in ",type,sep="")
   if(plot == 1){ #ggplot2
     a3 %>%
       mutate(quadrant = case_when(runs > x_lower & SRPowerPlay > y_lower   ~ "Q1",

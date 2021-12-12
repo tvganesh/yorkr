@@ -67,7 +67,7 @@ teamWicketsERPowerPlayPlotMatch <- function(match,t1,t2,plot=1) {
     x_lower <- quantile(a42$wicketsPowerPlay,p=0.66)
     y_lower <- quantile(a42$ERPowerPlay,p=0.33)
 
-    plot.title <- paste("Wickets-ER Plot in power play of ", t1, "against ", t2 )
+    plot.title <- paste("Wickets-ER in Power play of ", t1, " against ", t2 )
     if(plot == 1){ #ggplot2
         a42 %>%
             mutate(quadrant = case_when(wicketsPowerPlay > x_lower & ERPowerPlay > y_lower   ~ "Q1",
