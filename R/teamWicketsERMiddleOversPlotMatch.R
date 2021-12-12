@@ -75,6 +75,7 @@ teamWicketsERMiddleOversPlotMatch <- function(match,t1,t2,plot=1) {
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(wicketsMiddleOvers,ERMiddleOvers,color=quadrant)) +
       geom_text(aes(wicketsMiddleOvers,ERMiddleOvers,label=bowler,color=quadrant)) + geom_point() +
+      xlab("Wickets - Middle overs") + ylab("Economy rate - Middle overs") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
@@ -87,6 +88,7 @@ teamWicketsERMiddleOversPlotMatch <- function(match,t1,t2,plot=1) {
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(wicketsMiddleOvers,ERMiddleOvers,color=quadrant)) +
       geom_text(aes(wicketsMiddleOvers,ERMiddleOvers,label=bowler,color=quadrant)) + geom_point() +
+      xlab("Wickets - Middle overs") + ylab("Economy rate - Middle overs") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)

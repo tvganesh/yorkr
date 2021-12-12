@@ -76,6 +76,7 @@ teamRunsSRPMiddleOversPlotMatch <- function(match,t1,t2, plot=1) {
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(runs,SRMiddleOvers,color=quadrant)) +
       geom_text(aes(runs,SRMiddleOvers,label=batsman,color=quadrant)) + geom_point() +
+      xlab("Runs - Middle overs") + ylab("Strike rate - Middle overs") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
@@ -88,6 +89,7 @@ teamRunsSRPMiddleOversPlotMatch <- function(match,t1,t2, plot=1) {
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(runs,SRMiddleOvers,color=quadrant)) +
       geom_text(aes(runs,SRMiddleOvers,label=batsman,color=quadrant)) + geom_point() +
+      xlab("Runs - Middle overs") + ylab("Strike rate - Middle overs") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)

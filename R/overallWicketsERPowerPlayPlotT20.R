@@ -82,6 +82,7 @@ overallWicketsERPowerPlayPlotT20 <- function(dir=".", dateRange,type="IPL",plot=
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(wicketsPowerPlay,ERPowerPlay,color=quadrant)) +
       geom_text(aes(wicketsPowerPlay,ERPowerPlay,label=bowler,color=quadrant)) + geom_point() +
+      xlab("Wickets - Power play") + ylab("Economy rate - Power play") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
@@ -94,6 +95,7 @@ overallWicketsERPowerPlayPlotT20 <- function(dir=".", dateRange,type="IPL",plot=
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(wicketsPowerPlay,ERPowerPlay,color=quadrant)) +
       geom_text(aes(wicketsPowerPlay,ERPowerPlay,label=bowler,color=quadrant)) + geom_point() +
+      xlab("Wickets - Power play") + ylab("Economy rate - Power play") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)

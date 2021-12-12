@@ -82,6 +82,7 @@ overallWicketsERDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(wicketsDeathOvers,ERDeathOvers,color=quadrant)) +
       geom_text(aes(wicketsDeathOvers,ERDeathOvers,label=bowler,color=quadrant)) + geom_point() +
+      xlab("Wickets - Death overs") + ylab("Economy rate - Death overs") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
@@ -94,6 +95,7 @@ overallWicketsERDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot
                                   TRUE ~ "Q4")) %>%
       ggplot(aes(wicketsDeathOvers,ERDeathOvers,color=quadrant)) +
       geom_text(aes(wicketsDeathOvers,ERDeathOvers,label=bowler,color=quadrant)) + geom_point() +
+      xlab("Wickets - Death overs") + ylab("Economy rate - Death overs") +
       geom_vline(xintercept = x_lower,linetype="dashed") +  # plot vertical line
       geom_hline(yintercept = y_lower,linetype="dashed") +  # plot horizontal line
       ggtitle(plot.title)
