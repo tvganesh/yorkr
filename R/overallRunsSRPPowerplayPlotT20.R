@@ -65,8 +65,8 @@ overallRunsSRPPowerplayPlotT20 <- function(dir=".", dateRange,type="IPL",plot=1)
   a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRPowerPlay=runs/count*100)
 
 
-  x_lower <- quantile(a3$runs,p=0.66)
-  y_lower <- quantile(a3$SRPowerPlay,p=0.66)
+  x_lower <- quantile(a3$runs,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(a3$SRPowerPlay,p=0.66,na.rm = TRUE)
 
   plot.title <- paste("Overall Runs vs SR in Power play in ",type,sep="")
   if(plot == 1){ #ggplot2

@@ -64,8 +64,8 @@ teamWicketsERPowerPlayPlotAllOppnAllMatches <- function(matches,t1,plot=1) {
     x_lower <- 1/2 * min(a42$wicketsPowerPlay + max(a42$wicketsPowerPlay))
     y_lower <- 1/2 * min(a42$ERPowerPlay + max(a42$ERPowerPlay))
 
-    x_lower <- quantile(a42$wicketsPowerPlay,p=0.66)
-    y_lower <- quantile(a42$ERPowerPlay,p=0.66)
+    x_lower <- quantile(a42$wicketsPowerPlay,p=0.66,na.rm = TRUE)
+    y_lower <- quantile(a42$ERPowerPlay,p=0.66,na.rm = TRUE)
 
 
     plot.title <- paste("Wickets-ER Plot of", t1, "in Power play against all opposition all matches")

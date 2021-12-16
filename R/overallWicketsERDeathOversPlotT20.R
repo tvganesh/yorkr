@@ -71,8 +71,8 @@ overallWicketsERDeathOversPlotT20 <- function(dir=".", dateRange,type="IPL",plot
   a42=inner_join(a4,a41,by="bowler")
 
 
-  x_lower <- quantile(a42$wicketsDeathOvers,p=0.66)
-  y_lower <- quantile(a42$ERDeathOvers,p=0.66)
+  x_lower <- quantile(a42$wicketsDeathOvers,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(a42$ERDeathOvers,p=0.66,na.rm = TRUE)
   plot.title <- paste("Overall Wickets vs ER in Death overs in ",type,sep="")
   if(plot == 1){ #ggplot2
     a42 %>%

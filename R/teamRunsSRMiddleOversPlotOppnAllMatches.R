@@ -65,8 +65,8 @@ teamRunsSRPMiddleOversPlotOppnAllMatches <- function(matches,t1,t2, plot=1) {
   a2 <- select(a1,ball,totalRuns,batsman,date)
   a3 <- a2 %>% group_by(batsman) %>% summarise(runs=sum(totalRuns),count=n(), SRMiddleOvers=runs/count*100)
 
-  x_lower <- quantile(a3$runs,p=0.66)
-  y_lower <- quantile(a3$SRMiddleOvers,p=0.66)
+  x_lower <- quantile(a3$runs,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(a3$SRMiddleOvers,p=0.66,na.rm = TRUE)
 
   plot.title <- paste(t1, "Runs vs SR in Middle overs in all matches against ", t2)
   if(plot == 1){ #ggplot2

@@ -96,8 +96,8 @@ overallRunsSRPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plot=1
   # Reset to currDir
   setwd(currDir)
 
-  x_lower <- quantile(c$meanRuns,p=0.66)
-  y_lower <- quantile(c$meanSR,p=0.66)
+  x_lower <- quantile(c$meanRuns,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(c$meanSR,p=0.66,na.rm = TRUE)
 
   print("!!!!!!!!!!!!!!!!!!!!!!!!!")
   print(plot)

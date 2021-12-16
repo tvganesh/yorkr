@@ -63,8 +63,8 @@ teamWicketsERMiddleOversPlotMatch <- function(match,t1,t2,plot=1) {
   a42=inner_join(a4,a41,by="bowler")
 
 
-  x_lower <- quantile(a42$wicketsMiddleOvers,p=0.66)
-  y_lower <- quantile(a42$ERMiddleOvers,p=0.33)
+  x_lower <- quantile(a42$wicketsMiddleOvers,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(a42$ERMiddleOvers,p=0.66,na.rm = TRUE)
 
   plot.title <- paste("Wickets-ER in Middle overs of ", t1, " against ", t2, " in middle overs")
   if(plot == 1){ #ggplot2

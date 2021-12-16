@@ -106,8 +106,8 @@ teamRunsSRPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
   details <- arrange(details,desc(runs),desc(sixes),desc(fours))
   details <- select(details,batsman,ballsPlayed,fours,sixes,runs,SR)
 
-  x_lower <- quantile(details$runs,p=0.66)
-  y_lower <- quantile(details$SR,p=0.66)
+  x_lower <- quantile(details$runs,p=0.66, na.rm = TRUE)
+  y_lower <- quantile(details$SR,p=0.66, na.rm = TRUE)
 
   plot.title <- paste("Runs vs SR of ", t1, "in all matches against", t2)
   if(plot == 1){ #ggplot2

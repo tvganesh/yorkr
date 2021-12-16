@@ -104,8 +104,8 @@ teamRunsSRPlotMatch <- function(match,theTeam,opposition,plot=1){
   details[is.na(details)] <- 0
 
 
-  x_lower <- quantile(details$runs,p=0.66)
-  y_lower <- quantile(details$SR,p=0.66)
+  x_lower <- quantile(details$runs,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(details$SR,p=0.66,na.rm = TRUE)
 
   plot.title <- paste("Runs vs SR of ", theTeam, "in match against", opposition)
   if(plot == 1){ #ggplot2

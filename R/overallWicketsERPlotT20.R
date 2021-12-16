@@ -103,8 +103,8 @@ overallWicketsERPlotT20 <- function(dir=".",minMatches, dateRange,type="IPL",plo
     h <- filter(g,matches >= minMatches)
     setwd(currDir)
 
-    x_lower <- quantile(h$totalWickets,p=0.66)
-    y_lower <- quantile(h$meanER,p=0.66)
+    x_lower <- quantile(h$totalWickets,p=0.66,na.rm = TRUE)
+    y_lower <- quantile(h$meanER,p=0.66,na.rm = TRUE)
 
     plot.title <- paste("Overall Wickets vs ER in ",type,sep="")
     if(plot == 1){ #ggplot2

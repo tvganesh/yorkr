@@ -99,8 +99,8 @@ teamWicketsERPlotOppnAllMatches <- function(matches,t1,t2,plot=1){
     l <-arrange(l,desc(wickets),desc(runs),maidens)
     l$ER = l$runs/l$overs
 
-    x_lower <- quantile(l$wickets,p=0.66)
-    y_lower <- quantile(l$ER,p=0.66)
+    x_lower <- quantile(l$wickets,p=0.66,na.rm = TRUE)
+    y_lower <- quantile(l$ER,p=0.66,na.rm = TRUE)
 
 
 

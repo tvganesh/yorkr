@@ -56,19 +56,19 @@ topERBowlerAcrossOversAllOppnAllMatches <- function(matches,t1) {
   # Power play
   a1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 0.1, 5.9))
   a2 <- select(a1,team,bowler,date,totalRuns)
-  a3 <- a2 %>% group_by(bowler) %>% summarise(total=sum(totalRuns),count=n(), ERPowerPlay=total/count *6) %>% filter(count > quantile(count,prob=0.25))
+  a3 <- a2 %>% group_by(bowler) %>% summarise(total=sum(totalRuns),count=n(), ERPowerPlay=total/count *6) %>% filter(count > quantile(count,prob=0.25,na.rm = TRUE))
   a4 <- a3 %>% select(bowler,ERPowerPlay) %>% arrange(ERPowerPlay)
 
   # Middle overs
   b1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 6.1, 15.9))
   b2 <- select(b1,team,bowler,date,totalRuns)
-  b3 <- b2 %>% group_by(bowler) %>% summarise(total=sum(totalRuns),count=n(), ERMiddleOvers=total/count *6) %>% filter(count > quantile(count,prob=0.25))
+  b3 <- b2 %>% group_by(bowler) %>% summarise(total=sum(totalRuns),count=n(), ERMiddleOvers=total/count *6) %>% filter(count > quantile(count,prob=0.25,na.rm = TRUE))
   b4 <- b3 %>% select(bowler,ERMiddleOvers) %>% arrange(ERMiddleOvers)
 
   #Death overs
   c1 <- a %>% filter(between(as.numeric(str_extract(ball, "\\d+(\\.\\d+)?$")), 16.1, 20.0))
   c2 <- select(c1,team,bowler,date,totalRuns)
-  c3 <- c2 %>% group_by(bowler) %>% summarise(total=sum(totalRuns),count=n(), ERDeathOvers=total/count *6) %>% filter(count > quantile(count,prob=0.25))
+  c3 <- c2 %>% group_by(bowler) %>% summarise(total=sum(totalRuns),count=n(), ERDeathOvers=total/count *6) %>% filter(count > quantile(count,prob=0.25,na.rm = TRUE))
   c4 <- c3 %>% select(bowler,ERDeathOvers) %>% arrange(ERDeathOvers)
 
   val=min(dim(a4)[1],dim(b4)[1],dim(c4)[1])

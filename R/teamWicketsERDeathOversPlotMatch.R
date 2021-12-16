@@ -63,8 +63,8 @@ teamWicketsERDeathOversPlotMatch <- function(match,t1,t2,plot=1) {
   a42=inner_join(a4,a41,by="bowler")
 
 
-  x_lower <- quantile(a42$wicketsDeathOvers,p=0.66)
-  y_lower <- quantile(a42$ERDeathOvers,p=0.33)
+  x_lower <- quantile(a42$wicketsDeathOvers,p=0.66,na.rm = TRUE)
+  y_lower <- quantile(a42$ERDeathOvers,p=0.33,na.rm = TRUE)
   plot.title <- paste("Wickets-ER in Death overs of ", t1, " against ", t2, " in death overs")
   if(plot == 1){ #ggplot2
     a42 %>%
