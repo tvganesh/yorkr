@@ -60,7 +60,7 @@ bowlerVsBatsmanPerf <- function(t20MDF,batsman1,bowler1){
     d <- c %>% mutate(ER=runsConceded*6/balls) %>% select(balls,runsConceded,ER)
     e <- b %>% select(bowler,batsman,wicketKind,wicketPlayerOut)
     f <- e %>% filter(wicketPlayerOut==batsman1) %>% summarise(wicketTaken=n())
-    g <-cbind(bowler1,batsman1,d,f)
-
+    g <- cbind(bowler1,batsman1,d,f)
+    g <- g %>% arrange(bowler1)
     g
 }

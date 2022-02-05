@@ -78,6 +78,7 @@ batsmanVsBowlerPerf <- function(t20MDF,batsman1,bowler1){
     h <- select(a,batsman,bowler,wicketPlayerOut)
     i <- h %>% filter(wicketPlayerOut==batsman1) %>% summarise(timesOut=n())
     j <- cbind(g,i)
+    j <- j %>% arrange(batsman1)
     j
 
 }
