@@ -12,22 +12,16 @@
 #' This function computes the performance of bowler vs batsman
 #'
 #' @usage
-#' bowlerVsBatsmanPerf(t20MDF,batsman1,bowler1))
+#' bowlerVsBatsmanPerf(t20MDF,batsman1,bowler1)
 #'
-#' @param df
+#' @param t20MDF
 #' Dataframe
 #'
-#' @param batsman
+#' @param batsman1
 #' The batsman
 #'
 #' @param bowler1
 #' The bowler
-#'
-#'
-#' #@param dateRange
-#' #Date Range
-#'
-#'
 #' @return None
 #'
 #' @references
@@ -54,6 +48,7 @@
 #' @export
 #'
 bowlerVsBatsmanPerf <- function(t20MDF,batsman1,bowler1){
+    batsman=bowler=runs=wides=noballs=wicketKind=wicketPlayerOut=runsConceded=balls=ER=wicketTaken=NULL
     a <- t20MDF %>% filter(batsman==batsman1 & bowler==bowler1)
     b <- select(a,batsman,bowler,runs,wides,noballs,wicketKind,wicketPlayerOut)
     c <- summarise(group_by(a,bowler),balls=n(), runsConceded=sum(runs,wides,noballs))

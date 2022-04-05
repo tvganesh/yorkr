@@ -12,22 +12,17 @@
 #' This function computes the performance of batsman vs bowler
 #'
 #' @usage
-#' batsmanVsBowlerPerf(t20MDF,batsman1,bowler1))
+#' batsmanVsBowlerPerf(t20MDF,batsman1,bowler1)
 #'
-#' @param df
+#' @param t20MDF
 #' Dataframe
 #'
-#' @param batsman
+#' @param batsman1
 #' The batsman
 #'
 #' @param bowler1
 #' The bowler
-#'
-#'
-#' #@param dateRange
-#' #Date Range
-#'
-#'
+
 #' @return None
 #'
 #' @references
@@ -43,7 +38,7 @@
 #' @examples
 #' \dontrun{
 #'
-#' batsmanVsBowlerPerf((t20MDF,batsman1,bowler1))
+#' batsmanVsBowlerPerf(t20MDF,batsman1,bowler1)
 #' }
 #' @seealso
 #' \code{\link{batsmanFoursSixes}}\cr
@@ -55,11 +50,11 @@
 #'
 
 batsmanVsBowlerPerf <- function(t20MDF,batsman1,bowler1){
+    batsman=bowler=runs=fours=totalRuns=ballsFaced=wicketPlayerOut=NULL
+    sixes=fours=timesOut=NULL
     print(batsman1)
     print(bowler1)
     print(dim(t20MDF))
-    if(is.null(batsman1) || is.null(bowler1))
-          return
 
     a <- t20MDF %>% filter(batsman==batsman1 & bowler==bowler1)
     b <- select(a,batsman,bowler,runs)
@@ -80,5 +75,4 @@ batsmanVsBowlerPerf <- function(t20MDF,batsman1,bowler1){
     j <- cbind(g,i)
     j <- j %>% arrange(batsman1)
     j
-
 }

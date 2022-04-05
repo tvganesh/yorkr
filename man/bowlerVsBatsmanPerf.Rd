@@ -4,18 +4,14 @@
 \alias{bowlerVsBatsmanPerf}
 \title{Performance of bowler vs batsman}
 \usage{
-bowlerVsBatsmanPerf(batsman1,bowler1))
+bowlerVsBatsmanPerf(t20MDF,batsman1,bowler1)
 }
 \arguments{
-\item{bowler1}{The bowler
+\item{t20MDF}{Dataframe}
 
+\item{batsman1}{The batsman}
 
-#@param dateRange
-#Date Range}
-
-\item{df}{Dataframe}
-
-\item{batsman}{The batsman}
+\item{bowler1}{The bowler}
 }
 \value{
 None
@@ -29,7 +25,7 @@ Maintainer: Tinniam V Ganesh \email{tvganesh.85@gmail.com}
 \examples{
 \dontrun{
 
-bowlerVsBatsmanPerf((batsman1,bowler1))
+bowlerVsBatsmanPerf(t20MDF,batsman1,bowler1)
 }
 }
 \references{
