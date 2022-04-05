@@ -1,10 +1,10 @@
 Package: yorkr
 Type: Package
-Version: 0.0.31
+Version: 0.0.32
 Title: Analyze Cricket Performances Based on  Data from Cricsheet
 Description: Analyzing performances of cricketers and cricket teams
              based on 'yaml' match data from Cricsheet <https://cricsheet.org/>.
-Date: 2022-02-05
+Date: 2022-03-31
 Author: Tinniam V Ganesh
 Maintainer: Tinniam V Ganesh <tvganesh.85@gmail.com>
 License: MIT + file LICENSE

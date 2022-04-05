@@ -45,7 +45,7 @@ getIPLBowlingDetails <- function(dir='.',odir=".") {
               "Kings XI Punjab","Punjab Kings", 'Kochi Tuskers Kerala',"Kolkata Knight Riders",
               "Mumbai Indians", "Pune Warriors","Rajasthan Royals",
               "Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
-              "Rising Pune Supergiants")
+              "Rising Pune Supergiants","Lucknow Super Giants","Gujarat Titans")
 
 
     # Get all bowling details
