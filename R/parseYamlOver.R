@@ -145,7 +145,7 @@ parseYamlOver <- function(match,s,ateam,delivery,meta) {
         #Replace extras. with "" for the extras before doing diff - Added 27 Oct 2021
         names(over)=gsub("extras\\.","",names(over))
         cols<-names(over)
-        cols1=c("batsman","bowler","non_striker","byes","legbyes","noballs","wides","nonBoundary","penalty",
+        cols1=c("batsman","bowler","non_striker","byes","legbyes","noballs","wides","runs.non_boundary","penalty",
                 "runs.batsman","runs.extras","runs.total","wicket.fielders","wicket.kind","wicket.player_out",
                 "replacements.role.in", "replacements.role.out","replacements.role.reason","replacements.role.role")
 

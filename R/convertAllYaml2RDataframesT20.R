@@ -164,7 +164,7 @@ convertAllYaml2RDataframesT20 <- function(sourceDir=".",targetDirMen=".",targetD
 
         colList=list("batsman"="batsman","bowler"="bowler","non_striker"="nonStriker","runs.batsman" ="runs",
                      "runs.extras" ="extras","runs.total"="totalRuns","byes"="byes","legbyes"="legbyes","noballs"="noballs",
-                     "wides"="wides","nonBoundary"="nonBoundary","penalty" ="penalty","wicket.fielders"="wicketFielder",
+                     "wides"="wides","runs.non_boundary"="nonBoundary","penalty" ="penalty","wicket.fielders"="wicketFielder",
                      "wicket.kind"="wicketKind","wicket.player_out" ="wicketPlayerOut",
                      "replacements.role.in"="replacementIn","replacements.role.out"="replacementOut",
                      "replacements.role.reason"="replacementReason","replacements.role.role"="replacementRole",

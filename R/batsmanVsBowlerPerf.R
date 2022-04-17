@@ -52,9 +52,6 @@
 batsmanVsBowlerPerf <- function(t20MDF,batsman1,bowler1){
     batsman=bowler=runs=fours=totalRuns=ballsFaced=wicketPlayerOut=NULL
     sixes=fours=timesOut=NULL
-    print(batsman1)
-    print(bowler1)
-    print(dim(t20MDF))
 
     a <- t20MDF %>% filter(batsman==batsman1 & bowler==bowler1)
     b <- select(a,batsman,bowler,runs)
@@ -67,7 +64,6 @@ batsmanVsBowlerPerf <- function(t20MDF,batsman1,bowler1){
     e <- b %>%
         mutate(sixes=(runs ==6)) %>%
         filter(sixes == TRUE) %>% summarise(sixes=n())
-
     f <- cbind(batsman1,bowler1,c,d,e)
     g <- f %>% mutate(SR=(totalRuns/ballsFaced)*100)
     h <- select(a,batsman,bowler,wicketPlayerOut)
