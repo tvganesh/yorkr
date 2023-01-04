@@ -59,7 +59,7 @@
 winProbabilityRF <- function(match,t1,t2,plot=1){
 
   team=ball=totalRuns=wicketPlayerOut=ballsRemaining=runs=numWickets=runsMomentum=perfIndex=isWinner=NULL
-  predict=final_model=winProbability=ggplotly=runs=runRate=NULL
+  predict=winProbability=ggplotly=runs=runRate=batsman=bowler=NULL
 
     if (match$winner[1] == "NA") {
        print("Match no result ************************")
@@ -78,7 +78,7 @@ winProbabilityRF <- function(match,t1,t2,plot=1){
     ballsIn1stInnings= dim(a)[1]
 
 
-    b <- select(a,ball,totalRuns,wicketPlayerOut,team1,team2,date)
+    b <- select(a,batsman, bowler, ball,totalRuns,wicketPlayerOut,team1,team2,date)
     c <-mutate(b,ball=gsub("1st\\.","",ball))
 
     # Compute the total runs scored by team
@@ -107,7 +107,7 @@ winProbabilityRF <- function(match,t1,t2,plot=1){
     d$runRate = (d$runs/d$ballNum)
     d$runsMomentum = (11 - d$numWickets)/d$ballsRemaining
 
-    df = select(d, ballNum, ballsRemaining, runs, runRate,numWickets,runsMomentum,perfIndex, isWinner)
+    df = select(d, batsman, bowler, ballNum, ballsRemaining, runs, runRate,numWickets,runsMomentum,perfIndex, isWinner)
     print(dim(df))
 
 
@@ -127,7 +127,7 @@ winProbabilityRF <- function(match,t1,t2,plot=1){
     ballsIn2ndInnings= dim(a1)[1] + 1
 
 
-    b1 <- select(a1,ball,totalRuns,wicketPlayerOut,team1,team2,date)
+    b1 <- select(a1,batsman, bowler, ball,totalRuns,wicketPlayerOut,team1,team2,date)
     c1 <-mutate(b1,ball=gsub("2nd\\.","",ball))
 
     # Compute total Runs
@@ -162,25 +162,25 @@ winProbabilityRF <- function(match,t1,t2,plot=1){
 
 
     # Rename required runs as runs
-    df1 = select(d1,ballNum,ballsRemaining, requiredRuns,runRate,numWickets,runsMomentum,perfIndex, isWinner)
-    names(df1) =c("ballNum","ballsRemaining","runs","runRate","numWickets","runsMomentum","perfIndex","isWinner")
+    df1 = select(d1,batsman, bowler, ballNum,ballsRemaining, requiredRuns,runRate,numWickets,runsMomentum,perfIndex, isWinner)
+    names(df1) =c("batsman","bowler","ballNum","ballsRemaining","runs","runRate","numWickets","runsMomentum","perfIndex","isWinner")
     print(dim(df1))
 
     df2=rbind(df,df1)
 
 
-    a=select(df,ballNum,ballsRemaining, runs,runRate,numWickets,runsMomentum,perfIndex)
-    m=predict(final_model, new_data = a,type="prob")
+    a1=select(df,batsman,bowler,ballNum,ballsRemaining, runs,runRate,numWickets,runsMomentum,perfIndex)
+    m=predict(final_model,a1,type = "prob")
 
 
-    m1=m*100
-    m2=m1[".pred_1"]
+    m1=m$.pred_1*100
+    m2=matrix(m1)
 
-    b=select(df1,ballNum,ballsRemaining, runs,runRate,numWickets,runsMomentum,perfIndex)
-    n=predict(final_model, new_data = b,type="prob")
+    b1=select(df1,batsman,bowler,ballNum,ballsRemaining, runs,runRate,numWickets,runsMomentum,perfIndex)
+    n=predict(final_model,b1,type="prob")
 
-    n1=n*100
-    n2=n1[".pred_1"]
+    n1=n$.pred_1*100
+    n2=matrix(n1)
 
     m3= 100-n2
     n3=100-m2
@@ -197,15 +197,15 @@ winProbabilityRF <- function(match,t1,t2,plot=1){
     # Plot both lines
     if(plot ==1){ #ggplot2
       ggplot() +
-        geom_line(data = team11, aes(x = ballNum, y = winProbability, color = t1)) +
-        geom_line(data = team22, aes(x = ballNum, y = winProbability, color = t2))+
+        geom_line(data = team11, aes(x = ballNum, y = winProbability, color = teamA)) +
+        geom_line(data = team22, aes(x = ballNum, y = winProbability, color = teamB))+
         ggtitle(bquote(atop(.("Win Probability based on Random Forest model"),
                             atop(italic("Data source:http://cricsheet.org/"),""))))
 
     }else { #ggplotly
       g <- ggplot() +
-        geom_line(data = team11, aes(x = ballNum, y = winProbability, color = t1)) +
-        geom_line(data = team22, aes(x = ballNum, y = winProbability, color = t2))+
+        geom_line(data = team11, aes(x = ballNum, y = winProbability, color = teamA)) +
+        geom_line(data = team22, aes(x = ballNum, y = winProbability, color = teamB))+
         ggtitle("Win Probability based on Random Forest model")
 
 
