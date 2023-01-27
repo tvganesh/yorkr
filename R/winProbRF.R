@@ -1,4 +1,5 @@
 ##########################################################################################
+##########################################################################################
 # Designed and developed by Tinniam V Ganesh
 # Date : 25 Dec 2022
 # Function: winProbabiltyRF
@@ -54,12 +55,11 @@
 #'
 #' @export
 #'
-#load("iplMatches//Chennai Super Kings-Deccan Chargers-2009-04-27.RData")
-#load("iplMatches//Chennai Super Kings-Delhi Daredevils-2012-05-12.RData")
 winProbabilityRF <- function(match,t1,t2,plot=1){
 
   team=ball=totalRuns=wicketPlayerOut=ballsRemaining=runs=numWickets=runsMomentum=perfIndex=isWinner=NULL
   predict=winProbability=ggplotly=runs=runRate=batsman=bowler=NULL
+
 
     if (match$winner[1] == "NA") {
        print("Match no result ************************")

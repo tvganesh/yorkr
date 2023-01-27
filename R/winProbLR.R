@@ -54,12 +54,11 @@
 #'
 #' @export
 #'
-#load("iplMatches//Chennai Super Kings-Deccan Chargers-2009-04-27.RData")
-#load("iplMatches//Chennai Super Kings-Delhi Daredevils-2012-05-12.RData")
 winProbabilityLR <- function(match,t1,t2,plot=1){
 
     team=ball=totalRuns=wicketPlayerOut=ballsRemaining=runs=numWickets=runsMomentum=perfIndex=isWinner=NULL
-    predict=ml_model=winProbability=ggplotly=runs=runRate=batsman=bowler=NULL
+    predict=winProbability=ggplotly=runs=runRate=batsman=bowler=NULL
+
     if (match$winner[1] == "NA") {
        print("Match no result ************************")
        return()
@@ -196,17 +195,26 @@ winProbabilityLR <- function(match,t1,t2,plot=1){
 
     # Plot both lines
     if(plot ==1){ #ggplot2
-      ggplot() +
-        geom_line(data = team11, aes(x = ballNum, y = winProbability, color = teamA)) +
-        geom_line(data = team22, aes(x = ballNum, y = winProbability, color = teamB))+
-        ggtitle(bquote(atop(.("Win Probability based on Logistic Regression model"),
-                            atop(italic("Data source:http://cricsheet.org/"),""))))
+        df3 = as.data.frame(cbind(d$ballNum,m1))
+        names(df3) <- c("ballNum","winProbability")
+        df4 = as.data.frame(cbind(d1$ballNum,n1))
+        names(df4) <- c("ballNum","winProbability")
+        maxBallNum = max(df3$ballNum)
+        df4$ballNum = df4$ballNum - maxBallNum
+        g <- ggplot() +
+            geom_line(data = df3, aes(x = ballNum, y = winProbability, color = teamA)) +
+            geom_line(data = df4, aes(x = ballNum, y = winProbability, color = teamB))+
+            geom_vline(xintercept=36, linetype="dashed", color = "red") +
+            geom_vline(xintercept=96, linetype="dashed", color = "red") +
+            ggtitle("Ball-by-ball Logistic Regression Win Probability (Overlapping)")
+
+        ggplotly(g)
 
     }else { #ggplotly
       g <- ggplot() +
         geom_line(data = team11, aes(x = ballNum, y = winProbability, color = teamA)) +
         geom_line(data = team22, aes(x = ballNum, y = winProbability, color = teamB))+
-        ggtitle("Win Probability based on Logistic Regression model")
+        ggtitle("Ball-by-ball Logistic Regression Win Probability (Side-by-side)")
 
 
       ggplotly(g)

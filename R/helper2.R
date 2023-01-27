@@ -5,6 +5,7 @@
 # his function is a helper for computing batting details of team
 #
 ###########################################################################################
+#'
 #' @title
 #' Gets min,max date and min and max matches from dataframe
 #'
