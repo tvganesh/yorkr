@@ -1,18 +1,18 @@
 ##########################################################################################
 # Designed and developed by Tinniam V Ganesh
-# Date : 25 Dec 2022
-# Function: winProbabilityDL
+# Date : 14 Mar 2023
+# Function: bowlerWinProbDL
 # This function computes  the ball by ball win probability using Deep Learning Keras
 #
 ###########################################################################################
 #' @title
-#' Plot the  win probability using Deep Learning model
+#' Plot the  Bowler win probability contribution using Deep Learning model
 #'
 #' @description
-#' This function  plots the  win probability of the teams in a T20 match
+#' This function  plots the  win probability of bowlers in a T20 match
 #'
 #' @usage
-#' winProbabilityDL(match,t1,t2,plot=1)
+#' bowlerWinProbDL(match,t1,t2,plot=1)
 #'
 #' @param match
 #' The dataframe of the match
@@ -43,8 +43,8 @@
 #' #Get the match details
 #' a <- getMatchDetails("England","Pakistan","2006-09-05",dir="../temp")
 #'
-#' # Plot tne match worm plot
-#' winProbabilityDL(a,'England',"Pakistan")
+#' # t
+#' bowlerWinProbDL(a,'England',"Pakistan")
 #' }
 #' @seealso
 #' \code{\link{getBatsmanDetails}}\cr
@@ -54,7 +54,7 @@
 #'
 #' @export
 #'
-winProbabilityDL <- function(match,t1,t2,plot=1){
+bowlerWinProbDL <- function(match,t1,t2,plot=1){
 
   team=ball=totalRuns=wicketPlayerOut=ballsRemaining=runs=numWickets=runsMomentum=perfIndex=isWinner=NULL
   predict=ml_model=winProbability=ggplotly=runs=runRate=batsman=bowler=NULL
@@ -63,6 +63,7 @@ winProbabilityDL <- function(match,t1,t2,plot=1){
     print("Match no result ************************")
     return()
   }
+
   team1Size=0
   requiredRuns=0
 
@@ -206,78 +207,67 @@ winProbabilityDL <- function(match,t1,t2,plot=1){
   team22=as.data.frame(cbind(df2$ballNum,team2))
   names(team22) = c("ballNum","winProbability")
 
+  print("***************************************************************")
+  cat("t1=",t1,"teamA= ",teamA," t2=",t2,"teamB= ",teamB,"\n")
 
-  # Add labels to chart team 1
-  #Mark when players were dismissed
-  k <- cbind(b,m1)
-  k$ballNum = seq.int(nrow(k))
-  k1= filter(k,wicketPlayerOut !=  "nobody")
-  k2 = select(k1,ballNum,m1,wicketPlayerOut)
-  #print(k2)
+  print("***************************************************************")
 
-  # Mark when batsman started
-  batsmen = unique(k$batsman)
-  p =  data.frame(matrix(nrow = 0, ncol = dim(k[2])))
-  for(bman in batsmen){
-      l <-k  %>% filter(batsman == bman)
-      n=l[1,]
-      p=rbind(p,n)
+  if(t1 != teamA){
+     aa = cbind(df8,m2)
+     aa2 = aa %>% select(bowler,m2)
+     bowlers=unique(aa2$bowler)
+     columns=c("bowler","delta")
+     dfm = data.frame(matrix(nrow = 0, ncol = length(columns)))
+     for (b in bowlers){
+         print(b)
+         d <- aa2 %>% filter(bowler == b)
+         print(d)
+         delta =0
+         if(dim(d)[1] != 1){
+             delta = d$m2[dim(d)[1]] - d$m2[1]
+             df1 = data.frame(b,delta)
+             dfm = rbind(dfm,df1)
+         }
+     }
+  } else if(t1 != teamB){
+      aa = cbind(df10,n2)
+      aa2 = aa %>% select(bowler,n2)
+      bowlers=unique(aa2$bowler)
+      columns=c("bowler","delta")
+      dfm = data.frame(matrix(nrow = 0, ncol = length(columns)))
+      for (b in bowlers){
+          print(b)
+          d <- aa2 %>% filter(bowler == b)
+          print(d)
+          delta =0
+          if(dim(d)[1] != 1){
+              delta = d$n2[dim(d)[1]] - d$n2[1]
+              df1 = data.frame(b,delta)
+              dfm = rbind(dfm,df1)
+          }
+      }
   }
-  p1 = select(p,ballNum,m1,batsman)
-  #print(p1)
 
-  # Add labels to team 2
-  #Mark when players were dismissed
-  r <- cbind(b1,n1)
-  r$ballNum = seq.int(nrow(r))
-  r1= filter(r,wicketPlayerOut !=  "nobody")
-  r2 = select(r1,ballNum,n1,wicketPlayerOut)
+  print(dfm)
 
-  # Mark when batsman started
-  batsmen = unique(r$batsman)
-  s =  data.frame(matrix(nrow = 0, ncol = dim(k[2])))
-  for(bman1 in batsmen){
-      t1 <-r  %>% filter(batsman == bman1)
-      t2=t1[1,]
-      s=rbind(s,t2)
-  }
-  s1 = select(s,ballNum,n1,batsman)
-
+  plot.title <- paste("Bowler Win Probability(DL) contribution-",t1," vs ",t2)
   # Plot both lines
   if(plot ==1){ #ggplot
-    df3 = as.data.frame(cbind(d$ballNum,m1))
-    names(df3) <- c("ballNum","winProbability")
-    df4 = as.data.frame(cbind(d1$ballNum,n1))
-    names(df4) <- c("ballNum","winProbability")
-    maxBallNum = max(df3$ballNum)
-    df4$ballNum = df4$ballNum - maxBallNum
-    g <- ggplot() +
-    geom_line(data = df3, aes(x = ballNum, y = winProbability, color = teamA)) +
-    geom_line(data = df4, aes(x = ballNum, y = winProbability, color = teamB))+
-    geom_point(data=k2, aes(x=ballNum, y=m1,color="blue"),shape=15) +
-    geom_text(data=k2, aes(x=ballNum,y=m1,label=wicketPlayerOut,color="blue"),nudge_x =0.5,nudge_y = 0.5)+
-    geom_point(data=p1, aes(x=ballNum, y=m1,colour="red"),shape=16) +
-    geom_text(data=p1, aes(x=ballNum,y=m1,label=batsman,colour="red"),nudge_x =0.5,nudge_y = 0.5) +
-    geom_point(data=r2, aes(x=ballNum, y=n1,colour="black"),shape=15) +
-    geom_text(data=r2, aes(x=ballNum,y=n1,label=wicketPlayerOut,colour="black"),nudge_x =0.5,nudge_y = 0.5) +
-    geom_point(data=s1, aes(x=ballNum, y=n1,colour="grey"),shape=16) +
-    geom_text(data=s1, aes(x=ballNum,y=n1,label=batsman,colour="grey"),nudge_x =0.5,nudge_y = 0.5)+
-    geom_vline(xintercept=36, linetype="dashed", color = "red") +
-    geom_vline(xintercept=96, linetype="dashed", color = "red") +
-    ggtitle("Ball-by-ball Deep Learning Win Probability (Overlapping)")
-
-
-    ggplotly(g)
+    ggplot(data=dfm, aes(x=b, y=delta,fill=b)) + geom_bar(stat="identity") +
+      geom_hline(yintercept = 0,color="blue") +
+          ylab("Win probability(DL)") +
+          ggtitle(plot.title)
 
   }else { #ggplotly
-    g <- ggplot() +
-      geom_line(data = team11, aes(x = ballNum, y = winProbability, color = teamA)) +
-      geom_line(data = team22, aes(x = ballNum, y = winProbability, color = teamB))+
-      ggtitle("Ball-by-ball Deep Learning Win Probability (Side-by-side)")
+    g <- ggplot(data=dfm, aes(x=b, y=delta,fill=b)) + geom_bar(stat="identity") +
+      geom_hline(yintercept = 0,color="blue") +
+        ylab("Win probability (DL)") +
+        ggtitle(plot.title)
 
 
     ggplotly(g)
 
   }
 }
+
 

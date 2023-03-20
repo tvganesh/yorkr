@@ -99,6 +99,7 @@ matchWormWicketGraph <- function(match,t1,t2,plot=1) {
       geom_text(data=e, aes(x=ball,y=total,label=wicketPlayerOut,color=t1),vjust=0.5) +
       geom_point(data=e1,aes(x=ball, y=total,color=t2),shape=2) +
       geom_text(data=e1, aes(x=ball,y=total,label=wicketPlayerOut,color=t2),vjust=0.5) +
+      xlab("Overs") +
       ggtitle(bquote(atop(.("Worm chart of match"),
                           atop(italic("Data source:http://cricsheet.org/"),""))))
 
@@ -112,6 +113,7 @@ matchWormWicketGraph <- function(match,t1,t2,plot=1) {
       geom_text(data=e, aes(x=ball,y=total,label=wicketPlayerOut,color=t1),vjust=-0.5) +
       geom_point(data=e1,aes(x=ball, y=total,color=t2),shape=2) +
       geom_text(data=e1, aes(x=ball,y=total,label=wicketPlayerOut,color=t2),vjust=0.5) +
+      xlab("Overs") +
       ggtitle("Worm chart of match")
 
 

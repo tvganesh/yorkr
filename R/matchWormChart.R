@@ -91,6 +91,7 @@ matchWormGraph <- function(match,t1,t2,plot=1) {
       ggplot() +
         geom_line(data = d, aes(x = ball, y = total, color = t1)) +
         geom_line(data = d1, aes(x = ball, y = total, color = t2))+
+            xlab("Overs") +
          ggtitle(bquote(atop(.("Worm chart of match"),
                              atop(italic("Data source:http://cricsheet.org/"),""))))
 
@@ -98,6 +99,7 @@ matchWormGraph <- function(match,t1,t2,plot=1) {
         g <- ggplot() +
             geom_line(data = d, aes(x = ball, y = total, color = t1)) +
             geom_line(data = d1, aes(x = ball, y = total, color = t2))+
+            xlab("Overs") +
             ggtitle("Worm chart of match")
 
 
