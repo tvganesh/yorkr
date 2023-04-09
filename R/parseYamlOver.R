@@ -64,7 +64,7 @@ parseYamlOver <- function(match,s,ateam,delivery,meta) {
     byes=legbyes=noballs=wides=nonBoundary=penalty=runs=NULL
     extras=wicketFielder=wicketKind=wicketPlayerOut=NULL
     gt9=FALSE
-
+    print("new code")
     # Create an empty data frame
     overs <- data.frame(ball=character(),team=character(),batsman=character(),
                         bowler=character(),nonStriker=character(),byes=character(),
@@ -73,7 +73,7 @@ parseYamlOver <- function(match,s,ateam,delivery,meta) {
                         runs=character(),extras=character(),totalRuns=character(),
                         wicketFielder=character(), wicketKind=character(),
                         wicketPlayerOut=character(),replacementIn=factor(),
-                        replacementOut=character(),replacementReason=character(),replacementRole=character(),
+                        replacementOut=character(),replacementReason=character(),replacementTeam=character(),
                         date=character(),
                         matchType=character(),
                         overs=character(),venue=character(),team1=character(),team2=character(),
@@ -103,7 +103,6 @@ parseYamlOver <- function(match,s,ateam,delivery,meta) {
         # Assume in the worst case there are 15 deliveries
         # Compute delivery
         del <- i %%  15 # Assuming max of 15 deliveries
-
         # For deliveries 1-9
         if((del >=1) && (del<= 9)){
             pattern = paste(s[i],"\\D*$",sep="")
@@ -133,6 +132,7 @@ parseYamlOver <- function(match,s,ateam,delivery,meta) {
 
         #Check the number of deliveries in the over
         d <- dim(over)
+
         if(d[2] == 0){
             next
         } else if(d[2] >=10){
@@ -147,11 +147,12 @@ parseYamlOver <- function(match,s,ateam,delivery,meta) {
         cols<-names(over)
         cols1=c("batsman","bowler","non_striker","byes","legbyes","noballs","wides","runs.non_boundary","penalty",
                 "runs.batsman","runs.extras","runs.total","wicket.fielders","wicket.kind","wicket.player_out",
-                "replacements.role.in", "replacements.role.out","replacements.role.reason","replacements.role.role")
+                "replacements.match.in", "replacements.match.out","replacements.match.team","replacements.match.reason")
 
         # Get the missing columns
         a <- setdiff(cols1,cols)
         if(length(a) != (length(cols1) - length(cols))){
+            print("New columns added")
             break
         }
 

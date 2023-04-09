@@ -53,7 +53,7 @@ convertAllYaml2RDataframesT20 <- function(sourceDir=".",targetDirMen=".",targetD
     yaml.load_file=info.dates=info.match_type=info.overs=info.venue=NULL
     info.teams=matchType=winner=result=venue=info.gender=ball=team=batsman=NULL
     bowler=nonStriker=byes=legbyes=noballs=wides=nonBoundary=penalty=runs=extras=totalRuns=NULL
-    wicketFielder=wicketKind=wicketPlayerOut=replacementIn=replacementOut=replacementReason=replacementRole=NULL
+    wicketFielder=wicketKind=wicketPlayerOut=replacementIn=replacementOut=replacementReason=replacementTeam=NULL
     files <- list.files(sourceDir)
     print(length(files))
     for(iii in 1:length(files)){
@@ -166,8 +166,8 @@ convertAllYaml2RDataframesT20 <- function(sourceDir=".",targetDirMen=".",targetD
                      "runs.extras" ="extras","runs.total"="totalRuns","byes"="byes","legbyes"="legbyes","noballs"="noballs",
                      "wides"="wides","runs.non_boundary"="nonBoundary","penalty" ="penalty","wicket.fielders"="wicketFielder",
                      "wicket.kind"="wicketKind","wicket.player_out" ="wicketPlayerOut",
-                     "replacements.role.in"="replacementIn","replacements.role.out"="replacementOut",
-                     "replacements.role.reason"="replacementReason","replacements.role.role"="replacementRole",
+                     "replacements.match.in"="replacementIn","replacements.match.out"="replacementOut",
+                     "replacements.match.reason"="replacementReason","replacements.match.team"="replacementTeam",
                      "ball"="ball","team"="team","date"="date","matchType"="matchType","overs" ="overs",
                      "venue"="venue","team1" ="team1","team2" ="team2", "winner"="winner","result"="result",
                      "gender"="gender")
@@ -187,7 +187,7 @@ convertAllYaml2RDataframesT20 <- function(sourceDir=".",targetDirMen=".",targetD
                         extras,totalRuns,wicketFielder,
                         wicketKind,wicketPlayerOut,
                         replacementIn, replacementOut, replacementReason,
-                        replacementRole,date,matchType,overs,venue,team1,team2,winner,result,gender)
+                        replacementTeam,date,matchType,overs,venue,team1,team2,winner,result,gender)
 
         # Change factors to appropiate type
         overs$byes <- as.numeric(as.character(overs$byes))
