@@ -70,7 +70,8 @@ winProbabilityDL <- function(match,t1,t2,plot=1){
   batsmanMap=readRDS("batsmanMap.rds")
   bowlerMap=readRDS("bowlerMap.rds")
 
-  teamA=match$team[grep("1st.0.1",match$ball)]
+  teams=unique(match$team)
+  teamA=teams[1]
 
   # Filter the performance of team1
   a <-filter(match,team==teamA)
@@ -123,7 +124,7 @@ winProbabilityDL <- function(match,t1,t2,plot=1){
 
   # Required runs is the team made by team 1 + 1
   requiredRuns=d[dim(d)[1],]$runs +1
-  teamB=match$team[grep("2nd.0.1",match$ball)]
+  teamB=teams[2]
 
 
   # Filter the performance of team1

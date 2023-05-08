@@ -71,7 +71,8 @@ bowlerWinProbDL <- function(match,t1,t2,plot=1){
   batsmanMap=readRDS("batsmanMap.rds")
   bowlerMap=readRDS("bowlerMap.rds")
 
-  teamA=match$team[grep("1st.0.1",match$ball)]
+  teams=unique(match$team)
+  teamA=teams[1]
 
   # Filter the performance of team1
   a <-filter(match,team==teamA)
@@ -124,7 +125,7 @@ bowlerWinProbDL <- function(match,t1,t2,plot=1){
 
   # Required runs is the team made by team 1 + 1
   requiredRuns=d[dim(d)[1],]$runs +1
-  teamB=match$team[grep("2nd.0.1",match$ball)]
+  teamB=teams[2]
 
 
   # Filter the performance of team1
@@ -253,13 +254,13 @@ bowlerWinProbDL <- function(match,t1,t2,plot=1){
   plot.title <- paste("Bowler Win Probability(DL) contribution-",t1," vs ",t2)
   # Plot both lines
   if(plot ==1){ #ggplot
-    ggplot(data=dfm, aes(x=b, y=delta,fill=b)) + geom_bar(stat="identity") +
+    ggplot(data=dfm, aes(x=b, y=100-delta,fill=b)) + geom_bar(stat="identity") +
       geom_hline(yintercept = 0,color="blue") +
           ylab("Win probability(DL)") +
           ggtitle(plot.title)
 
   }else { #ggplotly
-    g <- ggplot(data=dfm, aes(x=b, y=delta,fill=b)) + geom_bar(stat="identity") +
+    g <- ggplot(data=dfm, aes(x=b, y=100-delta,fill=b)) + geom_bar(stat="identity") +
       geom_hline(yintercept = 0,color="blue") +
         ylab("Win probability (DL)") +
         ggtitle(plot.title)
